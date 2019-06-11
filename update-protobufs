@@ -1,0 +1,7 @@
+#!/bin/sh
+
+branch_rchain=dev
+branch_scalapb=master
+
+svn export --force https://github.com/rchain/rchain/branches/$branch_rchain/models/src/main/protobuf protobuf
+svn export --force https://github.com/scalapb/ScalaPB/branches/$branch_scalapb/protobuf protobuf
