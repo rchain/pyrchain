@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=_b('\n\022coop.rchain.models\342?\254\001\0326coop.rchain.models.BitSetBytesMapper.bitSetBytesMapper\0328coop.rchain.models.ParSetTypeMapper.parSetESetTypeMapper\0328coop.rchain.models.ParMapTypeMapper.parMapEMapTypeMapper'),
-  serialized_pb=_b('\n\x0eRhoTypes.proto\x1a\x15scalapb/scalapb.proto\"\xd1\x02\n\x03Par\x12\x14\n\x05sends\x18\x01 \x03(\x0b\x32\x05.Send\x12\x1a\n\x08receives\x18\x02 \x03(\x0b\x32\x08.Receive\x12\x12\n\x04news\x18\x04 \x03(\x0b\x32\x04.New\x12\x14\n\x05\x65xprs\x18\x05 \x03(\x0b\x32\x05.Expr\x12\x17\n\x07matches\x18\x06 \x03(\x0b\x32\x06.Match\x12#\n\x0cunforgeables\x18\x07 \x03(\x0b\x32\r.GUnforgeable\x12\x18\n\x07\x62undles\x18\x0b \x03(\x0b\x32\x07.Bundle\x12 \n\x0b\x63onnectives\x18\x08 \x03(\x0b\x32\x0b.Connective\x12[\n\x0blocallyFree\x18\t \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\n \x01(\x08\"a\n\x12TaggedContinuation\x12\"\n\x08par_body\x18\x01 \x01(\x0b\x32\x0e.ParWithRandomH\x00\x12\x18\n\x0escala_body_ref\x18\x02 \x01(\x03H\x00\x42\r\n\x0btagged_cont\"o\n\rParWithRandom\x12\x1a\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x42\n\x0brandomState\x18\x02 \x01(\x0c\x42-\xe2?*\n(coop.rchain.crypto.hash.Blake2b512Random\"\x15\n\x05PCost\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x04\"k\n\x11ListParWithRandom\x12\x12\n\x04pars\x18\x01 \x03(\x0b\x32\x04.Par\x12\x42\n\x0brandomState\x18\x02 \x01(\x0c\x42-\xe2?*\n(coop.rchain.crypto.hash.Blake2b512Random\"s\n\x03Var\x12\x13\n\tbound_var\x18\x01 \x01(\x11H\x00\x12\x12\n\x08\x66ree_var\x18\x02 \x01(\x11H\x00\x12$\n\x08wildcard\x18\x03 \x01(\x0b\x32\x10.Var.WildcardMsgH\x00\x1a\r\n\x0bWildcardMsgB\x0e\n\x0cvar_instance\"I\n\x06\x42undle\x12\x1a\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x11\n\twriteFlag\x18\x02 \x01(\x08\x12\x10\n\x08readFlag\x18\x03 \x01(\x08\"\xc0\x01\n\x04Send\x12\x1a\n\x04\x63han\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x12\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x04.Par\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x06 \x01(\x08\"o\n\x0bReceiveBind\x12\x16\n\x08patterns\x18\x01 \x03(\x0b\x32\x04.Par\x12\x1c\n\x06source\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x17\n\tremainder\x18\x03 \x01(\x0b\x32\x04.Var\x12\x11\n\tfreeCount\x18\x04 \x01(\x05\"Q\n\x0b\x42indPattern\x12\x16\n\x08patterns\x18\x01 \x03(\x0b\x32\x04.Par\x12\x17\n\tremainder\x18\x02 \x01(\x0b\x32\x04.Var\x12\x11\n\tfreeCount\x18\x03 \x01(\x05\"2\n\x10ListBindPatterns\x12\x1e\n\x08patterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\"\xdf\x01\n\x07Receive\x12\x1b\n\x05\x62inds\x18\x01 \x03(\x0b\x32\x0c.ReceiveBind\x12\x1a\n\x04\x62ody\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x11\n\tbindCount\x18\x04 \x01(\x05\x12[\n\x0blocallyFree\x18\x06 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x07 \x01(\x08\"\x9b\x01\n\x03New\x12\x11\n\tbindCount\x18\x01 \x01(\x11\x12\x17\n\x01p\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x0b\n\x03uri\x18\x03 \x03(\t\x12[\n\x0blocallyFree\x18\x04 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\"[\n\tMatchCase\x12\x1d\n\x07pattern\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1c\n\x06source\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x11\n\tfreeCount\x18\x03 \x01(\x05\"\xb6\x01\n\x05Match\x12\x1c\n\x06target\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x19\n\x05\x63\x61ses\x18\x02 \x03(\x0b\x32\n.MatchCase\x12[\n\x0blocallyFree\x18\x04 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x05 \x01(\x08\"\xb4\x07\n\x04\x45xpr\x12\x10\n\x06g_bool\x18\x01 \x01(\x08H\x00\x12\x0f\n\x05g_int\x18\x02 \x01(\x12H\x00\x12\x12\n\x08g_string\x18\x03 \x01(\tH\x00\x12\x0f\n\x05g_uri\x18\x04 \x01(\tH\x00\x12\x16\n\x0cg_byte_array\x18\x19 \x01(\x0cH\x00\x12\x1b\n\ne_not_body\x18\x05 \x01(\x0b\x32\x05.ENotH\x00\x12\x1b\n\ne_neg_body\x18\x06 \x01(\x0b\x32\x05.ENegH\x00\x12\x1d\n\x0b\x65_mult_body\x18\x07 \x01(\x0b\x32\x06.EMultH\x00\x12\x1b\n\ne_div_body\x18\x08 \x01(\x0b\x32\x05.EDivH\x00\x12\x1d\n\x0b\x65_plus_body\x18\t \x01(\x0b\x32\x06.EPlusH\x00\x12\x1f\n\x0c\x65_minus_body\x18\n \x01(\x0b\x32\x07.EMinusH\x00\x12\x19\n\te_lt_body\x18\x0b \x01(\x0b\x32\x04.ELtH\x00\x12\x1b\n\ne_lte_body\x18\x0c \x01(\x0b\x32\x05.ELteH\x00\x12\x19\n\te_gt_body\x18\r \x01(\x0b\x32\x04.EGtH\x00\x12\x1b\n\ne_gte_body\x18\x0e \x01(\x0b\x32\x05.EGteH\x00\x12\x19\n\te_eq_body\x18\x0f \x01(\x0b\x32\x04.EEqH\x00\x12\x1b\n\ne_neq_body\x18\x10 \x01(\x0b\x32\x05.ENeqH\x00\x12\x1b\n\ne_and_body\x18\x11 \x01(\x0b\x32\x05.EAndH\x00\x12\x19\n\te_or_body\x18\x12 \x01(\x0b\x32\x04.EOrH\x00\x12\x1b\n\ne_var_body\x18\x13 \x01(\x0b\x32\x05.EVarH\x00\x12\x1d\n\x0b\x65_list_body\x18\x14 \x01(\x0b\x32\x06.EListH\x00\x12\x1f\n\x0c\x65_tuple_body\x18\x15 \x01(\x0b\x32\x07.ETupleH\x00\x12;\n\ne_set_body\x18\x16 \x01(\x0b\x32\x05.ESetB\x1e\xe2?\x1b\n\x19\x63oop.rchain.models.ParSetH\x00\x12;\n\ne_map_body\x18\x17 \x01(\x0b\x32\x05.EMapB\x1e\xe2?\x1b\n\x19\x63oop.rchain.models.ParMapH\x00\x12!\n\re_method_body\x18\x18 \x01(\x0b\x32\x08.EMethodH\x00\x12#\n\x0e\x65_matches_body\x18\x1b \x01(\x0b\x32\t.EMatchesH\x00\x12\x32\n\x16\x65_percent_percent_body\x18\x1c \x01(\x0b\x32\x10.EPercentPercentH\x00\x12&\n\x10\x65_plus_plus_body\x18\x1d \x01(\x0b\x32\n.EPlusPlusH\x00\x12*\n\x12\x65_minus_minus_body\x18\x1e \x01(\x0b\x32\x0c.EMinusMinusH\x00\x42\x0f\n\rexpr_instance\"\xa8\x01\n\x05\x45List\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\x90\x01\n\x06\x45Tuple\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\"\xa7\x01\n\x04\x45Set\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\xb1\x01\n\x04\x45Map\x12\x1a\n\x03kvs\x18\x01 \x03(\x0b\x32\r.KeyValuePair\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\xca\x01\n\x07\x45Method\x12\x12\n\nmethodName\x18\x01 \x01(\t\x12\x1c\n\x06target\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x17\n\targuments\x18\x03 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x06 \x01(\x08\"F\n\x0cKeyValuePair\x12\x19\n\x03key\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Var\x12\x17\n\x01v\x18\x01 \x01(\x0b\x32\x04.VarB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Not\x12\x17\n\x01p\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Neg\x12\x17\n\x01p\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\";\n\x05\x45Mult\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45\x44iv\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\";\n\x05\x45Plus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"<\n\x06\x45Minus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Lt\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Lte\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Gt\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Gte\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45\x45q\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Neq\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45\x41nd\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Or\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"G\n\x08\x45Matches\x12\x1c\n\x06target\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1d\n\x07pattern\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"E\n\x0f\x45PercentPercent\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"?\n\tEPlusPlus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"A\n\x0b\x45MinusMinus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\xa5\x02\n\nConnective\x12(\n\rconn_and_body\x18\x01 \x01(\x0b\x32\x0f.ConnectiveBodyH\x00\x12\'\n\x0c\x63onn_or_body\x18\x02 \x01(\x0b\x32\x0f.ConnectiveBodyH\x00\x12\x1d\n\rconn_not_body\x18\x03 \x01(\x0b\x32\x04.ParH\x00\x12\x1f\n\x0cvar_ref_body\x18\x04 \x01(\x0b\x32\x07.VarRefH\x00\x12\x13\n\tconn_bool\x18\x05 \x01(\x08H\x00\x12\x12\n\x08\x63onn_int\x18\x06 \x01(\x08H\x00\x12\x15\n\x0b\x63onn_string\x18\x07 \x01(\x08H\x00\x12\x12\n\x08\x63onn_uri\x18\x08 \x01(\x08H\x00\x12\x19\n\x0f\x63onn_byte_array\x18\t \x01(\x08H\x00\x42\x15\n\x13\x63onnective_instance\"&\n\x06VarRef\x12\r\n\x05index\x18\x01 \x01(\x11\x12\r\n\x05\x64\x65pth\x18\x02 \x01(\x11\"\"\n\x0e\x43onnectiveBody\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\"s\n\x0cGUnforgeable\x12#\n\x0eg_private_body\x18\x01 \x01(\x0b\x32\t.GPrivateH\x00\x12.\n\x14g_deployer_auth_body\x18\x02 \x01(\x0b\x32\x0e.GDeployerAuthH\x00\x42\x0e\n\x0cunf_instance\"\x16\n\x08GPrivate\x12\n\n\x02id\x18\x01 \x01(\x0c\"\"\n\rGDeployerAuth\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x42\xc4\x01\n\x12\x63oop.rchain.models\xe2?\xac\x01\x1a\x36\x63oop.rchain.models.BitSetBytesMapper.bitSetBytesMapper\x1a\x38\x63oop.rchain.models.ParSetTypeMapper.parSetESetTypeMapper\x1a\x38\x63oop.rchain.models.ParMapTypeMapper.parMapEMapTypeMapperb\x06proto3')
+  serialized_pb=_b('\n\x0eRhoTypes.proto\x1a\x15scalapb/scalapb.proto\"\xd1\x02\n\x03Par\x12\x14\n\x05sends\x18\x01 \x03(\x0b\x32\x05.Send\x12\x1a\n\x08receives\x18\x02 \x03(\x0b\x32\x08.Receive\x12\x12\n\x04news\x18\x04 \x03(\x0b\x32\x04.New\x12\x14\n\x05\x65xprs\x18\x05 \x03(\x0b\x32\x05.Expr\x12\x17\n\x07matches\x18\x06 \x03(\x0b\x32\x06.Match\x12#\n\x0cunforgeables\x18\x07 \x03(\x0b\x32\r.GUnforgeable\x12\x18\n\x07\x62undles\x18\x0b \x03(\x0b\x32\x07.Bundle\x12 \n\x0b\x63onnectives\x18\x08 \x03(\x0b\x32\x0b.Connective\x12[\n\x0blocallyFree\x18\t \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\n \x01(\x08\"a\n\x12TaggedContinuation\x12\"\n\x08par_body\x18\x01 \x01(\x0b\x32\x0e.ParWithRandomH\x00\x12\x18\n\x0escala_body_ref\x18\x02 \x01(\x03H\x00\x42\r\n\x0btagged_cont\"o\n\rParWithRandom\x12\x1a\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x42\n\x0brandomState\x18\x02 \x01(\x0c\x42-\xe2?*\n(coop.rchain.crypto.hash.Blake2b512Random\"\x15\n\x05PCost\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x04\"k\n\x11ListParWithRandom\x12\x12\n\x04pars\x18\x01 \x03(\x0b\x32\x04.Par\x12\x42\n\x0brandomState\x18\x02 \x01(\x0c\x42-\xe2?*\n(coop.rchain.crypto.hash.Blake2b512Random\"s\n\x03Var\x12\x13\n\tbound_var\x18\x01 \x01(\x11H\x00\x12\x12\n\x08\x66ree_var\x18\x02 \x01(\x11H\x00\x12$\n\x08wildcard\x18\x03 \x01(\x0b\x32\x10.Var.WildcardMsgH\x00\x1a\r\n\x0bWildcardMsgB\x0e\n\x0cvar_instance\"I\n\x06\x42undle\x12\x1a\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x11\n\twriteFlag\x18\x02 \x01(\x08\x12\x10\n\x08readFlag\x18\x03 \x01(\x08\"\xc0\x01\n\x04Send\x12\x1a\n\x04\x63han\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x12\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x04.Par\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x06 \x01(\x08\"o\n\x0bReceiveBind\x12\x16\n\x08patterns\x18\x01 \x03(\x0b\x32\x04.Par\x12\x1c\n\x06source\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x17\n\tremainder\x18\x03 \x01(\x0b\x32\x04.Var\x12\x11\n\tfreeCount\x18\x04 \x01(\x05\"Q\n\x0b\x42indPattern\x12\x16\n\x08patterns\x18\x01 \x03(\x0b\x32\x04.Par\x12\x17\n\tremainder\x18\x02 \x01(\x0b\x32\x04.Var\x12\x11\n\tfreeCount\x18\x03 \x01(\x05\"2\n\x10ListBindPatterns\x12\x1e\n\x08patterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\"\xdf\x01\n\x07Receive\x12\x1b\n\x05\x62inds\x18\x01 \x03(\x0b\x32\x0c.ReceiveBind\x12\x1a\n\x04\x62ody\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x11\n\tbindCount\x18\x04 \x01(\x05\x12[\n\x0blocallyFree\x18\x06 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x07 \x01(\x08\"\xd9\x01\n\x03New\x12\x11\n\tbindCount\x18\x01 \x01(\x11\x12\x17\n\x01p\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x0b\n\x03uri\x18\x03 \x03(\t\x12\x1b\n\x08\x64\x65ployId\x18\x04 \x01(\x0b\x32\t.DeployId\x12\x1f\n\ndeployerId\x18\x05 \x01(\x0b\x32\x0b.DeployerId\x12[\n\x0blocallyFree\x18\x06 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\"[\n\tMatchCase\x12\x1d\n\x07pattern\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1c\n\x06source\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x11\n\tfreeCount\x18\x03 \x01(\x05\"\xb6\x01\n\x05Match\x12\x1c\n\x06target\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x19\n\x05\x63\x61ses\x18\x02 \x03(\x0b\x32\n.MatchCase\x12[\n\x0blocallyFree\x18\x04 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x05 \x01(\x08\"\xd1\x07\n\x04\x45xpr\x12\x10\n\x06g_bool\x18\x01 \x01(\x08H\x00\x12\x0f\n\x05g_int\x18\x02 \x01(\x12H\x00\x12\x12\n\x08g_string\x18\x03 \x01(\tH\x00\x12\x0f\n\x05g_uri\x18\x04 \x01(\tH\x00\x12\x16\n\x0cg_byte_array\x18\x19 \x01(\x0cH\x00\x12\x1b\n\ne_not_body\x18\x05 \x01(\x0b\x32\x05.ENotH\x00\x12\x1b\n\ne_neg_body\x18\x06 \x01(\x0b\x32\x05.ENegH\x00\x12\x1d\n\x0b\x65_mult_body\x18\x07 \x01(\x0b\x32\x06.EMultH\x00\x12\x1b\n\ne_div_body\x18\x08 \x01(\x0b\x32\x05.EDivH\x00\x12\x1d\n\x0b\x65_plus_body\x18\t \x01(\x0b\x32\x06.EPlusH\x00\x12\x1f\n\x0c\x65_minus_body\x18\n \x01(\x0b\x32\x07.EMinusH\x00\x12\x19\n\te_lt_body\x18\x0b \x01(\x0b\x32\x04.ELtH\x00\x12\x1b\n\ne_lte_body\x18\x0c \x01(\x0b\x32\x05.ELteH\x00\x12\x19\n\te_gt_body\x18\r \x01(\x0b\x32\x04.EGtH\x00\x12\x1b\n\ne_gte_body\x18\x0e \x01(\x0b\x32\x05.EGteH\x00\x12\x19\n\te_eq_body\x18\x0f \x01(\x0b\x32\x04.EEqH\x00\x12\x1b\n\ne_neq_body\x18\x10 \x01(\x0b\x32\x05.ENeqH\x00\x12\x1b\n\ne_and_body\x18\x11 \x01(\x0b\x32\x05.EAndH\x00\x12\x19\n\te_or_body\x18\x12 \x01(\x0b\x32\x04.EOrH\x00\x12\x1b\n\ne_var_body\x18\x13 \x01(\x0b\x32\x05.EVarH\x00\x12\x1d\n\x0b\x65_list_body\x18\x14 \x01(\x0b\x32\x06.EListH\x00\x12\x1f\n\x0c\x65_tuple_body\x18\x15 \x01(\x0b\x32\x07.ETupleH\x00\x12;\n\ne_set_body\x18\x16 \x01(\x0b\x32\x05.ESetB\x1e\xe2?\x1b\n\x19\x63oop.rchain.models.ParSetH\x00\x12;\n\ne_map_body\x18\x17 \x01(\x0b\x32\x05.EMapB\x1e\xe2?\x1b\n\x19\x63oop.rchain.models.ParMapH\x00\x12!\n\re_method_body\x18\x18 \x01(\x0b\x32\x08.EMethodH\x00\x12#\n\x0e\x65_matches_body\x18\x1b \x01(\x0b\x32\t.EMatchesH\x00\x12\x32\n\x16\x65_percent_percent_body\x18\x1c \x01(\x0b\x32\x10.EPercentPercentH\x00\x12&\n\x10\x65_plus_plus_body\x18\x1d \x01(\x0b\x32\n.EPlusPlusH\x00\x12*\n\x12\x65_minus_minus_body\x18\x1e \x01(\x0b\x32\x0c.EMinusMinusH\x00\x12\x1b\n\ne_mod_body\x18\x1f \x01(\x0b\x32\x05.EModH\x00\x42\x0f\n\rexpr_instance\"\xa8\x01\n\x05\x45List\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\x90\x01\n\x06\x45Tuple\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\"\xa7\x01\n\x04\x45Set\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\xb1\x01\n\x04\x45Map\x12\x1a\n\x03kvs\x18\x01 \x03(\x0b\x32\r.KeyValuePair\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\xca\x01\n\x07\x45Method\x12\x12\n\nmethodName\x18\x01 \x01(\t\x12\x1c\n\x06target\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x17\n\targuments\x18\x03 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x06 \x01(\x08\"F\n\x0cKeyValuePair\x12\x19\n\x03key\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Var\x12\x17\n\x01v\x18\x01 \x01(\x0b\x32\x04.VarB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Not\x12\x17\n\x01p\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Neg\x12\x17\n\x01p\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\";\n\x05\x45Mult\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45\x44iv\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Mod\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\";\n\x05\x45Plus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"<\n\x06\x45Minus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Lt\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Lte\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Gt\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Gte\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45\x45q\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Neq\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45\x41nd\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Or\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"G\n\x08\x45Matches\x12\x1c\n\x06target\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1d\n\x07pattern\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"E\n\x0f\x45PercentPercent\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"?\n\tEPlusPlus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"A\n\x0b\x45MinusMinus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\xa5\x02\n\nConnective\x12(\n\rconn_and_body\x18\x01 \x01(\x0b\x32\x0f.ConnectiveBodyH\x00\x12\'\n\x0c\x63onn_or_body\x18\x02 \x01(\x0b\x32\x0f.ConnectiveBodyH\x00\x12\x1d\n\rconn_not_body\x18\x03 \x01(\x0b\x32\x04.ParH\x00\x12\x1f\n\x0cvar_ref_body\x18\x04 \x01(\x0b\x32\x07.VarRefH\x00\x12\x13\n\tconn_bool\x18\x05 \x01(\x08H\x00\x12\x12\n\x08\x63onn_int\x18\x06 \x01(\x08H\x00\x12\x15\n\x0b\x63onn_string\x18\x07 \x01(\x08H\x00\x12\x12\n\x08\x63onn_uri\x18\x08 \x01(\x08H\x00\x12\x19\n\x0f\x63onn_byte_array\x18\t \x01(\x08H\x00\x42\x15\n\x13\x63onnective_instance\"&\n\x06VarRef\x12\r\n\x05index\x18\x01 \x01(\x11\x12\r\n\x05\x64\x65pth\x18\x02 \x01(\x11\"\"\n\x0e\x43onnectiveBody\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\"\x17\n\x08\x44\x65ployId\x12\x0b\n\x03sig\x18\x01 \x01(\x0c\"\x1f\n\nDeployerId\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\"\x97\x01\n\x0cGUnforgeable\x12#\n\x0eg_private_body\x18\x01 \x01(\x0b\x32\t.GPrivateH\x00\x12&\n\x10g_deploy_id_body\x18\x02 \x01(\x0b\x32\n.GDeployIdH\x00\x12*\n\x12g_deployer_id_body\x18\x03 \x01(\x0b\x32\x0c.GDeployerIdH\x00\x42\x0e\n\x0cunf_instance\"\x16\n\x08GPrivate\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x18\n\tGDeployId\x12\x0b\n\x03sig\x18\x01 \x01(\x0c\" \n\x0bGDeployerId\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x42\xc4\x01\n\x12\x63oop.rchain.models\xe2?\xac\x01\x1a\x36\x63oop.rchain.models.BitSetBytesMapper.bitSetBytesMapper\x1a\x38\x63oop.rchain.models.ParSetTypeMapper.parSetESetTypeMapper\x1a\x38\x63oop.rchain.models.ParMapTypeMapper.parMapEMapTypeMapperb\x06proto3')
   ,
   dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -668,8 +668,22 @@ _NEW = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='locallyFree', full_name='New.locallyFree', index=3,
-      number=4, type=12, cpp_type=9, label=1,
+      name='deployId', full_name='New.deployId', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='deployerId', full_name='New.deployerId', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='locallyFree', full_name='New.locallyFree', index=5,
+      number=6, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -687,7 +701,7 @@ _NEW = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1587,
-  serialized_end=1742,
+  serialized_end=1804,
 )
 
 
@@ -731,8 +745,8 @@ _MATCHCASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1744,
-  serialized_end=1835,
+  serialized_start=1806,
+  serialized_end=1897,
 )
 
 
@@ -783,8 +797,8 @@ _MATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1838,
-  serialized_end=2020,
+  serialized_start=1900,
+  serialized_end=2082,
 )
 
 
@@ -998,6 +1012,13 @@ _EXPR = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='e_mod_body', full_name='Expr.e_mod_body', index=29,
+      number=31, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1013,8 +1034,8 @@ _EXPR = _descriptor.Descriptor(
       name='expr_instance', full_name='Expr.expr_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2023,
-  serialized_end=2971,
+  serialized_start=2085,
+  serialized_end=3062,
 )
 
 
@@ -1065,8 +1086,8 @@ _ELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2974,
-  serialized_end=3142,
+  serialized_start=3065,
+  serialized_end=3233,
 )
 
 
@@ -1110,8 +1131,8 @@ _ETUPLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3145,
-  serialized_end=3289,
+  serialized_start=3236,
+  serialized_end=3380,
 )
 
 
@@ -1162,8 +1183,8 @@ _ESET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3292,
-  serialized_end=3459,
+  serialized_start=3383,
+  serialized_end=3550,
 )
 
 
@@ -1214,8 +1235,8 @@ _EMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3462,
-  serialized_end=3639,
+  serialized_start=3553,
+  serialized_end=3730,
 )
 
 
@@ -1273,8 +1294,8 @@ _EMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3642,
-  serialized_end=3844,
+  serialized_start=3733,
+  serialized_end=3935,
 )
 
 
@@ -1311,8 +1332,8 @@ _KEYVALUEPAIR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3846,
-  serialized_end=3916,
+  serialized_start=3937,
+  serialized_end=4007,
 )
 
 
@@ -1342,8 +1363,8 @@ _EVAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3918,
-  serialized_end=3949,
+  serialized_start=4009,
+  serialized_end=4040,
 )
 
 
@@ -1373,8 +1394,8 @@ _ENOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3951,
-  serialized_end=3982,
+  serialized_start=4042,
+  serialized_end=4073,
 )
 
 
@@ -1404,8 +1425,8 @@ _ENEG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3984,
-  serialized_end=4015,
+  serialized_start=4075,
+  serialized_end=4106,
 )
 
 
@@ -1442,8 +1463,8 @@ _EMULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4017,
-  serialized_end=4076,
+  serialized_start=4108,
+  serialized_end=4167,
 )
 
 
@@ -1480,8 +1501,46 @@ _EDIV = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4078,
-  serialized_end=4136,
+  serialized_start=4169,
+  serialized_end=4227,
+)
+
+
+_EMOD = _descriptor.Descriptor(
+  name='EMod',
+  full_name='EMod',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='p1', full_name='EMod.p1', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\342?\003\360\001\001'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='p2', full_name='EMod.p2', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\342?\003\360\001\001'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4229,
+  serialized_end=4287,
 )
 
 
@@ -1518,8 +1577,8 @@ _EPLUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4138,
-  serialized_end=4197,
+  serialized_start=4289,
+  serialized_end=4348,
 )
 
 
@@ -1556,8 +1615,8 @@ _EMINUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4199,
-  serialized_end=4259,
+  serialized_start=4350,
+  serialized_end=4410,
 )
 
 
@@ -1594,8 +1653,8 @@ _ELT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4261,
-  serialized_end=4318,
+  serialized_start=4412,
+  serialized_end=4469,
 )
 
 
@@ -1632,8 +1691,8 @@ _ELTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4320,
-  serialized_end=4378,
+  serialized_start=4471,
+  serialized_end=4529,
 )
 
 
@@ -1670,8 +1729,8 @@ _EGT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4380,
-  serialized_end=4437,
+  serialized_start=4531,
+  serialized_end=4588,
 )
 
 
@@ -1708,8 +1767,8 @@ _EGTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4439,
-  serialized_end=4497,
+  serialized_start=4590,
+  serialized_end=4648,
 )
 
 
@@ -1746,8 +1805,8 @@ _EEQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4499,
-  serialized_end=4556,
+  serialized_start=4650,
+  serialized_end=4707,
 )
 
 
@@ -1784,8 +1843,8 @@ _ENEQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4558,
-  serialized_end=4616,
+  serialized_start=4709,
+  serialized_end=4767,
 )
 
 
@@ -1822,8 +1881,8 @@ _EAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4618,
-  serialized_end=4676,
+  serialized_start=4769,
+  serialized_end=4827,
 )
 
 
@@ -1860,8 +1919,8 @@ _EOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4678,
-  serialized_end=4735,
+  serialized_start=4829,
+  serialized_end=4886,
 )
 
 
@@ -1898,8 +1957,8 @@ _EMATCHES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4737,
-  serialized_end=4808,
+  serialized_start=4888,
+  serialized_end=4959,
 )
 
 
@@ -1936,8 +1995,8 @@ _EPERCENTPERCENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4810,
-  serialized_end=4879,
+  serialized_start=4961,
+  serialized_end=5030,
 )
 
 
@@ -1974,8 +2033,8 @@ _EPLUSPLUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4881,
-  serialized_end=4944,
+  serialized_start=5032,
+  serialized_end=5095,
 )
 
 
@@ -2012,8 +2071,8 @@ _EMINUSMINUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4946,
-  serialized_end=5011,
+  serialized_start=5097,
+  serialized_end=5162,
 )
 
 
@@ -2102,8 +2161,8 @@ _CONNECTIVE = _descriptor.Descriptor(
       name='connective_instance', full_name='Connective.connective_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=5014,
-  serialized_end=5307,
+  serialized_start=5165,
+  serialized_end=5458,
 )
 
 
@@ -2140,8 +2199,8 @@ _VARREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5309,
-  serialized_end=5347,
+  serialized_start=5460,
+  serialized_end=5498,
 )
 
 
@@ -2171,8 +2230,70 @@ _CONNECTIVEBODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5349,
-  serialized_end=5383,
+  serialized_start=5500,
+  serialized_end=5534,
+)
+
+
+_DEPLOYID = _descriptor.Descriptor(
+  name='DeployId',
+  full_name='DeployId',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='sig', full_name='DeployId.sig', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5536,
+  serialized_end=5559,
+)
+
+
+_DEPLOYERID = _descriptor.Descriptor(
+  name='DeployerId',
+  full_name='DeployerId',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='publicKey', full_name='DeployerId.publicKey', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5561,
+  serialized_end=5592,
 )
 
 
@@ -2191,8 +2312,15 @@ _GUNFORGEABLE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='g_deployer_auth_body', full_name='GUnforgeable.g_deployer_auth_body', index=1,
+      name='g_deploy_id_body', full_name='GUnforgeable.g_deploy_id_body', index=1,
       number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='g_deployer_id_body', full_name='GUnforgeable.g_deployer_id_body', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2212,8 +2340,8 @@ _GUNFORGEABLE = _descriptor.Descriptor(
       name='unf_instance', full_name='GUnforgeable.unf_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=5385,
-  serialized_end=5500,
+  serialized_start=5595,
+  serialized_end=5746,
 )
 
 
@@ -2243,20 +2371,20 @@ _GPRIVATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5502,
-  serialized_end=5524,
+  serialized_start=5748,
+  serialized_end=5770,
 )
 
 
-_GDEPLOYERAUTH = _descriptor.Descriptor(
-  name='GDeployerAuth',
-  full_name='GDeployerAuth',
+_GDEPLOYID = _descriptor.Descriptor(
+  name='GDeployId',
+  full_name='GDeployId',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publicKey', full_name='GDeployerAuth.publicKey', index=0,
+      name='sig', full_name='GDeployId.sig', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -2274,8 +2402,39 @@ _GDEPLOYERAUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5526,
-  serialized_end=5560,
+  serialized_start=5772,
+  serialized_end=5796,
+)
+
+
+_GDEPLOYERID = _descriptor.Descriptor(
+  name='GDeployerId',
+  full_name='GDeployerId',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='publicKey', full_name='GDeployerId.publicKey', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5798,
+  serialized_end=5830,
 )
 
 _PAR.fields_by_name['sends'].message_type = _SEND
@@ -2318,6 +2477,8 @@ _LISTBINDPATTERNS.fields_by_name['patterns'].message_type = _BINDPATTERN
 _RECEIVE.fields_by_name['binds'].message_type = _RECEIVEBIND
 _RECEIVE.fields_by_name['body'].message_type = _PAR
 _NEW.fields_by_name['p'].message_type = _PAR
+_NEW.fields_by_name['deployId'].message_type = _DEPLOYID
+_NEW.fields_by_name['deployerId'].message_type = _DEPLOYERID
 _MATCHCASE.fields_by_name['pattern'].message_type = _PAR
 _MATCHCASE.fields_by_name['source'].message_type = _PAR
 _MATCH.fields_by_name['target'].message_type = _PAR
@@ -2346,6 +2507,7 @@ _EXPR.fields_by_name['e_matches_body'].message_type = _EMATCHES
 _EXPR.fields_by_name['e_percent_percent_body'].message_type = _EPERCENTPERCENT
 _EXPR.fields_by_name['e_plus_plus_body'].message_type = _EPLUSPLUS
 _EXPR.fields_by_name['e_minus_minus_body'].message_type = _EMINUSMINUS
+_EXPR.fields_by_name['e_mod_body'].message_type = _EMOD
 _EXPR.oneofs_by_name['expr_instance'].fields.append(
   _EXPR.fields_by_name['g_bool'])
 _EXPR.fields_by_name['g_bool'].containing_oneof = _EXPR.oneofs_by_name['expr_instance']
@@ -2433,6 +2595,9 @@ _EXPR.fields_by_name['e_plus_plus_body'].containing_oneof = _EXPR.oneofs_by_name
 _EXPR.oneofs_by_name['expr_instance'].fields.append(
   _EXPR.fields_by_name['e_minus_minus_body'])
 _EXPR.fields_by_name['e_minus_minus_body'].containing_oneof = _EXPR.oneofs_by_name['expr_instance']
+_EXPR.oneofs_by_name['expr_instance'].fields.append(
+  _EXPR.fields_by_name['e_mod_body'])
+_EXPR.fields_by_name['e_mod_body'].containing_oneof = _EXPR.oneofs_by_name['expr_instance']
 _ELIST.fields_by_name['ps'].message_type = _PAR
 _ELIST.fields_by_name['remainder'].message_type = _VAR
 _ETUPLE.fields_by_name['ps'].message_type = _PAR
@@ -2451,6 +2616,8 @@ _EMULT.fields_by_name['p1'].message_type = _PAR
 _EMULT.fields_by_name['p2'].message_type = _PAR
 _EDIV.fields_by_name['p1'].message_type = _PAR
 _EDIV.fields_by_name['p2'].message_type = _PAR
+_EMOD.fields_by_name['p1'].message_type = _PAR
+_EMOD.fields_by_name['p2'].message_type = _PAR
 _EPLUS.fields_by_name['p1'].message_type = _PAR
 _EPLUS.fields_by_name['p2'].message_type = _PAR
 _EMINUS.fields_by_name['p1'].message_type = _PAR
@@ -2512,13 +2679,17 @@ _CONNECTIVE.oneofs_by_name['connective_instance'].fields.append(
 _CONNECTIVE.fields_by_name['conn_byte_array'].containing_oneof = _CONNECTIVE.oneofs_by_name['connective_instance']
 _CONNECTIVEBODY.fields_by_name['ps'].message_type = _PAR
 _GUNFORGEABLE.fields_by_name['g_private_body'].message_type = _GPRIVATE
-_GUNFORGEABLE.fields_by_name['g_deployer_auth_body'].message_type = _GDEPLOYERAUTH
+_GUNFORGEABLE.fields_by_name['g_deploy_id_body'].message_type = _GDEPLOYID
+_GUNFORGEABLE.fields_by_name['g_deployer_id_body'].message_type = _GDEPLOYERID
 _GUNFORGEABLE.oneofs_by_name['unf_instance'].fields.append(
   _GUNFORGEABLE.fields_by_name['g_private_body'])
 _GUNFORGEABLE.fields_by_name['g_private_body'].containing_oneof = _GUNFORGEABLE.oneofs_by_name['unf_instance']
 _GUNFORGEABLE.oneofs_by_name['unf_instance'].fields.append(
-  _GUNFORGEABLE.fields_by_name['g_deployer_auth_body'])
-_GUNFORGEABLE.fields_by_name['g_deployer_auth_body'].containing_oneof = _GUNFORGEABLE.oneofs_by_name['unf_instance']
+  _GUNFORGEABLE.fields_by_name['g_deploy_id_body'])
+_GUNFORGEABLE.fields_by_name['g_deploy_id_body'].containing_oneof = _GUNFORGEABLE.oneofs_by_name['unf_instance']
+_GUNFORGEABLE.oneofs_by_name['unf_instance'].fields.append(
+  _GUNFORGEABLE.fields_by_name['g_deployer_id_body'])
+_GUNFORGEABLE.fields_by_name['g_deployer_id_body'].containing_oneof = _GUNFORGEABLE.oneofs_by_name['unf_instance']
 DESCRIPTOR.message_types_by_name['Par'] = _PAR
 DESCRIPTOR.message_types_by_name['TaggedContinuation'] = _TAGGEDCONTINUATION
 DESCRIPTOR.message_types_by_name['ParWithRandom'] = _PARWITHRANDOM
@@ -2546,6 +2717,7 @@ DESCRIPTOR.message_types_by_name['ENot'] = _ENOT
 DESCRIPTOR.message_types_by_name['ENeg'] = _ENEG
 DESCRIPTOR.message_types_by_name['EMult'] = _EMULT
 DESCRIPTOR.message_types_by_name['EDiv'] = _EDIV
+DESCRIPTOR.message_types_by_name['EMod'] = _EMOD
 DESCRIPTOR.message_types_by_name['EPlus'] = _EPLUS
 DESCRIPTOR.message_types_by_name['EMinus'] = _EMINUS
 DESCRIPTOR.message_types_by_name['ELt'] = _ELT
@@ -2563,9 +2735,12 @@ DESCRIPTOR.message_types_by_name['EMinusMinus'] = _EMINUSMINUS
 DESCRIPTOR.message_types_by_name['Connective'] = _CONNECTIVE
 DESCRIPTOR.message_types_by_name['VarRef'] = _VARREF
 DESCRIPTOR.message_types_by_name['ConnectiveBody'] = _CONNECTIVEBODY
+DESCRIPTOR.message_types_by_name['DeployId'] = _DEPLOYID
+DESCRIPTOR.message_types_by_name['DeployerId'] = _DEPLOYERID
 DESCRIPTOR.message_types_by_name['GUnforgeable'] = _GUNFORGEABLE
 DESCRIPTOR.message_types_by_name['GPrivate'] = _GPRIVATE
-DESCRIPTOR.message_types_by_name['GDeployerAuth'] = _GDEPLOYERAUTH
+DESCRIPTOR.message_types_by_name['GDeployId'] = _GDEPLOYID
+DESCRIPTOR.message_types_by_name['GDeployerId'] = _GDEPLOYERID
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Par = _reflection.GeneratedProtocolMessageType('Par', (_message.Message,), dict(
@@ -2765,6 +2940,13 @@ EDiv = _reflection.GeneratedProtocolMessageType('EDiv', (_message.Message,), dic
   ))
 _sym_db.RegisterMessage(EDiv)
 
+EMod = _reflection.GeneratedProtocolMessageType('EMod', (_message.Message,), dict(
+  DESCRIPTOR = _EMOD,
+  __module__ = 'RhoTypes_pb2'
+  # @@protoc_insertion_point(class_scope:EMod)
+  ))
+_sym_db.RegisterMessage(EMod)
+
 EPlus = _reflection.GeneratedProtocolMessageType('EPlus', (_message.Message,), dict(
   DESCRIPTOR = _EPLUS,
   __module__ = 'RhoTypes_pb2'
@@ -2884,6 +3066,20 @@ ConnectiveBody = _reflection.GeneratedProtocolMessageType('ConnectiveBody', (_me
   ))
 _sym_db.RegisterMessage(ConnectiveBody)
 
+DeployId = _reflection.GeneratedProtocolMessageType('DeployId', (_message.Message,), dict(
+  DESCRIPTOR = _DEPLOYID,
+  __module__ = 'RhoTypes_pb2'
+  # @@protoc_insertion_point(class_scope:DeployId)
+  ))
+_sym_db.RegisterMessage(DeployId)
+
+DeployerId = _reflection.GeneratedProtocolMessageType('DeployerId', (_message.Message,), dict(
+  DESCRIPTOR = _DEPLOYERID,
+  __module__ = 'RhoTypes_pb2'
+  # @@protoc_insertion_point(class_scope:DeployerId)
+  ))
+_sym_db.RegisterMessage(DeployerId)
+
 GUnforgeable = _reflection.GeneratedProtocolMessageType('GUnforgeable', (_message.Message,), dict(
   DESCRIPTOR = _GUNFORGEABLE,
   __module__ = 'RhoTypes_pb2'
@@ -2898,12 +3094,19 @@ GPrivate = _reflection.GeneratedProtocolMessageType('GPrivate', (_message.Messag
   ))
 _sym_db.RegisterMessage(GPrivate)
 
-GDeployerAuth = _reflection.GeneratedProtocolMessageType('GDeployerAuth', (_message.Message,), dict(
-  DESCRIPTOR = _GDEPLOYERAUTH,
+GDeployId = _reflection.GeneratedProtocolMessageType('GDeployId', (_message.Message,), dict(
+  DESCRIPTOR = _GDEPLOYID,
   __module__ = 'RhoTypes_pb2'
-  # @@protoc_insertion_point(class_scope:GDeployerAuth)
+  # @@protoc_insertion_point(class_scope:GDeployId)
   ))
-_sym_db.RegisterMessage(GDeployerAuth)
+_sym_db.RegisterMessage(GDeployId)
+
+GDeployerId = _reflection.GeneratedProtocolMessageType('GDeployerId', (_message.Message,), dict(
+  DESCRIPTOR = _GDEPLOYERID,
+  __module__ = 'RhoTypes_pb2'
+  # @@protoc_insertion_point(class_scope:GDeployerId)
+  ))
+_sym_db.RegisterMessage(GDeployerId)
 
 
 DESCRIPTOR._options = None
@@ -2940,6 +3143,8 @@ _EMULT.fields_by_name['p1']._options = None
 _EMULT.fields_by_name['p2']._options = None
 _EDIV.fields_by_name['p1']._options = None
 _EDIV.fields_by_name['p2']._options = None
+_EMOD.fields_by_name['p1']._options = None
+_EMOD.fields_by_name['p2']._options = None
 _EPLUS.fields_by_name['p1']._options = None
 _EPLUS.fields_by_name['p2']._options = None
 _EMINUS.fields_by_name['p1']._options = None
