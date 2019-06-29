@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 grpcio = "*"
 grpcio-tools = "*"
+ecdsa = "*"
+mypy = "*"
 
 [requires]
 python_version = "3.7"
