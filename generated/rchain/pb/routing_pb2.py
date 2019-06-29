@@ -13,8 +13,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
-import CasperMessage_pb2 as CasperMessage__pb2
+from .scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
+from . import CasperMessage_pb2 as CasperMessage__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
