@@ -10,6 +10,7 @@ grpcio = "*"
 grpcio-tools = "*"
 ecdsa = "*"
 mypy = "*"
+python-bitcoinlib = "*"
 
 [requires]
 python_version = "3.7"
