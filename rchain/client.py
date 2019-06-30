@@ -2,8 +2,8 @@ import logging
 
 from google.protobuf.empty_pb2 import Empty
 
-from rchain.crypto import PrivateKey
-from rchain.util import create_deploy_data
+from .crypto import PrivateKey
+from .util import create_deploy_data
 from .pb import DeployService_pb2_grpc, ProposeService_pb2_grpc
 
 
@@ -23,8 +23,18 @@ class RClient:
         if response.HasField('error'):
             raise RClientException('\n'.join(response.error.messages))
 
-    def deploy(self, key: PrivateKey, term: str, timestamp: int = -1):
-        deploy_data = create_deploy_data(key, term, timestamp)
+    def deploy(
+        self,
+        key: PrivateKey,
+        term: str,
+        phlo_price: int,
+        phlo_limit: int,
+        valid_after_block_no: int = -1,
+        timestamp_millis: int = -1,
+    ):
+        deploy_data = create_deploy_data(
+            key, term, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis
+        )
         stub = DeployService_pb2_grpc.DeployServiceStub(self.channel)
         response = stub.DoDeploy(deploy_data)
         self._check_response(response)

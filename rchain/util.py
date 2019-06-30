@@ -16,13 +16,23 @@ def sign_deploy_data(key: PrivateKey, data: DeployData) -> bytes:
     return key.sign(signed_data.SerializeToString())
 
 
-def create_deploy_data(key: PrivateKey, term: str, timestamp: int = -1) -> DeployData:
-    if timestamp < 0:
-        timestamp = int(time.time())
+def create_deploy_data(
+    key: PrivateKey,
+    term: str,
+    phlo_price: int,
+    phlo_limit: int,
+    valid_after_block_no: int = -1,
+    timestamp_millis: int = -1,
+) -> DeployData:
+    if timestamp_millis < 0:
+        timestamp_millis = int(time.time() * 1000)
     data = DeployData(
         deployer=key.get_public_key().to_bytes(),
         term=term,
-        timestamp=timestamp,
+        phloPrice=phlo_price,
+        phloLimit=phlo_limit,
+        validAfterBlockNumber=valid_after_block_no,
+        timestamp=timestamp_millis,
         sigAlgorithm='secp256k1',
     )
     data.sig = sign_deploy_data(key, data)
