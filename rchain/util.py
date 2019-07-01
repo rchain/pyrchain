@@ -1,4 +1,6 @@
 import time
+import string
+import importlib.resources
 from typing import Type
 
 from ecdsa import SigningKey
@@ -37,3 +39,8 @@ def create_deploy_data(
     )
     data.sig = sign_deploy_data(key, data)
     return data
+
+
+def load_contract(package, filename: str, subst_vars: dict = {}) -> str:
+    source = importlib.resources.read_text(package, filename)
+    return string.Template(source).substitute(subst_vars)
