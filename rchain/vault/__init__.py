@@ -3,6 +3,7 @@ from typing import Optional
 from ..client import RClient
 from ..crypto import PrivateKey
 from ..util import load_contract
+from ..pb.DeployService_pb2 import (ListeningNameDataResponse as Data)
 
 
 class VaultAPIException(Exception):
@@ -49,13 +50,19 @@ class VaultAPI:
             'addr': self._get_addr(addr),
         })
 
-    def get_balance(self, addr: Optional[str] = None) -> int:
-        deploy_id = self.deploy_get_balance(addr)
-        self.client.propose()
-        data = self.client.get_data_at_deploy_id(deploy_id, depth=999)
+    def get_balance_from_data(self, data: Data) -> int:
+        return data.blockResults[0].postBlockData[0].exprs[0].g_int
+
+    def get_balance_from_deploy_id(self, deploy_id: bytes, depth: int = -1) -> int:
+        data = self.client.get_data_at_deploy_id(deploy_id, depth=depth)
         if not data:
             raise VaultAPIException('No data at deployId')
-        return data.blockResults[0].postBlockData[0].exprs[0].g_int
+        return self.get_balance_from_data(data)
+
+    def get_balance(self, addr: Optional[str] = None, depth: int = -1) -> int:
+        deploy_id = self.deploy_get_balance(addr)
+        self.client.propose()
+        return self.get_balance_from_deploy_id(deploy_id, depth=depth)
 
     def deploy_transfer(
         self, from_addr: Optional[str], to_addr: str, amount: int
