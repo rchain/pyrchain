@@ -1,0 +1,8 @@
+How to run the example:
+
+  ./update-protobufs
+  ./update-generated
+  export PYTHONPATH="$PWD/generated"
+
+  pipenv install
+  pipenv run python test.py
