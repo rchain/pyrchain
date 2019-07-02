@@ -1,3 +1,5 @@
+import sys
+import random
 import hashlib
 
 import bitcoin.base58
@@ -26,7 +28,9 @@ class PublicKey:
         self._pub_key = _pub_key
 
     def verify(self, signature: bytes, data: bytes):
-        self._pub_key.verify(signature, data, hashfunc=blake2b_32, sigdecode=sigdecode_der)
+        self._pub_key.verify(
+            signature, data, hashfunc=blake2b_32, sigdecode=sigdecode_der
+        )
 
     def to_bytes(self) -> bytes:
         return b'\x04' + self._pub_key.to_string()
@@ -54,11 +58,19 @@ class PrivateKey:
     def from_hex(cls, s: str) -> 'PrivateKey':
         return cls.from_bytes(bytes.fromhex(s))
 
+    @classmethod
+    def from_seed(cls, seed: int) -> 'PrivateKey':
+        rand = random.Random(seed)
+        key_bytes = random.getrandbits(32 * 8).to_bytes(32, sys.byteorder)
+        return cls.from_bytes(key_bytes)
+
     def __init__(self, _key: SigningKey):
         self._key = _key
 
     def sign(self, data: bytes) -> bytes:
-        return self._key.sign(data, hashfunc=blake2b_32, sigencode=sigencode_der_canonize)
+        return self._key.sign(
+            data, hashfunc=blake2b_32, sigencode=sigencode_der_canonize
+        )
 
     def to_bytes(self) -> bytes:
         return self._key.to_string()
