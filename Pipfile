@@ -4,12 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+mypy = "*"
 
 [packages]
 grpcio = "*"
 grpcio-tools = "*"
 ecdsa = "*"
-mypy = "*"
 python-bitcoinlib = "*"
 
 [requires]
