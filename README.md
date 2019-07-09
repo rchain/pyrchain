@@ -23,13 +23,13 @@ Interface to RChain RNode RPC.
 	    admin_vault_api.transfer(None, alice_key.get_public_key().get_address(), 1000)
 	    assert alice_vault_api.get_balance() == 1000
 
-See `./examples/wallets.py` for complete example of vault API usage.
+See `./examples/vaults.py` for complete example of vault API usage.
 See `rchain.client.RClient` class for available RPC API.
 
 To run the example from this Git repository run:
 
 	pipenv install
-	pipenv run python examples/wallets.py
+	pipenv run python examples/vaults.py
 
 ## Development
 
