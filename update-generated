@@ -2,7 +2,7 @@
 set -e
 
 src_dir=protobuf
-out_dir=generated/rchain/pb
+out_dir=rchain/pb
 
 mkdir -p $out_dir
 pipenv run python -m grpc_tools.protoc \
