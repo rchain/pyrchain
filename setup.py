@@ -17,5 +17,5 @@ setuptools.setup(
         'ecdsa',
         'python-bitcoinlib',
     ],
-    extras_requires={'dev': ['grpcio-tools', 'mypy']}
+    extras_require={'dev': ['grpcio-tools', 'mypy']}
 )
