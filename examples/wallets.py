@@ -44,9 +44,9 @@ def main():
 
         # Example way to get balances in one block:
 
-        god_bal_deploy_id   = assert god_vault_api.deploy_get_balance()
-        alice_bal_deploy_id = assert alice_vault_api.deploy_get_balance()
-        bob_bal_deploy_id   = assert bob_vault_api.deploy_get_balance()
+        god_bal_deploy_id   = god_vault_api.deploy_get_balance()
+        alice_bal_deploy_id = alice_vault_api.deploy_get_balance()
+        bob_bal_deploy_id   = bob_vault_api.deploy_get_balance()
         client.propose()
 
         god_bal   = god_vault_api.get_balance_from_deploy_id(god_bal_deploy_id)
