@@ -10,7 +10,8 @@ setuptools.setup(
     long_description=Path('README.md').read_text(),
     long_description_content_type='text/markdown',
     url='https://github.com/rchain/pyrchain',
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_namespace_packages(include=['rchain', 'rchain.*']),
+    package_data={'rchain.vault': ['*.rho.tpl']},
     install_requires=[
         'grpcio',
         'protobuf',
