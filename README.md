@@ -42,3 +42,7 @@ This first command will fetch latest RChain `*.proto` files from `dev`
 branch into `./protobuf` directory. The second command will generate
 gRPC Python code corresponding to the protcol buffers into `rchain.pb`
 package (`./rchain/pb`).
+
+To run unit tests run:
+
+	pipenv run python -m unittest discover -p '*_test.py'
