@@ -13,6 +13,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         'grpcio',
+        'protobuf',
         'ecdsa',
         'python-bitcoinlib',
     ],
