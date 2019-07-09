@@ -1,3 +1,4 @@
+*.egg_info
 .mypy_cache
 /build
 /dist
