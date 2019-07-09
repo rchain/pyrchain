@@ -45,4 +45,4 @@ package (`./rchain/pb`).
 
 To run unit tests run:
 
-	pipenv run python -m unittest discover -p '*_test.py'
+	pipenv run python -m unittest rchain/*_test.py
