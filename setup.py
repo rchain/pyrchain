@@ -5,7 +5,7 @@ setuptools.setup(
     name='pyrchain',
     version='0.1.3',
     author='RChain Cooperative',
-    author_email='tomas.virtus@rchain.coop',
+    author_email='rchain-makers@rchain.coop',
     description='Interface to RChain RNode RPC',
     long_description=Path('README.md').read_text(),
     long_description_content_type='text/markdown',
