@@ -57,3 +57,17 @@ corresponding to the protcol buffers into `rchain.pb` package (`./rchain/pb`).
 To run unit tests run:
 
 	pipenv run python -m unittest rchain/*_test.py
+
+## References
+
+- https://github.com/rchain-community/rchain-api
+
+  #### JavaScript API for RChain RNode RPC
+  
+  Includes Rholang parser. Has dApp users already.
+  
+- https://github.com/rchain-community/rchain-grpc/
+
+  #### Python API for RChain RNode RPC
+  
+  Seems to cover more of the available gRPC APIs. The author of pyrchain wasn't aware of rchain-grpc existence.
