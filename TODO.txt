@@ -1,0 +1,4 @@
+- RClient.propose()
+  * Return information about created block
+- Add more gRPC API to RClient
+  * get_blocks() 
