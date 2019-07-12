@@ -3,7 +3,7 @@ from pathlib import Path
 
 setuptools.setup(
     name='pyrchain',
-    version='0.1.4',
+    version='0.1.5',
     author='RChain Cooperative',
     author_email='rchain-makers@rchain.coop',
     description='Interface to RChain RNode RPC',
