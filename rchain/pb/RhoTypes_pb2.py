@@ -2743,369 +2743,369 @@ DESCRIPTOR.message_types_by_name['GDeployId'] = _GDEPLOYID
 DESCRIPTOR.message_types_by_name['GDeployerId'] = _GDEPLOYERID
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Par = _reflection.GeneratedProtocolMessageType('Par', (_message.Message,), dict(
-  DESCRIPTOR = _PAR,
-  __module__ = 'RhoTypes_pb2'
+Par = _reflection.GeneratedProtocolMessageType('Par', (_message.Message,), {
+  'DESCRIPTOR' : _PAR,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:Par)
-  ))
+  })
 _sym_db.RegisterMessage(Par)
 
-TaggedContinuation = _reflection.GeneratedProtocolMessageType('TaggedContinuation', (_message.Message,), dict(
-  DESCRIPTOR = _TAGGEDCONTINUATION,
-  __module__ = 'RhoTypes_pb2'
+TaggedContinuation = _reflection.GeneratedProtocolMessageType('TaggedContinuation', (_message.Message,), {
+  'DESCRIPTOR' : _TAGGEDCONTINUATION,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:TaggedContinuation)
-  ))
+  })
 _sym_db.RegisterMessage(TaggedContinuation)
 
-ParWithRandom = _reflection.GeneratedProtocolMessageType('ParWithRandom', (_message.Message,), dict(
-  DESCRIPTOR = _PARWITHRANDOM,
-  __module__ = 'RhoTypes_pb2'
+ParWithRandom = _reflection.GeneratedProtocolMessageType('ParWithRandom', (_message.Message,), {
+  'DESCRIPTOR' : _PARWITHRANDOM,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ParWithRandom)
-  ))
+  })
 _sym_db.RegisterMessage(ParWithRandom)
 
-PCost = _reflection.GeneratedProtocolMessageType('PCost', (_message.Message,), dict(
-  DESCRIPTOR = _PCOST,
-  __module__ = 'RhoTypes_pb2'
+PCost = _reflection.GeneratedProtocolMessageType('PCost', (_message.Message,), {
+  'DESCRIPTOR' : _PCOST,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:PCost)
-  ))
+  })
 _sym_db.RegisterMessage(PCost)
 
-ListParWithRandom = _reflection.GeneratedProtocolMessageType('ListParWithRandom', (_message.Message,), dict(
-  DESCRIPTOR = _LISTPARWITHRANDOM,
-  __module__ = 'RhoTypes_pb2'
+ListParWithRandom = _reflection.GeneratedProtocolMessageType('ListParWithRandom', (_message.Message,), {
+  'DESCRIPTOR' : _LISTPARWITHRANDOM,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ListParWithRandom)
-  ))
+  })
 _sym_db.RegisterMessage(ListParWithRandom)
 
-Var = _reflection.GeneratedProtocolMessageType('Var', (_message.Message,), dict(
+Var = _reflection.GeneratedProtocolMessageType('Var', (_message.Message,), {
 
-  WildcardMsg = _reflection.GeneratedProtocolMessageType('WildcardMsg', (_message.Message,), dict(
-    DESCRIPTOR = _VAR_WILDCARDMSG,
-    __module__ = 'RhoTypes_pb2'
+  'WildcardMsg' : _reflection.GeneratedProtocolMessageType('WildcardMsg', (_message.Message,), {
+    'DESCRIPTOR' : _VAR_WILDCARDMSG,
+    '__module__' : 'RhoTypes_pb2'
     # @@protoc_insertion_point(class_scope:Var.WildcardMsg)
-    ))
+    })
   ,
-  DESCRIPTOR = _VAR,
-  __module__ = 'RhoTypes_pb2'
+  'DESCRIPTOR' : _VAR,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:Var)
-  ))
+  })
 _sym_db.RegisterMessage(Var)
 _sym_db.RegisterMessage(Var.WildcardMsg)
 
-Bundle = _reflection.GeneratedProtocolMessageType('Bundle', (_message.Message,), dict(
-  DESCRIPTOR = _BUNDLE,
-  __module__ = 'RhoTypes_pb2'
+Bundle = _reflection.GeneratedProtocolMessageType('Bundle', (_message.Message,), {
+  'DESCRIPTOR' : _BUNDLE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:Bundle)
-  ))
+  })
 _sym_db.RegisterMessage(Bundle)
 
-Send = _reflection.GeneratedProtocolMessageType('Send', (_message.Message,), dict(
-  DESCRIPTOR = _SEND,
-  __module__ = 'RhoTypes_pb2'
+Send = _reflection.GeneratedProtocolMessageType('Send', (_message.Message,), {
+  'DESCRIPTOR' : _SEND,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:Send)
-  ))
+  })
 _sym_db.RegisterMessage(Send)
 
-ReceiveBind = _reflection.GeneratedProtocolMessageType('ReceiveBind', (_message.Message,), dict(
-  DESCRIPTOR = _RECEIVEBIND,
-  __module__ = 'RhoTypes_pb2'
+ReceiveBind = _reflection.GeneratedProtocolMessageType('ReceiveBind', (_message.Message,), {
+  'DESCRIPTOR' : _RECEIVEBIND,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ReceiveBind)
-  ))
+  })
 _sym_db.RegisterMessage(ReceiveBind)
 
-BindPattern = _reflection.GeneratedProtocolMessageType('BindPattern', (_message.Message,), dict(
-  DESCRIPTOR = _BINDPATTERN,
-  __module__ = 'RhoTypes_pb2'
+BindPattern = _reflection.GeneratedProtocolMessageType('BindPattern', (_message.Message,), {
+  'DESCRIPTOR' : _BINDPATTERN,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:BindPattern)
-  ))
+  })
 _sym_db.RegisterMessage(BindPattern)
 
-ListBindPatterns = _reflection.GeneratedProtocolMessageType('ListBindPatterns', (_message.Message,), dict(
-  DESCRIPTOR = _LISTBINDPATTERNS,
-  __module__ = 'RhoTypes_pb2'
+ListBindPatterns = _reflection.GeneratedProtocolMessageType('ListBindPatterns', (_message.Message,), {
+  'DESCRIPTOR' : _LISTBINDPATTERNS,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ListBindPatterns)
-  ))
+  })
 _sym_db.RegisterMessage(ListBindPatterns)
 
-Receive = _reflection.GeneratedProtocolMessageType('Receive', (_message.Message,), dict(
-  DESCRIPTOR = _RECEIVE,
-  __module__ = 'RhoTypes_pb2'
+Receive = _reflection.GeneratedProtocolMessageType('Receive', (_message.Message,), {
+  'DESCRIPTOR' : _RECEIVE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:Receive)
-  ))
+  })
 _sym_db.RegisterMessage(Receive)
 
-New = _reflection.GeneratedProtocolMessageType('New', (_message.Message,), dict(
-  DESCRIPTOR = _NEW,
-  __module__ = 'RhoTypes_pb2'
+New = _reflection.GeneratedProtocolMessageType('New', (_message.Message,), {
+  'DESCRIPTOR' : _NEW,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:New)
-  ))
+  })
 _sym_db.RegisterMessage(New)
 
-MatchCase = _reflection.GeneratedProtocolMessageType('MatchCase', (_message.Message,), dict(
-  DESCRIPTOR = _MATCHCASE,
-  __module__ = 'RhoTypes_pb2'
+MatchCase = _reflection.GeneratedProtocolMessageType('MatchCase', (_message.Message,), {
+  'DESCRIPTOR' : _MATCHCASE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:MatchCase)
-  ))
+  })
 _sym_db.RegisterMessage(MatchCase)
 
-Match = _reflection.GeneratedProtocolMessageType('Match', (_message.Message,), dict(
-  DESCRIPTOR = _MATCH,
-  __module__ = 'RhoTypes_pb2'
+Match = _reflection.GeneratedProtocolMessageType('Match', (_message.Message,), {
+  'DESCRIPTOR' : _MATCH,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:Match)
-  ))
+  })
 _sym_db.RegisterMessage(Match)
 
-Expr = _reflection.GeneratedProtocolMessageType('Expr', (_message.Message,), dict(
-  DESCRIPTOR = _EXPR,
-  __module__ = 'RhoTypes_pb2'
+Expr = _reflection.GeneratedProtocolMessageType('Expr', (_message.Message,), {
+  'DESCRIPTOR' : _EXPR,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:Expr)
-  ))
+  })
 _sym_db.RegisterMessage(Expr)
 
-EList = _reflection.GeneratedProtocolMessageType('EList', (_message.Message,), dict(
-  DESCRIPTOR = _ELIST,
-  __module__ = 'RhoTypes_pb2'
+EList = _reflection.GeneratedProtocolMessageType('EList', (_message.Message,), {
+  'DESCRIPTOR' : _ELIST,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EList)
-  ))
+  })
 _sym_db.RegisterMessage(EList)
 
-ETuple = _reflection.GeneratedProtocolMessageType('ETuple', (_message.Message,), dict(
-  DESCRIPTOR = _ETUPLE,
-  __module__ = 'RhoTypes_pb2'
+ETuple = _reflection.GeneratedProtocolMessageType('ETuple', (_message.Message,), {
+  'DESCRIPTOR' : _ETUPLE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ETuple)
-  ))
+  })
 _sym_db.RegisterMessage(ETuple)
 
-ESet = _reflection.GeneratedProtocolMessageType('ESet', (_message.Message,), dict(
-  DESCRIPTOR = _ESET,
-  __module__ = 'RhoTypes_pb2'
+ESet = _reflection.GeneratedProtocolMessageType('ESet', (_message.Message,), {
+  'DESCRIPTOR' : _ESET,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ESet)
-  ))
+  })
 _sym_db.RegisterMessage(ESet)
 
-EMap = _reflection.GeneratedProtocolMessageType('EMap', (_message.Message,), dict(
-  DESCRIPTOR = _EMAP,
-  __module__ = 'RhoTypes_pb2'
+EMap = _reflection.GeneratedProtocolMessageType('EMap', (_message.Message,), {
+  'DESCRIPTOR' : _EMAP,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EMap)
-  ))
+  })
 _sym_db.RegisterMessage(EMap)
 
-EMethod = _reflection.GeneratedProtocolMessageType('EMethod', (_message.Message,), dict(
-  DESCRIPTOR = _EMETHOD,
-  __module__ = 'RhoTypes_pb2'
+EMethod = _reflection.GeneratedProtocolMessageType('EMethod', (_message.Message,), {
+  'DESCRIPTOR' : _EMETHOD,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EMethod)
-  ))
+  })
 _sym_db.RegisterMessage(EMethod)
 
-KeyValuePair = _reflection.GeneratedProtocolMessageType('KeyValuePair', (_message.Message,), dict(
-  DESCRIPTOR = _KEYVALUEPAIR,
-  __module__ = 'RhoTypes_pb2'
+KeyValuePair = _reflection.GeneratedProtocolMessageType('KeyValuePair', (_message.Message,), {
+  'DESCRIPTOR' : _KEYVALUEPAIR,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:KeyValuePair)
-  ))
+  })
 _sym_db.RegisterMessage(KeyValuePair)
 
-EVar = _reflection.GeneratedProtocolMessageType('EVar', (_message.Message,), dict(
-  DESCRIPTOR = _EVAR,
-  __module__ = 'RhoTypes_pb2'
+EVar = _reflection.GeneratedProtocolMessageType('EVar', (_message.Message,), {
+  'DESCRIPTOR' : _EVAR,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EVar)
-  ))
+  })
 _sym_db.RegisterMessage(EVar)
 
-ENot = _reflection.GeneratedProtocolMessageType('ENot', (_message.Message,), dict(
-  DESCRIPTOR = _ENOT,
-  __module__ = 'RhoTypes_pb2'
+ENot = _reflection.GeneratedProtocolMessageType('ENot', (_message.Message,), {
+  'DESCRIPTOR' : _ENOT,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ENot)
-  ))
+  })
 _sym_db.RegisterMessage(ENot)
 
-ENeg = _reflection.GeneratedProtocolMessageType('ENeg', (_message.Message,), dict(
-  DESCRIPTOR = _ENEG,
-  __module__ = 'RhoTypes_pb2'
+ENeg = _reflection.GeneratedProtocolMessageType('ENeg', (_message.Message,), {
+  'DESCRIPTOR' : _ENEG,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ENeg)
-  ))
+  })
 _sym_db.RegisterMessage(ENeg)
 
-EMult = _reflection.GeneratedProtocolMessageType('EMult', (_message.Message,), dict(
-  DESCRIPTOR = _EMULT,
-  __module__ = 'RhoTypes_pb2'
+EMult = _reflection.GeneratedProtocolMessageType('EMult', (_message.Message,), {
+  'DESCRIPTOR' : _EMULT,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EMult)
-  ))
+  })
 _sym_db.RegisterMessage(EMult)
 
-EDiv = _reflection.GeneratedProtocolMessageType('EDiv', (_message.Message,), dict(
-  DESCRIPTOR = _EDIV,
-  __module__ = 'RhoTypes_pb2'
+EDiv = _reflection.GeneratedProtocolMessageType('EDiv', (_message.Message,), {
+  'DESCRIPTOR' : _EDIV,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EDiv)
-  ))
+  })
 _sym_db.RegisterMessage(EDiv)
 
-EMod = _reflection.GeneratedProtocolMessageType('EMod', (_message.Message,), dict(
-  DESCRIPTOR = _EMOD,
-  __module__ = 'RhoTypes_pb2'
+EMod = _reflection.GeneratedProtocolMessageType('EMod', (_message.Message,), {
+  'DESCRIPTOR' : _EMOD,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EMod)
-  ))
+  })
 _sym_db.RegisterMessage(EMod)
 
-EPlus = _reflection.GeneratedProtocolMessageType('EPlus', (_message.Message,), dict(
-  DESCRIPTOR = _EPLUS,
-  __module__ = 'RhoTypes_pb2'
+EPlus = _reflection.GeneratedProtocolMessageType('EPlus', (_message.Message,), {
+  'DESCRIPTOR' : _EPLUS,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EPlus)
-  ))
+  })
 _sym_db.RegisterMessage(EPlus)
 
-EMinus = _reflection.GeneratedProtocolMessageType('EMinus', (_message.Message,), dict(
-  DESCRIPTOR = _EMINUS,
-  __module__ = 'RhoTypes_pb2'
+EMinus = _reflection.GeneratedProtocolMessageType('EMinus', (_message.Message,), {
+  'DESCRIPTOR' : _EMINUS,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EMinus)
-  ))
+  })
 _sym_db.RegisterMessage(EMinus)
 
-ELt = _reflection.GeneratedProtocolMessageType('ELt', (_message.Message,), dict(
-  DESCRIPTOR = _ELT,
-  __module__ = 'RhoTypes_pb2'
+ELt = _reflection.GeneratedProtocolMessageType('ELt', (_message.Message,), {
+  'DESCRIPTOR' : _ELT,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ELt)
-  ))
+  })
 _sym_db.RegisterMessage(ELt)
 
-ELte = _reflection.GeneratedProtocolMessageType('ELte', (_message.Message,), dict(
-  DESCRIPTOR = _ELTE,
-  __module__ = 'RhoTypes_pb2'
+ELte = _reflection.GeneratedProtocolMessageType('ELte', (_message.Message,), {
+  'DESCRIPTOR' : _ELTE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ELte)
-  ))
+  })
 _sym_db.RegisterMessage(ELte)
 
-EGt = _reflection.GeneratedProtocolMessageType('EGt', (_message.Message,), dict(
-  DESCRIPTOR = _EGT,
-  __module__ = 'RhoTypes_pb2'
+EGt = _reflection.GeneratedProtocolMessageType('EGt', (_message.Message,), {
+  'DESCRIPTOR' : _EGT,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EGt)
-  ))
+  })
 _sym_db.RegisterMessage(EGt)
 
-EGte = _reflection.GeneratedProtocolMessageType('EGte', (_message.Message,), dict(
-  DESCRIPTOR = _EGTE,
-  __module__ = 'RhoTypes_pb2'
+EGte = _reflection.GeneratedProtocolMessageType('EGte', (_message.Message,), {
+  'DESCRIPTOR' : _EGTE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EGte)
-  ))
+  })
 _sym_db.RegisterMessage(EGte)
 
-EEq = _reflection.GeneratedProtocolMessageType('EEq', (_message.Message,), dict(
-  DESCRIPTOR = _EEQ,
-  __module__ = 'RhoTypes_pb2'
+EEq = _reflection.GeneratedProtocolMessageType('EEq', (_message.Message,), {
+  'DESCRIPTOR' : _EEQ,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EEq)
-  ))
+  })
 _sym_db.RegisterMessage(EEq)
 
-ENeq = _reflection.GeneratedProtocolMessageType('ENeq', (_message.Message,), dict(
-  DESCRIPTOR = _ENEQ,
-  __module__ = 'RhoTypes_pb2'
+ENeq = _reflection.GeneratedProtocolMessageType('ENeq', (_message.Message,), {
+  'DESCRIPTOR' : _ENEQ,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ENeq)
-  ))
+  })
 _sym_db.RegisterMessage(ENeq)
 
-EAnd = _reflection.GeneratedProtocolMessageType('EAnd', (_message.Message,), dict(
-  DESCRIPTOR = _EAND,
-  __module__ = 'RhoTypes_pb2'
+EAnd = _reflection.GeneratedProtocolMessageType('EAnd', (_message.Message,), {
+  'DESCRIPTOR' : _EAND,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EAnd)
-  ))
+  })
 _sym_db.RegisterMessage(EAnd)
 
-EOr = _reflection.GeneratedProtocolMessageType('EOr', (_message.Message,), dict(
-  DESCRIPTOR = _EOR,
-  __module__ = 'RhoTypes_pb2'
+EOr = _reflection.GeneratedProtocolMessageType('EOr', (_message.Message,), {
+  'DESCRIPTOR' : _EOR,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EOr)
-  ))
+  })
 _sym_db.RegisterMessage(EOr)
 
-EMatches = _reflection.GeneratedProtocolMessageType('EMatches', (_message.Message,), dict(
-  DESCRIPTOR = _EMATCHES,
-  __module__ = 'RhoTypes_pb2'
+EMatches = _reflection.GeneratedProtocolMessageType('EMatches', (_message.Message,), {
+  'DESCRIPTOR' : _EMATCHES,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EMatches)
-  ))
+  })
 _sym_db.RegisterMessage(EMatches)
 
-EPercentPercent = _reflection.GeneratedProtocolMessageType('EPercentPercent', (_message.Message,), dict(
-  DESCRIPTOR = _EPERCENTPERCENT,
-  __module__ = 'RhoTypes_pb2'
+EPercentPercent = _reflection.GeneratedProtocolMessageType('EPercentPercent', (_message.Message,), {
+  'DESCRIPTOR' : _EPERCENTPERCENT,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EPercentPercent)
-  ))
+  })
 _sym_db.RegisterMessage(EPercentPercent)
 
-EPlusPlus = _reflection.GeneratedProtocolMessageType('EPlusPlus', (_message.Message,), dict(
-  DESCRIPTOR = _EPLUSPLUS,
-  __module__ = 'RhoTypes_pb2'
+EPlusPlus = _reflection.GeneratedProtocolMessageType('EPlusPlus', (_message.Message,), {
+  'DESCRIPTOR' : _EPLUSPLUS,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EPlusPlus)
-  ))
+  })
 _sym_db.RegisterMessage(EPlusPlus)
 
-EMinusMinus = _reflection.GeneratedProtocolMessageType('EMinusMinus', (_message.Message,), dict(
-  DESCRIPTOR = _EMINUSMINUS,
-  __module__ = 'RhoTypes_pb2'
+EMinusMinus = _reflection.GeneratedProtocolMessageType('EMinusMinus', (_message.Message,), {
+  'DESCRIPTOR' : _EMINUSMINUS,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:EMinusMinus)
-  ))
+  })
 _sym_db.RegisterMessage(EMinusMinus)
 
-Connective = _reflection.GeneratedProtocolMessageType('Connective', (_message.Message,), dict(
-  DESCRIPTOR = _CONNECTIVE,
-  __module__ = 'RhoTypes_pb2'
+Connective = _reflection.GeneratedProtocolMessageType('Connective', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTIVE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:Connective)
-  ))
+  })
 _sym_db.RegisterMessage(Connective)
 
-VarRef = _reflection.GeneratedProtocolMessageType('VarRef', (_message.Message,), dict(
-  DESCRIPTOR = _VARREF,
-  __module__ = 'RhoTypes_pb2'
+VarRef = _reflection.GeneratedProtocolMessageType('VarRef', (_message.Message,), {
+  'DESCRIPTOR' : _VARREF,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:VarRef)
-  ))
+  })
 _sym_db.RegisterMessage(VarRef)
 
-ConnectiveBody = _reflection.GeneratedProtocolMessageType('ConnectiveBody', (_message.Message,), dict(
-  DESCRIPTOR = _CONNECTIVEBODY,
-  __module__ = 'RhoTypes_pb2'
+ConnectiveBody = _reflection.GeneratedProtocolMessageType('ConnectiveBody', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTIVEBODY,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:ConnectiveBody)
-  ))
+  })
 _sym_db.RegisterMessage(ConnectiveBody)
 
-DeployId = _reflection.GeneratedProtocolMessageType('DeployId', (_message.Message,), dict(
-  DESCRIPTOR = _DEPLOYID,
-  __module__ = 'RhoTypes_pb2'
+DeployId = _reflection.GeneratedProtocolMessageType('DeployId', (_message.Message,), {
+  'DESCRIPTOR' : _DEPLOYID,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:DeployId)
-  ))
+  })
 _sym_db.RegisterMessage(DeployId)
 
-DeployerId = _reflection.GeneratedProtocolMessageType('DeployerId', (_message.Message,), dict(
-  DESCRIPTOR = _DEPLOYERID,
-  __module__ = 'RhoTypes_pb2'
+DeployerId = _reflection.GeneratedProtocolMessageType('DeployerId', (_message.Message,), {
+  'DESCRIPTOR' : _DEPLOYERID,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:DeployerId)
-  ))
+  })
 _sym_db.RegisterMessage(DeployerId)
 
-GUnforgeable = _reflection.GeneratedProtocolMessageType('GUnforgeable', (_message.Message,), dict(
-  DESCRIPTOR = _GUNFORGEABLE,
-  __module__ = 'RhoTypes_pb2'
+GUnforgeable = _reflection.GeneratedProtocolMessageType('GUnforgeable', (_message.Message,), {
+  'DESCRIPTOR' : _GUNFORGEABLE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:GUnforgeable)
-  ))
+  })
 _sym_db.RegisterMessage(GUnforgeable)
 
-GPrivate = _reflection.GeneratedProtocolMessageType('GPrivate', (_message.Message,), dict(
-  DESCRIPTOR = _GPRIVATE,
-  __module__ = 'RhoTypes_pb2'
+GPrivate = _reflection.GeneratedProtocolMessageType('GPrivate', (_message.Message,), {
+  'DESCRIPTOR' : _GPRIVATE,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:GPrivate)
-  ))
+  })
 _sym_db.RegisterMessage(GPrivate)
 
-GDeployId = _reflection.GeneratedProtocolMessageType('GDeployId', (_message.Message,), dict(
-  DESCRIPTOR = _GDEPLOYID,
-  __module__ = 'RhoTypes_pb2'
+GDeployId = _reflection.GeneratedProtocolMessageType('GDeployId', (_message.Message,), {
+  'DESCRIPTOR' : _GDEPLOYID,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:GDeployId)
-  ))
+  })
 _sym_db.RegisterMessage(GDeployId)
 
-GDeployerId = _reflection.GeneratedProtocolMessageType('GDeployerId', (_message.Message,), dict(
-  DESCRIPTOR = _GDEPLOYERID,
-  __module__ = 'RhoTypes_pb2'
+GDeployerId = _reflection.GeneratedProtocolMessageType('GDeployerId', (_message.Message,), {
+  'DESCRIPTOR' : _GDEPLOYERID,
+  '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:GDeployerId)
-  ))
+  })
 _sym_db.RegisterMessage(GDeployerId)
 
 

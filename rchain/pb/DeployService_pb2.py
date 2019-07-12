@@ -1038,172 +1038,172 @@ DESCRIPTOR.message_types_by_name['ContinuationsWithBlockInfo'] = _CONTINUATIONSW
 DESCRIPTOR.message_types_by_name['WaitingContinuationInfo'] = _WAITINGCONTINUATIONINFO
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-FindDeployQuery = _reflection.GeneratedProtocolMessageType('FindDeployQuery', (_message.Message,), dict(
-  DESCRIPTOR = _FINDDEPLOYQUERY,
-  __module__ = 'DeployService_pb2'
+FindDeployQuery = _reflection.GeneratedProtocolMessageType('FindDeployQuery', (_message.Message,), {
+  'DESCRIPTOR' : _FINDDEPLOYQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.FindDeployQuery)
-  ))
+  })
 _sym_db.RegisterMessage(FindDeployQuery)
 
-FindDeployInBlockQuery = _reflection.GeneratedProtocolMessageType('FindDeployInBlockQuery', (_message.Message,), dict(
-  DESCRIPTOR = _FINDDEPLOYINBLOCKQUERY,
-  __module__ = 'DeployService_pb2'
+FindDeployInBlockQuery = _reflection.GeneratedProtocolMessageType('FindDeployInBlockQuery', (_message.Message,), {
+  'DESCRIPTOR' : _FINDDEPLOYINBLOCKQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.FindDeployInBlockQuery)
-  ))
+  })
 _sym_db.RegisterMessage(FindDeployInBlockQuery)
 
-BlockQuery = _reflection.GeneratedProtocolMessageType('BlockQuery', (_message.Message,), dict(
-  DESCRIPTOR = _BLOCKQUERY,
-  __module__ = 'DeployService_pb2'
+BlockQuery = _reflection.GeneratedProtocolMessageType('BlockQuery', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockQuery)
-  ))
+  })
 _sym_db.RegisterMessage(BlockQuery)
 
-BlocksQuery = _reflection.GeneratedProtocolMessageType('BlocksQuery', (_message.Message,), dict(
-  DESCRIPTOR = _BLOCKSQUERY,
-  __module__ = 'DeployService_pb2'
+BlocksQuery = _reflection.GeneratedProtocolMessageType('BlocksQuery', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKSQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlocksQuery)
-  ))
+  })
 _sym_db.RegisterMessage(BlocksQuery)
 
-DataAtNameQuery = _reflection.GeneratedProtocolMessageType('DataAtNameQuery', (_message.Message,), dict(
-  DESCRIPTOR = _DATAATNAMEQUERY,
-  __module__ = 'DeployService_pb2'
+DataAtNameQuery = _reflection.GeneratedProtocolMessageType('DataAtNameQuery', (_message.Message,), {
+  'DESCRIPTOR' : _DATAATNAMEQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.DataAtNameQuery)
-  ))
+  })
 _sym_db.RegisterMessage(DataAtNameQuery)
 
-ContinuationAtNameQuery = _reflection.GeneratedProtocolMessageType('ContinuationAtNameQuery', (_message.Message,), dict(
-  DESCRIPTOR = _CONTINUATIONATNAMEQUERY,
-  __module__ = 'DeployService_pb2'
+ContinuationAtNameQuery = _reflection.GeneratedProtocolMessageType('ContinuationAtNameQuery', (_message.Message,), {
+  'DESCRIPTOR' : _CONTINUATIONATNAMEQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ContinuationAtNameQuery)
-  ))
+  })
 _sym_db.RegisterMessage(ContinuationAtNameQuery)
 
-DeployServiceResponse = _reflection.GeneratedProtocolMessageType('DeployServiceResponse', (_message.Message,), dict(
-  DESCRIPTOR = _DEPLOYSERVICERESPONSE,
-  __module__ = 'DeployService_pb2'
+DeployServiceResponse = _reflection.GeneratedProtocolMessageType('DeployServiceResponse', (_message.Message,), {
+  'DESCRIPTOR' : _DEPLOYSERVICERESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.DeployServiceResponse)
-  ))
+  })
 _sym_db.RegisterMessage(DeployServiceResponse)
 
-BlockQueryResponse = _reflection.GeneratedProtocolMessageType('BlockQueryResponse', (_message.Message,), dict(
-  DESCRIPTOR = _BLOCKQUERYRESPONSE,
-  __module__ = 'DeployService_pb2'
+BlockQueryResponse = _reflection.GeneratedProtocolMessageType('BlockQueryResponse', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKQUERYRESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockQueryResponse)
-  ))
+  })
 _sym_db.RegisterMessage(BlockQueryResponse)
 
-LightBlockQueryResponse = _reflection.GeneratedProtocolMessageType('LightBlockQueryResponse', (_message.Message,), dict(
-  DESCRIPTOR = _LIGHTBLOCKQUERYRESPONSE,
-  __module__ = 'DeployService_pb2'
+LightBlockQueryResponse = _reflection.GeneratedProtocolMessageType('LightBlockQueryResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LIGHTBLOCKQUERYRESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.LightBlockQueryResponse)
-  ))
+  })
 _sym_db.RegisterMessage(LightBlockQueryResponse)
 
-VisualizeDagQuery = _reflection.GeneratedProtocolMessageType('VisualizeDagQuery', (_message.Message,), dict(
-  DESCRIPTOR = _VISUALIZEDAGQUERY,
-  __module__ = 'DeployService_pb2'
+VisualizeDagQuery = _reflection.GeneratedProtocolMessageType('VisualizeDagQuery', (_message.Message,), {
+  'DESCRIPTOR' : _VISUALIZEDAGQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.VisualizeDagQuery)
-  ))
+  })
 _sym_db.RegisterMessage(VisualizeDagQuery)
 
-VisualizeBlocksResponse = _reflection.GeneratedProtocolMessageType('VisualizeBlocksResponse', (_message.Message,), dict(
-  DESCRIPTOR = _VISUALIZEBLOCKSRESPONSE,
-  __module__ = 'DeployService_pb2'
+VisualizeBlocksResponse = _reflection.GeneratedProtocolMessageType('VisualizeBlocksResponse', (_message.Message,), {
+  'DESCRIPTOR' : _VISUALIZEBLOCKSRESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.VisualizeBlocksResponse)
-  ))
+  })
 _sym_db.RegisterMessage(VisualizeBlocksResponse)
 
-MachineVerifyQuery = _reflection.GeneratedProtocolMessageType('MachineVerifyQuery', (_message.Message,), dict(
-  DESCRIPTOR = _MACHINEVERIFYQUERY,
-  __module__ = 'DeployService_pb2'
+MachineVerifyQuery = _reflection.GeneratedProtocolMessageType('MachineVerifyQuery', (_message.Message,), {
+  'DESCRIPTOR' : _MACHINEVERIFYQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.MachineVerifyQuery)
-  ))
+  })
 _sym_db.RegisterMessage(MachineVerifyQuery)
 
-MachineVerifyResponse = _reflection.GeneratedProtocolMessageType('MachineVerifyResponse', (_message.Message,), dict(
-  DESCRIPTOR = _MACHINEVERIFYRESPONSE,
-  __module__ = 'DeployService_pb2'
+MachineVerifyResponse = _reflection.GeneratedProtocolMessageType('MachineVerifyResponse', (_message.Message,), {
+  'DESCRIPTOR' : _MACHINEVERIFYRESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.MachineVerifyResponse)
-  ))
+  })
 _sym_db.RegisterMessage(MachineVerifyResponse)
 
-ListeningNameDataResponse = _reflection.GeneratedProtocolMessageType('ListeningNameDataResponse', (_message.Message,), dict(
-  DESCRIPTOR = _LISTENINGNAMEDATARESPONSE,
-  __module__ = 'DeployService_pb2'
+ListeningNameDataResponse = _reflection.GeneratedProtocolMessageType('ListeningNameDataResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTENINGNAMEDATARESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ListeningNameDataResponse)
-  ))
+  })
 _sym_db.RegisterMessage(ListeningNameDataResponse)
 
-ListeningNameContinuationResponse = _reflection.GeneratedProtocolMessageType('ListeningNameContinuationResponse', (_message.Message,), dict(
-  DESCRIPTOR = _LISTENINGNAMECONTINUATIONRESPONSE,
-  __module__ = 'DeployService_pb2'
+ListeningNameContinuationResponse = _reflection.GeneratedProtocolMessageType('ListeningNameContinuationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTENINGNAMECONTINUATIONRESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ListeningNameContinuationResponse)
-  ))
+  })
 _sym_db.RegisterMessage(ListeningNameContinuationResponse)
 
-PrivateNamePreviewQuery = _reflection.GeneratedProtocolMessageType('PrivateNamePreviewQuery', (_message.Message,), dict(
-  DESCRIPTOR = _PRIVATENAMEPREVIEWQUERY,
-  __module__ = 'DeployService_pb2'
+PrivateNamePreviewQuery = _reflection.GeneratedProtocolMessageType('PrivateNamePreviewQuery', (_message.Message,), {
+  'DESCRIPTOR' : _PRIVATENAMEPREVIEWQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.PrivateNamePreviewQuery)
-  ))
+  })
 _sym_db.RegisterMessage(PrivateNamePreviewQuery)
 
-PrivateNamePreviewResponse = _reflection.GeneratedProtocolMessageType('PrivateNamePreviewResponse', (_message.Message,), dict(
-  DESCRIPTOR = _PRIVATENAMEPREVIEWRESPONSE,
-  __module__ = 'DeployService_pb2'
+PrivateNamePreviewResponse = _reflection.GeneratedProtocolMessageType('PrivateNamePreviewResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PRIVATENAMEPREVIEWRESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.PrivateNamePreviewResponse)
-  ))
+  })
 _sym_db.RegisterMessage(PrivateNamePreviewResponse)
 
-LastFinalizedBlockQuery = _reflection.GeneratedProtocolMessageType('LastFinalizedBlockQuery', (_message.Message,), dict(
-  DESCRIPTOR = _LASTFINALIZEDBLOCKQUERY,
-  __module__ = 'DeployService_pb2'
+LastFinalizedBlockQuery = _reflection.GeneratedProtocolMessageType('LastFinalizedBlockQuery', (_message.Message,), {
+  'DESCRIPTOR' : _LASTFINALIZEDBLOCKQUERY,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.LastFinalizedBlockQuery)
-  ))
+  })
 _sym_db.RegisterMessage(LastFinalizedBlockQuery)
 
-LastFinalizedBlockResponse = _reflection.GeneratedProtocolMessageType('LastFinalizedBlockResponse', (_message.Message,), dict(
-  DESCRIPTOR = _LASTFINALIZEDBLOCKRESPONSE,
-  __module__ = 'DeployService_pb2'
+LastFinalizedBlockResponse = _reflection.GeneratedProtocolMessageType('LastFinalizedBlockResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LASTFINALIZEDBLOCKRESPONSE,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.LastFinalizedBlockResponse)
-  ))
+  })
 _sym_db.RegisterMessage(LastFinalizedBlockResponse)
 
-LightBlockInfo = _reflection.GeneratedProtocolMessageType('LightBlockInfo', (_message.Message,), dict(
-  DESCRIPTOR = _LIGHTBLOCKINFO,
-  __module__ = 'DeployService_pb2'
+LightBlockInfo = _reflection.GeneratedProtocolMessageType('LightBlockInfo', (_message.Message,), {
+  'DESCRIPTOR' : _LIGHTBLOCKINFO,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.LightBlockInfo)
-  ))
+  })
 _sym_db.RegisterMessage(LightBlockInfo)
 
-BlockInfo = _reflection.GeneratedProtocolMessageType('BlockInfo', (_message.Message,), dict(
-  DESCRIPTOR = _BLOCKINFO,
-  __module__ = 'DeployService_pb2'
+BlockInfo = _reflection.GeneratedProtocolMessageType('BlockInfo', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKINFO,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockInfo)
-  ))
+  })
 _sym_db.RegisterMessage(BlockInfo)
 
-DataWithBlockInfo = _reflection.GeneratedProtocolMessageType('DataWithBlockInfo', (_message.Message,), dict(
-  DESCRIPTOR = _DATAWITHBLOCKINFO,
-  __module__ = 'DeployService_pb2'
+DataWithBlockInfo = _reflection.GeneratedProtocolMessageType('DataWithBlockInfo', (_message.Message,), {
+  'DESCRIPTOR' : _DATAWITHBLOCKINFO,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.DataWithBlockInfo)
-  ))
+  })
 _sym_db.RegisterMessage(DataWithBlockInfo)
 
-ContinuationsWithBlockInfo = _reflection.GeneratedProtocolMessageType('ContinuationsWithBlockInfo', (_message.Message,), dict(
-  DESCRIPTOR = _CONTINUATIONSWITHBLOCKINFO,
-  __module__ = 'DeployService_pb2'
+ContinuationsWithBlockInfo = _reflection.GeneratedProtocolMessageType('ContinuationsWithBlockInfo', (_message.Message,), {
+  'DESCRIPTOR' : _CONTINUATIONSWITHBLOCKINFO,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ContinuationsWithBlockInfo)
-  ))
+  })
 _sym_db.RegisterMessage(ContinuationsWithBlockInfo)
 
-WaitingContinuationInfo = _reflection.GeneratedProtocolMessageType('WaitingContinuationInfo', (_message.Message,), dict(
-  DESCRIPTOR = _WAITINGCONTINUATIONINFO,
-  __module__ = 'DeployService_pb2'
+WaitingContinuationInfo = _reflection.GeneratedProtocolMessageType('WaitingContinuationInfo', (_message.Message,), {
+  'DESCRIPTOR' : _WAITINGCONTINUATIONINFO,
+  '__module__' : 'DeployService_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.WaitingContinuationInfo)
-  ))
+  })
 _sym_db.RegisterMessage(WaitingContinuationInfo)
 
 

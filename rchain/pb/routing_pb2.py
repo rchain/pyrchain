@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='coop.rchain.comm.protocol.routing',
   syntax='proto3',
   serialized_options=_b('\342?%\n!coop.rchain.comm.protocol.routing\020\001'),
-  serialized_pb=_b('\n\rrouting.proto\x12!coop.rchain.comm.protocol.routing\x1a\x15scalapb/scalapb.proto\x1a\x13\x43\x61sperMessage.proto\"D\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0c\n\x04host\x18\x02 \x01(\x0c\x12\x10\n\x08tcp_port\x18\x03 \x01(\r\x12\x10\n\x08udp_port\x18\x04 \x01(\r\"T\n\x06Header\x12\x37\n\x06sender\x18\x01 \x01(\x0b\x32\'.coop.rchain.comm.protocol.routing.Node\x12\x11\n\tnetworkId\x18\x02 \x01(\t\"\x0b\n\tHeartbeat\"\x13\n\x11HeartbeatResponse\"\"\n\x11ProtocolHandshake\x12\r\n\x05nonce\x18\x01 \x01(\x0c\"*\n\x19ProtocolHandshakeResponse\x12\r\n\x05nonce\x18\x01 \x01(\x0c\")\n\x06Packet\x12\x0e\n\x06typeId\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"\x0c\n\nDisconnect\"\xce\x03\n\x08Protocol\x12\x39\n\x06header\x18\x01 \x01(\x0b\x32).coop.rchain.comm.protocol.routing.Header\x12\x41\n\theartbeat\x18\x02 \x01(\x0b\x32,.coop.rchain.comm.protocol.routing.HeartbeatH\x00\x12R\n\x12protocol_handshake\x18\x03 \x01(\x0b\x32\x34.coop.rchain.comm.protocol.routing.ProtocolHandshakeH\x00\x12\x63\n\x1bprotocol_handshake_response\x18\x04 \x01(\x0b\x32<.coop.rchain.comm.protocol.routing.ProtocolHandshakeResponseH\x00\x12;\n\x06packet\x18\x05 \x01(\x0b\x32).coop.rchain.comm.protocol.routing.PacketH\x00\x12\x43\n\ndisconnect\x18\x06 \x01(\x0b\x32-.coop.rchain.comm.protocol.routing.DisconnectH\x00\x42\t\n\x07message\"J\n\tTLRequest\x12=\n\x08protocol\x18\x01 \x01(\x0b\x32+.coop.rchain.comm.protocol.routing.Protocol\"$\n\x13InternalServerError\x12\r\n\x05\x65rror\x18\x01 \x01(\x0c\"G\n\nNoResponse\x12\x39\n\x06header\x18\x01 \x01(\x0b\x32).coop.rchain.comm.protocol.routing.Header\"\xb3\x01\n\nTLResponse\x12\x43\n\nnoResponse\x18\x01 \x01(\x0b\x32-.coop.rchain.comm.protocol.routing.NoResponseH\x00\x12U\n\x13internalServerError\x18\x02 \x01(\x0b\x32\x36.coop.rchain.comm.protocol.routing.InternalServerErrorH\x00\x42\t\n\x07payload\"\x94\x01\n\x0b\x43hunkHeader\x12\x37\n\x06sender\x18\x01 \x01(\x0b\x32\'.coop.rchain.comm.protocol.routing.Node\x12\x0e\n\x06typeId\x18\x02 \x01(\t\x12\x12\n\ncompressed\x18\x03 \x01(\x08\x12\x15\n\rcontentLength\x18\x04 \x01(\x05\x12\x11\n\tnetworkId\x18\x05 \x01(\t\" \n\tChunkData\x12\x13\n\x0b\x63ontentData\x18\x01 \x01(\x0c\"\x92\x01\n\x05\x43hunk\x12@\n\x06header\x18\x01 \x01(\x0b\x32..coop.rchain.comm.protocol.routing.ChunkHeaderH\x00\x12<\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32,.coop.rchain.comm.protocol.routing.ChunkDataH\x00\x42\t\n\x07\x63ontent\"\x0f\n\rChunkResponse2\xe1\x01\n\x0eTransportLayer\x12\x65\n\x04Send\x12,.coop.rchain.comm.protocol.routing.TLRequest\x1a-.coop.rchain.comm.protocol.routing.TLResponse\"\x00\x12h\n\x06Stream\x12(.coop.rchain.comm.protocol.routing.Chunk\x1a\x30.coop.rchain.comm.protocol.routing.ChunkResponse\"\x00(\x01\x42(\xe2?%\n!coop.rchain.comm.protocol.routing\x10\x01\x62\x06proto3')
+  serialized_pb=_b('\n\rrouting.proto\x12!coop.rchain.comm.protocol.routing\x1a\x15scalapb/scalapb.proto\x1a\x13\x43\x61sperMessage.proto\"D\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0c\n\x04host\x18\x02 \x01(\x0c\x12\x10\n\x08tcp_port\x18\x03 \x01(\r\x12\x10\n\x08udp_port\x18\x04 \x01(\r\"T\n\x06Header\x12\x37\n\x06sender\x18\x01 \x01(\x0b\x32\'.coop.rchain.comm.protocol.routing.Node\x12\x11\n\tnetworkId\x18\x02 \x01(\t\"\x0b\n\tHeartbeat\"\x13\n\x11HeartbeatResponse\"\"\n\x11ProtocolHandshake\x12\r\n\x05nonce\x18\x01 \x01(\x0c\"*\n\x19ProtocolHandshakeResponse\x12\r\n\x05nonce\x18\x01 \x01(\x0c\")\n\x06Packet\x12\x0e\n\x06typeId\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"\x0c\n\nDisconnect\"\xce\x03\n\x08Protocol\x12\x39\n\x06header\x18\x01 \x01(\x0b\x32).coop.rchain.comm.protocol.routing.Header\x12\x41\n\theartbeat\x18\x02 \x01(\x0b\x32,.coop.rchain.comm.protocol.routing.HeartbeatH\x00\x12R\n\x12protocol_handshake\x18\x03 \x01(\x0b\x32\x34.coop.rchain.comm.protocol.routing.ProtocolHandshakeH\x00\x12\x63\n\x1bprotocol_handshake_response\x18\x04 \x01(\x0b\x32<.coop.rchain.comm.protocol.routing.ProtocolHandshakeResponseH\x00\x12;\n\x06packet\x18\x05 \x01(\x0b\x32).coop.rchain.comm.protocol.routing.PacketH\x00\x12\x43\n\ndisconnect\x18\x06 \x01(\x0b\x32-.coop.rchain.comm.protocol.routing.DisconnectH\x00\x42\t\n\x07message\"J\n\tTLRequest\x12=\n\x08protocol\x18\x01 \x01(\x0b\x32+.coop.rchain.comm.protocol.routing.Protocol\"$\n\x13InternalServerError\x12\r\n\x05\x65rror\x18\x01 \x01(\x0c\"@\n\x03\x41\x63k\x12\x39\n\x06header\x18\x01 \x01(\x0b\x32).coop.rchain.comm.protocol.routing.Header\"\xa5\x01\n\nTLResponse\x12\x35\n\x03\x61\x63k\x18\x01 \x01(\x0b\x32&.coop.rchain.comm.protocol.routing.AckH\x00\x12U\n\x13internalServerError\x18\x02 \x01(\x0b\x32\x36.coop.rchain.comm.protocol.routing.InternalServerErrorH\x00\x42\t\n\x07payload\"\x94\x01\n\x0b\x43hunkHeader\x12\x37\n\x06sender\x18\x01 \x01(\x0b\x32\'.coop.rchain.comm.protocol.routing.Node\x12\x0e\n\x06typeId\x18\x02 \x01(\t\x12\x12\n\ncompressed\x18\x03 \x01(\x08\x12\x15\n\rcontentLength\x18\x04 \x01(\x05\x12\x11\n\tnetworkId\x18\x05 \x01(\t\" \n\tChunkData\x12\x13\n\x0b\x63ontentData\x18\x01 \x01(\x0c\"\x92\x01\n\x05\x43hunk\x12@\n\x06header\x18\x01 \x01(\x0b\x32..coop.rchain.comm.protocol.routing.ChunkHeaderH\x00\x12<\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32,.coop.rchain.comm.protocol.routing.ChunkDataH\x00\x42\t\n\x07\x63ontent2\xde\x01\n\x0eTransportLayer\x12\x65\n\x04Send\x12,.coop.rchain.comm.protocol.routing.TLRequest\x1a-.coop.rchain.comm.protocol.routing.TLResponse\"\x00\x12\x65\n\x06Stream\x12(.coop.rchain.comm.protocol.routing.Chunk\x1a-.coop.rchain.comm.protocol.routing.TLResponse\"\x00(\x01\x42(\xe2?%\n!coop.rchain.comm.protocol.routing\x10\x01\x62\x06proto3')
   ,
   dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,CasperMessage__pb2.DESCRIPTOR,])
 
@@ -422,15 +422,15 @@ _INTERNALSERVERERROR = _descriptor.Descriptor(
 )
 
 
-_NORESPONSE = _descriptor.Descriptor(
-  name='NoResponse',
-  full_name='coop.rchain.comm.protocol.routing.NoResponse',
+_ACK = _descriptor.Descriptor(
+  name='Ack',
+  full_name='coop.rchain.comm.protocol.routing.Ack',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='header', full_name='coop.rchain.comm.protocol.routing.NoResponse.header', index=0,
+      name='header', full_name='coop.rchain.comm.protocol.routing.Ack.header', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -449,7 +449,7 @@ _NORESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1002,
-  serialized_end=1073,
+  serialized_end=1066,
 )
 
 
@@ -461,7 +461,7 @@ _TLRESPONSE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='noResponse', full_name='coop.rchain.comm.protocol.routing.TLResponse.noResponse', index=0,
+      name='ack', full_name='coop.rchain.comm.protocol.routing.TLResponse.ack', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -489,8 +489,8 @@ _TLRESPONSE = _descriptor.Descriptor(
       name='payload', full_name='coop.rchain.comm.protocol.routing.TLResponse.payload',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1076,
-  serialized_end=1255,
+  serialized_start=1069,
+  serialized_end=1234,
 )
 
 
@@ -548,8 +548,8 @@ _CHUNKHEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1258,
-  serialized_end=1406,
+  serialized_start=1237,
+  serialized_end=1385,
 )
 
 
@@ -579,8 +579,8 @@ _CHUNKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1408,
-  serialized_end=1440,
+  serialized_start=1387,
+  serialized_end=1419,
 )
 
 
@@ -620,32 +620,8 @@ _CHUNK = _descriptor.Descriptor(
       name='content', full_name='coop.rchain.comm.protocol.routing.Chunk.content',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1443,
-  serialized_end=1589,
-)
-
-
-_CHUNKRESPONSE = _descriptor.Descriptor(
-  name='ChunkResponse',
-  full_name='coop.rchain.comm.protocol.routing.ChunkResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1591,
-  serialized_end=1606,
+  serialized_start=1422,
+  serialized_end=1568,
 )
 
 _HEADER.fields_by_name['sender'].message_type = _NODE
@@ -671,12 +647,12 @@ _PROTOCOL.oneofs_by_name['message'].fields.append(
   _PROTOCOL.fields_by_name['disconnect'])
 _PROTOCOL.fields_by_name['disconnect'].containing_oneof = _PROTOCOL.oneofs_by_name['message']
 _TLREQUEST.fields_by_name['protocol'].message_type = _PROTOCOL
-_NORESPONSE.fields_by_name['header'].message_type = _HEADER
-_TLRESPONSE.fields_by_name['noResponse'].message_type = _NORESPONSE
+_ACK.fields_by_name['header'].message_type = _HEADER
+_TLRESPONSE.fields_by_name['ack'].message_type = _ACK
 _TLRESPONSE.fields_by_name['internalServerError'].message_type = _INTERNALSERVERERROR
 _TLRESPONSE.oneofs_by_name['payload'].fields.append(
-  _TLRESPONSE.fields_by_name['noResponse'])
-_TLRESPONSE.fields_by_name['noResponse'].containing_oneof = _TLRESPONSE.oneofs_by_name['payload']
+  _TLRESPONSE.fields_by_name['ack'])
+_TLRESPONSE.fields_by_name['ack'].containing_oneof = _TLRESPONSE.oneofs_by_name['payload']
 _TLRESPONSE.oneofs_by_name['payload'].fields.append(
   _TLRESPONSE.fields_by_name['internalServerError'])
 _TLRESPONSE.fields_by_name['internalServerError'].containing_oneof = _TLRESPONSE.oneofs_by_name['payload']
@@ -700,132 +676,124 @@ DESCRIPTOR.message_types_by_name['Disconnect'] = _DISCONNECT
 DESCRIPTOR.message_types_by_name['Protocol'] = _PROTOCOL
 DESCRIPTOR.message_types_by_name['TLRequest'] = _TLREQUEST
 DESCRIPTOR.message_types_by_name['InternalServerError'] = _INTERNALSERVERERROR
-DESCRIPTOR.message_types_by_name['NoResponse'] = _NORESPONSE
+DESCRIPTOR.message_types_by_name['Ack'] = _ACK
 DESCRIPTOR.message_types_by_name['TLResponse'] = _TLRESPONSE
 DESCRIPTOR.message_types_by_name['ChunkHeader'] = _CHUNKHEADER
 DESCRIPTOR.message_types_by_name['ChunkData'] = _CHUNKDATA
 DESCRIPTOR.message_types_by_name['Chunk'] = _CHUNK
-DESCRIPTOR.message_types_by_name['ChunkResponse'] = _CHUNKRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), dict(
-  DESCRIPTOR = _NODE,
-  __module__ = 'routing_pb2'
+Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), {
+  'DESCRIPTOR' : _NODE,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.Node)
-  ))
+  })
 _sym_db.RegisterMessage(Node)
 
-Header = _reflection.GeneratedProtocolMessageType('Header', (_message.Message,), dict(
-  DESCRIPTOR = _HEADER,
-  __module__ = 'routing_pb2'
+Header = _reflection.GeneratedProtocolMessageType('Header', (_message.Message,), {
+  'DESCRIPTOR' : _HEADER,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.Header)
-  ))
+  })
 _sym_db.RegisterMessage(Header)
 
-Heartbeat = _reflection.GeneratedProtocolMessageType('Heartbeat', (_message.Message,), dict(
-  DESCRIPTOR = _HEARTBEAT,
-  __module__ = 'routing_pb2'
+Heartbeat = _reflection.GeneratedProtocolMessageType('Heartbeat', (_message.Message,), {
+  'DESCRIPTOR' : _HEARTBEAT,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.Heartbeat)
-  ))
+  })
 _sym_db.RegisterMessage(Heartbeat)
 
-HeartbeatResponse = _reflection.GeneratedProtocolMessageType('HeartbeatResponse', (_message.Message,), dict(
-  DESCRIPTOR = _HEARTBEATRESPONSE,
-  __module__ = 'routing_pb2'
+HeartbeatResponse = _reflection.GeneratedProtocolMessageType('HeartbeatResponse', (_message.Message,), {
+  'DESCRIPTOR' : _HEARTBEATRESPONSE,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.HeartbeatResponse)
-  ))
+  })
 _sym_db.RegisterMessage(HeartbeatResponse)
 
-ProtocolHandshake = _reflection.GeneratedProtocolMessageType('ProtocolHandshake', (_message.Message,), dict(
-  DESCRIPTOR = _PROTOCOLHANDSHAKE,
-  __module__ = 'routing_pb2'
+ProtocolHandshake = _reflection.GeneratedProtocolMessageType('ProtocolHandshake', (_message.Message,), {
+  'DESCRIPTOR' : _PROTOCOLHANDSHAKE,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.ProtocolHandshake)
-  ))
+  })
 _sym_db.RegisterMessage(ProtocolHandshake)
 
-ProtocolHandshakeResponse = _reflection.GeneratedProtocolMessageType('ProtocolHandshakeResponse', (_message.Message,), dict(
-  DESCRIPTOR = _PROTOCOLHANDSHAKERESPONSE,
-  __module__ = 'routing_pb2'
+ProtocolHandshakeResponse = _reflection.GeneratedProtocolMessageType('ProtocolHandshakeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PROTOCOLHANDSHAKERESPONSE,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.ProtocolHandshakeResponse)
-  ))
+  })
 _sym_db.RegisterMessage(ProtocolHandshakeResponse)
 
-Packet = _reflection.GeneratedProtocolMessageType('Packet', (_message.Message,), dict(
-  DESCRIPTOR = _PACKET,
-  __module__ = 'routing_pb2'
+Packet = _reflection.GeneratedProtocolMessageType('Packet', (_message.Message,), {
+  'DESCRIPTOR' : _PACKET,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.Packet)
-  ))
+  })
 _sym_db.RegisterMessage(Packet)
 
-Disconnect = _reflection.GeneratedProtocolMessageType('Disconnect', (_message.Message,), dict(
-  DESCRIPTOR = _DISCONNECT,
-  __module__ = 'routing_pb2'
+Disconnect = _reflection.GeneratedProtocolMessageType('Disconnect', (_message.Message,), {
+  'DESCRIPTOR' : _DISCONNECT,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.Disconnect)
-  ))
+  })
 _sym_db.RegisterMessage(Disconnect)
 
-Protocol = _reflection.GeneratedProtocolMessageType('Protocol', (_message.Message,), dict(
-  DESCRIPTOR = _PROTOCOL,
-  __module__ = 'routing_pb2'
+Protocol = _reflection.GeneratedProtocolMessageType('Protocol', (_message.Message,), {
+  'DESCRIPTOR' : _PROTOCOL,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.Protocol)
-  ))
+  })
 _sym_db.RegisterMessage(Protocol)
 
-TLRequest = _reflection.GeneratedProtocolMessageType('TLRequest', (_message.Message,), dict(
-  DESCRIPTOR = _TLREQUEST,
-  __module__ = 'routing_pb2'
+TLRequest = _reflection.GeneratedProtocolMessageType('TLRequest', (_message.Message,), {
+  'DESCRIPTOR' : _TLREQUEST,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.TLRequest)
-  ))
+  })
 _sym_db.RegisterMessage(TLRequest)
 
-InternalServerError = _reflection.GeneratedProtocolMessageType('InternalServerError', (_message.Message,), dict(
-  DESCRIPTOR = _INTERNALSERVERERROR,
-  __module__ = 'routing_pb2'
+InternalServerError = _reflection.GeneratedProtocolMessageType('InternalServerError', (_message.Message,), {
+  'DESCRIPTOR' : _INTERNALSERVERERROR,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.InternalServerError)
-  ))
+  })
 _sym_db.RegisterMessage(InternalServerError)
 
-NoResponse = _reflection.GeneratedProtocolMessageType('NoResponse', (_message.Message,), dict(
-  DESCRIPTOR = _NORESPONSE,
-  __module__ = 'routing_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.NoResponse)
-  ))
-_sym_db.RegisterMessage(NoResponse)
+Ack = _reflection.GeneratedProtocolMessageType('Ack', (_message.Message,), {
+  'DESCRIPTOR' : _ACK,
+  '__module__' : 'routing_pb2'
+  # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.Ack)
+  })
+_sym_db.RegisterMessage(Ack)
 
-TLResponse = _reflection.GeneratedProtocolMessageType('TLResponse', (_message.Message,), dict(
-  DESCRIPTOR = _TLRESPONSE,
-  __module__ = 'routing_pb2'
+TLResponse = _reflection.GeneratedProtocolMessageType('TLResponse', (_message.Message,), {
+  'DESCRIPTOR' : _TLRESPONSE,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.TLResponse)
-  ))
+  })
 _sym_db.RegisterMessage(TLResponse)
 
-ChunkHeader = _reflection.GeneratedProtocolMessageType('ChunkHeader', (_message.Message,), dict(
-  DESCRIPTOR = _CHUNKHEADER,
-  __module__ = 'routing_pb2'
+ChunkHeader = _reflection.GeneratedProtocolMessageType('ChunkHeader', (_message.Message,), {
+  'DESCRIPTOR' : _CHUNKHEADER,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.ChunkHeader)
-  ))
+  })
 _sym_db.RegisterMessage(ChunkHeader)
 
-ChunkData = _reflection.GeneratedProtocolMessageType('ChunkData', (_message.Message,), dict(
-  DESCRIPTOR = _CHUNKDATA,
-  __module__ = 'routing_pb2'
+ChunkData = _reflection.GeneratedProtocolMessageType('ChunkData', (_message.Message,), {
+  'DESCRIPTOR' : _CHUNKDATA,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.ChunkData)
-  ))
+  })
 _sym_db.RegisterMessage(ChunkData)
 
-Chunk = _reflection.GeneratedProtocolMessageType('Chunk', (_message.Message,), dict(
-  DESCRIPTOR = _CHUNK,
-  __module__ = 'routing_pb2'
+Chunk = _reflection.GeneratedProtocolMessageType('Chunk', (_message.Message,), {
+  'DESCRIPTOR' : _CHUNK,
+  '__module__' : 'routing_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.Chunk)
-  ))
+  })
 _sym_db.RegisterMessage(Chunk)
-
-ChunkResponse = _reflection.GeneratedProtocolMessageType('ChunkResponse', (_message.Message,), dict(
-  DESCRIPTOR = _CHUNKRESPONSE,
-  __module__ = 'routing_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.comm.protocol.routing.ChunkResponse)
-  ))
-_sym_db.RegisterMessage(ChunkResponse)
 
 
 DESCRIPTOR._options = None
@@ -836,8 +804,8 @@ _TRANSPORTLAYER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1609,
-  serialized_end=1834,
+  serialized_start=1571,
+  serialized_end=1793,
   methods=[
   _descriptor.MethodDescriptor(
     name='Send',
@@ -854,7 +822,7 @@ _TRANSPORTLAYER = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=_CHUNK,
-    output_type=_CHUNKRESPONSE,
+    output_type=_TLRESPONSE,
     serialized_options=None,
   ),
 ])

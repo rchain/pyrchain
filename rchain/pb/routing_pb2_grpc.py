@@ -22,7 +22,7 @@ class TransportLayerStub(object):
     self.Stream = channel.stream_unary(
         '/coop.rchain.comm.protocol.routing.TransportLayer/Stream',
         request_serializer=routing__pb2.Chunk.SerializeToString,
-        response_deserializer=routing__pb2.ChunkResponse.FromString,
+        response_deserializer=routing__pb2.TLResponse.FromString,
         )
 
 
@@ -55,7 +55,7 @@ def add_TransportLayerServicer_to_server(servicer, server):
       'Stream': grpc.stream_unary_rpc_method_handler(
           servicer.Stream,
           request_deserializer=routing__pb2.Chunk.FromString,
-          response_serializer=routing__pb2.ChunkResponse.SerializeToString,
+          response_serializer=routing__pb2.TLResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
