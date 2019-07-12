@@ -496,46 +496,46 @@ DESCRIPTOR.extensions_by_name['enum_value'] = enum_value
 DESCRIPTOR.extensions_by_name['oneof'] = oneof
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-ScalaPbOptions = _reflection.GeneratedProtocolMessageType('ScalaPbOptions', (_message.Message,), dict(
-  DESCRIPTOR = _SCALAPBOPTIONS,
-  __module__ = 'scalapb.scalapb_pb2'
+ScalaPbOptions = _reflection.GeneratedProtocolMessageType('ScalaPbOptions', (_message.Message,), {
+  'DESCRIPTOR' : _SCALAPBOPTIONS,
+  '__module__' : 'scalapb.scalapb_pb2'
   # @@protoc_insertion_point(class_scope:scalapb.ScalaPbOptions)
-  ))
+  })
 _sym_db.RegisterMessage(ScalaPbOptions)
 
-MessageOptions = _reflection.GeneratedProtocolMessageType('MessageOptions', (_message.Message,), dict(
-  DESCRIPTOR = _MESSAGEOPTIONS,
-  __module__ = 'scalapb.scalapb_pb2'
+MessageOptions = _reflection.GeneratedProtocolMessageType('MessageOptions', (_message.Message,), {
+  'DESCRIPTOR' : _MESSAGEOPTIONS,
+  '__module__' : 'scalapb.scalapb_pb2'
   # @@protoc_insertion_point(class_scope:scalapb.MessageOptions)
-  ))
+  })
 _sym_db.RegisterMessage(MessageOptions)
 
-FieldOptions = _reflection.GeneratedProtocolMessageType('FieldOptions', (_message.Message,), dict(
-  DESCRIPTOR = _FIELDOPTIONS,
-  __module__ = 'scalapb.scalapb_pb2'
+FieldOptions = _reflection.GeneratedProtocolMessageType('FieldOptions', (_message.Message,), {
+  'DESCRIPTOR' : _FIELDOPTIONS,
+  '__module__' : 'scalapb.scalapb_pb2'
   # @@protoc_insertion_point(class_scope:scalapb.FieldOptions)
-  ))
+  })
 _sym_db.RegisterMessage(FieldOptions)
 
-EnumOptions = _reflection.GeneratedProtocolMessageType('EnumOptions', (_message.Message,), dict(
-  DESCRIPTOR = _ENUMOPTIONS,
-  __module__ = 'scalapb.scalapb_pb2'
+EnumOptions = _reflection.GeneratedProtocolMessageType('EnumOptions', (_message.Message,), {
+  'DESCRIPTOR' : _ENUMOPTIONS,
+  '__module__' : 'scalapb.scalapb_pb2'
   # @@protoc_insertion_point(class_scope:scalapb.EnumOptions)
-  ))
+  })
 _sym_db.RegisterMessage(EnumOptions)
 
-EnumValueOptions = _reflection.GeneratedProtocolMessageType('EnumValueOptions', (_message.Message,), dict(
-  DESCRIPTOR = _ENUMVALUEOPTIONS,
-  __module__ = 'scalapb.scalapb_pb2'
+EnumValueOptions = _reflection.GeneratedProtocolMessageType('EnumValueOptions', (_message.Message,), {
+  'DESCRIPTOR' : _ENUMVALUEOPTIONS,
+  '__module__' : 'scalapb.scalapb_pb2'
   # @@protoc_insertion_point(class_scope:scalapb.EnumValueOptions)
-  ))
+  })
 _sym_db.RegisterMessage(EnumValueOptions)
 
-OneofOptions = _reflection.GeneratedProtocolMessageType('OneofOptions', (_message.Message,), dict(
-  DESCRIPTOR = _ONEOFOPTIONS,
-  __module__ = 'scalapb.scalapb_pb2'
+OneofOptions = _reflection.GeneratedProtocolMessageType('OneofOptions', (_message.Message,), {
+  'DESCRIPTOR' : _ONEOFOPTIONS,
+  '__module__' : 'scalapb.scalapb_pb2'
   # @@protoc_insertion_point(class_scope:scalapb.OneofOptions)
-  ))
+  })
 _sym_db.RegisterMessage(OneofOptions)
 
 options.message_type = _SCALAPBOPTIONS

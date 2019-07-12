@@ -184,32 +184,32 @@ DESCRIPTOR.message_types_by_name['EitherSuccess'] = _EITHERSUCCESS
 DESCRIPTOR.message_types_by_name['Either'] = _EITHER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-EitherAny = _reflection.GeneratedProtocolMessageType('EitherAny', (_message.Message,), dict(
-  DESCRIPTOR = _EITHERANY,
-  __module__ = 'Either_pb2'
+EitherAny = _reflection.GeneratedProtocolMessageType('EitherAny', (_message.Message,), {
+  'DESCRIPTOR' : _EITHERANY,
+  '__module__' : 'Either_pb2'
   # @@protoc_insertion_point(class_scope:EitherAny)
-  ))
+  })
 _sym_db.RegisterMessage(EitherAny)
 
-EitherError = _reflection.GeneratedProtocolMessageType('EitherError', (_message.Message,), dict(
-  DESCRIPTOR = _EITHERERROR,
-  __module__ = 'Either_pb2'
+EitherError = _reflection.GeneratedProtocolMessageType('EitherError', (_message.Message,), {
+  'DESCRIPTOR' : _EITHERERROR,
+  '__module__' : 'Either_pb2'
   # @@protoc_insertion_point(class_scope:EitherError)
-  ))
+  })
 _sym_db.RegisterMessage(EitherError)
 
-EitherSuccess = _reflection.GeneratedProtocolMessageType('EitherSuccess', (_message.Message,), dict(
-  DESCRIPTOR = _EITHERSUCCESS,
-  __module__ = 'Either_pb2'
+EitherSuccess = _reflection.GeneratedProtocolMessageType('EitherSuccess', (_message.Message,), {
+  'DESCRIPTOR' : _EITHERSUCCESS,
+  '__module__' : 'Either_pb2'
   # @@protoc_insertion_point(class_scope:EitherSuccess)
-  ))
+  })
 _sym_db.RegisterMessage(EitherSuccess)
 
-Either = _reflection.GeneratedProtocolMessageType('Either', (_message.Message,), dict(
-  DESCRIPTOR = _EITHER,
-  __module__ = 'Either_pb2'
+Either = _reflection.GeneratedProtocolMessageType('Either', (_message.Message,), {
+  'DESCRIPTOR' : _EITHER,
+  '__module__' : 'Either_pb2'
   # @@protoc_insertion_point(class_scope:Either)
-  ))
+  })
 _sym_db.RegisterMessage(Either)
 
 

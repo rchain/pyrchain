@@ -1156,158 +1156,158 @@ DESCRIPTOR.message_types_by_name['CommEvent'] = _COMMEVENT
 DESCRIPTOR.message_types_by_name['Bond'] = _BOND
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-BlockRequest = _reflection.GeneratedProtocolMessageType('BlockRequest', (_message.Message,), dict(
-  DESCRIPTOR = _BLOCKREQUEST,
-  __module__ = 'CasperMessage_pb2'
+BlockRequest = _reflection.GeneratedProtocolMessageType('BlockRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKREQUEST,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockRequest)
-  ))
+  })
 _sym_db.RegisterMessage(BlockRequest)
 
-ForkChoiceTipRequest = _reflection.GeneratedProtocolMessageType('ForkChoiceTipRequest', (_message.Message,), dict(
-  DESCRIPTOR = _FORKCHOICETIPREQUEST,
-  __module__ = 'CasperMessage_pb2'
+ForkChoiceTipRequest = _reflection.GeneratedProtocolMessageType('ForkChoiceTipRequest', (_message.Message,), {
+  'DESCRIPTOR' : _FORKCHOICETIPREQUEST,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ForkChoiceTipRequest)
-  ))
+  })
 _sym_db.RegisterMessage(ForkChoiceTipRequest)
 
-ApprovedBlockCandidate = _reflection.GeneratedProtocolMessageType('ApprovedBlockCandidate', (_message.Message,), dict(
-  DESCRIPTOR = _APPROVEDBLOCKCANDIDATE,
-  __module__ = 'CasperMessage_pb2'
+ApprovedBlockCandidate = _reflection.GeneratedProtocolMessageType('ApprovedBlockCandidate', (_message.Message,), {
+  'DESCRIPTOR' : _APPROVEDBLOCKCANDIDATE,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ApprovedBlockCandidate)
-  ))
+  })
 _sym_db.RegisterMessage(ApprovedBlockCandidate)
 
-UnapprovedBlock = _reflection.GeneratedProtocolMessageType('UnapprovedBlock', (_message.Message,), dict(
-  DESCRIPTOR = _UNAPPROVEDBLOCK,
-  __module__ = 'CasperMessage_pb2'
+UnapprovedBlock = _reflection.GeneratedProtocolMessageType('UnapprovedBlock', (_message.Message,), {
+  'DESCRIPTOR' : _UNAPPROVEDBLOCK,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.UnapprovedBlock)
-  ))
+  })
 _sym_db.RegisterMessage(UnapprovedBlock)
 
-Signature = _reflection.GeneratedProtocolMessageType('Signature', (_message.Message,), dict(
-  DESCRIPTOR = _SIGNATURE,
-  __module__ = 'CasperMessage_pb2'
+Signature = _reflection.GeneratedProtocolMessageType('Signature', (_message.Message,), {
+  'DESCRIPTOR' : _SIGNATURE,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Signature)
-  ))
+  })
 _sym_db.RegisterMessage(Signature)
 
-BlockApproval = _reflection.GeneratedProtocolMessageType('BlockApproval', (_message.Message,), dict(
-  DESCRIPTOR = _BLOCKAPPROVAL,
-  __module__ = 'CasperMessage_pb2'
+BlockApproval = _reflection.GeneratedProtocolMessageType('BlockApproval', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKAPPROVAL,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockApproval)
-  ))
+  })
 _sym_db.RegisterMessage(BlockApproval)
 
-ApprovedBlock = _reflection.GeneratedProtocolMessageType('ApprovedBlock', (_message.Message,), dict(
-  DESCRIPTOR = _APPROVEDBLOCK,
-  __module__ = 'CasperMessage_pb2'
+ApprovedBlock = _reflection.GeneratedProtocolMessageType('ApprovedBlock', (_message.Message,), {
+  'DESCRIPTOR' : _APPROVEDBLOCK,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ApprovedBlock)
-  ))
+  })
 _sym_db.RegisterMessage(ApprovedBlock)
 
-ApprovedBlockRequest = _reflection.GeneratedProtocolMessageType('ApprovedBlockRequest', (_message.Message,), dict(
-  DESCRIPTOR = _APPROVEDBLOCKREQUEST,
-  __module__ = 'CasperMessage_pb2'
+ApprovedBlockRequest = _reflection.GeneratedProtocolMessageType('ApprovedBlockRequest', (_message.Message,), {
+  'DESCRIPTOR' : _APPROVEDBLOCKREQUEST,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ApprovedBlockRequest)
-  ))
+  })
 _sym_db.RegisterMessage(ApprovedBlockRequest)
 
-NoApprovedBlockAvailable = _reflection.GeneratedProtocolMessageType('NoApprovedBlockAvailable', (_message.Message,), dict(
-  DESCRIPTOR = _NOAPPROVEDBLOCKAVAILABLE,
-  __module__ = 'CasperMessage_pb2'
+NoApprovedBlockAvailable = _reflection.GeneratedProtocolMessageType('NoApprovedBlockAvailable', (_message.Message,), {
+  'DESCRIPTOR' : _NOAPPROVEDBLOCKAVAILABLE,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.NoApprovedBlockAvailable)
-  ))
+  })
 _sym_db.RegisterMessage(NoApprovedBlockAvailable)
 
-BlockMessage = _reflection.GeneratedProtocolMessageType('BlockMessage', (_message.Message,), dict(
-  DESCRIPTOR = _BLOCKMESSAGE,
-  __module__ = 'CasperMessage_pb2'
+BlockMessage = _reflection.GeneratedProtocolMessageType('BlockMessage', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKMESSAGE,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockMessage)
-  ))
+  })
 _sym_db.RegisterMessage(BlockMessage)
 
-BlockMetadataInternal = _reflection.GeneratedProtocolMessageType('BlockMetadataInternal', (_message.Message,), dict(
-  DESCRIPTOR = _BLOCKMETADATAINTERNAL,
-  __module__ = 'CasperMessage_pb2'
+BlockMetadataInternal = _reflection.GeneratedProtocolMessageType('BlockMetadataInternal', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKMETADATAINTERNAL,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockMetadataInternal)
-  ))
+  })
 _sym_db.RegisterMessage(BlockMetadataInternal)
 
-Header = _reflection.GeneratedProtocolMessageType('Header', (_message.Message,), dict(
-  DESCRIPTOR = _HEADER,
-  __module__ = 'CasperMessage_pb2'
+Header = _reflection.GeneratedProtocolMessageType('Header', (_message.Message,), {
+  'DESCRIPTOR' : _HEADER,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Header)
-  ))
+  })
 _sym_db.RegisterMessage(Header)
 
-DeployData = _reflection.GeneratedProtocolMessageType('DeployData', (_message.Message,), dict(
-  DESCRIPTOR = _DEPLOYDATA,
-  __module__ = 'CasperMessage_pb2'
+DeployData = _reflection.GeneratedProtocolMessageType('DeployData', (_message.Message,), {
+  'DESCRIPTOR' : _DEPLOYDATA,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.DeployData)
-  ))
+  })
 _sym_db.RegisterMessage(DeployData)
 
-ProcessedDeploy = _reflection.GeneratedProtocolMessageType('ProcessedDeploy', (_message.Message,), dict(
-  DESCRIPTOR = _PROCESSEDDEPLOY,
-  __module__ = 'CasperMessage_pb2'
+ProcessedDeploy = _reflection.GeneratedProtocolMessageType('ProcessedDeploy', (_message.Message,), {
+  'DESCRIPTOR' : _PROCESSEDDEPLOY,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ProcessedDeploy)
-  ))
+  })
 _sym_db.RegisterMessage(ProcessedDeploy)
 
-Body = _reflection.GeneratedProtocolMessageType('Body', (_message.Message,), dict(
-  DESCRIPTOR = _BODY,
-  __module__ = 'CasperMessage_pb2'
+Body = _reflection.GeneratedProtocolMessageType('Body', (_message.Message,), {
+  'DESCRIPTOR' : _BODY,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Body)
-  ))
+  })
 _sym_db.RegisterMessage(Body)
 
-Justification = _reflection.GeneratedProtocolMessageType('Justification', (_message.Message,), dict(
-  DESCRIPTOR = _JUSTIFICATION,
-  __module__ = 'CasperMessage_pb2'
+Justification = _reflection.GeneratedProtocolMessageType('Justification', (_message.Message,), {
+  'DESCRIPTOR' : _JUSTIFICATION,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Justification)
-  ))
+  })
 _sym_db.RegisterMessage(Justification)
 
-RChainState = _reflection.GeneratedProtocolMessageType('RChainState', (_message.Message,), dict(
-  DESCRIPTOR = _RCHAINSTATE,
-  __module__ = 'CasperMessage_pb2'
+RChainState = _reflection.GeneratedProtocolMessageType('RChainState', (_message.Message,), {
+  'DESCRIPTOR' : _RCHAINSTATE,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.RChainState)
-  ))
+  })
 _sym_db.RegisterMessage(RChainState)
 
-Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), dict(
-  DESCRIPTOR = _EVENT,
-  __module__ = 'CasperMessage_pb2'
+Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), {
+  'DESCRIPTOR' : _EVENT,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Event)
-  ))
+  })
 _sym_db.RegisterMessage(Event)
 
-ProduceEvent = _reflection.GeneratedProtocolMessageType('ProduceEvent', (_message.Message,), dict(
-  DESCRIPTOR = _PRODUCEEVENT,
-  __module__ = 'CasperMessage_pb2'
+ProduceEvent = _reflection.GeneratedProtocolMessageType('ProduceEvent', (_message.Message,), {
+  'DESCRIPTOR' : _PRODUCEEVENT,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ProduceEvent)
-  ))
+  })
 _sym_db.RegisterMessage(ProduceEvent)
 
-ConsumeEvent = _reflection.GeneratedProtocolMessageType('ConsumeEvent', (_message.Message,), dict(
-  DESCRIPTOR = _CONSUMEEVENT,
-  __module__ = 'CasperMessage_pb2'
+ConsumeEvent = _reflection.GeneratedProtocolMessageType('ConsumeEvent', (_message.Message,), {
+  'DESCRIPTOR' : _CONSUMEEVENT,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ConsumeEvent)
-  ))
+  })
 _sym_db.RegisterMessage(ConsumeEvent)
 
-CommEvent = _reflection.GeneratedProtocolMessageType('CommEvent', (_message.Message,), dict(
-  DESCRIPTOR = _COMMEVENT,
-  __module__ = 'CasperMessage_pb2'
+CommEvent = _reflection.GeneratedProtocolMessageType('CommEvent', (_message.Message,), {
+  'DESCRIPTOR' : _COMMEVENT,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.CommEvent)
-  ))
+  })
 _sym_db.RegisterMessage(CommEvent)
 
-Bond = _reflection.GeneratedProtocolMessageType('Bond', (_message.Message,), dict(
-  DESCRIPTOR = _BOND,
-  __module__ = 'CasperMessage_pb2'
+Bond = _reflection.GeneratedProtocolMessageType('Bond', (_message.Message,), {
+  'DESCRIPTOR' : _BOND,
+  '__module__' : 'CasperMessage_pb2'
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Bond)
-  ))
+  })
 _sym_db.RegisterMessage(Bond)
 
 

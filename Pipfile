@@ -4,10 +4,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pyrchain = {editable = true,extras = ["dev"],path = "."}
+pyrchain = {path = ".",extras = ["dev"],editable = true}
 
 [packages]
-pyrchain = {editable = true,path = "."}
+pyrchain = {path = ".",editable = true}
 
 [requires]
 python_version = "3.7"
