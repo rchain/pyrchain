@@ -60,7 +60,7 @@ class PrivateKey:
     @classmethod
     def from_seed(cls, seed: int) -> 'PrivateKey':
         rand = random.Random(seed)
-        key_bytes = random.getrandbits(32 * 8).to_bytes(32, 'big')
+        key_bytes = rand.getrandbits(32 * 8).to_bytes(32, 'big')
         return cls.from_bytes(key_bytes)
 
     def __init__(self, _key: SigningKey):
