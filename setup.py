@@ -17,6 +17,9 @@ setuptools.setup(
         'protobuf',
         'ecdsa',
         'python-bitcoinlib',
+        'cryptography',
+        'eth_hash',
+        'pycryptodome'
     ],
     extras_require={'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf']}
 )
