@@ -1,6 +1,6 @@
 import random
 import hashlib
-
+import base64
 import bitcoin.base58
 from ecdsa import SigningKey, VerifyingKey
 from ecdsa.curves import SECP256k1
@@ -31,6 +31,12 @@ class PublicKey:
             signature, data, hashfunc=blake2b_32, sigdecode=sigdecode_der
         )
 
+    def verify_block_hash(self, signature: bytes, block_hash: bytes):
+        self._pub_key.verify_digest(signature, block_hash, sigdecode=sigdecode_der)
+
+    def to_hex(self, lower: bool = True) -> str:
+        return self.to_bytes().hex().lower() if lower else self.to_bytes().hex()
+
     def to_bytes(self) -> bytes:
         return b'\x04' + self._pub_key.to_string()
 
@@ -44,7 +50,6 @@ class PublicKey:
 
 
 class PrivateKey:
-
     @classmethod
     def generate(cls) -> 'PrivateKey':
         return cls(SigningKey.generate(curve=SECP256k1))
@@ -71,8 +76,14 @@ class PrivateKey:
             data, hashfunc=blake2b_32, sigencode=sigencode_der_canonize
         )
 
+    def sign_block_hash(self, block_hash: bytes) -> bytes:
+        return self._key.sign_digest(block_hash, sigencode=sigencode_der_canonize)
+
     def to_bytes(self) -> bytes:
         return self._key.to_string()
+
+    def to_hex(self, lower: bool = True) -> str:
+        return self.to_bytes().hex().lower() if lower else self.to_bytes().hex()
 
     def get_public_key(self) -> PublicKey:
         return PublicKey(self._key.get_verifying_key())

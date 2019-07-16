@@ -1,5 +1,4 @@
 import unittest
-
 from ecdsa.keys import BadSignatureError
 
 from .crypto import blake2b_32, PrivateKey, PublicKey
@@ -53,6 +52,13 @@ class TestCrypto(unittest.TestCase):
             actual_pub_key_bytes = pub_key.to_bytes()
             self.assertEqual(expected_pub_key_bytes, actual_pub_key_bytes)
 
+    def test_key_to_hex(self):
+        for key_hex, pub_key_hex, _ in self.identities:
+            private_key = PrivateKey.from_hex(key_hex)
+            self.assertEqual(private_key.to_hex(), key_hex)
+            public_key = PublicKey.from_hex(pub_key_hex)
+            self.assertEqual(public_key.to_hex(), pub_key_hex)
+
     def test_sign_verify_good(self):
         for key_hex, pub_key_hex, _ in self.identities:
             key = PrivateKey.from_hex(key_hex)
@@ -70,6 +76,27 @@ class TestCrypto(unittest.TestCase):
             signature = key.sign(sign_message)
             with self.assertRaises(BadSignatureError):
                 pub_key.verify(signature, verify_message)
+
+    def test_sign_block_hash_verify_good(self):
+        for key_hex, pub_key_hex, _ in self.identities:
+            key = PrivateKey.from_hex(key_hex)
+            pub_key = PublicKey.from_hex(pub_key_hex)
+            message = 'hello rchain'.encode()
+            digest = blake2b_32(message).digest()
+            signature = key.sign_block_hash(digest)
+            pub_key.verify_block_hash(signature, digest)
+
+    def test_sign_block_hash_verify_bad(self):
+        for key_hex, pub_key_hex, _ in self.identities:
+            key = PrivateKey.from_hex(key_hex)
+            pub_key = PublicKey.from_hex(pub_key_hex)
+            sign_message = 'hello rchain'.encode()
+            verify_message = 'hello world'.encode()
+            block_hash = blake2b_32(sign_message).digest()
+            signature = key.sign_block_hash(block_hash)
+            verify_digest = blake2b_32(verify_message).digest()
+            with self.assertRaises(BadSignatureError):
+                pub_key.verify_block_hash(signature, verify_digest)
 
     def test_address(self):
         for _, pub_key_hex, expected_address in self.identities:
