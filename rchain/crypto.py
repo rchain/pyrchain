@@ -1,6 +1,5 @@
 import random
 import hashlib
-import base64
 import bitcoin.base58
 from ecdsa import SigningKey, VerifyingKey
 from ecdsa.curves import SECP256k1

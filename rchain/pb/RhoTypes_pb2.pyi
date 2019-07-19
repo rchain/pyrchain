@@ -315,6 +315,7 @@ class ListBindPatterns(google___protobuf___message___Message):
 
 class Receive(google___protobuf___message___Message):
     persistent = ... # type: bool
+    peek = ... # type: bool
     bindCount = ... # type: int
     locallyFree = ... # type: bytes
     connective_used = ... # type: bool
@@ -330,6 +331,7 @@ class Receive(google___protobuf___message___Message):
         binds : typing___Optional[typing___Iterable[ReceiveBind]] = None,
         body : typing___Optional[Par] = None,
         persistent : typing___Optional[bool] = None,
+        peek : typing___Optional[bool] = None,
         bindCount : typing___Optional[int] = None,
         locallyFree : typing___Optional[bytes] = None,
         connective_used : typing___Optional[bool] = None,
@@ -340,10 +342,10 @@ class Receive(google___protobuf___message___Message):
     def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     if sys.version_info >= (3,):
         def HasField(self, field_name: typing_extensions___Literal[u"body"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"bindCount",u"binds",u"body",u"connective_used",u"locallyFree",u"persistent"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"bindCount",u"binds",u"body",u"connective_used",u"locallyFree",u"peek",u"persistent"]) -> None: ...
     else:
         def HasField(self, field_name: typing_extensions___Literal[u"body",b"body"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"bindCount",b"bindCount",u"binds",b"binds",u"body",b"body",u"connective_used",b"connective_used",u"locallyFree",b"locallyFree",u"persistent",b"persistent"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"bindCount",b"bindCount",u"binds",b"binds",u"body",b"body",u"connective_used",b"connective_used",u"locallyFree",b"locallyFree",u"peek",b"peek",u"persistent",b"persistent"]) -> None: ...
 
 class New(google___protobuf___message___Message):
     bindCount = ... # type: int
