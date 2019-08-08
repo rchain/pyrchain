@@ -19,7 +19,7 @@ class VaultAPI:
         self.key = key
 
     def _get_addr(self, addr: Optional[str]) -> str:
-        return addr or self.key.get_public_key().get_address()
+        return addr or self.key.get_public_key().get_rev_address()
 
     def _deploy(self, filename: str, args: dict) -> bytes:
         return self.client.deploy(

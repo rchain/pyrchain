@@ -12,9 +12,9 @@ def main():
     alice_key  = PrivateKey.generate()
     bob_key    = PrivateKey.generate()
 
-    god_addr   = god_key.get_public_key().get_address()
-    alice_addr = alice_key.get_public_key().get_address()
-    bob_addr   = bob_key.get_public_key().get_address()
+    god_addr   = god_key.get_public_key().get_rev_address()
+    alice_addr = alice_key.get_public_key().get_rev_address()
+    bob_addr   = bob_key.get_public_key().get_rev_address()
 
     with grpc.insecure_channel('172.27.0.2:40401') as channel:
         client = RClient(channel)
