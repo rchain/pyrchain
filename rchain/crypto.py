@@ -4,6 +4,7 @@ import bitcoin.base58
 from ecdsa import SigningKey, VerifyingKey
 from ecdsa.curves import SECP256k1
 from ecdsa.util import sigencode_der_canonize, sigdecode_der
+from eth_hash.auto import keccak
 
 
 def blake2b_32(data=b''):
@@ -39,13 +40,17 @@ class PublicKey:
     def to_bytes(self) -> bytes:
         return b'\x04' + self._pub_key.to_string()
 
-    def get_address(self) -> str:
+    def get_rev_address(self) -> str:
         prefix = b'\0\0\0\0'
-        pub_key_hash = blake2b_32(self.to_bytes()).digest()
+        eth_address = self.get_eth_address()
+        pub_key_hash = keccak(bytes.fromhex(eth_address))
         payload = prefix + pub_key_hash
         payload_chksum = blake2b_32(payload).digest()[:4]
         addr_bytes = payload + payload_chksum
         return bitcoin.base58.encode(addr_bytes)
+
+    def get_eth_address(self) -> str:
+        return keccak(self.to_bytes()[1:]).hex()[-40:]
 
 
 class PrivateKey:
