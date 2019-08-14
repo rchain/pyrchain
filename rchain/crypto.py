@@ -52,6 +52,12 @@ class PublicKey:
     def get_eth_address(self) -> str:
         return keccak(self.to_bytes()[1:]).hex()[-40:]
 
+    def __hash__(self):
+        return hash(self.to_bytes())
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.to_bytes() == other.to_bytes()
+
 
 class PrivateKey:
     @classmethod
@@ -91,3 +97,9 @@ class PrivateKey:
 
     def get_public_key(self) -> PublicKey:
         return PublicKey(self._key.get_verifying_key())
+
+    def __hash__(self):
+        return hash(self.to_bytes())
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.to_bytes() == other.to_bytes()
