@@ -33,6 +33,13 @@ class VaultAPI:
         self.deploy_create_vault()
         self.client.propose()
 
+    def deploy_bond(self, amount) -> bytes:
+        return self._deploy('bond.rho.tpl', {'amount': amount})
+
+    def bond(self, amount = 100) -> None:
+        self.deploy_bond(amount)
+        self.client.propose()
+
     def deploy_create_genesis_vault(self, addr: Optional[str], balance: int) -> bytes:
         return self._deploy(
             'create_genesis_vault.rho.tpl', {
