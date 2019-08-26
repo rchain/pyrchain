@@ -40,18 +40,6 @@ class VaultAPI:
         self.deploy_bond(amount)
         self.client.propose()
 
-    def deploy_create_genesis_vault(self, addr: Optional[str], balance: int) -> bytes:
-        return self._deploy(
-            'create_genesis_vault.rho.tpl', {
-                'addr': self._get_addr(addr),
-                'balance': balance
-            }
-        )
-
-    def create_genesis_vault(self, addr: Optional[str], balance: int) -> None:
-        self.deploy_create_genesis_vault(addr, balance)
-        self.client.propose()
-
     def deploy_get_balance(self, addr: Optional[str] = None) -> bytes:
         return self._deploy('get_balance.rho.tpl', {
             'addr': self._get_addr(addr),
