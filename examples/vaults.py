@@ -26,12 +26,10 @@ def main():
         # Most methods without deploy_ prefix create block (propose) after
         # deploy. To deploy a batch and then create block do:
         #
-        #  god_vault_api.deploy_create_genesis_vault(None, 100_000)
         #  alice_vault_api.deploy_create_vault()
         #  bob_vault_api.deploy_create_vault()
         #  client.propose()
 
-        god_vault_api.create_genesis_vault(None, 100_000)
         alice_vault_api.create_vault()
         bob_vault_api.create_vault()
 
