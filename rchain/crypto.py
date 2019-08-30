@@ -11,10 +11,6 @@ from google.protobuf.wrappers_pb2 import StringValue, Int32Value
 def blake2b_32(data=b''):
     return hashlib.blake2b(data, digest_size=32)
 
-def gen_state_hash_from_block(block: BlockMessage) -> bytes:
-    state = block.body.state.SerializeToString()
-    return blake2b_32(state).digest()
-
 def gen_deploys_hash_from_block(block: BlockMessage) -> bytes:
     hash_obj = b"".join([deploy.SerializeToString() for deploy in block.body.deploys])
     return blake2b_32(hash_obj).digest()

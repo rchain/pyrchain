@@ -60,11 +60,6 @@ class DeployServiceStub(object):
         request_serializer=DeployService__pb2.ContinuationAtNameQuery.SerializeToString,
         response_deserializer=Either__pb2.Either.FromString,
         )
-    self.findBlockWithDeploy = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/findBlockWithDeploy',
-        request_serializer=DeployService__pb2.FindDeployInBlockQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
-        )
     self.findDeploy = channel.unary_unary(
         '/coop.rchain.casper.protocol.DeployService/findDeploy',
         request_serializer=DeployService__pb2.FindDeployQuery.SerializeToString,
@@ -152,14 +147,6 @@ class DeployServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def findBlockWithDeploy(self, request, context):
-    """Find block from a deploy.
-    Returns on success BlockQueryResponse
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def findDeploy(self, request, context):
     """Find block containing a deploy.
     Returns on success LightBlockQueryResponse
@@ -225,11 +212,6 @@ def add_DeployServiceServicer_to_server(servicer, server):
       'listenForContinuationAtName': grpc.unary_unary_rpc_method_handler(
           servicer.listenForContinuationAtName,
           request_deserializer=DeployService__pb2.ContinuationAtNameQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
-      ),
-      'findBlockWithDeploy': grpc.unary_unary_rpc_method_handler(
-          servicer.findBlockWithDeploy,
-          request_deserializer=DeployService__pb2.FindDeployInBlockQuery.FromString,
           response_serializer=Either__pb2.Either.SerializeToString,
       ),
       'findDeploy': grpc.unary_unary_rpc_method_handler(

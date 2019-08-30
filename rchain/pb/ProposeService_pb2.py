@@ -24,13 +24,52 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='coop.rchain.casper.protocol',
   syntax='proto3',
   serialized_options=_b('\342?!\n\033coop.rchain.casper.protocol\020\001(\001'),
-  serialized_pb=_b('\n\x14ProposeService.proto\x12\x1b\x63oop.rchain.casper.protocol\x1a\x13\x43\x61sperMessage.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x0c\x45ither.proto\x1a\x15scalapb/scalapb.proto2>\n\x0eProposeService\x12,\n\x07propose\x12\x16.google.protobuf.Empty\x1a\x07.Either\"\x00\x42$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x14ProposeService.proto\x12\x1b\x63oop.rchain.casper.protocol\x1a\x13\x43\x61sperMessage.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x0c\x45ither.proto\x1a\x15scalapb/scalapb.proto\"7\n\x18PrintUnmatchedSendsQuery\x12\x1b\n\x13printUnmatchedSends\x18\x01 \x01(\x08\x32]\n\x0eProposeService\x12K\n\x07propose\x12\x35.coop.rchain.casper.protocol.PrintUnmatchedSendsQuery\x1a\x07.Either\"\x00\x42$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3')
   ,
   dependencies=[CasperMessage__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,Either__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
 
 
+
+_PRINTUNMATCHEDSENDSQUERY = _descriptor.Descriptor(
+  name='PrintUnmatchedSendsQuery',
+  full_name='coop.rchain.casper.protocol.PrintUnmatchedSendsQuery',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='printUnmatchedSends', full_name='coop.rchain.casper.protocol.PrintUnmatchedSendsQuery.printUnmatchedSends', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=140,
+  serialized_end=195,
+)
+
+DESCRIPTOR.message_types_by_name['PrintUnmatchedSendsQuery'] = _PRINTUNMATCHEDSENDSQUERY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+PrintUnmatchedSendsQuery = _reflection.GeneratedProtocolMessageType('PrintUnmatchedSendsQuery', (_message.Message,), {
+  'DESCRIPTOR' : _PRINTUNMATCHEDSENDSQUERY,
+  '__module__' : 'ProposeService_pb2'
+  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.PrintUnmatchedSendsQuery)
+  })
+_sym_db.RegisterMessage(PrintUnmatchedSendsQuery)
 
 
 DESCRIPTOR._options = None
@@ -41,15 +80,15 @@ _PROPOSESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=140,
-  serialized_end=202,
+  serialized_start=197,
+  serialized_end=290,
   methods=[
   _descriptor.MethodDescriptor(
     name='propose',
     full_name='coop.rchain.casper.protocol.ProposeService.propose',
     index=0,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    input_type=_PRINTUNMATCHEDSENDSQUERY,
     output_type=Either__pb2._EITHER,
     serialized_options=None,
   ),

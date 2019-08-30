@@ -41,24 +41,6 @@ class FindDeployQuery(google___protobuf___message___Message):
     else:
         def ClearField(self, field_name: typing_extensions___Literal[u"deployId",b"deployId"]) -> None: ...
 
-class FindDeployInBlockQuery(google___protobuf___message___Message):
-    user = ... # type: bytes
-    timestamp = ... # type: int
-
-    def __init__(self,
-        *,
-        user : typing___Optional[bytes] = None,
-        timestamp : typing___Optional[int] = None,
-        ) -> None: ...
-    @classmethod
-    def FromString(cls, s: bytes) -> FindDeployInBlockQuery: ...
-    def MergeFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
-    def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
-    if sys.version_info >= (3,):
-        def ClearField(self, field_name: typing_extensions___Literal[u"timestamp",u"user"]) -> None: ...
-    else:
-        def ClearField(self, field_name: typing_extensions___Literal[u"timestamp",b"timestamp",u"user",b"user"]) -> None: ...
-
 class BlockQuery(google___protobuf___message___Message):
     hash = ... # type: typing___Text
 
