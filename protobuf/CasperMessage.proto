@@ -87,7 +87,7 @@ message NoApprovedBlockAvailable {
 
 // --------- Core Protocol  --------
 message BlockMessage {
-  option (scalapb.message).extends = "CasperMessage";  
+  option (scalapb.message).extends = "CasperMessage";
   bytes                  blockHash      = 1; // obtained by hashing the information in the header
   Header                 header         = 2;
   Body                   body           = 3;
@@ -117,8 +117,7 @@ message BlockMetadataInternal {
 
 message Header {
   repeated bytes parentsHashList = 1; //list of parent block hashes
-  bytes postStateHash      = 2;
-  bytes deploysHash        = 3;
+  bytes deploysHash = 3;
   int64 timestamp = 5;
   int64 version = 6;
   int32 deployCount = 7;
@@ -181,18 +180,25 @@ message Event {
 message ProduceEvent {
   bytes channelsHash = 1;
   bytes hash = 2;
-  int32 sequenceNumber = 3;
+  bool persistent = 3;
+  int32 sequenceNumber = 4;
 }
 
 message ConsumeEvent {
   repeated bytes channelsHashes = 1;
   bytes hash = 2;
-  int32 sequenceNumber = 3;
+  bool persistent = 3;
+  int32 sequenceNumber = 4;
 }
 
 message CommEvent {
   ConsumeEvent consume = 1;
   repeated ProduceEvent produces = 2;
+  repeated Peek peeks = 3;
+}
+
+message Peek {
+  int32 channelIndex = 1;
 }
 
 message Bond {

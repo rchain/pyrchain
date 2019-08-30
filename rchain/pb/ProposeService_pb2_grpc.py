@@ -2,7 +2,7 @@
 import grpc
 
 from . import Either_pb2 as Either__pb2
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+from . import ProposeService_pb2 as ProposeService__pb2
 
 
 class ProposeServiceStub(object):
@@ -17,7 +17,7 @@ class ProposeServiceStub(object):
     """
     self.propose = channel.unary_unary(
         '/coop.rchain.casper.protocol.ProposeService/propose',
-        request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+        request_serializer=ProposeService__pb2.PrintUnmatchedSendsQuery.SerializeToString,
         response_deserializer=Either__pb2.Either.FromString,
         )
 
@@ -38,7 +38,7 @@ def add_ProposeServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'propose': grpc.unary_unary_rpc_method_handler(
           servicer.propose,
-          request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+          request_deserializer=ProposeService__pb2.PrintUnmatchedSendsQuery.FromString,
           response_serializer=Either__pb2.Either.SerializeToString,
       ),
   }

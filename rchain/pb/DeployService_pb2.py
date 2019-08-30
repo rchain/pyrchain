@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='coop.rchain.casper.protocol',
   syntax='proto3',
   serialized_options=_b('\342?!\n\033coop.rchain.casper.protocol\020\001(\001'),
-  serialized_pb=_b('\n\x13\x44\x65ployService.proto\x12\x1b\x63oop.rchain.casper.protocol\x1a\x13\x43\x61sperMessage.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\x1a\x0c\x45ither.proto\"#\n\x0f\x46indDeployQuery\x12\x10\n\x08\x64\x65ployId\x18\x01 \x01(\x0c\"9\n\x16\x46indDeployInBlockQuery\x12\x0c\n\x04user\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"\x1a\n\nBlockQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"\x1c\n\x0b\x42locksQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\"4\n\x0f\x44\x61taAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x12\n\x04name\x18\x02 \x01(\x0b\x32\x04.Par\"=\n\x17\x43ontinuationAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x13\n\x05names\x18\x02 \x03(\x0b\x32\x04.Par\"(\n\x15\x44\x65ployServiceResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"O\n\x12\x42lockQueryResponse\x12\x39\n\tblockInfo\x18\x01 \x01(\x0b\x32&.coop.rchain.casper.protocol.BlockInfo\"Y\n\x17LightBlockQueryResponse\x12>\n\tblockInfo\x18\x01 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"B\n\x11VisualizeDagQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x1e\n\x16showJustificationLines\x18\x02 \x01(\x08\"*\n\x17VisualizeBlocksResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"\x14\n\x12MachineVerifyQuery\"(\n\x15MachineVerifyResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"q\n\x19ListeningNameDataResponse\x12\x44\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32..coop.rchain.casper.protocol.DataWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"\x82\x01\n!ListeningNameContinuationResponse\x12M\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32\x37.coop.rchain.casper.protocol.ContinuationsWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"K\n\x17PrivateNamePreviewQuery\x12\x0c\n\x04user\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07nameQty\x18\x03 \x01(\x05\")\n\x1aPrivateNamePreviewResponse\x12\x0b\n\x03ids\x18\x01 \x03(\x0c\"\x19\n\x17LastFinalizedBlockQuery\"W\n\x1aLastFinalizedBlockResponse\x12\x39\n\tblockInfo\x18\x01 \x01(\x0b\x32&.coop.rchain.casper.protocol.BlockInfo\"\xf5\x01\n\x0eLightBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\"\xb1\x02\n\tBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\x12\x0f\n\x07shardId\x18\x0c \x01(\t\x12\x1a\n\x12\x62ondsValidatorList\x18\r \x03(\t\x12\x12\n\ndeployCost\x18\x0e \x03(\t\"l\n\x11\x44\x61taWithBlockInfo\x12\x1b\n\rpostBlockData\x18\x01 \x03(\x0b\x32\x04.Par\x12:\n\x05\x62lock\x18\x02 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"\xae\x01\n\x1a\x43ontinuationsWithBlockInfo\x12T\n\x16postBlockContinuations\x18\x01 \x03(\x0b\x32\x34.coop.rchain.casper.protocol.WaitingContinuationInfo\x12:\n\x05\x62lock\x18\x02 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"g\n\x17WaitingContinuationInfo\x12\'\n\x11postBlockPatterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\x12#\n\x15postBlockContinuation\x18\x02 \x01(\x0b\x32\x04.Par2\xb9\x07\n\rDeployService\x12>\n\x08\x44oDeploy\x12\'.coop.rchain.casper.protocol.DeployData\x1a\x07.Either\"\x00\x12>\n\x08getBlock\x12\'.coop.rchain.casper.protocol.BlockQuery\x1a\x07.Either\"\x00\x12K\n\x0cvisualizeDag\x12..coop.rchain.casper.protocol.VisualizeDagQuery\x1a\x07.Either\"\x00\x30\x01\x12R\n\x14machineVerifiableDag\x12/.coop.rchain.casper.protocol.MachineVerifyQuery\x1a\x07.Either\"\x00\x12\x46\n\rshowMainChain\x12(.coop.rchain.casper.protocol.BlocksQuery\x1a\x07.Either\"\x00\x30\x01\x12\x42\n\tgetBlocks\x12(.coop.rchain.casper.protocol.BlocksQuery\x1a\x07.Either\"\x00\x30\x01\x12N\n\x13listenForDataAtName\x12,.coop.rchain.casper.protocol.DataAtNameQuery\x1a\x07.Either\"\x00\x12^\n\x1blistenForContinuationAtName\x12\x34.coop.rchain.casper.protocol.ContinuationAtNameQuery\x1a\x07.Either\"\x00\x12U\n\x13\x66indBlockWithDeploy\x12\x33.coop.rchain.casper.protocol.FindDeployInBlockQuery\x1a\x07.Either\"\x00\x12\x45\n\nfindDeploy\x12,.coop.rchain.casper.protocol.FindDeployQuery\x1a\x07.Either\"\x00\x12V\n\x13previewPrivateNames\x12\x34.coop.rchain.casper.protocol.PrivateNamePreviewQuery\x1a\x07.Either\"\x00\x12U\n\x12lastFinalizedBlock\x12\x34.coop.rchain.casper.protocol.LastFinalizedBlockQuery\x1a\x07.Either\"\x00\x42$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x44\x65ployService.proto\x12\x1b\x63oop.rchain.casper.protocol\x1a\x13\x43\x61sperMessage.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\x1a\x0c\x45ither.proto\"#\n\x0f\x46indDeployQuery\x12\x10\n\x08\x64\x65ployId\x18\x01 \x01(\x0c\"\x1a\n\nBlockQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"\x1c\n\x0b\x42locksQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\"4\n\x0f\x44\x61taAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x12\n\x04name\x18\x02 \x01(\x0b\x32\x04.Par\"=\n\x17\x43ontinuationAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x13\n\x05names\x18\x02 \x03(\x0b\x32\x04.Par\"(\n\x15\x44\x65ployServiceResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"O\n\x12\x42lockQueryResponse\x12\x39\n\tblockInfo\x18\x01 \x01(\x0b\x32&.coop.rchain.casper.protocol.BlockInfo\"Y\n\x17LightBlockQueryResponse\x12>\n\tblockInfo\x18\x01 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"B\n\x11VisualizeDagQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x1e\n\x16showJustificationLines\x18\x02 \x01(\x08\"*\n\x17VisualizeBlocksResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"\x14\n\x12MachineVerifyQuery\"(\n\x15MachineVerifyResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"q\n\x19ListeningNameDataResponse\x12\x44\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32..coop.rchain.casper.protocol.DataWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"\x82\x01\n!ListeningNameContinuationResponse\x12M\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32\x37.coop.rchain.casper.protocol.ContinuationsWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"K\n\x17PrivateNamePreviewQuery\x12\x0c\n\x04user\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07nameQty\x18\x03 \x01(\x05\")\n\x1aPrivateNamePreviewResponse\x12\x0b\n\x03ids\x18\x01 \x03(\x0c\"\x19\n\x17LastFinalizedBlockQuery\"W\n\x1aLastFinalizedBlockResponse\x12\x39\n\tblockInfo\x18\x01 \x01(\x0b\x32&.coop.rchain.casper.protocol.BlockInfo\"\xf5\x01\n\x0eLightBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\"\xb1\x02\n\tBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\x12\x0f\n\x07shardId\x18\x0c \x01(\t\x12\x1a\n\x12\x62ondsValidatorList\x18\r \x03(\t\x12\x12\n\ndeployCost\x18\x0e \x03(\t\"l\n\x11\x44\x61taWithBlockInfo\x12\x1b\n\rpostBlockData\x18\x01 \x03(\x0b\x32\x04.Par\x12:\n\x05\x62lock\x18\x02 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"\xae\x01\n\x1a\x43ontinuationsWithBlockInfo\x12T\n\x16postBlockContinuations\x18\x01 \x03(\x0b\x32\x34.coop.rchain.casper.protocol.WaitingContinuationInfo\x12:\n\x05\x62lock\x18\x02 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"g\n\x17WaitingContinuationInfo\x12\'\n\x11postBlockPatterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\x12#\n\x15postBlockContinuation\x18\x02 \x01(\x0b\x32\x04.Par2\xe2\x06\n\rDeployService\x12>\n\x08\x44oDeploy\x12\'.coop.rchain.casper.protocol.DeployData\x1a\x07.Either\"\x00\x12>\n\x08getBlock\x12\'.coop.rchain.casper.protocol.BlockQuery\x1a\x07.Either\"\x00\x12K\n\x0cvisualizeDag\x12..coop.rchain.casper.protocol.VisualizeDagQuery\x1a\x07.Either\"\x00\x30\x01\x12R\n\x14machineVerifiableDag\x12/.coop.rchain.casper.protocol.MachineVerifyQuery\x1a\x07.Either\"\x00\x12\x46\n\rshowMainChain\x12(.coop.rchain.casper.protocol.BlocksQuery\x1a\x07.Either\"\x00\x30\x01\x12\x42\n\tgetBlocks\x12(.coop.rchain.casper.protocol.BlocksQuery\x1a\x07.Either\"\x00\x30\x01\x12N\n\x13listenForDataAtName\x12,.coop.rchain.casper.protocol.DataAtNameQuery\x1a\x07.Either\"\x00\x12^\n\x1blistenForContinuationAtName\x12\x34.coop.rchain.casper.protocol.ContinuationAtNameQuery\x1a\x07.Either\"\x00\x12\x45\n\nfindDeploy\x12,.coop.rchain.casper.protocol.FindDeployQuery\x1a\x07.Either\"\x00\x12V\n\x13previewPrivateNames\x12\x34.coop.rchain.casper.protocol.PrivateNamePreviewQuery\x1a\x07.Either\"\x00\x12U\n\x12lastFinalizedBlock\x12\x34.coop.rchain.casper.protocol.LastFinalizedBlockQuery\x1a\x07.Either\"\x00\x42$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3')
   ,
   dependencies=[CasperMessage__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,RhoTypes__pb2.DESCRIPTOR,Either__pb2.DESCRIPTOR,])
 
@@ -63,44 +63,6 @@ _FINDDEPLOYQUERY = _descriptor.Descriptor(
 )
 
 
-_FINDDEPLOYINBLOCKQUERY = _descriptor.Descriptor(
-  name='FindDeployInBlockQuery',
-  full_name='coop.rchain.casper.protocol.FindDeployInBlockQuery',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='user', full_name='coop.rchain.casper.protocol.FindDeployInBlockQuery.user', index=0,
-      number=1, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='timestamp', full_name='coop.rchain.casper.protocol.FindDeployInBlockQuery.timestamp', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=192,
-  serialized_end=249,
-)
-
-
 _BLOCKQUERY = _descriptor.Descriptor(
   name='BlockQuery',
   full_name='coop.rchain.casper.protocol.BlockQuery',
@@ -127,8 +89,8 @@ _BLOCKQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=251,
-  serialized_end=277,
+  serialized_start=192,
+  serialized_end=218,
 )
 
 
@@ -158,8 +120,8 @@ _BLOCKSQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=279,
-  serialized_end=307,
+  serialized_start=220,
+  serialized_end=248,
 )
 
 
@@ -196,8 +158,8 @@ _DATAATNAMEQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=309,
-  serialized_end=361,
+  serialized_start=250,
+  serialized_end=302,
 )
 
 
@@ -234,8 +196,8 @@ _CONTINUATIONATNAMEQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=363,
-  serialized_end=424,
+  serialized_start=304,
+  serialized_end=365,
 )
 
 
@@ -265,8 +227,8 @@ _DEPLOYSERVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=426,
-  serialized_end=466,
+  serialized_start=367,
+  serialized_end=407,
 )
 
 
@@ -296,8 +258,8 @@ _BLOCKQUERYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=468,
-  serialized_end=547,
+  serialized_start=409,
+  serialized_end=488,
 )
 
 
@@ -327,8 +289,8 @@ _LIGHTBLOCKQUERYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=549,
-  serialized_end=638,
+  serialized_start=490,
+  serialized_end=579,
 )
 
 
@@ -365,8 +327,8 @@ _VISUALIZEDAGQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=640,
-  serialized_end=706,
+  serialized_start=581,
+  serialized_end=647,
 )
 
 
@@ -396,8 +358,8 @@ _VISUALIZEBLOCKSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=708,
-  serialized_end=750,
+  serialized_start=649,
+  serialized_end=691,
 )
 
 
@@ -420,8 +382,8 @@ _MACHINEVERIFYQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=752,
-  serialized_end=772,
+  serialized_start=693,
+  serialized_end=713,
 )
 
 
@@ -451,8 +413,8 @@ _MACHINEVERIFYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=774,
-  serialized_end=814,
+  serialized_start=715,
+  serialized_end=755,
 )
 
 
@@ -489,8 +451,8 @@ _LISTENINGNAMEDATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=816,
-  serialized_end=929,
+  serialized_start=757,
+  serialized_end=870,
 )
 
 
@@ -527,8 +489,8 @@ _LISTENINGNAMECONTINUATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=932,
-  serialized_end=1062,
+  serialized_start=873,
+  serialized_end=1003,
 )
 
 
@@ -572,8 +534,8 @@ _PRIVATENAMEPREVIEWQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1064,
-  serialized_end=1139,
+  serialized_start=1005,
+  serialized_end=1080,
 )
 
 
@@ -603,8 +565,8 @@ _PRIVATENAMEPREVIEWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1141,
-  serialized_end=1182,
+  serialized_start=1082,
+  serialized_end=1123,
 )
 
 
@@ -627,8 +589,8 @@ _LASTFINALIZEDBLOCKQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1184,
-  serialized_end=1209,
+  serialized_start=1125,
+  serialized_end=1150,
 )
 
 
@@ -658,8 +620,8 @@ _LASTFINALIZEDBLOCKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1211,
-  serialized_end=1298,
+  serialized_start=1152,
+  serialized_end=1239,
 )
 
 
@@ -759,8 +721,8 @@ _LIGHTBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1301,
-  serialized_end=1546,
+  serialized_start=1242,
+  serialized_end=1487,
 )
 
 
@@ -881,8 +843,8 @@ _BLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1549,
-  serialized_end=1854,
+  serialized_start=1490,
+  serialized_end=1795,
 )
 
 
@@ -919,8 +881,8 @@ _DATAWITHBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1856,
-  serialized_end=1964,
+  serialized_start=1797,
+  serialized_end=1905,
 )
 
 
@@ -957,8 +919,8 @@ _CONTINUATIONSWITHBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1967,
-  serialized_end=2141,
+  serialized_start=1908,
+  serialized_end=2082,
 )
 
 
@@ -995,8 +957,8 @@ _WAITINGCONTINUATIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2143,
-  serialized_end=2246,
+  serialized_start=2084,
+  serialized_end=2187,
 )
 
 _DATAATNAMEQUERY.fields_by_name['name'].message_type = RhoTypes__pb2._PAR
@@ -1013,7 +975,6 @@ _CONTINUATIONSWITHBLOCKINFO.fields_by_name['block'].message_type = _LIGHTBLOCKIN
 _WAITINGCONTINUATIONINFO.fields_by_name['postBlockPatterns'].message_type = RhoTypes__pb2._BINDPATTERN
 _WAITINGCONTINUATIONINFO.fields_by_name['postBlockContinuation'].message_type = RhoTypes__pb2._PAR
 DESCRIPTOR.message_types_by_name['FindDeployQuery'] = _FINDDEPLOYQUERY
-DESCRIPTOR.message_types_by_name['FindDeployInBlockQuery'] = _FINDDEPLOYINBLOCKQUERY
 DESCRIPTOR.message_types_by_name['BlockQuery'] = _BLOCKQUERY
 DESCRIPTOR.message_types_by_name['BlocksQuery'] = _BLOCKSQUERY
 DESCRIPTOR.message_types_by_name['DataAtNameQuery'] = _DATAATNAMEQUERY
@@ -1044,13 +1005,6 @@ FindDeployQuery = _reflection.GeneratedProtocolMessageType('FindDeployQuery', (_
   # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.FindDeployQuery)
   })
 _sym_db.RegisterMessage(FindDeployQuery)
-
-FindDeployInBlockQuery = _reflection.GeneratedProtocolMessageType('FindDeployInBlockQuery', (_message.Message,), {
-  'DESCRIPTOR' : _FINDDEPLOYINBLOCKQUERY,
-  '__module__' : 'DeployService_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.FindDeployInBlockQuery)
-  })
-_sym_db.RegisterMessage(FindDeployInBlockQuery)
 
 BlockQuery = _reflection.GeneratedProtocolMessageType('BlockQuery', (_message.Message,), {
   'DESCRIPTOR' : _BLOCKQUERY,
@@ -1215,8 +1169,8 @@ _DEPLOYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2249,
-  serialized_end=3202,
+  serialized_start=2190,
+  serialized_end=3056,
   methods=[
   _descriptor.MethodDescriptor(
     name='DoDeploy',
@@ -1291,18 +1245,9 @@ _DEPLOYSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='findBlockWithDeploy',
-    full_name='coop.rchain.casper.protocol.DeployService.findBlockWithDeploy',
-    index=8,
-    containing_service=None,
-    input_type=_FINDDEPLOYINBLOCKQUERY,
-    output_type=Either__pb2._EITHER,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
     name='findDeploy',
     full_name='coop.rchain.casper.protocol.DeployService.findDeploy',
-    index=9,
+    index=8,
     containing_service=None,
     input_type=_FINDDEPLOYQUERY,
     output_type=Either__pb2._EITHER,
@@ -1311,7 +1256,7 @@ _DEPLOYSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='previewPrivateNames',
     full_name='coop.rchain.casper.protocol.DeployService.previewPrivateNames',
-    index=10,
+    index=9,
     containing_service=None,
     input_type=_PRIVATENAMEPREVIEWQUERY,
     output_type=Either__pb2._EITHER,
@@ -1320,7 +1265,7 @@ _DEPLOYSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='lastFinalizedBlock',
     full_name='coop.rchain.casper.protocol.DeployService.lastFinalizedBlock',
-    index=11,
+    index=10,
     containing_service=None,
     input_type=_LASTFINALIZEDBLOCKQUERY,
     output_type=Either__pb2._EITHER,
