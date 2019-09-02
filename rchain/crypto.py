@@ -17,6 +17,7 @@ def gen_deploys_hash_from_block(block: BlockMessage) -> bytes:
 
 def gen_block_hash_from_block(block: BlockMessage) -> bytes:
     signed_obj = b''.join([block.header.SerializeToString(),
+                           block.body.SerializeToString(),
                            block.sender,
                            StringValue(value=block.sigAlgorithm).SerializeToString(),
                            Int32Value(value=block.seqNum).SerializeToString(),
