@@ -87,7 +87,7 @@ class VaultAPI:
     def _get_addr(self, addr: Optional[str]) -> str:
         return addr or self.key.get_public_key().get_rev_address()
 
-    def _deploy(self, contract: str, args: dict) -> bytes:
+    def _deploy(self, contract: str) -> bytes:
         return self.client.deploy(self.key, contract, 1, 1000000000)
 
     def deploy_create_vault(self, addr: Optional[str] = None) -> bytes:
@@ -97,7 +97,7 @@ class VaultAPI:
         )
         return self._deploy(contract)
 
-    def create_vault(self, addr: Optional[str] = None) -> None:
+    def create_vault(self) -> None:
         self.deploy_create_vault()
         self.client.propose()
 
@@ -117,7 +117,7 @@ class VaultAPI:
         return self._deploy(contract)
 
     def get_balance_from_data(self, data: Data) -> int:
-        return data.blockResults[0].postBlockData[0].exprs[0].g_int
+        return data.blockInfo[0].postBlockData[0].exprs[0].g_int
 
     def get_balance_from_deploy_id(self, deploy_id: bytes, depth: int = -1) -> int:
         data = self.client.get_data_at_deploy_id(deploy_id, depth=depth)
