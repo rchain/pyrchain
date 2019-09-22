@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='coop.rchain.casper.protocol',
   syntax='proto3',
   serialized_options=_b('\342?!\n\033coop.rchain.casper.protocol\020\001(\001'),
-  serialized_pb=_b('\n\x13\x44\x65ployService.proto\x12\x1b\x63oop.rchain.casper.protocol\x1a\x13\x43\x61sperMessage.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\x1a\x0c\x45ither.proto\"#\n\x0f\x46indDeployQuery\x12\x10\n\x08\x64\x65ployId\x18\x01 \x01(\x0c\"\x1a\n\nBlockQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"\x1c\n\x0b\x42locksQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\"4\n\x0f\x44\x61taAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x12\n\x04name\x18\x02 \x01(\x0b\x32\x04.Par\"=\n\x17\x43ontinuationAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x13\n\x05names\x18\x02 \x03(\x0b\x32\x04.Par\"(\n\x15\x44\x65ployServiceResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"O\n\x12\x42lockQueryResponse\x12\x39\n\tblockInfo\x18\x01 \x01(\x0b\x32&.coop.rchain.casper.protocol.BlockInfo\"Y\n\x17LightBlockQueryResponse\x12>\n\tblockInfo\x18\x01 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"B\n\x11VisualizeDagQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x1e\n\x16showJustificationLines\x18\x02 \x01(\x08\"*\n\x17VisualizeBlocksResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"\x14\n\x12MachineVerifyQuery\"(\n\x15MachineVerifyResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"q\n\x19ListeningNameDataResponse\x12\x44\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32..coop.rchain.casper.protocol.DataWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"\x82\x01\n!ListeningNameContinuationResponse\x12M\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32\x37.coop.rchain.casper.protocol.ContinuationsWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"K\n\x17PrivateNamePreviewQuery\x12\x0c\n\x04user\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07nameQty\x18\x03 \x01(\x05\")\n\x1aPrivateNamePreviewResponse\x12\x0b\n\x03ids\x18\x01 \x03(\x0c\"\x19\n\x17LastFinalizedBlockQuery\"W\n\x1aLastFinalizedBlockResponse\x12\x39\n\tblockInfo\x18\x01 \x01(\x0b\x32&.coop.rchain.casper.protocol.BlockInfo\"\xf5\x01\n\x0eLightBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\"\xb1\x02\n\tBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\x12\x0f\n\x07shardId\x18\x0c \x01(\t\x12\x1a\n\x12\x62ondsValidatorList\x18\r \x03(\t\x12\x12\n\ndeployCost\x18\x0e \x03(\t\"l\n\x11\x44\x61taWithBlockInfo\x12\x1b\n\rpostBlockData\x18\x01 \x03(\x0b\x32\x04.Par\x12:\n\x05\x62lock\x18\x02 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"\xae\x01\n\x1a\x43ontinuationsWithBlockInfo\x12T\n\x16postBlockContinuations\x18\x01 \x03(\x0b\x32\x34.coop.rchain.casper.protocol.WaitingContinuationInfo\x12:\n\x05\x62lock\x18\x02 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"g\n\x17WaitingContinuationInfo\x12\'\n\x11postBlockPatterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\x12#\n\x15postBlockContinuation\x18\x02 \x01(\x0b\x32\x04.Par2\xe2\x06\n\rDeployService\x12>\n\x08\x44oDeploy\x12\'.coop.rchain.casper.protocol.DeployData\x1a\x07.Either\"\x00\x12>\n\x08getBlock\x12\'.coop.rchain.casper.protocol.BlockQuery\x1a\x07.Either\"\x00\x12K\n\x0cvisualizeDag\x12..coop.rchain.casper.protocol.VisualizeDagQuery\x1a\x07.Either\"\x00\x30\x01\x12R\n\x14machineVerifiableDag\x12/.coop.rchain.casper.protocol.MachineVerifyQuery\x1a\x07.Either\"\x00\x12\x46\n\rshowMainChain\x12(.coop.rchain.casper.protocol.BlocksQuery\x1a\x07.Either\"\x00\x30\x01\x12\x42\n\tgetBlocks\x12(.coop.rchain.casper.protocol.BlocksQuery\x1a\x07.Either\"\x00\x30\x01\x12N\n\x13listenForDataAtName\x12,.coop.rchain.casper.protocol.DataAtNameQuery\x1a\x07.Either\"\x00\x12^\n\x1blistenForContinuationAtName\x12\x34.coop.rchain.casper.protocol.ContinuationAtNameQuery\x1a\x07.Either\"\x00\x12\x45\n\nfindDeploy\x12,.coop.rchain.casper.protocol.FindDeployQuery\x1a\x07.Either\"\x00\x12V\n\x13previewPrivateNames\x12\x34.coop.rchain.casper.protocol.PrivateNamePreviewQuery\x1a\x07.Either\"\x00\x12U\n\x12lastFinalizedBlock\x12\x34.coop.rchain.casper.protocol.LastFinalizedBlockQuery\x1a\x07.Either\"\x00\x42$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x44\x65ployService.proto\x12\x1b\x63oop.rchain.casper.protocol\x1a\x13\x43\x61sperMessage.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\x1a\x0c\x45ither.proto\"#\n\x0f\x46indDeployQuery\x12\x10\n\x08\x64\x65ployId\x18\x01 \x01(\x0c\"\x1a\n\nBlockQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"\x1c\n\x0b\x42locksQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\"4\n\x0f\x44\x61taAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x12\n\x04name\x18\x02 \x01(\x0b\x32\x04.Par\"=\n\x17\x43ontinuationAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x13\n\x05names\x18\x02 \x03(\x0b\x32\x04.Par\"(\n\x15\x44\x65ployServiceResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"O\n\x12\x42lockQueryResponse\x12\x39\n\tblockInfo\x18\x01 \x01(\x0b\x32&.coop.rchain.casper.protocol.BlockInfo\"Y\n\x17LightBlockQueryResponse\x12>\n\tblockInfo\x18\x01 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"B\n\x11VisualizeDagQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x1e\n\x16showJustificationLines\x18\x02 \x01(\x08\"*\n\x17VisualizeBlocksResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"\x14\n\x12MachineVerifyQuery\"(\n\x15MachineVerifyResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"q\n\x19ListeningNameDataResponse\x12\x44\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32..coop.rchain.casper.protocol.DataWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"\x82\x01\n!ListeningNameContinuationResponse\x12M\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32\x37.coop.rchain.casper.protocol.ContinuationsWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"K\n\x17PrivateNamePreviewQuery\x12\x0c\n\x04user\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07nameQty\x18\x03 \x01(\x05\")\n\x1aPrivateNamePreviewResponse\x12\x0b\n\x03ids\x18\x01 \x03(\x0c\"\x19\n\x17LastFinalizedBlockQuery\"W\n\x1aLastFinalizedBlockResponse\x12\x39\n\tblockInfo\x18\x01 \x01(\x0b\x32&.coop.rchain.casper.protocol.BlockInfo\" \n\x10IsFinalizedQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"*\n\x13IsFinalizedResponse\x12\x13\n\x0bisFinalized\x18\x01 \x01(\x08\"\xf5\x01\n\x0eLightBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\"\xb1\x02\n\tBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\x12\x0f\n\x07shardId\x18\x0c \x01(\t\x12\x1a\n\x12\x62ondsValidatorList\x18\r \x03(\t\x12\x12\n\ndeployCost\x18\x0e \x03(\t\"l\n\x11\x44\x61taWithBlockInfo\x12\x1b\n\rpostBlockData\x18\x01 \x03(\x0b\x32\x04.Par\x12:\n\x05\x62lock\x18\x02 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"\xae\x01\n\x1a\x43ontinuationsWithBlockInfo\x12T\n\x16postBlockContinuations\x18\x01 \x03(\x0b\x32\x34.coop.rchain.casper.protocol.WaitingContinuationInfo\x12:\n\x05\x62lock\x18\x02 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\"g\n\x17WaitingContinuationInfo\x12\'\n\x11postBlockPatterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\x12#\n\x15postBlockContinuation\x18\x02 \x01(\x0b\x32\x04.Par\"\x9b\x06\n\x19\x44\x65ployServiceResponseMeta\x12\x44\n\x08\x44oDeploy\x18\x01 \x01(\x0b\x32\x32.coop.rchain.casper.protocol.DeployServiceResponse\x12\x41\n\x08getBlock\x18\x02 \x01(\x0b\x32/.coop.rchain.casper.protocol.BlockQueryResponse\x12J\n\x0cvisualizeDag\x18\x03 \x01(\x0b\x32\x34.coop.rchain.casper.protocol.VisualizeBlocksResponse\x12\x42\n\rshowMainChain\x18\x04 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\x12>\n\tgetBlocks\x18\x05 \x01(\x0b\x32+.coop.rchain.casper.protocol.LightBlockInfo\x12S\n\x13listenForDataAtName\x18\x06 \x01(\x0b\x32\x36.coop.rchain.casper.protocol.ListeningNameDataResponse\x12\x63\n\x1blistenForContinuationAtName\x18\x07 \x01(\x0b\x32>.coop.rchain.casper.protocol.ListeningNameContinuationResponse\x12H\n\nfindDeploy\x18\x08 \x01(\x0b\x32\x34.coop.rchain.casper.protocol.LightBlockQueryResponse\x12T\n\x13previewPrivateNames\x18\t \x01(\x0b\x32\x37.coop.rchain.casper.protocol.PrivateNamePreviewResponse\x12K\n\x12lastFinalizedBlock\x18\n \x01(\x0b\x32/.coop.rchain.casper.protocol.BlockQueryResponse2\x8f\x07\n\rDeployService\x12\"\n\x08\x44oDeploy\x12\x0b.DeployData\x1a\x07.Either\"\x00\x12>\n\x08getBlock\x12\'.coop.rchain.casper.protocol.BlockQuery\x1a\x07.Either\"\x00\x12K\n\x0cvisualizeDag\x12..coop.rchain.casper.protocol.VisualizeDagQuery\x1a\x07.Either\"\x00\x30\x01\x12R\n\x14machineVerifiableDag\x12/.coop.rchain.casper.protocol.MachineVerifyQuery\x1a\x07.Either\"\x00\x12\x46\n\rshowMainChain\x12(.coop.rchain.casper.protocol.BlocksQuery\x1a\x07.Either\"\x00\x30\x01\x12\x42\n\tgetBlocks\x12(.coop.rchain.casper.protocol.BlocksQuery\x1a\x07.Either\"\x00\x30\x01\x12N\n\x13listenForDataAtName\x12,.coop.rchain.casper.protocol.DataAtNameQuery\x1a\x07.Either\"\x00\x12^\n\x1blistenForContinuationAtName\x12\x34.coop.rchain.casper.protocol.ContinuationAtNameQuery\x1a\x07.Either\"\x00\x12\x45\n\nfindDeploy\x12,.coop.rchain.casper.protocol.FindDeployQuery\x1a\x07.Either\"\x00\x12V\n\x13previewPrivateNames\x12\x34.coop.rchain.casper.protocol.PrivateNamePreviewQuery\x1a\x07.Either\"\x00\x12U\n\x12lastFinalizedBlock\x12\x34.coop.rchain.casper.protocol.LastFinalizedBlockQuery\x1a\x07.Either\"\x00\x12G\n\x0bisFinalized\x12-.coop.rchain.casper.protocol.IsFinalizedQuery\x1a\x07.Either\"\x00\x42$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3')
   ,
   dependencies=[CasperMessage__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,RhoTypes__pb2.DESCRIPTOR,Either__pb2.DESCRIPTOR,])
 
@@ -625,6 +625,68 @@ _LASTFINALIZEDBLOCKRESPONSE = _descriptor.Descriptor(
 )
 
 
+_ISFINALIZEDQUERY = _descriptor.Descriptor(
+  name='IsFinalizedQuery',
+  full_name='coop.rchain.casper.protocol.IsFinalizedQuery',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='hash', full_name='coop.rchain.casper.protocol.IsFinalizedQuery.hash', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1241,
+  serialized_end=1273,
+)
+
+
+_ISFINALIZEDRESPONSE = _descriptor.Descriptor(
+  name='IsFinalizedResponse',
+  full_name='coop.rchain.casper.protocol.IsFinalizedResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='isFinalized', full_name='coop.rchain.casper.protocol.IsFinalizedResponse.isFinalized', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1275,
+  serialized_end=1317,
+)
+
+
 _LIGHTBLOCKINFO = _descriptor.Descriptor(
   name='LightBlockInfo',
   full_name='coop.rchain.casper.protocol.LightBlockInfo',
@@ -721,8 +783,8 @@ _LIGHTBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1242,
-  serialized_end=1487,
+  serialized_start=1320,
+  serialized_end=1565,
 )
 
 
@@ -843,8 +905,8 @@ _BLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1490,
-  serialized_end=1795,
+  serialized_start=1568,
+  serialized_end=1873,
 )
 
 
@@ -881,8 +943,8 @@ _DATAWITHBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1797,
-  serialized_end=1905,
+  serialized_start=1875,
+  serialized_end=1983,
 )
 
 
@@ -919,8 +981,8 @@ _CONTINUATIONSWITHBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1908,
-  serialized_end=2082,
+  serialized_start=1986,
+  serialized_end=2160,
 )
 
 
@@ -957,8 +1019,102 @@ _WAITINGCONTINUATIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2084,
-  serialized_end=2187,
+  serialized_start=2162,
+  serialized_end=2265,
+)
+
+
+_DEPLOYSERVICERESPONSEMETA = _descriptor.Descriptor(
+  name='DeployServiceResponseMeta',
+  full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='DoDeploy', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.DoDeploy', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='getBlock', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.getBlock', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='visualizeDag', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.visualizeDag', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='showMainChain', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.showMainChain', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='getBlocks', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.getBlocks', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='listenForDataAtName', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.listenForDataAtName', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='listenForContinuationAtName', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.listenForContinuationAtName', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='findDeploy', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.findDeploy', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='previewPrivateNames', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.previewPrivateNames', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='lastFinalizedBlock', full_name='coop.rchain.casper.protocol.DeployServiceResponseMeta.lastFinalizedBlock', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2268,
+  serialized_end=3063,
 )
 
 _DATAATNAMEQUERY.fields_by_name['name'].message_type = RhoTypes__pb2._PAR
@@ -974,6 +1130,16 @@ _CONTINUATIONSWITHBLOCKINFO.fields_by_name['postBlockContinuations'].message_typ
 _CONTINUATIONSWITHBLOCKINFO.fields_by_name['block'].message_type = _LIGHTBLOCKINFO
 _WAITINGCONTINUATIONINFO.fields_by_name['postBlockPatterns'].message_type = RhoTypes__pb2._BINDPATTERN
 _WAITINGCONTINUATIONINFO.fields_by_name['postBlockContinuation'].message_type = RhoTypes__pb2._PAR
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['DoDeploy'].message_type = _DEPLOYSERVICERESPONSE
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['getBlock'].message_type = _BLOCKQUERYRESPONSE
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['visualizeDag'].message_type = _VISUALIZEBLOCKSRESPONSE
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['showMainChain'].message_type = _LIGHTBLOCKINFO
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['getBlocks'].message_type = _LIGHTBLOCKINFO
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['listenForDataAtName'].message_type = _LISTENINGNAMEDATARESPONSE
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['listenForContinuationAtName'].message_type = _LISTENINGNAMECONTINUATIONRESPONSE
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['findDeploy'].message_type = _LIGHTBLOCKQUERYRESPONSE
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['previewPrivateNames'].message_type = _PRIVATENAMEPREVIEWRESPONSE
+_DEPLOYSERVICERESPONSEMETA.fields_by_name['lastFinalizedBlock'].message_type = _BLOCKQUERYRESPONSE
 DESCRIPTOR.message_types_by_name['FindDeployQuery'] = _FINDDEPLOYQUERY
 DESCRIPTOR.message_types_by_name['BlockQuery'] = _BLOCKQUERY
 DESCRIPTOR.message_types_by_name['BlocksQuery'] = _BLOCKSQUERY
@@ -992,11 +1158,14 @@ DESCRIPTOR.message_types_by_name['PrivateNamePreviewQuery'] = _PRIVATENAMEPREVIE
 DESCRIPTOR.message_types_by_name['PrivateNamePreviewResponse'] = _PRIVATENAMEPREVIEWRESPONSE
 DESCRIPTOR.message_types_by_name['LastFinalizedBlockQuery'] = _LASTFINALIZEDBLOCKQUERY
 DESCRIPTOR.message_types_by_name['LastFinalizedBlockResponse'] = _LASTFINALIZEDBLOCKRESPONSE
+DESCRIPTOR.message_types_by_name['IsFinalizedQuery'] = _ISFINALIZEDQUERY
+DESCRIPTOR.message_types_by_name['IsFinalizedResponse'] = _ISFINALIZEDRESPONSE
 DESCRIPTOR.message_types_by_name['LightBlockInfo'] = _LIGHTBLOCKINFO
 DESCRIPTOR.message_types_by_name['BlockInfo'] = _BLOCKINFO
 DESCRIPTOR.message_types_by_name['DataWithBlockInfo'] = _DATAWITHBLOCKINFO
 DESCRIPTOR.message_types_by_name['ContinuationsWithBlockInfo'] = _CONTINUATIONSWITHBLOCKINFO
 DESCRIPTOR.message_types_by_name['WaitingContinuationInfo'] = _WAITINGCONTINUATIONINFO
+DESCRIPTOR.message_types_by_name['DeployServiceResponseMeta'] = _DEPLOYSERVICERESPONSEMETA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 FindDeployQuery = _reflection.GeneratedProtocolMessageType('FindDeployQuery', (_message.Message,), {
@@ -1125,6 +1294,20 @@ LastFinalizedBlockResponse = _reflection.GeneratedProtocolMessageType('LastFinal
   })
 _sym_db.RegisterMessage(LastFinalizedBlockResponse)
 
+IsFinalizedQuery = _reflection.GeneratedProtocolMessageType('IsFinalizedQuery', (_message.Message,), {
+  'DESCRIPTOR' : _ISFINALIZEDQUERY,
+  '__module__' : 'DeployService_pb2'
+  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.IsFinalizedQuery)
+  })
+_sym_db.RegisterMessage(IsFinalizedQuery)
+
+IsFinalizedResponse = _reflection.GeneratedProtocolMessageType('IsFinalizedResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ISFINALIZEDRESPONSE,
+  '__module__' : 'DeployService_pb2'
+  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.IsFinalizedResponse)
+  })
+_sym_db.RegisterMessage(IsFinalizedResponse)
+
 LightBlockInfo = _reflection.GeneratedProtocolMessageType('LightBlockInfo', (_message.Message,), {
   'DESCRIPTOR' : _LIGHTBLOCKINFO,
   '__module__' : 'DeployService_pb2'
@@ -1160,6 +1343,13 @@ WaitingContinuationInfo = _reflection.GeneratedProtocolMessageType('WaitingConti
   })
 _sym_db.RegisterMessage(WaitingContinuationInfo)
 
+DeployServiceResponseMeta = _reflection.GeneratedProtocolMessageType('DeployServiceResponseMeta', (_message.Message,), {
+  'DESCRIPTOR' : _DEPLOYSERVICERESPONSEMETA,
+  '__module__' : 'DeployService_pb2'
+  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.DeployServiceResponseMeta)
+  })
+_sym_db.RegisterMessage(DeployServiceResponseMeta)
+
 
 DESCRIPTOR._options = None
 
@@ -1169,8 +1359,8 @@ _DEPLOYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2190,
-  serialized_end=3056,
+  serialized_start=3066,
+  serialized_end=3977,
   methods=[
   _descriptor.MethodDescriptor(
     name='DoDeploy',
@@ -1268,6 +1458,15 @@ _DEPLOYSERVICE = _descriptor.ServiceDescriptor(
     index=10,
     containing_service=None,
     input_type=_LASTFINALIZEDBLOCKQUERY,
+    output_type=Either__pb2._EITHER,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='isFinalized',
+    full_name='coop.rchain.casper.protocol.DeployService.isFinalized',
+    index=11,
+    containing_service=None,
+    input_type=_ISFINALIZEDQUERY,
     output_type=Either__pb2._EITHER,
     serialized_options=None,
   ),
