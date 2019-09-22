@@ -117,7 +117,7 @@ class VaultAPI:
         return self._deploy(contract)
 
     def get_balance_from_data(self, data: Data) -> int:
-        return data.blockResults[0].postBlockData[0].exprs[0].g_int
+        return data.blockInfo[0].postBlockData[0].exprs[0].g_int
 
     def get_balance_from_deploy_id(self, deploy_id: bytes, depth: int = -1) -> int:
         data = self.client.get_data_at_deploy_id(deploy_id, depth=depth)
