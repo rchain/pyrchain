@@ -13,33 +13,31 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from .scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
 from . import RhoTypes_pb2 as RhoTypes__pb2
-from . import Either_pb2 as Either__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='CasperMessage.proto',
-  package='coop.rchain.casper.protocol',
+  package='',
   syntax='proto3',
   serialized_options=_b('\342?=\n\033coop.rchain.casper.protocol\020\001\"\032sealed trait CasperMessage(\001'),
-  serialized_pb=_b('\n\x13\x43\x61sperMessage.proto\x12\x1b\x63oop.rchain.casper.protocol\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\x1a\x0c\x45ither.proto\"3\n\x0fHasBlockRequest\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x12\xe2?\x0f\n\rCasperMessage\",\n\x08HasBlock\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x12\xe2?\x0f\n\rCasperMessage\"0\n\x0c\x42lockRequest\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x12\xe2?\x0f\n\rCasperMessage\"*\n\x14\x46orkChoiceTipRequest:\x12\xe2?\x0f\n\rCasperMessage\"h\n\x16\x41pprovedBlockCandidate\x12\x38\n\x05\x62lock\x18\x01 \x01(\x0b\x32).coop.rchain.casper.protocol.BlockMessage\x12\x14\n\x0crequiredSigs\x18\x02 \x01(\x05\"\x92\x01\n\x0fUnapprovedBlock\x12\x46\n\tcandidate\x18\x01 \x01(\x0b\x32\x33.coop.rchain.casper.protocol.ApprovedBlockCandidate\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x10\n\x08\x64uration\x18\x03 \x01(\x03:\x12\xe2?\x0f\n\rCasperMessage\">\n\tSignature\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x0b\n\x03sig\x18\x03 \x01(\x0c\"\xa0\x01\n\rBlockApproval\x12\x46\n\tcandidate\x18\x01 \x01(\x0b\x32\x33.coop.rchain.casper.protocol.ApprovedBlockCandidate\x12\x33\n\x03sig\x18\x02 \x01(\x0b\x32&.coop.rchain.casper.protocol.Signature:\x12\xe2?\x0f\n\rCasperMessage\"\xa1\x01\n\rApprovedBlock\x12\x46\n\tcandidate\x18\x01 \x01(\x0b\x32\x33.coop.rchain.casper.protocol.ApprovedBlockCandidate\x12\x34\n\x04sigs\x18\x02 \x03(\x0b\x32&.coop.rchain.casper.protocol.Signature:\x12\xe2?\x0f\n\rCasperMessage\">\n\x14\x41pprovedBlockRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t:\x12\xe2?\x0f\n\rCasperMessage\"Y\n\x18NoApprovedBlockAvailable\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x15\n\rnodeIdentifer\x18\x02 \x01(\t:\x12\xe2?\x0f\n\rCasperMessage\"\xc7\x02\n\x0c\x42lockMessage\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12\x33\n\x06header\x18\x02 \x01(\x0b\x32#.coop.rchain.casper.protocol.Header\x12/\n\x04\x62ody\x18\x03 \x01(\x0b\x32!.coop.rchain.casper.protocol.Body\x12\x42\n\x0ejustifications\x18\x04 \x03(\x0b\x32*.coop.rchain.casper.protocol.Justification\x12\x0e\n\x06sender\x18\x05 \x01(\x0c\x12\x0e\n\x06seqNum\x18\x06 \x01(\x05\x12\x0b\n\x03sig\x18\x07 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x08 \x01(\t\x12\x0f\n\x07shardId\x18\t \x01(\t\x12\x12\n\nextraBytes\x18\n \x01(\x0c:\x12\xe2?\x0f\n\rCasperMessage\"\xfb\x02\n\x15\x42lockMetadataInternal\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12/\n\x07parents\x18\x02 \x03(\x0c\x42\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x0e\n\x06sender\x18\x03 \x01(\x0c\x12\x62\n\x0ejustifications\x18\x04 \x03(\x0b\x32*.coop.rchain.casper.protocol.JustificationB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12P\n\x05\x62onds\x18\x05 \x03(\x0b\x32!.coop.rchain.casper.protocol.BondB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x10\n\x08\x62lockNum\x18\x06 \x01(\x03\x12\x0e\n\x06seqNum\x18\x07 \x01(\x05\x12\x0f\n\x07invalid\x18\x08 \x01(\x08:%\xe2?\"\" coop.rchain.models.BlockMetadata\"\x83\x01\n\x06Header\x12\x17\n\x0fparentsHashList\x18\x01 \x03(\x0c\x12\x13\n\x0b\x64\x65ploysHash\x18\x03 \x01(\x0c\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12\x0f\n\x07version\x18\x06 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x07 \x01(\x05\x12\x12\n\nextraBytes\x18\x08 \x01(\x0c\"\xa7\x01\n\nDeployData\x12\x10\n\x08\x64\x65ployer\x18\x01 \x01(\x0c\x12\x0c\n\x04term\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0b\n\x03sig\x18\x04 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x05 \x01(\t\x12\x11\n\tphloPrice\x18\x07 \x01(\x03\x12\x11\n\tphloLimit\x18\x08 \x01(\x03\x12\x1d\n\x15validAfterBlockNumber\x18\n \x01(\x03\"\xe0\x01\n\x0fProcessedDeploy\x12\x37\n\x06\x64\x65ploy\x18\x01 \x01(\x0b\x32\'.coop.rchain.casper.protocol.DeployData\x12\x14\n\x04\x63ost\x18\x02 \x01(\x0b\x32\x06.PCost\x12\x35\n\tdeployLog\x18\x03 \x03(\x0b\x32\".coop.rchain.casper.protocol.Event\x12\x36\n\npaymentLog\x18\x04 \x03(\x0b\x32\".coop.rchain.casper.protocol.Event\x12\x0f\n\x07\x65rrored\x18\x05 \x01(\x08\"\x92\x01\n\x04\x42ody\x12\x37\n\x05state\x18\x01 \x01(\x0b\x32(.coop.rchain.casper.protocol.RChainState\x12=\n\x07\x64\x65ploys\x18\x02 \x03(\x0b\x32,.coop.rchain.casper.protocol.ProcessedDeploy\x12\x12\n\nextraBytes\x18\x03 \x01(\x0c\";\n\rJustification\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\x17\n\x0flatestBlockHash\x18\x02 \x01(\x0c\"\x81\x01\n\x0bRChainState\x12\x14\n\x0cpreStateHash\x18\x01 \x01(\x0c\x12\x15\n\rpostStateHash\x18\x02 \x01(\x0c\x12\x30\n\x05\x62onds\x18\x03 \x03(\x0b\x32!.coop.rchain.casper.protocol.Bond\x12\x13\n\x0b\x62lockNumber\x18\x04 \x01(\x03\"\xcd\x01\n\x05\x45vent\x12<\n\x07produce\x18\x01 \x01(\x0b\x32).coop.rchain.casper.protocol.ProduceEventH\x00\x12<\n\x07\x63onsume\x18\x02 \x01(\x0b\x32).coop.rchain.casper.protocol.ConsumeEventH\x00\x12\x36\n\x04\x63omm\x18\x03 \x01(\x0b\x32&.coop.rchain.casper.protocol.CommEventH\x00\x42\x10\n\x0e\x65vent_instance\"^\n\x0cProduceEvent\x12\x14\n\x0c\x63hannelsHash\x18\x01 \x01(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x16\n\x0esequenceNumber\x18\x04 \x01(\x05\"`\n\x0c\x43onsumeEvent\x12\x16\n\x0e\x63hannelsHashes\x18\x01 \x03(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x16\n\x0esequenceNumber\x18\x04 \x01(\x05\"\xb6\x01\n\tCommEvent\x12:\n\x07\x63onsume\x18\x01 \x01(\x0b\x32).coop.rchain.casper.protocol.ConsumeEvent\x12;\n\x08produces\x18\x02 \x03(\x0b\x32).coop.rchain.casper.protocol.ProduceEvent\x12\x30\n\x05peeks\x18\x03 \x03(\x0b\x32!.coop.rchain.casper.protocol.Peek\"\x1c\n\x04Peek\x12\x14\n\x0c\x63hannelIndex\x18\x01 \x01(\x05\"(\n\x04\x42ond\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\r\n\x05stake\x18\x02 \x01(\x03\x42@\xe2?=\n\x1b\x63oop.rchain.casper.protocol\x10\x01\"\x1asealed trait CasperMessage(\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x43\x61sperMessage.proto\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\"3\n\x0fHasBlockRequest\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x12\xe2?\x0f\n\rCasperMessage\",\n\x08HasBlock\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x12\xe2?\x0f\n\rCasperMessage\"0\n\x0c\x42lockRequest\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x12\xe2?\x0f\n\rCasperMessage\"*\n\x14\x46orkChoiceTipRequest:\x12\xe2?\x0f\n\rCasperMessage\"L\n\x16\x41pprovedBlockCandidate\x12\x1c\n\x05\x62lock\x18\x01 \x01(\x0b\x32\r.BlockMessage\x12\x14\n\x0crequiredSigs\x18\x02 \x01(\x05\"v\n\x0fUnapprovedBlock\x12*\n\tcandidate\x18\x01 \x01(\x0b\x32\x17.ApprovedBlockCandidate\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x10\n\x08\x64uration\x18\x03 \x01(\x03:\x12\xe2?\x0f\n\rCasperMessage\">\n\tSignature\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x0b\n\x03sig\x18\x03 \x01(\x0c\"h\n\rBlockApproval\x12*\n\tcandidate\x18\x01 \x01(\x0b\x32\x17.ApprovedBlockCandidate\x12\x17\n\x03sig\x18\x02 \x01(\x0b\x32\n.Signature:\x12\xe2?\x0f\n\rCasperMessage\"i\n\rApprovedBlock\x12*\n\tcandidate\x18\x01 \x01(\x0b\x32\x17.ApprovedBlockCandidate\x12\x18\n\x04sigs\x18\x02 \x03(\x0b\x32\n.Signature:\x12\xe2?\x0f\n\rCasperMessage\">\n\x14\x41pprovedBlockRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t:\x12\xe2?\x0f\n\rCasperMessage\"Y\n\x18NoApprovedBlockAvailable\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x15\n\rnodeIdentifer\x18\x02 \x01(\t:\x12\xe2?\x0f\n\rCasperMessage\"\xf3\x01\n\x0c\x42lockMessage\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12\x17\n\x06header\x18\x02 \x01(\x0b\x32\x07.Header\x12\x13\n\x04\x62ody\x18\x03 \x01(\x0b\x32\x05.Body\x12&\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x0e.Justification\x12\x0e\n\x06sender\x18\x05 \x01(\x0c\x12\x0e\n\x06seqNum\x18\x06 \x01(\x05\x12\x0b\n\x03sig\x18\x07 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x08 \x01(\t\x12\x0f\n\x07shardId\x18\t \x01(\t\x12\x12\n\nextraBytes\x18\n \x01(\x0c:\x12\xe2?\x0f\n\rCasperMessage\"\xc3\x02\n\x15\x42lockMetadataInternal\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12/\n\x07parents\x18\x02 \x03(\x0c\x42\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x0e\n\x06sender\x18\x03 \x01(\x0c\x12\x46\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x0e.JustificationB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x34\n\x05\x62onds\x18\x05 \x03(\x0b\x32\x05.BondB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x10\n\x08\x62lockNum\x18\x06 \x01(\x03\x12\x0e\n\x06seqNum\x18\x07 \x01(\x05\x12\x0f\n\x07invalid\x18\x08 \x01(\x08:%\xe2?\"\" coop.rchain.models.BlockMetadata\"\x83\x01\n\x06Header\x12\x17\n\x0fparentsHashList\x18\x01 \x03(\x0c\x12\x13\n\x0b\x64\x65ploysHash\x18\x03 \x01(\x0c\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12\x0f\n\x07version\x18\x06 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x07 \x01(\x05\x12\x12\n\nextraBytes\x18\x08 \x01(\x0c\"\xa7\x01\n\nDeployData\x12\x10\n\x08\x64\x65ployer\x18\x01 \x01(\x0c\x12\x0c\n\x04term\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0b\n\x03sig\x18\x04 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x05 \x01(\t\x12\x11\n\tphloPrice\x18\x07 \x01(\x03\x12\x11\n\tphloLimit\x18\x08 \x01(\x03\x12\x1d\n\x15validAfterBlockNumber\x18\n \x01(\x03\"\x8c\x01\n\x0fProcessedDeploy\x12\x1b\n\x06\x64\x65ploy\x18\x01 \x01(\x0b\x32\x0b.DeployData\x12\x14\n\x04\x63ost\x18\x02 \x01(\x0b\x32\x06.PCost\x12\x19\n\tdeployLog\x18\x03 \x03(\x0b\x32\x06.Event\x12\x1a\n\npaymentLog\x18\x04 \x03(\x0b\x32\x06.Event\x12\x0f\n\x07\x65rrored\x18\x05 \x01(\x08\"Z\n\x04\x42ody\x12\x1b\n\x05state\x18\x01 \x01(\x0b\x32\x0c.RChainState\x12!\n\x07\x64\x65ploys\x18\x02 \x03(\x0b\x32\x10.ProcessedDeploy\x12\x12\n\nextraBytes\x18\x03 \x01(\x0c\";\n\rJustification\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\x17\n\x0flatestBlockHash\x18\x02 \x01(\x0c\"e\n\x0bRChainState\x12\x14\n\x0cpreStateHash\x18\x01 \x01(\x0c\x12\x15\n\rpostStateHash\x18\x02 \x01(\x0c\x12\x14\n\x05\x62onds\x18\x03 \x03(\x0b\x32\x05.Bond\x12\x13\n\x0b\x62lockNumber\x18\x04 \x01(\x03\"y\n\x05\x45vent\x12 \n\x07produce\x18\x01 \x01(\x0b\x32\r.ProduceEventH\x00\x12 \n\x07\x63onsume\x18\x02 \x01(\x0b\x32\r.ConsumeEventH\x00\x12\x1a\n\x04\x63omm\x18\x03 \x01(\x0b\x32\n.CommEventH\x00\x42\x10\n\x0e\x65vent_instance\"^\n\x0cProduceEvent\x12\x14\n\x0c\x63hannelsHash\x18\x01 \x01(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x16\n\x0esequenceNumber\x18\x04 \x01(\x05\"`\n\x0c\x43onsumeEvent\x12\x16\n\x0e\x63hannelsHashes\x18\x01 \x03(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x16\n\x0esequenceNumber\x18\x04 \x01(\x05\"b\n\tCommEvent\x12\x1e\n\x07\x63onsume\x18\x01 \x01(\x0b\x32\r.ConsumeEvent\x12\x1f\n\x08produces\x18\x02 \x03(\x0b\x32\r.ProduceEvent\x12\x14\n\x05peeks\x18\x03 \x03(\x0b\x32\x05.Peek\"\x1c\n\x04Peek\x12\x14\n\x0c\x63hannelIndex\x18\x01 \x01(\x05\"(\n\x04\x42ond\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\r\n\x05stake\x18\x02 \x01(\x03\x42@\xe2?=\n\x1b\x63oop.rchain.casper.protocol\x10\x01\"\x1asealed trait CasperMessage(\x01\x62\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,RhoTypes__pb2.DESCRIPTOR,Either__pb2.DESCRIPTOR,])
+  dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,RhoTypes__pb2.DESCRIPTOR,])
 
 
 
 
 _HASBLOCKREQUEST = _descriptor.Descriptor(
   name='HasBlockRequest',
-  full_name='coop.rchain.casper.protocol.HasBlockRequest',
+  full_name='HasBlockRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hash', full_name='coop.rchain.casper.protocol.HasBlockRequest.hash', index=0,
+      name='hash', full_name='HasBlockRequest.hash', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -57,20 +55,20 @@ _HASBLOCKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=134,
-  serialized_end=185,
+  serialized_start=62,
+  serialized_end=113,
 )
 
 
 _HASBLOCK = _descriptor.Descriptor(
   name='HasBlock',
-  full_name='coop.rchain.casper.protocol.HasBlock',
+  full_name='HasBlock',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hash', full_name='coop.rchain.casper.protocol.HasBlock.hash', index=0,
+      name='hash', full_name='HasBlock.hash', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -88,20 +86,20 @@ _HASBLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=231,
+  serialized_start=115,
+  serialized_end=159,
 )
 
 
 _BLOCKREQUEST = _descriptor.Descriptor(
   name='BlockRequest',
-  full_name='coop.rchain.casper.protocol.BlockRequest',
+  full_name='BlockRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hash', full_name='coop.rchain.casper.protocol.BlockRequest.hash', index=0,
+      name='hash', full_name='BlockRequest.hash', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -119,14 +117,14 @@ _BLOCKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=233,
-  serialized_end=281,
+  serialized_start=161,
+  serialized_end=209,
 )
 
 
 _FORKCHOICETIPREQUEST = _descriptor.Descriptor(
   name='ForkChoiceTipRequest',
-  full_name='coop.rchain.casper.protocol.ForkChoiceTipRequest',
+  full_name='ForkChoiceTipRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -143,27 +141,27 @@ _FORKCHOICETIPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=283,
-  serialized_end=325,
+  serialized_start=211,
+  serialized_end=253,
 )
 
 
 _APPROVEDBLOCKCANDIDATE = _descriptor.Descriptor(
   name='ApprovedBlockCandidate',
-  full_name='coop.rchain.casper.protocol.ApprovedBlockCandidate',
+  full_name='ApprovedBlockCandidate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='block', full_name='coop.rchain.casper.protocol.ApprovedBlockCandidate.block', index=0,
+      name='block', full_name='ApprovedBlockCandidate.block', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='requiredSigs', full_name='coop.rchain.casper.protocol.ApprovedBlockCandidate.requiredSigs', index=1,
+      name='requiredSigs', full_name='ApprovedBlockCandidate.requiredSigs', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -181,34 +179,34 @@ _APPROVEDBLOCKCANDIDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=327,
-  serialized_end=431,
+  serialized_start=255,
+  serialized_end=331,
 )
 
 
 _UNAPPROVEDBLOCK = _descriptor.Descriptor(
   name='UnapprovedBlock',
-  full_name='coop.rchain.casper.protocol.UnapprovedBlock',
+  full_name='UnapprovedBlock',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='candidate', full_name='coop.rchain.casper.protocol.UnapprovedBlock.candidate', index=0,
+      name='candidate', full_name='UnapprovedBlock.candidate', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='coop.rchain.casper.protocol.UnapprovedBlock.timestamp', index=1,
+      name='timestamp', full_name='UnapprovedBlock.timestamp', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='duration', full_name='coop.rchain.casper.protocol.UnapprovedBlock.duration', index=2,
+      name='duration', full_name='UnapprovedBlock.duration', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -226,34 +224,34 @@ _UNAPPROVEDBLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=434,
-  serialized_end=580,
+  serialized_start=333,
+  serialized_end=451,
 )
 
 
 _SIGNATURE = _descriptor.Descriptor(
   name='Signature',
-  full_name='coop.rchain.casper.protocol.Signature',
+  full_name='Signature',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publicKey', full_name='coop.rchain.casper.protocol.Signature.publicKey', index=0,
+      name='publicKey', full_name='Signature.publicKey', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='algorithm', full_name='coop.rchain.casper.protocol.Signature.algorithm', index=1,
+      name='algorithm', full_name='Signature.algorithm', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sig', full_name='coop.rchain.casper.protocol.Signature.sig', index=2,
+      name='sig', full_name='Signature.sig', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -271,27 +269,27 @@ _SIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=582,
-  serialized_end=644,
+  serialized_start=453,
+  serialized_end=515,
 )
 
 
 _BLOCKAPPROVAL = _descriptor.Descriptor(
   name='BlockApproval',
-  full_name='coop.rchain.casper.protocol.BlockApproval',
+  full_name='BlockApproval',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='candidate', full_name='coop.rchain.casper.protocol.BlockApproval.candidate', index=0,
+      name='candidate', full_name='BlockApproval.candidate', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sig', full_name='coop.rchain.casper.protocol.BlockApproval.sig', index=1,
+      name='sig', full_name='BlockApproval.sig', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -309,27 +307,27 @@ _BLOCKAPPROVAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=647,
-  serialized_end=807,
+  serialized_start=517,
+  serialized_end=621,
 )
 
 
 _APPROVEDBLOCK = _descriptor.Descriptor(
   name='ApprovedBlock',
-  full_name='coop.rchain.casper.protocol.ApprovedBlock',
+  full_name='ApprovedBlock',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='candidate', full_name='coop.rchain.casper.protocol.ApprovedBlock.candidate', index=0,
+      name='candidate', full_name='ApprovedBlock.candidate', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sigs', full_name='coop.rchain.casper.protocol.ApprovedBlock.sigs', index=1,
+      name='sigs', full_name='ApprovedBlock.sigs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -347,20 +345,20 @@ _APPROVEDBLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=810,
-  serialized_end=971,
+  serialized_start=623,
+  serialized_end=728,
 )
 
 
 _APPROVEDBLOCKREQUEST = _descriptor.Descriptor(
   name='ApprovedBlockRequest',
-  full_name='coop.rchain.casper.protocol.ApprovedBlockRequest',
+  full_name='ApprovedBlockRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='identifier', full_name='coop.rchain.casper.protocol.ApprovedBlockRequest.identifier', index=0,
+      name='identifier', full_name='ApprovedBlockRequest.identifier', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -378,27 +376,27 @@ _APPROVEDBLOCKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=973,
-  serialized_end=1035,
+  serialized_start=730,
+  serialized_end=792,
 )
 
 
 _NOAPPROVEDBLOCKAVAILABLE = _descriptor.Descriptor(
   name='NoApprovedBlockAvailable',
-  full_name='coop.rchain.casper.protocol.NoApprovedBlockAvailable',
+  full_name='NoApprovedBlockAvailable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='identifier', full_name='coop.rchain.casper.protocol.NoApprovedBlockAvailable.identifier', index=0,
+      name='identifier', full_name='NoApprovedBlockAvailable.identifier', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nodeIdentifer', full_name='coop.rchain.casper.protocol.NoApprovedBlockAvailable.nodeIdentifer', index=1,
+      name='nodeIdentifer', full_name='NoApprovedBlockAvailable.nodeIdentifer', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -416,83 +414,83 @@ _NOAPPROVEDBLOCKAVAILABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1037,
-  serialized_end=1126,
+  serialized_start=794,
+  serialized_end=883,
 )
 
 
 _BLOCKMESSAGE = _descriptor.Descriptor(
   name='BlockMessage',
-  full_name='coop.rchain.casper.protocol.BlockMessage',
+  full_name='BlockMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blockHash', full_name='coop.rchain.casper.protocol.BlockMessage.blockHash', index=0,
+      name='blockHash', full_name='BlockMessage.blockHash', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='header', full_name='coop.rchain.casper.protocol.BlockMessage.header', index=1,
+      name='header', full_name='BlockMessage.header', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='body', full_name='coop.rchain.casper.protocol.BlockMessage.body', index=2,
+      name='body', full_name='BlockMessage.body', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='justifications', full_name='coop.rchain.casper.protocol.BlockMessage.justifications', index=3,
+      name='justifications', full_name='BlockMessage.justifications', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sender', full_name='coop.rchain.casper.protocol.BlockMessage.sender', index=4,
+      name='sender', full_name='BlockMessage.sender', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='seqNum', full_name='coop.rchain.casper.protocol.BlockMessage.seqNum', index=5,
+      name='seqNum', full_name='BlockMessage.seqNum', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sig', full_name='coop.rchain.casper.protocol.BlockMessage.sig', index=6,
+      name='sig', full_name='BlockMessage.sig', index=6,
       number=7, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sigAlgorithm', full_name='coop.rchain.casper.protocol.BlockMessage.sigAlgorithm', index=7,
+      name='sigAlgorithm', full_name='BlockMessage.sigAlgorithm', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='shardId', full_name='coop.rchain.casper.protocol.BlockMessage.shardId', index=8,
+      name='shardId', full_name='BlockMessage.shardId', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='extraBytes', full_name='coop.rchain.casper.protocol.BlockMessage.extraBytes', index=9,
+      name='extraBytes', full_name='BlockMessage.extraBytes', index=9,
       number=10, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -510,69 +508,69 @@ _BLOCKMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1129,
-  serialized_end=1456,
+  serialized_start=886,
+  serialized_end=1129,
 )
 
 
 _BLOCKMETADATAINTERNAL = _descriptor.Descriptor(
   name='BlockMetadataInternal',
-  full_name='coop.rchain.casper.protocol.BlockMetadataInternal',
+  full_name='BlockMetadataInternal',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blockHash', full_name='coop.rchain.casper.protocol.BlockMetadataInternal.blockHash', index=0,
+      name='blockHash', full_name='BlockMetadataInternal.blockHash', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='parents', full_name='coop.rchain.casper.protocol.BlockMetadataInternal.parents', index=1,
+      name='parents', full_name='BlockMetadataInternal.parents', index=1,
       number=2, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\342?\033\032\031collection.immutable.List'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sender', full_name='coop.rchain.casper.protocol.BlockMetadataInternal.sender', index=2,
+      name='sender', full_name='BlockMetadataInternal.sender', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='justifications', full_name='coop.rchain.casper.protocol.BlockMetadataInternal.justifications', index=3,
+      name='justifications', full_name='BlockMetadataInternal.justifications', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\342?\033\032\031collection.immutable.List'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='bonds', full_name='coop.rchain.casper.protocol.BlockMetadataInternal.bonds', index=4,
+      name='bonds', full_name='BlockMetadataInternal.bonds', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\342?\033\032\031collection.immutable.List'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='blockNum', full_name='coop.rchain.casper.protocol.BlockMetadataInternal.blockNum', index=5,
+      name='blockNum', full_name='BlockMetadataInternal.blockNum', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='seqNum', full_name='coop.rchain.casper.protocol.BlockMetadataInternal.seqNum', index=6,
+      name='seqNum', full_name='BlockMetadataInternal.seqNum', index=6,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='invalid', full_name='coop.rchain.casper.protocol.BlockMetadataInternal.invalid', index=7,
+      name='invalid', full_name='BlockMetadataInternal.invalid', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -590,55 +588,55 @@ _BLOCKMETADATAINTERNAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1459,
-  serialized_end=1838,
+  serialized_start=1132,
+  serialized_end=1455,
 )
 
 
 _HEADER = _descriptor.Descriptor(
   name='Header',
-  full_name='coop.rchain.casper.protocol.Header',
+  full_name='Header',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='parentsHashList', full_name='coop.rchain.casper.protocol.Header.parentsHashList', index=0,
+      name='parentsHashList', full_name='Header.parentsHashList', index=0,
       number=1, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deploysHash', full_name='coop.rchain.casper.protocol.Header.deploysHash', index=1,
+      name='deploysHash', full_name='Header.deploysHash', index=1,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='coop.rchain.casper.protocol.Header.timestamp', index=2,
+      name='timestamp', full_name='Header.timestamp', index=2,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='version', full_name='coop.rchain.casper.protocol.Header.version', index=3,
+      name='version', full_name='Header.version', index=3,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deployCount', full_name='coop.rchain.casper.protocol.Header.deployCount', index=4,
+      name='deployCount', full_name='Header.deployCount', index=4,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='extraBytes', full_name='coop.rchain.casper.protocol.Header.extraBytes', index=5,
+      name='extraBytes', full_name='Header.extraBytes', index=5,
       number=8, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -656,69 +654,69 @@ _HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1841,
-  serialized_end=1972,
+  serialized_start=1458,
+  serialized_end=1589,
 )
 
 
 _DEPLOYDATA = _descriptor.Descriptor(
   name='DeployData',
-  full_name='coop.rchain.casper.protocol.DeployData',
+  full_name='DeployData',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='deployer', full_name='coop.rchain.casper.protocol.DeployData.deployer', index=0,
+      name='deployer', full_name='DeployData.deployer', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='term', full_name='coop.rchain.casper.protocol.DeployData.term', index=1,
+      name='term', full_name='DeployData.term', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='coop.rchain.casper.protocol.DeployData.timestamp', index=2,
+      name='timestamp', full_name='DeployData.timestamp', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sig', full_name='coop.rchain.casper.protocol.DeployData.sig', index=3,
+      name='sig', full_name='DeployData.sig', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sigAlgorithm', full_name='coop.rchain.casper.protocol.DeployData.sigAlgorithm', index=4,
+      name='sigAlgorithm', full_name='DeployData.sigAlgorithm', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='phloPrice', full_name='coop.rchain.casper.protocol.DeployData.phloPrice', index=5,
+      name='phloPrice', full_name='DeployData.phloPrice', index=5,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='phloLimit', full_name='coop.rchain.casper.protocol.DeployData.phloLimit', index=6,
+      name='phloLimit', full_name='DeployData.phloLimit', index=6,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='validAfterBlockNumber', full_name='coop.rchain.casper.protocol.DeployData.validAfterBlockNumber', index=7,
+      name='validAfterBlockNumber', full_name='DeployData.validAfterBlockNumber', index=7,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -736,48 +734,48 @@ _DEPLOYDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1975,
-  serialized_end=2142,
+  serialized_start=1592,
+  serialized_end=1759,
 )
 
 
 _PROCESSEDDEPLOY = _descriptor.Descriptor(
   name='ProcessedDeploy',
-  full_name='coop.rchain.casper.protocol.ProcessedDeploy',
+  full_name='ProcessedDeploy',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='deploy', full_name='coop.rchain.casper.protocol.ProcessedDeploy.deploy', index=0,
+      name='deploy', full_name='ProcessedDeploy.deploy', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cost', full_name='coop.rchain.casper.protocol.ProcessedDeploy.cost', index=1,
+      name='cost', full_name='ProcessedDeploy.cost', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deployLog', full_name='coop.rchain.casper.protocol.ProcessedDeploy.deployLog', index=2,
+      name='deployLog', full_name='ProcessedDeploy.deployLog', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='paymentLog', full_name='coop.rchain.casper.protocol.ProcessedDeploy.paymentLog', index=3,
+      name='paymentLog', full_name='ProcessedDeploy.paymentLog', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='errored', full_name='coop.rchain.casper.protocol.ProcessedDeploy.errored', index=4,
+      name='errored', full_name='ProcessedDeploy.errored', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -795,34 +793,34 @@ _PROCESSEDDEPLOY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2145,
-  serialized_end=2369,
+  serialized_start=1762,
+  serialized_end=1902,
 )
 
 
 _BODY = _descriptor.Descriptor(
   name='Body',
-  full_name='coop.rchain.casper.protocol.Body',
+  full_name='Body',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='state', full_name='coop.rchain.casper.protocol.Body.state', index=0,
+      name='state', full_name='Body.state', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deploys', full_name='coop.rchain.casper.protocol.Body.deploys', index=1,
+      name='deploys', full_name='Body.deploys', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='extraBytes', full_name='coop.rchain.casper.protocol.Body.extraBytes', index=2,
+      name='extraBytes', full_name='Body.extraBytes', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -840,27 +838,27 @@ _BODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2372,
-  serialized_end=2518,
+  serialized_start=1904,
+  serialized_end=1994,
 )
 
 
 _JUSTIFICATION = _descriptor.Descriptor(
   name='Justification',
-  full_name='coop.rchain.casper.protocol.Justification',
+  full_name='Justification',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='validator', full_name='coop.rchain.casper.protocol.Justification.validator', index=0,
+      name='validator', full_name='Justification.validator', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='latestBlockHash', full_name='coop.rchain.casper.protocol.Justification.latestBlockHash', index=1,
+      name='latestBlockHash', full_name='Justification.latestBlockHash', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -878,41 +876,41 @@ _JUSTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2520,
-  serialized_end=2579,
+  serialized_start=1996,
+  serialized_end=2055,
 )
 
 
 _RCHAINSTATE = _descriptor.Descriptor(
   name='RChainState',
-  full_name='coop.rchain.casper.protocol.RChainState',
+  full_name='RChainState',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='preStateHash', full_name='coop.rchain.casper.protocol.RChainState.preStateHash', index=0,
+      name='preStateHash', full_name='RChainState.preStateHash', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='postStateHash', full_name='coop.rchain.casper.protocol.RChainState.postStateHash', index=1,
+      name='postStateHash', full_name='RChainState.postStateHash', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='bonds', full_name='coop.rchain.casper.protocol.RChainState.bonds', index=2,
+      name='bonds', full_name='RChainState.bonds', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='blockNumber', full_name='coop.rchain.casper.protocol.RChainState.blockNumber', index=3,
+      name='blockNumber', full_name='RChainState.blockNumber', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -930,34 +928,34 @@ _RCHAINSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2582,
-  serialized_end=2711,
+  serialized_start=2057,
+  serialized_end=2158,
 )
 
 
 _EVENT = _descriptor.Descriptor(
   name='Event',
-  full_name='coop.rchain.casper.protocol.Event',
+  full_name='Event',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='produce', full_name='coop.rchain.casper.protocol.Event.produce', index=0,
+      name='produce', full_name='Event.produce', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='consume', full_name='coop.rchain.casper.protocol.Event.consume', index=1,
+      name='consume', full_name='Event.consume', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='comm', full_name='coop.rchain.casper.protocol.Event.comm', index=2,
+      name='comm', full_name='Event.comm', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -975,44 +973,44 @@ _EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='event_instance', full_name='coop.rchain.casper.protocol.Event.event_instance',
+      name='event_instance', full_name='Event.event_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2714,
-  serialized_end=2919,
+  serialized_start=2160,
+  serialized_end=2281,
 )
 
 
 _PRODUCEEVENT = _descriptor.Descriptor(
   name='ProduceEvent',
-  full_name='coop.rchain.casper.protocol.ProduceEvent',
+  full_name='ProduceEvent',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='channelsHash', full_name='coop.rchain.casper.protocol.ProduceEvent.channelsHash', index=0,
+      name='channelsHash', full_name='ProduceEvent.channelsHash', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='hash', full_name='coop.rchain.casper.protocol.ProduceEvent.hash', index=1,
+      name='hash', full_name='ProduceEvent.hash', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='persistent', full_name='coop.rchain.casper.protocol.ProduceEvent.persistent', index=2,
+      name='persistent', full_name='ProduceEvent.persistent', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sequenceNumber', full_name='coop.rchain.casper.protocol.ProduceEvent.sequenceNumber', index=3,
+      name='sequenceNumber', full_name='ProduceEvent.sequenceNumber', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1030,41 +1028,41 @@ _PRODUCEEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2921,
-  serialized_end=3015,
+  serialized_start=2283,
+  serialized_end=2377,
 )
 
 
 _CONSUMEEVENT = _descriptor.Descriptor(
   name='ConsumeEvent',
-  full_name='coop.rchain.casper.protocol.ConsumeEvent',
+  full_name='ConsumeEvent',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='channelsHashes', full_name='coop.rchain.casper.protocol.ConsumeEvent.channelsHashes', index=0,
+      name='channelsHashes', full_name='ConsumeEvent.channelsHashes', index=0,
       number=1, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='hash', full_name='coop.rchain.casper.protocol.ConsumeEvent.hash', index=1,
+      name='hash', full_name='ConsumeEvent.hash', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='persistent', full_name='coop.rchain.casper.protocol.ConsumeEvent.persistent', index=2,
+      name='persistent', full_name='ConsumeEvent.persistent', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sequenceNumber', full_name='coop.rchain.casper.protocol.ConsumeEvent.sequenceNumber', index=3,
+      name='sequenceNumber', full_name='ConsumeEvent.sequenceNumber', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1082,34 +1080,34 @@ _CONSUMEEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3017,
-  serialized_end=3113,
+  serialized_start=2379,
+  serialized_end=2475,
 )
 
 
 _COMMEVENT = _descriptor.Descriptor(
   name='CommEvent',
-  full_name='coop.rchain.casper.protocol.CommEvent',
+  full_name='CommEvent',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='consume', full_name='coop.rchain.casper.protocol.CommEvent.consume', index=0,
+      name='consume', full_name='CommEvent.consume', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='produces', full_name='coop.rchain.casper.protocol.CommEvent.produces', index=1,
+      name='produces', full_name='CommEvent.produces', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='peeks', full_name='coop.rchain.casper.protocol.CommEvent.peeks', index=2,
+      name='peeks', full_name='CommEvent.peeks', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1127,20 +1125,20 @@ _COMMEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3116,
-  serialized_end=3298,
+  serialized_start=2477,
+  serialized_end=2575,
 )
 
 
 _PEEK = _descriptor.Descriptor(
   name='Peek',
-  full_name='coop.rchain.casper.protocol.Peek',
+  full_name='Peek',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='channelIndex', full_name='coop.rchain.casper.protocol.Peek.channelIndex', index=0,
+      name='channelIndex', full_name='Peek.channelIndex', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1158,27 +1156,27 @@ _PEEK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3300,
-  serialized_end=3328,
+  serialized_start=2577,
+  serialized_end=2605,
 )
 
 
 _BOND = _descriptor.Descriptor(
   name='Bond',
-  full_name='coop.rchain.casper.protocol.Bond',
+  full_name='Bond',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='validator', full_name='coop.rchain.casper.protocol.Bond.validator', index=0,
+      name='validator', full_name='Bond.validator', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='stake', full_name='coop.rchain.casper.protocol.Bond.stake', index=1,
+      name='stake', full_name='Bond.stake', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1196,8 +1194,8 @@ _BOND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3330,
-  serialized_end=3370,
+  serialized_start=2607,
+  serialized_end=2647,
 )
 
 _APPROVEDBLOCKCANDIDATE.fields_by_name['block'].message_type = _BLOCKMESSAGE
@@ -1263,175 +1261,175 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 HasBlockRequest = _reflection.GeneratedProtocolMessageType('HasBlockRequest', (_message.Message,), {
   'DESCRIPTOR' : _HASBLOCKREQUEST,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.HasBlockRequest)
+  # @@protoc_insertion_point(class_scope:HasBlockRequest)
   })
 _sym_db.RegisterMessage(HasBlockRequest)
 
 HasBlock = _reflection.GeneratedProtocolMessageType('HasBlock', (_message.Message,), {
   'DESCRIPTOR' : _HASBLOCK,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.HasBlock)
+  # @@protoc_insertion_point(class_scope:HasBlock)
   })
 _sym_db.RegisterMessage(HasBlock)
 
 BlockRequest = _reflection.GeneratedProtocolMessageType('BlockRequest', (_message.Message,), {
   'DESCRIPTOR' : _BLOCKREQUEST,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockRequest)
+  # @@protoc_insertion_point(class_scope:BlockRequest)
   })
 _sym_db.RegisterMessage(BlockRequest)
 
 ForkChoiceTipRequest = _reflection.GeneratedProtocolMessageType('ForkChoiceTipRequest', (_message.Message,), {
   'DESCRIPTOR' : _FORKCHOICETIPREQUEST,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ForkChoiceTipRequest)
+  # @@protoc_insertion_point(class_scope:ForkChoiceTipRequest)
   })
 _sym_db.RegisterMessage(ForkChoiceTipRequest)
 
 ApprovedBlockCandidate = _reflection.GeneratedProtocolMessageType('ApprovedBlockCandidate', (_message.Message,), {
   'DESCRIPTOR' : _APPROVEDBLOCKCANDIDATE,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ApprovedBlockCandidate)
+  # @@protoc_insertion_point(class_scope:ApprovedBlockCandidate)
   })
 _sym_db.RegisterMessage(ApprovedBlockCandidate)
 
 UnapprovedBlock = _reflection.GeneratedProtocolMessageType('UnapprovedBlock', (_message.Message,), {
   'DESCRIPTOR' : _UNAPPROVEDBLOCK,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.UnapprovedBlock)
+  # @@protoc_insertion_point(class_scope:UnapprovedBlock)
   })
 _sym_db.RegisterMessage(UnapprovedBlock)
 
 Signature = _reflection.GeneratedProtocolMessageType('Signature', (_message.Message,), {
   'DESCRIPTOR' : _SIGNATURE,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Signature)
+  # @@protoc_insertion_point(class_scope:Signature)
   })
 _sym_db.RegisterMessage(Signature)
 
 BlockApproval = _reflection.GeneratedProtocolMessageType('BlockApproval', (_message.Message,), {
   'DESCRIPTOR' : _BLOCKAPPROVAL,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockApproval)
+  # @@protoc_insertion_point(class_scope:BlockApproval)
   })
 _sym_db.RegisterMessage(BlockApproval)
 
 ApprovedBlock = _reflection.GeneratedProtocolMessageType('ApprovedBlock', (_message.Message,), {
   'DESCRIPTOR' : _APPROVEDBLOCK,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ApprovedBlock)
+  # @@protoc_insertion_point(class_scope:ApprovedBlock)
   })
 _sym_db.RegisterMessage(ApprovedBlock)
 
 ApprovedBlockRequest = _reflection.GeneratedProtocolMessageType('ApprovedBlockRequest', (_message.Message,), {
   'DESCRIPTOR' : _APPROVEDBLOCKREQUEST,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ApprovedBlockRequest)
+  # @@protoc_insertion_point(class_scope:ApprovedBlockRequest)
   })
 _sym_db.RegisterMessage(ApprovedBlockRequest)
 
 NoApprovedBlockAvailable = _reflection.GeneratedProtocolMessageType('NoApprovedBlockAvailable', (_message.Message,), {
   'DESCRIPTOR' : _NOAPPROVEDBLOCKAVAILABLE,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.NoApprovedBlockAvailable)
+  # @@protoc_insertion_point(class_scope:NoApprovedBlockAvailable)
   })
 _sym_db.RegisterMessage(NoApprovedBlockAvailable)
 
 BlockMessage = _reflection.GeneratedProtocolMessageType('BlockMessage', (_message.Message,), {
   'DESCRIPTOR' : _BLOCKMESSAGE,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockMessage)
+  # @@protoc_insertion_point(class_scope:BlockMessage)
   })
 _sym_db.RegisterMessage(BlockMessage)
 
 BlockMetadataInternal = _reflection.GeneratedProtocolMessageType('BlockMetadataInternal', (_message.Message,), {
   'DESCRIPTOR' : _BLOCKMETADATAINTERNAL,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.BlockMetadataInternal)
+  # @@protoc_insertion_point(class_scope:BlockMetadataInternal)
   })
 _sym_db.RegisterMessage(BlockMetadataInternal)
 
 Header = _reflection.GeneratedProtocolMessageType('Header', (_message.Message,), {
   'DESCRIPTOR' : _HEADER,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Header)
+  # @@protoc_insertion_point(class_scope:Header)
   })
 _sym_db.RegisterMessage(Header)
 
 DeployData = _reflection.GeneratedProtocolMessageType('DeployData', (_message.Message,), {
   'DESCRIPTOR' : _DEPLOYDATA,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.DeployData)
+  # @@protoc_insertion_point(class_scope:DeployData)
   })
 _sym_db.RegisterMessage(DeployData)
 
 ProcessedDeploy = _reflection.GeneratedProtocolMessageType('ProcessedDeploy', (_message.Message,), {
   'DESCRIPTOR' : _PROCESSEDDEPLOY,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ProcessedDeploy)
+  # @@protoc_insertion_point(class_scope:ProcessedDeploy)
   })
 _sym_db.RegisterMessage(ProcessedDeploy)
 
 Body = _reflection.GeneratedProtocolMessageType('Body', (_message.Message,), {
   'DESCRIPTOR' : _BODY,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Body)
+  # @@protoc_insertion_point(class_scope:Body)
   })
 _sym_db.RegisterMessage(Body)
 
 Justification = _reflection.GeneratedProtocolMessageType('Justification', (_message.Message,), {
   'DESCRIPTOR' : _JUSTIFICATION,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Justification)
+  # @@protoc_insertion_point(class_scope:Justification)
   })
 _sym_db.RegisterMessage(Justification)
 
 RChainState = _reflection.GeneratedProtocolMessageType('RChainState', (_message.Message,), {
   'DESCRIPTOR' : _RCHAINSTATE,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.RChainState)
+  # @@protoc_insertion_point(class_scope:RChainState)
   })
 _sym_db.RegisterMessage(RChainState)
 
 Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), {
   'DESCRIPTOR' : _EVENT,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Event)
+  # @@protoc_insertion_point(class_scope:Event)
   })
 _sym_db.RegisterMessage(Event)
 
 ProduceEvent = _reflection.GeneratedProtocolMessageType('ProduceEvent', (_message.Message,), {
   'DESCRIPTOR' : _PRODUCEEVENT,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ProduceEvent)
+  # @@protoc_insertion_point(class_scope:ProduceEvent)
   })
 _sym_db.RegisterMessage(ProduceEvent)
 
 ConsumeEvent = _reflection.GeneratedProtocolMessageType('ConsumeEvent', (_message.Message,), {
   'DESCRIPTOR' : _CONSUMEEVENT,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.ConsumeEvent)
+  # @@protoc_insertion_point(class_scope:ConsumeEvent)
   })
 _sym_db.RegisterMessage(ConsumeEvent)
 
 CommEvent = _reflection.GeneratedProtocolMessageType('CommEvent', (_message.Message,), {
   'DESCRIPTOR' : _COMMEVENT,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.CommEvent)
+  # @@protoc_insertion_point(class_scope:CommEvent)
   })
 _sym_db.RegisterMessage(CommEvent)
 
 Peek = _reflection.GeneratedProtocolMessageType('Peek', (_message.Message,), {
   'DESCRIPTOR' : _PEEK,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Peek)
+  # @@protoc_insertion_point(class_scope:Peek)
   })
 _sym_db.RegisterMessage(Peek)
 
 Bond = _reflection.GeneratedProtocolMessageType('Bond', (_message.Message,), {
   'DESCRIPTOR' : _BOND,
   '__module__' : 'CasperMessage_pb2'
-  # @@protoc_insertion_point(class_scope:coop.rchain.casper.protocol.Bond)
+  # @@protoc_insertion_point(class_scope:Bond)
   })
 _sym_db.RegisterMessage(Bond)
 

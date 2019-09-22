@@ -2,13 +2,13 @@
 import grpc
 
 from . import CasperMessage_pb2 as CasperMessage__pb2
-from . import DeployService_pb2 as DeployService__pb2
-from . import Either_pb2 as Either__pb2
+from . import DeployServiceCommon_pb2 as DeployServiceCommon__pb2
+from . import DeployServiceV1_pb2 as DeployServiceV1__pb2
 
 
 class DeployServiceStub(object):
-  """Use `DoDeploy` to queue deployments of Rholang code and then
-  `ProposeService.propose` to make a new block with the results of running them
+  """Use `doDeploy` to queue deployments of Rholang code and then
+  `ProposeServiceV2.propose` to make a new block with the results of running them
   all.
 
   To get results back, use `listenForDataAtName`.
@@ -20,79 +20,78 @@ class DeployServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.DoDeploy = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/DoDeploy',
+    self.doDeploy = channel.unary_unary(
+        '/casper.v1.DeployService/doDeploy',
         request_serializer=CasperMessage__pb2.DeployData.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        response_deserializer=DeployServiceV1__pb2.DeployResponse.FromString,
         )
     self.getBlock = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/getBlock',
-        request_serializer=DeployService__pb2.BlockQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/getBlock',
+        request_serializer=DeployServiceCommon__pb2.BlockQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.BlockResponse.FromString,
         )
     self.visualizeDag = channel.unary_stream(
-        '/coop.rchain.casper.protocol.DeployService/visualizeDag',
-        request_serializer=DeployService__pb2.VisualizeDagQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/visualizeDag',
+        request_serializer=DeployServiceCommon__pb2.VisualizeDagQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.VisualizeBlocksResponse.FromString,
         )
     self.machineVerifiableDag = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/machineVerifiableDag',
-        request_serializer=DeployService__pb2.MachineVerifyQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/machineVerifiableDag',
+        request_serializer=DeployServiceCommon__pb2.MachineVerifyQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.MachineVerifyResponse.FromString,
         )
     self.showMainChain = channel.unary_stream(
-        '/coop.rchain.casper.protocol.DeployService/showMainChain',
-        request_serializer=DeployService__pb2.BlocksQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/showMainChain',
+        request_serializer=DeployServiceCommon__pb2.BlocksQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.BlockInfoResponse.FromString,
         )
     self.getBlocks = channel.unary_stream(
-        '/coop.rchain.casper.protocol.DeployService/getBlocks',
-        request_serializer=DeployService__pb2.BlocksQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/getBlocks',
+        request_serializer=DeployServiceCommon__pb2.BlocksQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.BlockInfoResponse.FromString,
         )
     self.listenForDataAtName = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/listenForDataAtName',
-        request_serializer=DeployService__pb2.DataAtNameQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/listenForDataAtName',
+        request_serializer=DeployServiceCommon__pb2.DataAtNameQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.ListeningNameDataResponse.FromString,
         )
     self.listenForContinuationAtName = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/listenForContinuationAtName',
-        request_serializer=DeployService__pb2.ContinuationAtNameQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/listenForContinuationAtName',
+        request_serializer=DeployServiceCommon__pb2.ContinuationAtNameQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.ContinuationAtNameResponse.FromString,
         )
     self.findDeploy = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/findDeploy',
-        request_serializer=DeployService__pb2.FindDeployQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/findDeploy',
+        request_serializer=DeployServiceCommon__pb2.FindDeployQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.FindDeployResponse.FromString,
         )
     self.previewPrivateNames = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/previewPrivateNames',
-        request_serializer=DeployService__pb2.PrivateNamePreviewQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/previewPrivateNames',
+        request_serializer=DeployServiceCommon__pb2.PrivateNamePreviewQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.PrivateNamePreviewResponse.FromString,
         )
     self.lastFinalizedBlock = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/lastFinalizedBlock',
-        request_serializer=DeployService__pb2.LastFinalizedBlockQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/lastFinalizedBlock',
+        request_serializer=DeployServiceCommon__pb2.LastFinalizedBlockQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.LastFinalizedBlockResponse.FromString,
         )
     self.isFinalized = channel.unary_unary(
-        '/coop.rchain.casper.protocol.DeployService/isFinalized',
-        request_serializer=DeployService__pb2.IsFinalizedQuery.SerializeToString,
-        response_deserializer=Either__pb2.Either.FromString,
+        '/casper.v1.DeployService/isFinalized',
+        request_serializer=DeployServiceCommon__pb2.IsFinalizedQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.IsFinalizedResponse.FromString,
         )
 
 
 class DeployServiceServicer(object):
-  """Use `DoDeploy` to queue deployments of Rholang code and then
-  `ProposeService.propose` to make a new block with the results of running them
+  """Use `doDeploy` to queue deployments of Rholang code and then
+  `ProposeServiceV2.propose` to make a new block with the results of running them
   all.
 
   To get results back, use `listenForDataAtName`.
   """
 
-  def DoDeploy(self, request, context):
+  def doDeploy(self, request, context):
     """Queue deployment of Rholang code (or fail to parse).
-    Returns on success DeployServiceResponse
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -100,7 +99,6 @@ class DeployServiceServicer(object):
 
   def getBlock(self, request, context):
     """Get details about a particular block.
-    Returns on success BlockQueryResponse
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -108,7 +106,6 @@ class DeployServiceServicer(object):
 
   def visualizeDag(self, request, context):
     """Get dag
-    Returns on success VisualizeBlocksResponse
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -130,7 +127,6 @@ class DeployServiceServicer(object):
 
   def getBlocks(self, request, context):
     """Get a summary of blocks on the blockchain.
-    Returns on success LightBlockInfo
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -138,7 +134,6 @@ class DeployServiceServicer(object):
 
   def listenForDataAtName(self, request, context):
     """Find data sent to a name.
-    Returns on success ListeningNameDataResponse
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -146,7 +141,6 @@ class DeployServiceServicer(object):
 
   def listenForContinuationAtName(self, request, context):
     """Find processes receiving on a name.
-    Returns on success ListeningNameContinuationResponse
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -154,7 +148,6 @@ class DeployServiceServicer(object):
 
   def findDeploy(self, request, context):
     """Find block containing a deploy.
-    Returns on success LightBlockQueryResponse
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -162,15 +155,13 @@ class DeployServiceServicer(object):
 
   def previewPrivateNames(self, request, context):
     """Preview new top-level unforgeable names (for example, to compute signatures over them).
-    Returns on success PrivateNamePreviewResponse
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def lastFinalizedBlock(self, request, context):
-    """Get details about the last finalized block.
-    Returns on success LastFinalizedBlockResponse
+    """Get details about a particular block.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -178,7 +169,6 @@ class DeployServiceServicer(object):
 
   def isFinalized(self, request, context):
     """Check if a given block is finalized.
-    Returns on success IsFinalizedResponse
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -187,67 +177,67 @@ class DeployServiceServicer(object):
 
 def add_DeployServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'DoDeploy': grpc.unary_unary_rpc_method_handler(
-          servicer.DoDeploy,
+      'doDeploy': grpc.unary_unary_rpc_method_handler(
+          servicer.doDeploy,
           request_deserializer=CasperMessage__pb2.DeployData.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          response_serializer=DeployServiceV1__pb2.DeployResponse.SerializeToString,
       ),
       'getBlock': grpc.unary_unary_rpc_method_handler(
           servicer.getBlock,
-          request_deserializer=DeployService__pb2.BlockQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.BlockQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.BlockResponse.SerializeToString,
       ),
       'visualizeDag': grpc.unary_stream_rpc_method_handler(
           servicer.visualizeDag,
-          request_deserializer=DeployService__pb2.VisualizeDagQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.VisualizeDagQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.VisualizeBlocksResponse.SerializeToString,
       ),
       'machineVerifiableDag': grpc.unary_unary_rpc_method_handler(
           servicer.machineVerifiableDag,
-          request_deserializer=DeployService__pb2.MachineVerifyQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.MachineVerifyQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.MachineVerifyResponse.SerializeToString,
       ),
       'showMainChain': grpc.unary_stream_rpc_method_handler(
           servicer.showMainChain,
-          request_deserializer=DeployService__pb2.BlocksQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.BlocksQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.BlockInfoResponse.SerializeToString,
       ),
       'getBlocks': grpc.unary_stream_rpc_method_handler(
           servicer.getBlocks,
-          request_deserializer=DeployService__pb2.BlocksQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.BlocksQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.BlockInfoResponse.SerializeToString,
       ),
       'listenForDataAtName': grpc.unary_unary_rpc_method_handler(
           servicer.listenForDataAtName,
-          request_deserializer=DeployService__pb2.DataAtNameQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.DataAtNameQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.ListeningNameDataResponse.SerializeToString,
       ),
       'listenForContinuationAtName': grpc.unary_unary_rpc_method_handler(
           servicer.listenForContinuationAtName,
-          request_deserializer=DeployService__pb2.ContinuationAtNameQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.ContinuationAtNameQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.ContinuationAtNameResponse.SerializeToString,
       ),
       'findDeploy': grpc.unary_unary_rpc_method_handler(
           servicer.findDeploy,
-          request_deserializer=DeployService__pb2.FindDeployQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.FindDeployQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.FindDeployResponse.SerializeToString,
       ),
       'previewPrivateNames': grpc.unary_unary_rpc_method_handler(
           servicer.previewPrivateNames,
-          request_deserializer=DeployService__pb2.PrivateNamePreviewQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.PrivateNamePreviewQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.PrivateNamePreviewResponse.SerializeToString,
       ),
       'lastFinalizedBlock': grpc.unary_unary_rpc_method_handler(
           servicer.lastFinalizedBlock,
-          request_deserializer=DeployService__pb2.LastFinalizedBlockQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.LastFinalizedBlockQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.LastFinalizedBlockResponse.SerializeToString,
       ),
       'isFinalized': grpc.unary_unary_rpc_method_handler(
           servicer.isFinalized,
-          request_deserializer=DeployService__pb2.IsFinalizedQuery.FromString,
-          response_serializer=Either__pb2.Either.SerializeToString,
+          request_deserializer=DeployServiceCommon__pb2.IsFinalizedQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.IsFinalizedResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'coop.rchain.casper.protocol.DeployService', rpc_method_handlers)
+      'casper.v1.DeployService', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
