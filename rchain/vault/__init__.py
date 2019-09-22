@@ -3,6 +3,8 @@ from typing import (
     Dict,
 )
 
+import string
+
 from ..client import RClient
 from ..crypto import PrivateKey
 from ..pb.DeployService_pb2 import (ListeningNameDataResponse as Data)
