@@ -5,17 +5,17 @@ from ecdsa import SigningKey, VerifyingKey
 from ecdsa.curves import SECP256k1
 from ecdsa.util import sigencode_der_canonize, sigdecode_der
 from eth_hash.auto import keccak
-from rchain.pb.CasperMessage_pb2 import BlockMessage
+from rchain.pb.CasperMessage_pb2 import BlockMessageProto
 from google.protobuf.wrappers_pb2 import StringValue, Int32Value
 
 def blake2b_32(data=b''):
     return hashlib.blake2b(data, digest_size=32)
 
-def gen_deploys_hash_from_block(block: BlockMessage) -> bytes:
+def gen_deploys_hash_from_block(block: BlockMessageProto) -> bytes:
     hash_obj = b"".join([deploy.SerializeToString() for deploy in block.body.deploys])
     return blake2b_32(hash_obj).digest()
 
-def gen_block_hash_from_block(block: BlockMessage) -> bytes:
+def gen_block_hash_from_block(block: BlockMessageProto) -> bytes:
     signed_obj = b''.join([block.header.SerializeToString(),
                            block.body.SerializeToString(),
                            block.sender,

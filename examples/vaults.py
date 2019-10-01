@@ -8,15 +8,15 @@ from rchain.vault import VaultAPI
 
 
 def main():
-    god_key    = PrivateKey.generate()
-    alice_key  = PrivateKey.generate()
-    bob_key    = PrivateKey.generate()
+    god_key    = PrivateKey.from_hex("9a801debae8bb97fe54c99389cafa576c60612503348578125b65ab182ff5850")
+    alice_key  = PrivateKey.from_hex("b2527b00340a83e302beae2a8daf6d654e8e57541acfa261cc1b5635eb16aa15")
+    bob_key    = PrivateKey.from_hex("567ea426deaeb8233f134c3a266149fb196d6eea7d28b447dfefff92002cb400")
 
-    god_addr   = god_key.get_public_key().get_rev_address()
-    alice_addr = alice_key.get_public_key().get_rev_address()
-    bob_addr   = bob_key.get_public_key().get_rev_address()
+    alice_addr   = PrivateKey.from_hex("b2527b00340a83e302beae2a8daf6d654e8e57541acfa261cc1b5635eb16aa15").get_public_key().get_rev_address()
+    god_addr = PrivateKey.from_hex("9a801debae8bb97fe54c99389cafa576c60612503348578125b65ab182ff5850").get_public_key().get_rev_address()
+    bob_addr   = PrivateKey.from_hex("567ea426deaeb8233f134c3a266149fb196d6eea7d28b447dfefff92002cb400").get_public_key().get_rev_address()
 
-    with grpc.insecure_channel('172.27.0.2:40401') as channel:
+    with grpc.insecure_channel('rchain-kuxgz.bootstrap:40401') as channel:
         client = RClient(channel)
 
         god_vault_api   = VaultAPI(client, god_key)
@@ -33,12 +33,11 @@ def main():
         alice_vault_api.create_vault()
         bob_vault_api.create_vault()
 
-
-        assert god_vault_api.get_balance()   == 100_000
-        assert alice_vault_api.get_balance() == 0
+        assert alice_vault_api.get_balance()   == 5000
+        assert god_vault_api.get_balance() == 0
         assert bob_vault_api.get_balance()   == 0
 
-        god_vault_api.transfer(None, alice_addr, 1000)
+        alice_vault_api.transfer(None, bob_addr, 1000)
 
         # Example way to get balances in one block:
 
@@ -51,15 +50,15 @@ def main():
         alice_bal = alice_vault_api.get_balance_from_deploy_id(alice_bal_deploy_id)
         bob_bal   = bob_vault_api.get_balance_from_deploy_id(bob_bal_deploy_id)
 
-        assert god_bal   == 99_000
-        assert alice_bal == 1000
-        assert bob_bal   == 0
+        assert god_bal   == 0
+        assert alice_bal == 4000
+        assert bob_bal   == 1000
 
-        alice_vault_api.transfer(None, bob_addr, 400)
+        bob_vault_api.transfer(None, god_addr, 400)
 
-        assert god_vault_api.get_balance()   == 99_000
-        assert alice_vault_api.get_balance() == 600
-        assert bob_vault_api.get_balance()   == 400
+        assert god_vault_api.get_balance()   == 400
+        assert alice_vault_api.get_balance() == 4000
+        assert bob_vault_api.get_balance()   == 600
 
 
 if __name__ == "__main__":
