@@ -22,7 +22,7 @@ class DeployServiceStub(object):
     """
     self.doDeploy = channel.unary_unary(
         '/casper.v1.DeployService/doDeploy',
-        request_serializer=CasperMessage__pb2.DeployData.SerializeToString,
+        request_serializer=CasperMessage__pb2.DeployDataProto.SerializeToString,
         response_deserializer=DeployServiceV1__pb2.DeployResponse.FromString,
         )
     self.getBlock = channel.unary_unary(
@@ -179,7 +179,7 @@ def add_DeployServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'doDeploy': grpc.unary_unary_rpc_method_handler(
           servicer.doDeploy,
-          request_deserializer=CasperMessage__pb2.DeployData.FromString,
+          request_deserializer=CasperMessage__pb2.DeployDataProto.FromString,
           response_serializer=DeployServiceV1__pb2.DeployResponse.SerializeToString,
       ),
       'getBlock': grpc.unary_unary_rpc_method_handler(

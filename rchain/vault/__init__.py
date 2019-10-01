@@ -7,7 +7,7 @@ import string
 
 from ..client import RClient
 from ..crypto import PrivateKey
-from ..pb.DeployService_pb2 import (ListeningNameDataResponse as Data)
+from ..pb.DeployServiceV1_pb2 import (ListeningNameDataResponse as Data)
 
 
 CREATE_VAULT_RHO_TPL = """
