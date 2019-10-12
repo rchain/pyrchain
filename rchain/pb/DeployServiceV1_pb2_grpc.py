@@ -80,6 +80,11 @@ class DeployServiceStub(object):
         request_serializer=DeployServiceCommon__pb2.IsFinalizedQuery.SerializeToString,
         response_deserializer=DeployServiceV1__pb2.IsFinalizedResponse.FromString,
         )
+    self.bondStatus = channel.unary_unary(
+        '/casper.v1.DeployService/bondStatus',
+        request_serializer=DeployServiceCommon__pb2.BondStatusQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.BondStatusResponse.FromString,
+        )
 
 
 class DeployServiceServicer(object):
@@ -174,6 +179,14 @@ class DeployServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def bondStatus(self, request, context):
+    """Check if a given validator is bonded.
+    Returns on success BondStatusResponse
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DeployServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -236,6 +249,11 @@ def add_DeployServiceServicer_to_server(servicer, server):
           servicer.isFinalized,
           request_deserializer=DeployServiceCommon__pb2.IsFinalizedQuery.FromString,
           response_serializer=DeployServiceV1__pb2.IsFinalizedResponse.SerializeToString,
+      ),
+      'bondStatus': grpc.unary_unary_rpc_method_handler(
+          servicer.bondStatus,
+          request_deserializer=DeployServiceCommon__pb2.BondStatusQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.BondStatusResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
