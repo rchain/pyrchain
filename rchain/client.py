@@ -1,23 +1,24 @@
 import logging
-from typing import Optional, List
-
-from google.protobuf.empty_pb2 import Empty
+from typing import Optional, List, Union
+from grpc import Channel
 
 from .crypto import PrivateKey
 from .util import create_deploy_data
 
 from .pb.DeployServiceCommon_pb2 import DataAtNameQuery
-from .pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data
+from .pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data, DeployResponse, ListeningNameDataResponse
 from .pb.DeployServiceV1_pb2_grpc import (DeployServiceStub)
 from .pb.ProposeServiceV1_pb2_grpc import (ProposeServiceStub)
+from .pb.ProposeServiceV1_pb2 import ProposeResponse
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 
 from .pb.RhoTypes_pb2 import (Par, Expr, GUnforgeable, GDeployId)
 
+GRPC_Response_T = Union[ProposeResponse, DeployResponse, ListeningNameDataResponse]
 
 class RClientException(Exception):
 
-    def _init__(self, message):
+    def _init__(self, message: str):
         super().__init__(message)
 
 
@@ -37,13 +38,13 @@ class DataQueries:
 
 class RClient:
 
-    def __init__(self, channel):
+    def __init__(self, channel: Channel):
         self.channel = channel
 
-    def _check_response(self, response):
+    def _check_response(self, response: GRPC_Response_T):
         logging.debug('gRPC response: %s', str(response))
         if response.WhichOneof("message") == 'error':
-            raise RClientException('\n'.join(response.error))
+            raise RClientException('\n'.join(response.error.messages))
 
     def deploy(
         self,

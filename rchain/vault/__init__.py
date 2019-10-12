@@ -1,13 +1,13 @@
 from typing import (
     Optional,
-    Dict,
+    Mapping,
 )
 
 import string
 
 from ..client import RClient
 from ..crypto import PrivateKey
-from ..pb.DeployServiceV1_pb2 import (ListeningNameDataResponse as Data)
+from ..pb.DeployServiceV1_pb2 import (ListeningNameDataPayload as Data)
 
 
 CREATE_VAULT_RHO_TPL = """
@@ -73,7 +73,7 @@ class VaultAPIException(Exception):
 
 
 
-def render_contract_template(template: str, substitutions: Dict[str, str] = {}) -> str:
+def render_contract_template(template: str, substitutions: Mapping[str, str]) -> str:
     return string.Template(template).substitute(substitutions)
 
 
@@ -137,11 +137,11 @@ class VaultAPI:
             TRANSFER_RHO_TPL, {
                 'from': self._get_addr(from_addr),
                 'to': to_addr,
-                'amount': amount
+                'amount': str(amount)
             }
         )
         return self._deploy(contract)
 
-    def transfer(self, from_addr: Optional[str], to_addr: str, amount: int) -> bytes:
+    def transfer(self, from_addr: Optional[str], to_addr: str, amount: int) -> None:
         self.deploy_transfer(from_addr, to_addr, amount)
         self.client.propose()
