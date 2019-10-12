@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='casper',
   syntax='proto3',
   serialized_options=_b('\342?!\n\033coop.rchain.casper.protocol\020\001(\001'),
-  serialized_pb=_b('\n\x19\x44\x65ployServiceCommon.proto\x12\x06\x63\x61sper\x1a\x13\x43\x61sperMessage.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\"#\n\x0f\x46indDeployQuery\x12\x10\n\x08\x64\x65ployId\x18\x01 \x01(\x0c\"\x1a\n\nBlockQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"\x1c\n\x0b\x42locksQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\"4\n\x0f\x44\x61taAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x12\n\x04name\x18\x02 \x01(\x0b\x32\x04.Par\"=\n\x17\x43ontinuationAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x13\n\x05names\x18\x02 \x03(\x0b\x32\x04.Par\"B\n\x11VisualizeDagQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x1e\n\x16showJustificationLines\x18\x02 \x01(\x08\"\x14\n\x12MachineVerifyQuery\"K\n\x17PrivateNamePreviewQuery\x12\x0c\n\x04user\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07nameQty\x18\x03 \x01(\x05\"\x19\n\x17LastFinalizedBlockQuery\" \n\x10IsFinalizedQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"\xf5\x01\n\x0eLightBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\"\xb1\x02\n\tBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\x12\x0f\n\x07shardId\x18\x0c \x01(\t\x12\x1a\n\x12\x62ondsValidatorList\x18\r \x03(\t\x12\x12\n\ndeployCost\x18\x0e \x03(\t\"W\n\x11\x44\x61taWithBlockInfo\x12\x1b\n\rpostBlockData\x18\x01 \x03(\x0b\x32\x04.Par\x12%\n\x05\x62lock\x18\x02 \x01(\x0b\x32\x16.casper.LightBlockInfo\"\x84\x01\n\x1a\x43ontinuationsWithBlockInfo\x12?\n\x16postBlockContinuations\x18\x01 \x03(\x0b\x32\x1f.casper.WaitingContinuationInfo\x12%\n\x05\x62lock\x18\x02 \x01(\x0b\x32\x16.casper.LightBlockInfo\"g\n\x17WaitingContinuationInfo\x12\'\n\x11postBlockPatterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\x12#\n\x15postBlockContinuation\x18\x02 \x01(\x0b\x32\x04.ParB$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x19\x44\x65ployServiceCommon.proto\x12\x06\x63\x61sper\x1a\x13\x43\x61sperMessage.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\"#\n\x0f\x46indDeployQuery\x12\x10\n\x08\x64\x65ployId\x18\x01 \x01(\x0c\"\x1a\n\nBlockQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"\x1c\n\x0b\x42locksQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\"4\n\x0f\x44\x61taAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x12\n\x04name\x18\x02 \x01(\x0b\x32\x04.Par\"=\n\x17\x43ontinuationAtNameQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x13\n\x05names\x18\x02 \x03(\x0b\x32\x04.Par\"B\n\x11VisualizeDagQuery\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\x05\x12\x1e\n\x16showJustificationLines\x18\x02 \x01(\x08\"\x14\n\x12MachineVerifyQuery\"K\n\x17PrivateNamePreviewQuery\x12\x0c\n\x04user\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07nameQty\x18\x03 \x01(\x05\"\x19\n\x17LastFinalizedBlockQuery\" \n\x10IsFinalizedQuery\x12\x0c\n\x04hash\x18\x01 \x01(\t\"$\n\x0f\x42ondStatusQuery\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\"\xf5\x01\n\x0eLightBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\"\xb1\x02\n\tBlockInfo\x12\x11\n\tblockHash\x18\x01 \x01(\t\x12\x11\n\tblockSize\x18\x02 \x01(\t\x12\x13\n\x0b\x62lockNumber\x18\x03 \x01(\x03\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x05 \x01(\x05\x12\x16\n\x0etupleSpaceHash\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x16\n\x0e\x66\x61ultTolerance\x18\x08 \x01(\x02\x12\x16\n\x0emainParentHash\x18\t \x01(\t\x12\x17\n\x0fparentsHashList\x18\n \x03(\t\x12\x0e\n\x06sender\x18\x0b \x01(\t\x12\x0f\n\x07shardId\x18\x0c \x01(\t\x12\x1a\n\x12\x62ondsValidatorList\x18\r \x03(\t\x12\x12\n\ndeployCost\x18\x0e \x03(\t\"W\n\x11\x44\x61taWithBlockInfo\x12\x1b\n\rpostBlockData\x18\x01 \x03(\x0b\x32\x04.Par\x12%\n\x05\x62lock\x18\x02 \x01(\x0b\x32\x16.casper.LightBlockInfo\"\x84\x01\n\x1a\x43ontinuationsWithBlockInfo\x12?\n\x16postBlockContinuations\x18\x01 \x03(\x0b\x32\x1f.casper.WaitingContinuationInfo\x12%\n\x05\x62lock\x18\x02 \x01(\x0b\x32\x16.casper.LightBlockInfo\"g\n\x17WaitingContinuationInfo\x12\'\n\x11postBlockPatterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\x12#\n\x15postBlockContinuation\x18\x02 \x01(\x0b\x32\x04.ParB$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3')
   ,
   dependencies=[CasperMessage__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,RhoTypes__pb2.DESCRIPTOR,])
 
@@ -362,6 +362,37 @@ _ISFINALIZEDQUERY = _descriptor.Descriptor(
 )
 
 
+_BONDSTATUSQUERY = _descriptor.Descriptor(
+  name='BondStatusQuery',
+  full_name='casper.BondStatusQuery',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='publicKey', full_name='casper.BondStatusQuery.publicKey', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=566,
+  serialized_end=602,
+)
+
+
 _LIGHTBLOCKINFO = _descriptor.Descriptor(
   name='LightBlockInfo',
   full_name='casper.LightBlockInfo',
@@ -458,8 +489,8 @@ _LIGHTBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=567,
-  serialized_end=812,
+  serialized_start=605,
+  serialized_end=850,
 )
 
 
@@ -580,8 +611,8 @@ _BLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=815,
-  serialized_end=1120,
+  serialized_start=853,
+  serialized_end=1158,
 )
 
 
@@ -618,8 +649,8 @@ _DATAWITHBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1122,
-  serialized_end=1209,
+  serialized_start=1160,
+  serialized_end=1247,
 )
 
 
@@ -656,8 +687,8 @@ _CONTINUATIONSWITHBLOCKINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1212,
-  serialized_end=1344,
+  serialized_start=1250,
+  serialized_end=1382,
 )
 
 
@@ -694,8 +725,8 @@ _WAITINGCONTINUATIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1346,
-  serialized_end=1449,
+  serialized_start=1384,
+  serialized_end=1487,
 )
 
 _DATAATNAMEQUERY.fields_by_name['name'].message_type = RhoTypes__pb2._PAR
@@ -716,6 +747,7 @@ DESCRIPTOR.message_types_by_name['MachineVerifyQuery'] = _MACHINEVERIFYQUERY
 DESCRIPTOR.message_types_by_name['PrivateNamePreviewQuery'] = _PRIVATENAMEPREVIEWQUERY
 DESCRIPTOR.message_types_by_name['LastFinalizedBlockQuery'] = _LASTFINALIZEDBLOCKQUERY
 DESCRIPTOR.message_types_by_name['IsFinalizedQuery'] = _ISFINALIZEDQUERY
+DESCRIPTOR.message_types_by_name['BondStatusQuery'] = _BONDSTATUSQUERY
 DESCRIPTOR.message_types_by_name['LightBlockInfo'] = _LIGHTBLOCKINFO
 DESCRIPTOR.message_types_by_name['BlockInfo'] = _BLOCKINFO
 DESCRIPTOR.message_types_by_name['DataWithBlockInfo'] = _DATAWITHBLOCKINFO
@@ -792,6 +824,13 @@ IsFinalizedQuery = _reflection.GeneratedProtocolMessageType('IsFinalizedQuery', 
   # @@protoc_insertion_point(class_scope:casper.IsFinalizedQuery)
   })
 _sym_db.RegisterMessage(IsFinalizedQuery)
+
+BondStatusQuery = _reflection.GeneratedProtocolMessageType('BondStatusQuery', (_message.Message,), {
+  'DESCRIPTOR' : _BONDSTATUSQUERY,
+  '__module__' : 'DeployServiceCommon_pb2'
+  # @@protoc_insertion_point(class_scope:casper.BondStatusQuery)
+  })
+_sym_db.RegisterMessage(BondStatusQuery)
 
 LightBlockInfo = _reflection.GeneratedProtocolMessageType('LightBlockInfo', (_message.Message,), {
   'DESCRIPTOR' : _LIGHTBLOCKINFO,

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='casper',
   syntax='proto3',
   serialized_options=_b('\342?B\n\033coop.rchain.casper.protocol\020\001\"\037sealed trait CasperMessageProto(\001'),
-  serialized_pb=_b('\n\x13\x43\x61sperMessage.proto\x12\x06\x63\x61sper\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\"=\n\x14HasBlockRequestProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"6\n\rHasBlockProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\":\n\x11\x42lockRequestProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"4\n\x19\x46orkChoiceTipRequestProto:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"v\n\x1b\x41pprovedBlockCandidateProto\x12(\n\x05\x62lock\x18\x01 \x01(\x0b\x32\x19.casper.BlockMessageProto\x12\x14\n\x0crequiredSigs\x18\x02 \x01(\x05:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\x8c\x01\n\x14UnapprovedBlockProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x10\n\x08\x64uration\x18\x03 \x01(\x03:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\">\n\tSignature\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x0b\n\x03sig\x18\x03 \x01(\x0c\"\x85\x01\n\x12\x42lockApprovalProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x1e\n\x03sig\x18\x02 \x01(\x0b\x32\x11.casper.Signature:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\x86\x01\n\x12\x41pprovedBlockProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x1f\n\x04sigs\x18\x02 \x03(\x0b\x32\x11.casper.Signature:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"H\n\x19\x41pprovedBlockRequestProto\x12\x12\n\nidentifier\x18\x01 \x01(\t:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"c\n\x1dNoApprovedBlockAvailableProto\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x15\n\rnodeIdentifer\x18\x02 \x01(\t:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\xa1\x02\n\x11\x42lockMessageProto\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12#\n\x06header\x18\x02 \x01(\x0b\x32\x13.casper.HeaderProto\x12\x1f\n\x04\x62ody\x18\x03 \x01(\x0b\x32\x11.casper.BodyProto\x12\x32\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x1a.casper.JustificationProto\x12\x0e\n\x06sender\x18\x05 \x01(\x0c\x12\x0e\n\x06seqNum\x18\x06 \x01(\x05\x12\x0b\n\x03sig\x18\x07 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x08 \x01(\t\x12\x0f\n\x07shardId\x18\t \x01(\t\x12\x12\n\nextraBytes\x18\n \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\xdb\x02\n\x15\x42lockMetadataInternal\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12/\n\x07parents\x18\x02 \x03(\x0c\x42\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x0e\n\x06sender\x18\x03 \x01(\x0c\x12R\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x1a.casper.JustificationProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12@\n\x05\x62onds\x18\x05 \x03(\x0b\x32\x11.casper.BondProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x10\n\x08\x62lockNum\x18\x06 \x01(\x03\x12\x0e\n\x06seqNum\x18\x07 \x01(\x05\x12\x0f\n\x07invalid\x18\x08 \x01(\x08:%\xe2?\"\" coop.rchain.models.BlockMetadata\"\x88\x01\n\x0bHeaderProto\x12\x17\n\x0fparentsHashList\x18\x01 \x03(\x0c\x12\x13\n\x0b\x64\x65ploysHash\x18\x03 \x01(\x0c\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12\x0f\n\x07version\x18\x06 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x07 \x01(\x05\x12\x12\n\nextraBytes\x18\x08 \x01(\x0c\"\xac\x01\n\x0f\x44\x65ployDataProto\x12\x10\n\x08\x64\x65ployer\x18\x01 \x01(\x0c\x12\x0c\n\x04term\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0b\n\x03sig\x18\x04 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x05 \x01(\t\x12\x11\n\tphloPrice\x18\x07 \x01(\x03\x12\x11\n\tphloLimit\x18\x08 \x01(\x03\x12\x1d\n\x15validAfterBlockNumber\x18\n \x01(\x03\"\xb5\x01\n\x14ProcessedDeployProto\x12\'\n\x06\x64\x65ploy\x18\x01 \x01(\x0b\x32\x17.casper.DeployDataProto\x12\x14\n\x04\x63ost\x18\x02 \x01(\x0b\x32\x06.PCost\x12%\n\tdeployLog\x18\x03 \x03(\x0b\x32\x12.casper.EventProto\x12&\n\npaymentLog\x18\x04 \x03(\x0b\x32\x12.casper.EventProto\x12\x0f\n\x07\x65rrored\x18\x05 \x01(\x08\"w\n\tBodyProto\x12\'\n\x05state\x18\x01 \x01(\x0b\x32\x18.casper.RChainStateProto\x12-\n\x07\x64\x65ploys\x18\x02 \x03(\x0b\x32\x1c.casper.ProcessedDeployProto\x12\x12\n\nextraBytes\x18\x03 \x01(\x0c\"@\n\x12JustificationProto\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\x17\n\x0flatestBlockHash\x18\x02 \x01(\x0c\"v\n\x10RChainStateProto\x12\x14\n\x0cpreStateHash\x18\x01 \x01(\x0c\x12\x15\n\rpostStateHash\x18\x02 \x01(\x0c\x12 \n\x05\x62onds\x18\x03 \x03(\x0b\x32\x11.casper.BondProto\x12\x13\n\x0b\x62lockNumber\x18\x04 \x01(\x03\"\xa2\x01\n\nEventProto\x12,\n\x07produce\x18\x01 \x01(\x0b\x32\x19.casper.ProduceEventProtoH\x00\x12,\n\x07\x63onsume\x18\x02 \x01(\x0b\x32\x19.casper.ConsumeEventProtoH\x00\x12&\n\x04\x63omm\x18\x03 \x01(\x0b\x32\x16.casper.CommEventProtoH\x00\x42\x10\n\x0e\x65vent_instance\"b\n\x11ProduceEventProto\x12\x14\n\x0c\x63hannelsHash\x18\x01 \x01(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x15\n\rtimesRepeated\x18\x04 \x01(\x05\"M\n\x11\x43onsumeEventProto\x12\x16\n\x0e\x63hannelsHashes\x18\x01 \x03(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\"\x8b\x01\n\x0e\x43ommEventProto\x12*\n\x07\x63onsume\x18\x01 \x01(\x0b\x32\x19.casper.ConsumeEventProto\x12+\n\x08produces\x18\x02 \x03(\x0b\x32\x19.casper.ProduceEventProto\x12 \n\x05peeks\x18\x03 \x03(\x0b\x32\x11.casper.PeekProto\"!\n\tPeekProto\x12\x14\n\x0c\x63hannelIndex\x18\x01 \x01(\x05\"-\n\tBondProto\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\r\n\x05stake\x18\x02 \x01(\x03\x42\x45\xe2?B\n\x1b\x63oop.rchain.casper.protocol\x10\x01\"\x1fsealed trait CasperMessageProto(\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x43\x61sperMessage.proto\x12\x06\x63\x61sper\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\"=\n\x14HasBlockRequestProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"6\n\rHasBlockProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\":\n\x11\x42lockRequestProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"4\n\x19\x46orkChoiceTipRequestProto:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"v\n\x1b\x41pprovedBlockCandidateProto\x12(\n\x05\x62lock\x18\x01 \x01(\x0b\x32\x19.casper.BlockMessageProto\x12\x14\n\x0crequiredSigs\x18\x02 \x01(\x05:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\x8c\x01\n\x14UnapprovedBlockProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x10\n\x08\x64uration\x18\x03 \x01(\x03:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\">\n\tSignature\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x0b\n\x03sig\x18\x03 \x01(\x0c\"\x85\x01\n\x12\x42lockApprovalProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x1e\n\x03sig\x18\x02 \x01(\x0b\x32\x11.casper.Signature:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\x86\x01\n\x12\x41pprovedBlockProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x1f\n\x04sigs\x18\x02 \x03(\x0b\x32\x11.casper.Signature:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"H\n\x19\x41pprovedBlockRequestProto\x12\x12\n\nidentifier\x18\x01 \x01(\t:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"c\n\x1dNoApprovedBlockAvailableProto\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x15\n\rnodeIdentifer\x18\x02 \x01(\t:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\xa1\x02\n\x11\x42lockMessageProto\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12#\n\x06header\x18\x02 \x01(\x0b\x32\x13.casper.HeaderProto\x12\x1f\n\x04\x62ody\x18\x03 \x01(\x0b\x32\x11.casper.BodyProto\x12\x32\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x1a.casper.JustificationProto\x12\x0e\n\x06sender\x18\x05 \x01(\x0c\x12\x0e\n\x06seqNum\x18\x06 \x01(\x05\x12\x0b\n\x03sig\x18\x07 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x08 \x01(\t\x12\x0f\n\x07shardId\x18\t \x01(\t\x12\x12\n\nextraBytes\x18\n \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\">\n\x15\x42lockHashMessageProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\xdb\x02\n\x15\x42lockMetadataInternal\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12/\n\x07parents\x18\x02 \x03(\x0c\x42\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x0e\n\x06sender\x18\x03 \x01(\x0c\x12R\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x1a.casper.JustificationProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12@\n\x05\x62onds\x18\x05 \x03(\x0b\x32\x11.casper.BondProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x10\n\x08\x62lockNum\x18\x06 \x01(\x03\x12\x0e\n\x06seqNum\x18\x07 \x01(\x05\x12\x0f\n\x07invalid\x18\x08 \x01(\x08:%\xe2?\"\" coop.rchain.models.BlockMetadata\"\x88\x01\n\x0bHeaderProto\x12\x17\n\x0fparentsHashList\x18\x01 \x03(\x0c\x12\x13\n\x0b\x64\x65ploysHash\x18\x03 \x01(\x0c\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12\x0f\n\x07version\x18\x06 \x01(\x03\x12\x13\n\x0b\x64\x65ployCount\x18\x07 \x01(\x05\x12\x12\n\nextraBytes\x18\x08 \x01(\x0c\"\xac\x01\n\x0f\x44\x65ployDataProto\x12\x10\n\x08\x64\x65ployer\x18\x01 \x01(\x0c\x12\x0c\n\x04term\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0b\n\x03sig\x18\x04 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x05 \x01(\t\x12\x11\n\tphloPrice\x18\x07 \x01(\x03\x12\x11\n\tphloLimit\x18\x08 \x01(\x03\x12\x1d\n\x15validAfterBlockNumber\x18\n \x01(\x03\"\xb5\x01\n\x14ProcessedDeployProto\x12\'\n\x06\x64\x65ploy\x18\x01 \x01(\x0b\x32\x17.casper.DeployDataProto\x12\x14\n\x04\x63ost\x18\x02 \x01(\x0b\x32\x06.PCost\x12%\n\tdeployLog\x18\x03 \x03(\x0b\x32\x12.casper.EventProto\x12&\n\npaymentLog\x18\x04 \x03(\x0b\x32\x12.casper.EventProto\x12\x0f\n\x07\x65rrored\x18\x05 \x01(\x08\"w\n\tBodyProto\x12\'\n\x05state\x18\x01 \x01(\x0b\x32\x18.casper.RChainStateProto\x12-\n\x07\x64\x65ploys\x18\x02 \x03(\x0b\x32\x1c.casper.ProcessedDeployProto\x12\x12\n\nextraBytes\x18\x03 \x01(\x0c\"@\n\x12JustificationProto\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\x17\n\x0flatestBlockHash\x18\x02 \x01(\x0c\"v\n\x10RChainStateProto\x12\x14\n\x0cpreStateHash\x18\x01 \x01(\x0c\x12\x15\n\rpostStateHash\x18\x02 \x01(\x0c\x12 \n\x05\x62onds\x18\x03 \x03(\x0b\x32\x11.casper.BondProto\x12\x13\n\x0b\x62lockNumber\x18\x04 \x01(\x03\"\xa2\x01\n\nEventProto\x12,\n\x07produce\x18\x01 \x01(\x0b\x32\x19.casper.ProduceEventProtoH\x00\x12,\n\x07\x63onsume\x18\x02 \x01(\x0b\x32\x19.casper.ConsumeEventProtoH\x00\x12&\n\x04\x63omm\x18\x03 \x01(\x0b\x32\x16.casper.CommEventProtoH\x00\x42\x10\n\x0e\x65vent_instance\"b\n\x11ProduceEventProto\x12\x14\n\x0c\x63hannelsHash\x18\x01 \x01(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x15\n\rtimesRepeated\x18\x04 \x01(\x05\"M\n\x11\x43onsumeEventProto\x12\x16\n\x0e\x63hannelsHashes\x18\x01 \x03(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\"\x8b\x01\n\x0e\x43ommEventProto\x12*\n\x07\x63onsume\x18\x01 \x01(\x0b\x32\x19.casper.ConsumeEventProto\x12+\n\x08produces\x18\x02 \x03(\x0b\x32\x19.casper.ProduceEventProto\x12 \n\x05peeks\x18\x03 \x03(\x0b\x32\x11.casper.PeekProto\"!\n\tPeekProto\x12\x14\n\x0c\x63hannelIndex\x18\x01 \x01(\x05\"-\n\tBondProto\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\r\n\x05stake\x18\x02 \x01(\x03\x42\x45\xe2?B\n\x1b\x63oop.rchain.casper.protocol\x10\x01\"\x1fsealed trait CasperMessageProto(\x01\x62\x06proto3')
   ,
   dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,RhoTypes__pb2.DESCRIPTOR,])
 
@@ -513,6 +513,37 @@ _BLOCKMESSAGEPROTO = _descriptor.Descriptor(
 )
 
 
+_BLOCKHASHMESSAGEPROTO = _descriptor.Descriptor(
+  name='BlockHashMessageProto',
+  full_name='casper.BlockHashMessageProto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='hash', full_name='casper.BlockHashMessageProto.hash', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('\342?\024\n\022CasperMessageProto'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1370,
+  serialized_end=1432,
+)
+
+
 _BLOCKMETADATAINTERNAL = _descriptor.Descriptor(
   name='BlockMetadataInternal',
   full_name='casper.BlockMetadataInternal',
@@ -588,8 +619,8 @@ _BLOCKMETADATAINTERNAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1371,
-  serialized_end=1718,
+  serialized_start=1435,
+  serialized_end=1782,
 )
 
 
@@ -654,8 +685,8 @@ _HEADERPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1721,
-  serialized_end=1857,
+  serialized_start=1785,
+  serialized_end=1921,
 )
 
 
@@ -734,8 +765,8 @@ _DEPLOYDATAPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1860,
-  serialized_end=2032,
+  serialized_start=1924,
+  serialized_end=2096,
 )
 
 
@@ -793,8 +824,8 @@ _PROCESSEDDEPLOYPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2035,
-  serialized_end=2216,
+  serialized_start=2099,
+  serialized_end=2280,
 )
 
 
@@ -838,8 +869,8 @@ _BODYPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2218,
-  serialized_end=2337,
+  serialized_start=2282,
+  serialized_end=2401,
 )
 
 
@@ -876,8 +907,8 @@ _JUSTIFICATIONPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2339,
-  serialized_end=2403,
+  serialized_start=2403,
+  serialized_end=2467,
 )
 
 
@@ -928,8 +959,8 @@ _RCHAINSTATEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2405,
-  serialized_end=2523,
+  serialized_start=2469,
+  serialized_end=2587,
 )
 
 
@@ -976,8 +1007,8 @@ _EVENTPROTO = _descriptor.Descriptor(
       name='event_instance', full_name='casper.EventProto.event_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2526,
-  serialized_end=2688,
+  serialized_start=2590,
+  serialized_end=2752,
 )
 
 
@@ -1028,8 +1059,8 @@ _PRODUCEEVENTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2690,
-  serialized_end=2788,
+  serialized_start=2754,
+  serialized_end=2852,
 )
 
 
@@ -1073,8 +1104,8 @@ _CONSUMEEVENTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2790,
-  serialized_end=2867,
+  serialized_start=2854,
+  serialized_end=2931,
 )
 
 
@@ -1118,8 +1149,8 @@ _COMMEVENTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2870,
-  serialized_end=3009,
+  serialized_start=2934,
+  serialized_end=3073,
 )
 
 
@@ -1149,8 +1180,8 @@ _PEEKPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3011,
-  serialized_end=3044,
+  serialized_start=3075,
+  serialized_end=3108,
 )
 
 
@@ -1187,8 +1218,8 @@ _BONDPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3046,
-  serialized_end=3091,
+  serialized_start=3110,
+  serialized_end=3155,
 )
 
 _APPROVEDBLOCKCANDIDATEPROTO.fields_by_name['block'].message_type = _BLOCKMESSAGEPROTO
@@ -1236,6 +1267,7 @@ DESCRIPTOR.message_types_by_name['ApprovedBlockProto'] = _APPROVEDBLOCKPROTO
 DESCRIPTOR.message_types_by_name['ApprovedBlockRequestProto'] = _APPROVEDBLOCKREQUESTPROTO
 DESCRIPTOR.message_types_by_name['NoApprovedBlockAvailableProto'] = _NOAPPROVEDBLOCKAVAILABLEPROTO
 DESCRIPTOR.message_types_by_name['BlockMessageProto'] = _BLOCKMESSAGEPROTO
+DESCRIPTOR.message_types_by_name['BlockHashMessageProto'] = _BLOCKHASHMESSAGEPROTO
 DESCRIPTOR.message_types_by_name['BlockMetadataInternal'] = _BLOCKMETADATAINTERNAL
 DESCRIPTOR.message_types_by_name['HeaderProto'] = _HEADERPROTO
 DESCRIPTOR.message_types_by_name['DeployDataProto'] = _DEPLOYDATAPROTO
@@ -1334,6 +1366,13 @@ BlockMessageProto = _reflection.GeneratedProtocolMessageType('BlockMessageProto'
   # @@protoc_insertion_point(class_scope:casper.BlockMessageProto)
   })
 _sym_db.RegisterMessage(BlockMessageProto)
+
+BlockHashMessageProto = _reflection.GeneratedProtocolMessageType('BlockHashMessageProto', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKHASHMESSAGEPROTO,
+  '__module__' : 'CasperMessage_pb2'
+  # @@protoc_insertion_point(class_scope:casper.BlockHashMessageProto)
+  })
+_sym_db.RegisterMessage(BlockHashMessageProto)
 
 BlockMetadataInternal = _reflection.GeneratedProtocolMessageType('BlockMetadataInternal', (_message.Message,), {
   'DESCRIPTOR' : _BLOCKMETADATAINTERNAL,
@@ -1439,6 +1478,7 @@ _APPROVEDBLOCKPROTO._options = None
 _APPROVEDBLOCKREQUESTPROTO._options = None
 _NOAPPROVEDBLOCKAVAILABLEPROTO._options = None
 _BLOCKMESSAGEPROTO._options = None
+_BLOCKHASHMESSAGEPROTO._options = None
 _BLOCKMETADATAINTERNAL.fields_by_name['parents']._options = None
 _BLOCKMETADATAINTERNAL.fields_by_name['justifications']._options = None
 _BLOCKMETADATAINTERNAL.fields_by_name['bonds']._options = None
