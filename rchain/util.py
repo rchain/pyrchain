@@ -10,6 +10,7 @@ def sign_deploy_data(key: PrivateKey, data: DeployDataProto) -> bytes:
     signed_data.ClearField('deployer')
     signed_data.ClearField('sig')
     signed_data.ClearField('sigAlgorithm')
+    signed_data.validAfterBlockNumber = 0
     return key.sign(signed_data.SerializeToString())
 
 
