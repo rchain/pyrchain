@@ -1,4 +1,5 @@
 import logging
+import re
 from typing import Optional, List, Union
 from grpc import Channel
 
@@ -15,6 +16,8 @@ from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 from .pb.RhoTypes_pb2 import (Par, Expr, GUnforgeable, GDeployId)
 
 GRPC_Response_T = Union[ProposeResponse, DeployResponse, ListeningNameDataResponse]
+
+propose_result_match = re.compile(r'Success! Block (?P<block_hash>[0-9a-f]+) created and added.')
 
 class RClientException(Exception):
 
@@ -54,19 +57,23 @@ class RClient:
         phlo_limit: int,
         valid_after_block_no: int = -1,
         timestamp_millis: int = -1,
-    ) -> bytes:
+    ) -> str:
         deploy_data = create_deploy_data(
             key, term, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis
         )
         stub = DeployServiceStub(self.channel)
         response = stub.doDeploy(deploy_data)
         self._check_response(response)
-        return deploy_data.sig
+        # sig of deploy data is deployId
+        return deploy_data.sig.hex()
 
-    def propose(self):
+    def propose(self) -> str:
         stub = ProposeServiceStub(self.channel)
-        response = stub.propose(PrintUnmatchedSendsQuery(printUnmatchedSends=True))
+        response: ProposeResponse = stub.propose(PrintUnmatchedSendsQuery(printUnmatchedSends=True))
         self._check_response(response)
+        match_result = propose_result_match.match(response.result)
+        assert match_result is not None
+        return match_result.group("block_hash")
 
     def get_data_at_name(self, par: Par, depth: int = -1) -> Data:
         query = DataAtNameQuery(depth=depth, name=par)
