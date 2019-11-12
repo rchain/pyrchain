@@ -273,19 +273,21 @@ class BlockMessageProto(google___protobuf___message___Message):
 
 class BlockHashMessageProto(google___protobuf___message___Message):
     hash = ... # type: bytes
+    blockCreator = ... # type: bytes
 
     def __init__(self,
         *,
         hash : typing___Optional[bytes] = None,
+        blockCreator : typing___Optional[bytes] = None,
         ) -> None: ...
     @classmethod
     def FromString(cls, s: bytes) -> BlockHashMessageProto: ...
     def MergeFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     if sys.version_info >= (3,):
-        def ClearField(self, field_name: typing_extensions___Literal[u"hash"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"blockCreator",u"hash"]) -> None: ...
     else:
-        def ClearField(self, field_name: typing_extensions___Literal[u"hash",b"hash"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"blockCreator",b"blockCreator",u"hash",b"hash"]) -> None: ...
 
 class BlockMetadataInternal(google___protobuf___message___Message):
     blockHash = ... # type: bytes
@@ -323,19 +325,15 @@ class BlockMetadataInternal(google___protobuf___message___Message):
 
 class HeaderProto(google___protobuf___message___Message):
     parentsHashList = ... # type: google___protobuf___internal___containers___RepeatedScalarFieldContainer[bytes]
-    deploysHash = ... # type: bytes
     timestamp = ... # type: int
     version = ... # type: int
-    deployCount = ... # type: int
     extraBytes = ... # type: bytes
 
     def __init__(self,
         *,
         parentsHashList : typing___Optional[typing___Iterable[bytes]] = None,
-        deploysHash : typing___Optional[bytes] = None,
         timestamp : typing___Optional[int] = None,
         version : typing___Optional[int] = None,
-        deployCount : typing___Optional[int] = None,
         extraBytes : typing___Optional[bytes] = None,
         ) -> None: ...
     @classmethod
@@ -343,9 +341,9 @@ class HeaderProto(google___protobuf___message___Message):
     def MergeFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     if sys.version_info >= (3,):
-        def ClearField(self, field_name: typing_extensions___Literal[u"deployCount",u"deploysHash",u"extraBytes",u"parentsHashList",u"timestamp",u"version"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"extraBytes",u"parentsHashList",u"timestamp",u"version"]) -> None: ...
     else:
-        def ClearField(self, field_name: typing_extensions___Literal[u"deployCount",b"deployCount",u"deploysHash",b"deploysHash",u"extraBytes",b"extraBytes",u"parentsHashList",b"parentsHashList",u"timestamp",b"timestamp",u"version",b"version"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"extraBytes",b"extraBytes",u"parentsHashList",b"parentsHashList",u"timestamp",b"timestamp",u"version",b"version"]) -> None: ...
 
 class DeployDataProto(google___protobuf___message___Message):
     deployer = ... # type: bytes
@@ -379,6 +377,7 @@ class DeployDataProto(google___protobuf___message___Message):
 
 class ProcessedDeployProto(google___protobuf___message___Message):
     errored = ... # type: bool
+    systemDeployError = ... # type: typing___Text
 
     @property
     def deploy(self) -> DeployDataProto: ...
@@ -389,16 +388,13 @@ class ProcessedDeployProto(google___protobuf___message___Message):
     @property
     def deployLog(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[EventProto]: ...
 
-    @property
-    def paymentLog(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[EventProto]: ...
-
     def __init__(self,
         *,
         deploy : typing___Optional[DeployDataProto] = None,
         cost : typing___Optional[RhoTypes_pb2___PCost] = None,
         deployLog : typing___Optional[typing___Iterable[EventProto]] = None,
-        paymentLog : typing___Optional[typing___Iterable[EventProto]] = None,
         errored : typing___Optional[bool] = None,
+        systemDeployError : typing___Optional[typing___Text] = None,
         ) -> None: ...
     @classmethod
     def FromString(cls, s: bytes) -> ProcessedDeployProto: ...
@@ -406,10 +402,30 @@ class ProcessedDeployProto(google___protobuf___message___Message):
     def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     if sys.version_info >= (3,):
         def HasField(self, field_name: typing_extensions___Literal[u"cost",u"deploy"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"cost",u"deploy",u"deployLog",u"errored",u"paymentLog"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"cost",u"deploy",u"deployLog",u"errored",u"systemDeployError"]) -> None: ...
     else:
         def HasField(self, field_name: typing_extensions___Literal[u"cost",b"cost",u"deploy",b"deploy"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"cost",b"cost",u"deploy",b"deploy",u"deployLog",b"deployLog",u"errored",b"errored",u"paymentLog",b"paymentLog"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"cost",b"cost",u"deploy",b"deploy",u"deployLog",b"deployLog",u"errored",b"errored",u"systemDeployError",b"systemDeployError"]) -> None: ...
+
+class ProcessedSystemDeployProto(google___protobuf___message___Message):
+    errorMsg = ... # type: typing___Text
+
+    @property
+    def deployLog(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[EventProto]: ...
+
+    def __init__(self,
+        *,
+        deployLog : typing___Optional[typing___Iterable[EventProto]] = None,
+        errorMsg : typing___Optional[typing___Text] = None,
+        ) -> None: ...
+    @classmethod
+    def FromString(cls, s: bytes) -> ProcessedSystemDeployProto: ...
+    def MergeFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
+    def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
+    if sys.version_info >= (3,):
+        def ClearField(self, field_name: typing_extensions___Literal[u"deployLog",u"errorMsg"]) -> None: ...
+    else:
+        def ClearField(self, field_name: typing_extensions___Literal[u"deployLog",b"deployLog",u"errorMsg",b"errorMsg"]) -> None: ...
 
 class BodyProto(google___protobuf___message___Message):
     extraBytes = ... # type: bytes
