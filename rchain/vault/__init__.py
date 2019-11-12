@@ -127,8 +127,8 @@ class VaultAPI:
             raise VaultAPIException('No data at deployId')
         return self.get_balance_from_data(data)
 
-    def get_balance(self, addr: Optional[str] = None, depth: int = -1) -> int:
-        deploy_id = self.deploy_get_balance(addr)
+    def get_balance(self, addr: Optional[str] = None, depth: int = -1, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit: int=DEFAULT_PHLO_LIMIT) -> int:
+        deploy_id = self.deploy_get_balance(addr, phlo_price, phlo_price)
         self.client.propose()
         return self.get_balance_from_deploy_id(deploy_id, depth=depth)
 
