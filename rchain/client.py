@@ -33,8 +33,8 @@ class DataQueries:
         return Par(exprs=exprs)
 
     @staticmethod
-    def deploy_id(deploy_id: bytes) -> Par:
-        g_deploy_id = GDeployId(sig=deploy_id)
+    def deploy_id(deploy_id: str) -> Par:
+        g_deploy_id = GDeployId(sig=bytes.fromhex(deploy_id))
         g_unforgeable = GUnforgeable(g_deploy_id_body=g_deploy_id)
         return Par(unforgeables=[g_unforgeable])
 
@@ -86,5 +86,5 @@ class RClient:
     def get_data_at_public_names(self, names: List[str], depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.public_names(names), depth)
 
-    def get_data_at_deploy_id(self, deploy_id: bytes, depth: int = -1) -> Optional[Data]:
+    def get_data_at_deploy_id(self, deploy_id: str, depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.deploy_id(deploy_id), depth)
