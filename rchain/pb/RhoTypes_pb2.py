@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=_b('\342?\300\001\n\022coop.rchain.models\0326coop.rchain.models.BitSetBytesMapper.bitSetBytesMapper\0328coop.rchain.models.ParSetTypeMapper.parSetESetTypeMapper\0328coop.rchain.models.ParMapTypeMapper.parMapEMapTypeMapper'),
-  serialized_pb=_b('\n\x0eRhoTypes.proto\x1a\x15scalapb/scalapb.proto\"\xd1\x02\n\x03Par\x12\x14\n\x05sends\x18\x01 \x03(\x0b\x32\x05.Send\x12\x1a\n\x08receives\x18\x02 \x03(\x0b\x32\x08.Receive\x12\x12\n\x04news\x18\x04 \x03(\x0b\x32\x04.New\x12\x14\n\x05\x65xprs\x18\x05 \x03(\x0b\x32\x05.Expr\x12\x17\n\x07matches\x18\x06 \x03(\x0b\x32\x06.Match\x12#\n\x0cunforgeables\x18\x07 \x03(\x0b\x32\r.GUnforgeable\x12\x18\n\x07\x62undles\x18\x0b \x03(\x0b\x32\x07.Bundle\x12 \n\x0b\x63onnectives\x18\x08 \x03(\x0b\x32\x0b.Connective\x12[\n\x0blocallyFree\x18\t \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\n \x01(\x08\"a\n\x12TaggedContinuation\x12\"\n\x08par_body\x18\x01 \x01(\x0b\x32\x0e.ParWithRandomH\x00\x12\x18\n\x0escala_body_ref\x18\x02 \x01(\x03H\x00\x42\r\n\x0btagged_cont\"o\n\rParWithRandom\x12\x1a\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x42\n\x0brandomState\x18\x02 \x01(\x0c\x42-\xe2?*\n(coop.rchain.crypto.hash.Blake2b512Random\"\x15\n\x05PCost\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x04\"k\n\x11ListParWithRandom\x12\x12\n\x04pars\x18\x01 \x03(\x0b\x32\x04.Par\x12\x42\n\x0brandomState\x18\x02 \x01(\x0c\x42-\xe2?*\n(coop.rchain.crypto.hash.Blake2b512Random\"s\n\x03Var\x12\x13\n\tbound_var\x18\x01 \x01(\x11H\x00\x12\x12\n\x08\x66ree_var\x18\x02 \x01(\x11H\x00\x12$\n\x08wildcard\x18\x03 \x01(\x0b\x32\x10.Var.WildcardMsgH\x00\x1a\r\n\x0bWildcardMsgB\x0e\n\x0cvar_instance\"I\n\x06\x42undle\x12\x1a\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x11\n\twriteFlag\x18\x02 \x01(\x08\x12\x10\n\x08readFlag\x18\x03 \x01(\x08\"\xc0\x01\n\x04Send\x12\x1a\n\x04\x63han\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x12\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x04.Par\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x06 \x01(\x08\"o\n\x0bReceiveBind\x12\x16\n\x08patterns\x18\x01 \x03(\x0b\x32\x04.Par\x12\x1c\n\x06source\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x17\n\tremainder\x18\x03 \x01(\x0b\x32\x04.Var\x12\x11\n\tfreeCount\x18\x04 \x01(\x05\"Q\n\x0b\x42indPattern\x12\x16\n\x08patterns\x18\x01 \x03(\x0b\x32\x04.Par\x12\x17\n\tremainder\x18\x02 \x01(\x0b\x32\x04.Var\x12\x11\n\tfreeCount\x18\x03 \x01(\x05\"2\n\x10ListBindPatterns\x12\x1e\n\x08patterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\"\xed\x01\n\x07Receive\x12\x1b\n\x05\x62inds\x18\x01 \x03(\x0b\x32\x0c.ReceiveBind\x12\x1a\n\x04\x62ody\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x0c\n\x04peek\x18\x04 \x01(\x08\x12\x11\n\tbindCount\x18\x05 \x01(\x05\x12[\n\x0blocallyFree\x18\x06 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x07 \x01(\x08\"\xd9\x01\n\x03New\x12\x11\n\tbindCount\x18\x01 \x01(\x11\x12\x17\n\x01p\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x0b\n\x03uri\x18\x03 \x03(\t\x12\x1b\n\x08\x64\x65ployId\x18\x04 \x01(\x0b\x32\t.DeployId\x12\x1f\n\ndeployerId\x18\x05 \x01(\x0b\x32\x0b.DeployerId\x12[\n\x0blocallyFree\x18\x06 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\"[\n\tMatchCase\x12\x1d\n\x07pattern\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1c\n\x06source\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x11\n\tfreeCount\x18\x03 \x01(\x05\"\xb6\x01\n\x05Match\x12\x1c\n\x06target\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x19\n\x05\x63\x61ses\x18\x02 \x03(\x0b\x32\n.MatchCase\x12[\n\x0blocallyFree\x18\x04 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x05 \x01(\x08\"\xd1\x07\n\x04\x45xpr\x12\x10\n\x06g_bool\x18\x01 \x01(\x08H\x00\x12\x0f\n\x05g_int\x18\x02 \x01(\x12H\x00\x12\x12\n\x08g_string\x18\x03 \x01(\tH\x00\x12\x0f\n\x05g_uri\x18\x04 \x01(\tH\x00\x12\x16\n\x0cg_byte_array\x18\x19 \x01(\x0cH\x00\x12\x1b\n\ne_not_body\x18\x05 \x01(\x0b\x32\x05.ENotH\x00\x12\x1b\n\ne_neg_body\x18\x06 \x01(\x0b\x32\x05.ENegH\x00\x12\x1d\n\x0b\x65_mult_body\x18\x07 \x01(\x0b\x32\x06.EMultH\x00\x12\x1b\n\ne_div_body\x18\x08 \x01(\x0b\x32\x05.EDivH\x00\x12\x1d\n\x0b\x65_plus_body\x18\t \x01(\x0b\x32\x06.EPlusH\x00\x12\x1f\n\x0c\x65_minus_body\x18\n \x01(\x0b\x32\x07.EMinusH\x00\x12\x19\n\te_lt_body\x18\x0b \x01(\x0b\x32\x04.ELtH\x00\x12\x1b\n\ne_lte_body\x18\x0c \x01(\x0b\x32\x05.ELteH\x00\x12\x19\n\te_gt_body\x18\r \x01(\x0b\x32\x04.EGtH\x00\x12\x1b\n\ne_gte_body\x18\x0e \x01(\x0b\x32\x05.EGteH\x00\x12\x19\n\te_eq_body\x18\x0f \x01(\x0b\x32\x04.EEqH\x00\x12\x1b\n\ne_neq_body\x18\x10 \x01(\x0b\x32\x05.ENeqH\x00\x12\x1b\n\ne_and_body\x18\x11 \x01(\x0b\x32\x05.EAndH\x00\x12\x19\n\te_or_body\x18\x12 \x01(\x0b\x32\x04.EOrH\x00\x12\x1b\n\ne_var_body\x18\x13 \x01(\x0b\x32\x05.EVarH\x00\x12\x1d\n\x0b\x65_list_body\x18\x14 \x01(\x0b\x32\x06.EListH\x00\x12\x1f\n\x0c\x65_tuple_body\x18\x15 \x01(\x0b\x32\x07.ETupleH\x00\x12;\n\ne_set_body\x18\x16 \x01(\x0b\x32\x05.ESetB\x1e\xe2?\x1b\n\x19\x63oop.rchain.models.ParSetH\x00\x12;\n\ne_map_body\x18\x17 \x01(\x0b\x32\x05.EMapB\x1e\xe2?\x1b\n\x19\x63oop.rchain.models.ParMapH\x00\x12!\n\re_method_body\x18\x18 \x01(\x0b\x32\x08.EMethodH\x00\x12#\n\x0e\x65_matches_body\x18\x1b \x01(\x0b\x32\t.EMatchesH\x00\x12\x32\n\x16\x65_percent_percent_body\x18\x1c \x01(\x0b\x32\x10.EPercentPercentH\x00\x12&\n\x10\x65_plus_plus_body\x18\x1d \x01(\x0b\x32\n.EPlusPlusH\x00\x12*\n\x12\x65_minus_minus_body\x18\x1e \x01(\x0b\x32\x0c.EMinusMinusH\x00\x12\x1b\n\ne_mod_body\x18\x1f \x01(\x0b\x32\x05.EModH\x00\x42\x0f\n\rexpr_instance\"\xa8\x01\n\x05\x45List\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\x90\x01\n\x06\x45Tuple\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\"\xa7\x01\n\x04\x45Set\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\xb1\x01\n\x04\x45Map\x12\x1a\n\x03kvs\x18\x01 \x03(\x0b\x32\r.KeyValuePair\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\xca\x01\n\x07\x45Method\x12\x12\n\nmethodName\x18\x01 \x01(\t\x12\x1c\n\x06target\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x17\n\targuments\x18\x03 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x06 \x01(\x08\"F\n\x0cKeyValuePair\x12\x19\n\x03key\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Var\x12\x17\n\x01v\x18\x01 \x01(\x0b\x32\x04.VarB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Not\x12\x17\n\x01p\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Neg\x12\x17\n\x01p\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\";\n\x05\x45Mult\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45\x44iv\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Mod\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\";\n\x05\x45Plus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"<\n\x06\x45Minus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Lt\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Lte\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Gt\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Gte\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45\x45q\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Neq\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45\x41nd\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Or\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"G\n\x08\x45Matches\x12\x1c\n\x06target\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1d\n\x07pattern\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"E\n\x0f\x45PercentPercent\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"?\n\tEPlusPlus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"A\n\x0b\x45MinusMinus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\xa5\x02\n\nConnective\x12(\n\rconn_and_body\x18\x01 \x01(\x0b\x32\x0f.ConnectiveBodyH\x00\x12\'\n\x0c\x63onn_or_body\x18\x02 \x01(\x0b\x32\x0f.ConnectiveBodyH\x00\x12\x1d\n\rconn_not_body\x18\x03 \x01(\x0b\x32\x04.ParH\x00\x12\x1f\n\x0cvar_ref_body\x18\x04 \x01(\x0b\x32\x07.VarRefH\x00\x12\x13\n\tconn_bool\x18\x05 \x01(\x08H\x00\x12\x12\n\x08\x63onn_int\x18\x06 \x01(\x08H\x00\x12\x15\n\x0b\x63onn_string\x18\x07 \x01(\x08H\x00\x12\x12\n\x08\x63onn_uri\x18\x08 \x01(\x08H\x00\x12\x19\n\x0f\x63onn_byte_array\x18\t \x01(\x08H\x00\x42\x15\n\x13\x63onnective_instance\"&\n\x06VarRef\x12\r\n\x05index\x18\x01 \x01(\x11\x12\r\n\x05\x64\x65pth\x18\x02 \x01(\x11\"\"\n\x0e\x43onnectiveBody\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\"\x17\n\x08\x44\x65ployId\x12\x0b\n\x03sig\x18\x01 \x01(\x0c\"\x1f\n\nDeployerId\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\"\x97\x01\n\x0cGUnforgeable\x12#\n\x0eg_private_body\x18\x01 \x01(\x0b\x32\t.GPrivateH\x00\x12&\n\x10g_deploy_id_body\x18\x02 \x01(\x0b\x32\n.GDeployIdH\x00\x12*\n\x12g_deployer_id_body\x18\x03 \x01(\x0b\x32\x0c.GDeployerIdH\x00\x42\x0e\n\x0cunf_instance\"\x16\n\x08GPrivate\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x18\n\tGDeployId\x12\x0b\n\x03sig\x18\x01 \x01(\x0c\" \n\x0bGDeployerId\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x42\xc4\x01\xe2?\xc0\x01\n\x12\x63oop.rchain.models\x1a\x36\x63oop.rchain.models.BitSetBytesMapper.bitSetBytesMapper\x1a\x38\x63oop.rchain.models.ParSetTypeMapper.parSetESetTypeMapper\x1a\x38\x63oop.rchain.models.ParMapTypeMapper.parMapEMapTypeMapperb\x06proto3')
+  serialized_pb=_b('\n\x0eRhoTypes.proto\x1a\x15scalapb/scalapb.proto\"\xd1\x02\n\x03Par\x12\x14\n\x05sends\x18\x01 \x03(\x0b\x32\x05.Send\x12\x1a\n\x08receives\x18\x02 \x03(\x0b\x32\x08.Receive\x12\x12\n\x04news\x18\x04 \x03(\x0b\x32\x04.New\x12\x14\n\x05\x65xprs\x18\x05 \x03(\x0b\x32\x05.Expr\x12\x17\n\x07matches\x18\x06 \x03(\x0b\x32\x06.Match\x12#\n\x0cunforgeables\x18\x07 \x03(\x0b\x32\r.GUnforgeable\x12\x18\n\x07\x62undles\x18\x0b \x03(\x0b\x32\x07.Bundle\x12 \n\x0b\x63onnectives\x18\x08 \x03(\x0b\x32\x0b.Connective\x12[\n\x0blocallyFree\x18\t \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\n \x01(\x08\"a\n\x12TaggedContinuation\x12\"\n\x08par_body\x18\x01 \x01(\x0b\x32\x0e.ParWithRandomH\x00\x12\x18\n\x0escala_body_ref\x18\x02 \x01(\x03H\x00\x42\r\n\x0btagged_cont\"o\n\rParWithRandom\x12\x1a\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x42\n\x0brandomState\x18\x02 \x01(\x0c\x42-\xe2?*\n(coop.rchain.crypto.hash.Blake2b512Random\"\x15\n\x05PCost\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x04\"k\n\x11ListParWithRandom\x12\x12\n\x04pars\x18\x01 \x03(\x0b\x32\x04.Par\x12\x42\n\x0brandomState\x18\x02 \x01(\x0c\x42-\xe2?*\n(coop.rchain.crypto.hash.Blake2b512Random\"s\n\x03Var\x12\x13\n\tbound_var\x18\x01 \x01(\x11H\x00\x12\x12\n\x08\x66ree_var\x18\x02 \x01(\x11H\x00\x12$\n\x08wildcard\x18\x03 \x01(\x0b\x32\x10.Var.WildcardMsgH\x00\x1a\r\n\x0bWildcardMsgB\x0e\n\x0cvar_instance\"I\n\x06\x42undle\x12\x1a\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x11\n\twriteFlag\x18\x02 \x01(\x08\x12\x10\n\x08readFlag\x18\x03 \x01(\x08\"\xc0\x01\n\x04Send\x12\x1a\n\x04\x63han\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x12\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x04.Par\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x06 \x01(\x08\"o\n\x0bReceiveBind\x12\x16\n\x08patterns\x18\x01 \x03(\x0b\x32\x04.Par\x12\x1c\n\x06source\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x17\n\tremainder\x18\x03 \x01(\x0b\x32\x04.Var\x12\x11\n\tfreeCount\x18\x04 \x01(\x05\"Q\n\x0b\x42indPattern\x12\x16\n\x08patterns\x18\x01 \x03(\x0b\x32\x04.Par\x12\x17\n\tremainder\x18\x02 \x01(\x0b\x32\x04.Var\x12\x11\n\tfreeCount\x18\x03 \x01(\x05\"2\n\x10ListBindPatterns\x12\x1e\n\x08patterns\x18\x01 \x03(\x0b\x32\x0c.BindPattern\"\xed\x01\n\x07Receive\x12\x1b\n\x05\x62inds\x18\x01 \x03(\x0b\x32\x0c.ReceiveBind\x12\x1a\n\x04\x62ody\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x0c\n\x04peek\x18\x04 \x01(\x08\x12\x11\n\tbindCount\x18\x05 \x01(\x05\x12[\n\x0blocallyFree\x18\x06 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x07 \x01(\x08\"\xfe\x01\n\x03New\x12\x11\n\tbindCount\x18\x01 \x01(\x11\x12\x17\n\x01p\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x0b\n\x03uri\x18\x03 \x03(\t\x12(\n\ninjections\x18\x04 \x03(\x0b\x32\x14.New.InjectionsEntry\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x1a\x37\n\x0fInjectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x13\n\x05value\x18\x02 \x01(\x0b\x32\x04.Par:\x02\x38\x01\"[\n\tMatchCase\x12\x1d\n\x07pattern\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1c\n\x06source\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x11\n\tfreeCount\x18\x03 \x01(\x05\"\xb6\x01\n\x05Match\x12\x1c\n\x06target\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x19\n\x05\x63\x61ses\x18\x02 \x03(\x0b\x32\n.MatchCase\x12[\n\x0blocallyFree\x18\x04 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x05 \x01(\x08\"\xd1\x07\n\x04\x45xpr\x12\x10\n\x06g_bool\x18\x01 \x01(\x08H\x00\x12\x0f\n\x05g_int\x18\x02 \x01(\x12H\x00\x12\x12\n\x08g_string\x18\x03 \x01(\tH\x00\x12\x0f\n\x05g_uri\x18\x04 \x01(\tH\x00\x12\x16\n\x0cg_byte_array\x18\x19 \x01(\x0cH\x00\x12\x1b\n\ne_not_body\x18\x05 \x01(\x0b\x32\x05.ENotH\x00\x12\x1b\n\ne_neg_body\x18\x06 \x01(\x0b\x32\x05.ENegH\x00\x12\x1d\n\x0b\x65_mult_body\x18\x07 \x01(\x0b\x32\x06.EMultH\x00\x12\x1b\n\ne_div_body\x18\x08 \x01(\x0b\x32\x05.EDivH\x00\x12\x1d\n\x0b\x65_plus_body\x18\t \x01(\x0b\x32\x06.EPlusH\x00\x12\x1f\n\x0c\x65_minus_body\x18\n \x01(\x0b\x32\x07.EMinusH\x00\x12\x19\n\te_lt_body\x18\x0b \x01(\x0b\x32\x04.ELtH\x00\x12\x1b\n\ne_lte_body\x18\x0c \x01(\x0b\x32\x05.ELteH\x00\x12\x19\n\te_gt_body\x18\r \x01(\x0b\x32\x04.EGtH\x00\x12\x1b\n\ne_gte_body\x18\x0e \x01(\x0b\x32\x05.EGteH\x00\x12\x19\n\te_eq_body\x18\x0f \x01(\x0b\x32\x04.EEqH\x00\x12\x1b\n\ne_neq_body\x18\x10 \x01(\x0b\x32\x05.ENeqH\x00\x12\x1b\n\ne_and_body\x18\x11 \x01(\x0b\x32\x05.EAndH\x00\x12\x19\n\te_or_body\x18\x12 \x01(\x0b\x32\x04.EOrH\x00\x12\x1b\n\ne_var_body\x18\x13 \x01(\x0b\x32\x05.EVarH\x00\x12\x1d\n\x0b\x65_list_body\x18\x14 \x01(\x0b\x32\x06.EListH\x00\x12\x1f\n\x0c\x65_tuple_body\x18\x15 \x01(\x0b\x32\x07.ETupleH\x00\x12;\n\ne_set_body\x18\x16 \x01(\x0b\x32\x05.ESetB\x1e\xe2?\x1b\n\x19\x63oop.rchain.models.ParSetH\x00\x12;\n\ne_map_body\x18\x17 \x01(\x0b\x32\x05.EMapB\x1e\xe2?\x1b\n\x19\x63oop.rchain.models.ParMapH\x00\x12!\n\re_method_body\x18\x18 \x01(\x0b\x32\x08.EMethodH\x00\x12#\n\x0e\x65_matches_body\x18\x1b \x01(\x0b\x32\t.EMatchesH\x00\x12\x32\n\x16\x65_percent_percent_body\x18\x1c \x01(\x0b\x32\x10.EPercentPercentH\x00\x12&\n\x10\x65_plus_plus_body\x18\x1d \x01(\x0b\x32\n.EPlusPlusH\x00\x12*\n\x12\x65_minus_minus_body\x18\x1e \x01(\x0b\x32\x0c.EMinusMinusH\x00\x12\x1b\n\ne_mod_body\x18\x1f \x01(\x0b\x32\x05.EModH\x00\x42\x0f\n\rexpr_instance\"\xa8\x01\n\x05\x45List\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\x90\x01\n\x06\x45Tuple\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\"\xa7\x01\n\x04\x45Set\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\xb1\x01\n\x04\x45Map\x12\x1a\n\x03kvs\x18\x01 \x03(\x0b\x32\r.KeyValuePair\x12[\n\x0blocallyFree\x18\x03 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x04 \x01(\x08\x12\x17\n\tremainder\x18\x05 \x01(\x0b\x32\x04.Var\"\xca\x01\n\x07\x45Method\x12\x12\n\nmethodName\x18\x01 \x01(\t\x12\x1c\n\x06target\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x17\n\targuments\x18\x03 \x03(\x0b\x32\x04.Par\x12[\n\x0blocallyFree\x18\x05 \x01(\x0c\x42\x46\xe2?C\nAcoop.rchain.models.AlwaysEqual[scala.collection.immutable.BitSet]\x12\x17\n\x0f\x63onnective_used\x18\x06 \x01(\x08\"F\n\x0cKeyValuePair\x12\x19\n\x03key\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Var\x12\x17\n\x01v\x18\x01 \x01(\x0b\x32\x04.VarB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Not\x12\x17\n\x01p\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\x1f\n\x04\x45Neg\x12\x17\n\x01p\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\";\n\x05\x45Mult\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45\x44iv\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Mod\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\";\n\x05\x45Plus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"<\n\x06\x45Minus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Lt\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Lte\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Gt\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Gte\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45\x45q\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45Neq\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\":\n\x04\x45\x41nd\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"9\n\x03\x45Or\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"G\n\x08\x45Matches\x12\x1c\n\x06target\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x1d\n\x07pattern\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"E\n\x0f\x45PercentPercent\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"?\n\tEPlusPlus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"A\n\x0b\x45MinusMinus\x12\x18\n\x02p1\x18\x01 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\x12\x18\n\x02p2\x18\x02 \x01(\x0b\x32\x04.ParB\x06\xe2?\x03\xf0\x01\x01\"\xa5\x02\n\nConnective\x12(\n\rconn_and_body\x18\x01 \x01(\x0b\x32\x0f.ConnectiveBodyH\x00\x12\'\n\x0c\x63onn_or_body\x18\x02 \x01(\x0b\x32\x0f.ConnectiveBodyH\x00\x12\x1d\n\rconn_not_body\x18\x03 \x01(\x0b\x32\x04.ParH\x00\x12\x1f\n\x0cvar_ref_body\x18\x04 \x01(\x0b\x32\x07.VarRefH\x00\x12\x13\n\tconn_bool\x18\x05 \x01(\x08H\x00\x12\x12\n\x08\x63onn_int\x18\x06 \x01(\x08H\x00\x12\x15\n\x0b\x63onn_string\x18\x07 \x01(\x08H\x00\x12\x12\n\x08\x63onn_uri\x18\x08 \x01(\x08H\x00\x12\x19\n\x0f\x63onn_byte_array\x18\t \x01(\x08H\x00\x42\x15\n\x13\x63onnective_instance\"&\n\x06VarRef\x12\r\n\x05index\x18\x01 \x01(\x11\x12\r\n\x05\x64\x65pth\x18\x02 \x01(\x11\"\"\n\x0e\x43onnectiveBody\x12\x10\n\x02ps\x18\x01 \x03(\x0b\x32\x04.Par\"\x17\n\x08\x44\x65ployId\x12\x0b\n\x03sig\x18\x01 \x01(\x0c\"\x1f\n\nDeployerId\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\"\x97\x01\n\x0cGUnforgeable\x12#\n\x0eg_private_body\x18\x01 \x01(\x0b\x32\t.GPrivateH\x00\x12&\n\x10g_deploy_id_body\x18\x02 \x01(\x0b\x32\n.GDeployIdH\x00\x12*\n\x12g_deployer_id_body\x18\x03 \x01(\x0b\x32\x0c.GDeployerIdH\x00\x42\x0e\n\x0cunf_instance\"\x16\n\x08GPrivate\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x18\n\tGDeployId\x12\x0b\n\x03sig\x18\x01 \x01(\x0c\" \n\x0bGDeployerId\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x42\xc4\x01\xe2?\xc0\x01\n\x12\x63oop.rchain.models\x1a\x36\x63oop.rchain.models.BitSetBytesMapper.bitSetBytesMapper\x1a\x38\x63oop.rchain.models.ParSetTypeMapper.parSetESetTypeMapper\x1a\x38\x63oop.rchain.models.ParMapTypeMapper.parMapEMapTypeMapperb\x06proto3')
   ,
   dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
@@ -646,6 +646,43 @@ _RECEIVE = _descriptor.Descriptor(
 )
 
 
+_NEW_INJECTIONSENTRY = _descriptor.Descriptor(
+  name='InjectionsEntry',
+  full_name='New.InjectionsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='New.InjectionsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='New.InjectionsEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1800,
+  serialized_end=1855,
+)
+
 _NEW = _descriptor.Descriptor(
   name='New',
   full_name='New',
@@ -675,22 +712,15 @@ _NEW = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deployId', full_name='New.deployId', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='injections', full_name='New.injections', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deployerId', full_name='New.deployerId', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='locallyFree', full_name='New.locallyFree', index=5,
-      number=6, type=12, cpp_type=9, label=1,
+      name='locallyFree', full_name='New.locallyFree', index=4,
+      number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -698,7 +728,7 @@ _NEW = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_NEW_INJECTIONSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -708,7 +738,7 @@ _NEW = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1601,
-  serialized_end=1818,
+  serialized_end=1855,
 )
 
 
@@ -752,8 +782,8 @@ _MATCHCASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1820,
-  serialized_end=1911,
+  serialized_start=1857,
+  serialized_end=1948,
 )
 
 
@@ -804,8 +834,8 @@ _MATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1914,
-  serialized_end=2096,
+  serialized_start=1951,
+  serialized_end=2133,
 )
 
 
@@ -1041,8 +1071,8 @@ _EXPR = _descriptor.Descriptor(
       name='expr_instance', full_name='Expr.expr_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2099,
-  serialized_end=3076,
+  serialized_start=2136,
+  serialized_end=3113,
 )
 
 
@@ -1093,8 +1123,8 @@ _ELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3079,
-  serialized_end=3247,
+  serialized_start=3116,
+  serialized_end=3284,
 )
 
 
@@ -1138,8 +1168,8 @@ _ETUPLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3250,
-  serialized_end=3394,
+  serialized_start=3287,
+  serialized_end=3431,
 )
 
 
@@ -1190,8 +1220,8 @@ _ESET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3397,
-  serialized_end=3564,
+  serialized_start=3434,
+  serialized_end=3601,
 )
 
 
@@ -1242,8 +1272,8 @@ _EMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3567,
-  serialized_end=3744,
+  serialized_start=3604,
+  serialized_end=3781,
 )
 
 
@@ -1301,8 +1331,8 @@ _EMETHOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3747,
-  serialized_end=3949,
+  serialized_start=3784,
+  serialized_end=3986,
 )
 
 
@@ -1339,8 +1369,8 @@ _KEYVALUEPAIR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3951,
-  serialized_end=4021,
+  serialized_start=3988,
+  serialized_end=4058,
 )
 
 
@@ -1370,8 +1400,8 @@ _EVAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4023,
-  serialized_end=4054,
+  serialized_start=4060,
+  serialized_end=4091,
 )
 
 
@@ -1401,8 +1431,8 @@ _ENOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4056,
-  serialized_end=4087,
+  serialized_start=4093,
+  serialized_end=4124,
 )
 
 
@@ -1432,8 +1462,8 @@ _ENEG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4089,
-  serialized_end=4120,
+  serialized_start=4126,
+  serialized_end=4157,
 )
 
 
@@ -1470,8 +1500,8 @@ _EMULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4122,
-  serialized_end=4181,
+  serialized_start=4159,
+  serialized_end=4218,
 )
 
 
@@ -1508,8 +1538,8 @@ _EDIV = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4183,
-  serialized_end=4241,
+  serialized_start=4220,
+  serialized_end=4278,
 )
 
 
@@ -1546,8 +1576,8 @@ _EMOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4243,
-  serialized_end=4301,
+  serialized_start=4280,
+  serialized_end=4338,
 )
 
 
@@ -1584,8 +1614,8 @@ _EPLUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4303,
-  serialized_end=4362,
+  serialized_start=4340,
+  serialized_end=4399,
 )
 
 
@@ -1622,8 +1652,8 @@ _EMINUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4364,
-  serialized_end=4424,
+  serialized_start=4401,
+  serialized_end=4461,
 )
 
 
@@ -1660,8 +1690,8 @@ _ELT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4426,
-  serialized_end=4483,
+  serialized_start=4463,
+  serialized_end=4520,
 )
 
 
@@ -1698,8 +1728,8 @@ _ELTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4485,
-  serialized_end=4543,
+  serialized_start=4522,
+  serialized_end=4580,
 )
 
 
@@ -1736,8 +1766,8 @@ _EGT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4545,
-  serialized_end=4602,
+  serialized_start=4582,
+  serialized_end=4639,
 )
 
 
@@ -1774,8 +1804,8 @@ _EGTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4604,
-  serialized_end=4662,
+  serialized_start=4641,
+  serialized_end=4699,
 )
 
 
@@ -1812,8 +1842,8 @@ _EEQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4664,
-  serialized_end=4721,
+  serialized_start=4701,
+  serialized_end=4758,
 )
 
 
@@ -1850,8 +1880,8 @@ _ENEQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4723,
-  serialized_end=4781,
+  serialized_start=4760,
+  serialized_end=4818,
 )
 
 
@@ -1888,8 +1918,8 @@ _EAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4783,
-  serialized_end=4841,
+  serialized_start=4820,
+  serialized_end=4878,
 )
 
 
@@ -1926,8 +1956,8 @@ _EOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4843,
-  serialized_end=4900,
+  serialized_start=4880,
+  serialized_end=4937,
 )
 
 
@@ -1964,8 +1994,8 @@ _EMATCHES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4902,
-  serialized_end=4973,
+  serialized_start=4939,
+  serialized_end=5010,
 )
 
 
@@ -2002,8 +2032,8 @@ _EPERCENTPERCENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4975,
-  serialized_end=5044,
+  serialized_start=5012,
+  serialized_end=5081,
 )
 
 
@@ -2040,8 +2070,8 @@ _EPLUSPLUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5046,
-  serialized_end=5109,
+  serialized_start=5083,
+  serialized_end=5146,
 )
 
 
@@ -2078,8 +2108,8 @@ _EMINUSMINUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5111,
-  serialized_end=5176,
+  serialized_start=5148,
+  serialized_end=5213,
 )
 
 
@@ -2168,8 +2198,8 @@ _CONNECTIVE = _descriptor.Descriptor(
       name='connective_instance', full_name='Connective.connective_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=5179,
-  serialized_end=5472,
+  serialized_start=5216,
+  serialized_end=5509,
 )
 
 
@@ -2206,8 +2236,8 @@ _VARREF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5474,
-  serialized_end=5512,
+  serialized_start=5511,
+  serialized_end=5549,
 )
 
 
@@ -2237,8 +2267,8 @@ _CONNECTIVEBODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5514,
-  serialized_end=5548,
+  serialized_start=5551,
+  serialized_end=5585,
 )
 
 
@@ -2268,8 +2298,8 @@ _DEPLOYID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5550,
-  serialized_end=5573,
+  serialized_start=5587,
+  serialized_end=5610,
 )
 
 
@@ -2299,8 +2329,8 @@ _DEPLOYERID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5575,
-  serialized_end=5606,
+  serialized_start=5612,
+  serialized_end=5643,
 )
 
 
@@ -2347,8 +2377,8 @@ _GUNFORGEABLE = _descriptor.Descriptor(
       name='unf_instance', full_name='GUnforgeable.unf_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=5609,
-  serialized_end=5760,
+  serialized_start=5646,
+  serialized_end=5797,
 )
 
 
@@ -2378,8 +2408,8 @@ _GPRIVATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5762,
-  serialized_end=5784,
+  serialized_start=5799,
+  serialized_end=5821,
 )
 
 
@@ -2409,8 +2439,8 @@ _GDEPLOYID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5786,
-  serialized_end=5810,
+  serialized_start=5823,
+  serialized_end=5847,
 )
 
 
@@ -2440,8 +2470,8 @@ _GDEPLOYERID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5812,
-  serialized_end=5844,
+  serialized_start=5849,
+  serialized_end=5881,
 )
 
 _PAR.fields_by_name['sends'].message_type = _SEND
@@ -2483,9 +2513,10 @@ _BINDPATTERN.fields_by_name['remainder'].message_type = _VAR
 _LISTBINDPATTERNS.fields_by_name['patterns'].message_type = _BINDPATTERN
 _RECEIVE.fields_by_name['binds'].message_type = _RECEIVEBIND
 _RECEIVE.fields_by_name['body'].message_type = _PAR
+_NEW_INJECTIONSENTRY.fields_by_name['value'].message_type = _PAR
+_NEW_INJECTIONSENTRY.containing_type = _NEW
 _NEW.fields_by_name['p'].message_type = _PAR
-_NEW.fields_by_name['deployId'].message_type = _DEPLOYID
-_NEW.fields_by_name['deployerId'].message_type = _DEPLOYERID
+_NEW.fields_by_name['injections'].message_type = _NEW_INJECTIONSENTRY
 _MATCHCASE.fields_by_name['pattern'].message_type = _PAR
 _MATCHCASE.fields_by_name['source'].message_type = _PAR
 _MATCH.fields_by_name['target'].message_type = _PAR
@@ -2843,11 +2874,19 @@ Receive = _reflection.GeneratedProtocolMessageType('Receive', (_message.Message,
 _sym_db.RegisterMessage(Receive)
 
 New = _reflection.GeneratedProtocolMessageType('New', (_message.Message,), {
+
+  'InjectionsEntry' : _reflection.GeneratedProtocolMessageType('InjectionsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _NEW_INJECTIONSENTRY,
+    '__module__' : 'RhoTypes_pb2'
+    # @@protoc_insertion_point(class_scope:New.InjectionsEntry)
+    })
+  ,
   'DESCRIPTOR' : _NEW,
   '__module__' : 'RhoTypes_pb2'
   # @@protoc_insertion_point(class_scope:New)
   })
 _sym_db.RegisterMessage(New)
+_sym_db.RegisterMessage(New.InjectionsEntry)
 
 MatchCase = _reflection.GeneratedProtocolMessageType('MatchCase', (_message.Message,), {
   'DESCRIPTOR' : _MATCHCASE,
@@ -3127,6 +3166,7 @@ _SEND.fields_by_name['locallyFree']._options = None
 _RECEIVEBIND.fields_by_name['source']._options = None
 _RECEIVE.fields_by_name['body']._options = None
 _RECEIVE.fields_by_name['locallyFree']._options = None
+_NEW_INJECTIONSENTRY._options = None
 _NEW.fields_by_name['p']._options = None
 _NEW.fields_by_name['locallyFree']._options = None
 _MATCHCASE.fields_by_name['pattern']._options = None
