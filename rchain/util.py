@@ -6,11 +6,11 @@ from .pb.CasperMessage_pb2 import DeployDataProto
 
 def sign_deploy_data(key: PrivateKey, data: DeployDataProto) -> bytes:
     signed_data = DeployDataProto()
-    signed_data.CopyFrom(data)
-    signed_data.ClearField('deployer')
-    signed_data.ClearField('sig')
-    signed_data.ClearField('sigAlgorithm')
-    signed_data.validAfterBlockNumber = 0
+    signed_data.term = data.term
+    signed_data.timestamp = data.timestamp
+    signed_data.phloLimit = data.phloLimit
+    signed_data.phloPrice = data.phloPrice
+    signed_data.validAfterBlockNumber = data.validAfterBlockNumber
     return key.sign(signed_data.SerializeToString())
 
 
