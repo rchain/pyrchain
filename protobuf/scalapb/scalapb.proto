@@ -51,7 +51,7 @@ message ScalaPbOptions {
 
   // If set to true, all generated messages in this file will preserve unknown
   // fields.
-  optional bool preserve_unknown_fields = 9;
+  optional bool preserve_unknown_fields = 9 [default=true];
 
   // If defined, sets the name of the file-level object that would be generated. This
   // object extends `GeneratedFileObject` and contains descriptors, and list of message
@@ -84,6 +84,13 @@ message ScalaPbOptions {
 
   // If true, no default values will be generated in message constructors.
   optional bool no_default_values_in_constructor = 15;
+
+  /* Naming convention for generated enum values */
+  enum EnumValueNaming {
+    AS_IN_PROTO = 0;  // Enum value names in Scala use the same name as in the proto
+    CAMEL_CASE = 1;   // Convert enum values to CamelCase in Scala.
+  }
+  optional EnumValueNaming enum_value_naming = 16;
 
   // For use in tests only. Inhibit Java conversions even when when generator parameters
   // request for it.
@@ -183,6 +190,9 @@ extend google.protobuf.EnumOptions {
 message EnumValueOptions {
   // Additional classes and traits to mix in to an individual enum value.
   repeated string extends = 1;
+
+  // Name in Scala to use for this enum value.
+  optional string scala_name = 2;
 }
 
 extend google.protobuf.EnumValueOptions {
