@@ -1,11 +1,14 @@
 import unittest
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives.serialization import load_pem_private_key
+
 from cryptography import x509
-from cryptography.x509.oid import NameOID
-from .certificate import (get_node_id_raw, generate_node_tls_key_cert_id, get_node_tls_cert_pem, get_node_tls_cn,
-                          get_node_tls_key_pem)
+from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.serialization import load_pem_private_key
+from cryptography.x509.oid import NameOID
+
+from rchain.certificate import (generate_node_tls_key_cert_id, get_node_id_raw,
+                                get_node_tls_cert_pem, get_node_tls_cn,
+                                get_node_tls_key_pem)
 
 
 class TestCertificate(unittest.TestCase):
