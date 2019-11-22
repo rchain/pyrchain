@@ -4,6 +4,7 @@ from typing import (
 )
 
 import string
+import time
 
 from ..client import RClient
 from ..crypto import PrivateKey
@@ -88,7 +89,8 @@ class VaultAPI:
         return addr or self.key.get_public_key().get_rev_address()
 
     def _deploy(self, contract: str) -> bytes:
-        return self.client.deploy(self.key, contract, 1, 1000000000)
+        timestamp_mill = int(time.time() * 1000)
+        return self.client.deploy_with_vabn_filled(self.key, contract, 1, 1000000000, timestamp_mill)
 
     def deploy_create_vault(self, addr: Optional[str] = None) -> bytes:
         contract = render_contract_template(
