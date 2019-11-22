@@ -1,0 +1,18 @@
+language: python
+python:
+  - '3.6'
+  - '3.7'
+  - '3.8'
+install: pip install .
+script:
+  - python -m unittest discover -p '*_test.py'
+deploy:
+  edge: true
+  provider: pypi
+  username: rchain
+  password:
+    secure: QlQ74VkL77eG5qmpNN0nATSbvklWuUYkEaQ55hQhrNoHy+MNbKCgPt5o80Ys2Ok467afG2pn4UT67MxrqRiSrEVzghm+NQmCYzeirviC4gZAaSICaA430pEbZP+5xeWTzUmXfyL3bsDX1SjFER/yULRKNgLBiz4hkfha8DH82sT82TiOnG+96Q0tsKdKivpZogTh/+ETZPIMkooOSbKGVCrMUzDRx/sfFKHibEZW05Cze0eQQ3YwXorReZgwJzNox/gjJo3Ud+5LqZBVEqEB6T49Awm6X5A4+sOhwZTtmnLmkeJGea/REoHqOKxs9b6HnzwpB6Ql5zH8VQvLkzN6JN4WDvL8xOi3R7xMQqy/l8JcK0AlotvifvA4SxWmoyqoXRannGy+padh1lehWeKVS6KADMcqc61tU18vzCw4QlevHfGROOV6zUfqvAVwQ5ZU87Iw/CSB0M6aqsM/fMW1efc4tI8nw6rqZkTNZn6C4jQiNYuqeEjObZ0ZdawKTBYK/KU0HkK7DmR2DPcXGrJ4VGo4JYx3hmo42LkJzGYnVMp7xtXb552pLwDW+hWqI72y1/BQRDrVsKEOyiY/L9UG7el4yTd/ZJPWSepaK76fYsP6WBrXGzlQWyPOGGc7u/Aei411pJIXlCPjqkCtn8vRfeRPIdyHWvo6ulhI35bdfnE=
+  distributions: sdist bdist_wheel
+  skip_existing: true
+  on:
+    tags: true
