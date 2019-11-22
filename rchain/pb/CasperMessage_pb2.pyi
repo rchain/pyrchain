@@ -427,26 +427,6 @@ class ProcessedSystemDeployProto(google___protobuf___message___Message):
     else:
         def ClearField(self, field_name: typing_extensions___Literal[u"deployLog",b"deployLog",u"errorMsg",b"errorMsg"]) -> None: ...
 
-class ProcessedSystemDeployProto(google___protobuf___message___Message):
-    errorMsg = ... # type: typing___Text
-
-    @property
-    def deployLog(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[EventProto]: ...
-
-    def __init__(self,
-        *,
-        deployLog : typing___Optional[typing___Iterable[EventProto]] = None,
-        errorMsg : typing___Optional[typing___Text] = None,
-        ) -> None: ...
-    @classmethod
-    def FromString(cls, s: bytes) -> ProcessedSystemDeployProto: ...
-    def MergeFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
-    def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
-    if sys.version_info >= (3,):
-        def ClearField(self, field_name: typing_extensions___Literal[u"deployLog",u"errorMsg"]) -> None: ...
-    else:
-        def ClearField(self, field_name: typing_extensions___Literal[u"deployLog",b"deployLog",u"errorMsg",b"errorMsg"]) -> None: ...
-
 class BodyProto(google___protobuf___message___Message):
     extraBytes = ... # type: bytes
 

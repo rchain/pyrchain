@@ -90,7 +90,7 @@ class VaultAPI:
     def _get_addr(self, addr: Optional[str]) -> str:
         return addr or self.key.get_public_key().get_rev_address()
 
-    def _deploy(self, contract: str, phlo_price: int, phlo_limit: int) -> bytes:
+    def _deploy(self, contract: str, phlo_price: int, phlo_limit: int) -> str:
         timestamp_mill = int(time.time() * 1000)
         return self.client.deploy_with_vabn_filled(self.key, contract, phlo_price, phlo_limit, timestamp_mill)
 

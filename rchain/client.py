@@ -1,13 +1,14 @@
 import logging
 import re
-from typing import Optional, List, Union, TypeVar, Iterable
+from typing import Optional, List, Union, TypeVar, Iterable, Protocol, Any
 from grpc import Channel
 
 from .crypto import PrivateKey
 from .util import create_deploy_data
 
 from .pb.DeployServiceCommon_pb2 import DataAtNameQuery, BlockQuery, BlockInfo, BlocksQuery, LightBlockInfo
-from .pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data, DeployResponse, ListeningNameDataResponse, BlockResponse
+from .pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data, \
+    DeployResponse, ListeningNameDataResponse, BlockResponse, BlockInfoResponse, VisualizeBlocksResponse
 from .pb.DeployServiceV1_pb2_grpc import (DeployServiceStub)
 from .pb.ProposeServiceV1_pb2_grpc import (ProposeServiceStub)
 from .pb.ProposeServiceV1_pb2 import ProposeResponse
@@ -15,7 +16,14 @@ from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 
 from .pb.RhoTypes_pb2 import (Par, Expr, GUnforgeable, GDeployId)
 
-GRPC_Response_T = Union[ProposeResponse, DeployResponse, ListeningNameDataResponse, BlockResponse]
+GRPC_Response_T = Union[ProposeResponse,
+                        DeployResponse,
+                        ListeningNameDataResponse,
+                        BlockResponse,
+                        BlockInfoResponse,
+                        VisualizeBlocksResponse]
+
+GRPC_StreamResponse_T = Union[BlockInfoResponse, VisualizeBlocksResponse]
 T = TypeVar("T")
 
 propose_result_match = re.compile(r'Success! Block (?P<block_hash>[0-9a-f]+) created and added.')
@@ -50,7 +58,7 @@ class RClient:
         if response.WhichOneof("message") == 'error':
             raise RClientException('\n'.join(response.error.messages))
 
-    def _handle_stream(self, response: Iterable[T]) -> List[T]:
+    def _handle_stream(self, response: Iterable[GRPC_StreamResponse_T]) -> List[GRPC_StreamResponse_T]:
         result = []
         for resp in response:
             self._check_response(resp)
@@ -103,7 +111,7 @@ class RClient:
         stub = DeployServiceStub(self.channel)
         response = stub.getBlocks(blocks_query)
         result = self._handle_stream(response)
-        return list(map(lambda x:x.blockInfo, result))
+        return list(map(lambda x:x.blockInfo, result))  # type: ignore
 
     def propose(self) -> str:
         stub = ProposeServiceStub(self.channel)
