@@ -1,14 +1,10 @@
-from typing import (
-    Optional,
-    Mapping,
-)
-
 import string
 import time
+from typing import Mapping, Optional
 
 from ..client import RClient
 from ..crypto import PrivateKey
-from ..pb.DeployServiceV1_pb2 import (ListeningNameDataPayload as Data)
+from ..pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data
 
 DEFAULT_PHLO_PRICE = 1
 DEFAULT_PHLO_LIMIT = 10000000

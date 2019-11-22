@@ -1,20 +1,23 @@
 import logging
 import re
-from typing import Optional, List, Union, TypeVar, Iterable, Protocol, Any
+from typing import Iterable, List, Optional, TypeVar, Union
+
 from grpc import Channel
 
 from .crypto import PrivateKey
-from .util import create_deploy_data
-
-from .pb.DeployServiceCommon_pb2 import DataAtNameQuery, BlockQuery, BlockInfo, BlocksQuery, LightBlockInfo
-from .pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data, \
-    DeployResponse, ListeningNameDataResponse, BlockResponse, BlockInfoResponse, VisualizeBlocksResponse
-from .pb.DeployServiceV1_pb2_grpc import (DeployServiceStub)
-from .pb.ProposeServiceV1_pb2_grpc import (ProposeServiceStub)
-from .pb.ProposeServiceV1_pb2 import ProposeResponse
+from .pb.DeployServiceCommon_pb2 import (BlockInfo, BlockQuery, BlocksQuery,
+                                         DataAtNameQuery, LightBlockInfo)
+from .pb.DeployServiceV1_pb2 import (BlockInfoResponse, BlockResponse,
+                                     DeployResponse)
+from .pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data
+from .pb.DeployServiceV1_pb2 import (ListeningNameDataResponse,
+                                     VisualizeBlocksResponse)
+from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
-
-from .pb.RhoTypes_pb2 import (Par, Expr, GUnforgeable, GDeployId)
+from .pb.ProposeServiceV1_pb2 import ProposeResponse
+from .pb.ProposeServiceV1_pb2_grpc import ProposeServiceStub
+from .pb.RhoTypes_pb2 import Expr, GDeployId, GUnforgeable, Par
+from .util import create_deploy_data
 
 GRPC_Response_T = Union[ProposeResponse,
                         DeployResponse,
