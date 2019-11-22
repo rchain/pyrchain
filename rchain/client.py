@@ -66,7 +66,9 @@ class RClient:
             timestamp_millis: int = -1
         ) -> str:
         latest_blocks = self.show_blocks(1)
-        assert len(latest_blocks) == 1, "No latest block found"
+        # when the genesis block is not ready, it would be empty in show_blocks
+        # it could return more than 1 block when there are multiple blocks at the same height
+        assert len(latest_blocks) >= 1, "No latest block found"
         latest_block = latest_blocks[0]
         latest_block_num = latest_block.blockNumber
         return self.deploy(key, term, phlo_price, phlo_limit, latest_block_num, timestamp_millis)
