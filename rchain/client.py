@@ -1,21 +1,33 @@
 import logging
 import re
-from typing import Optional, List, Union, TypeVar, Iterable
+from typing import Iterable, List, Optional, TypeVar, Union
+
 from grpc import Channel
 
 from .crypto import PrivateKey
+from .pb.DeployServiceCommon_pb2 import (
+    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery, LightBlockInfo,
+)
+from .pb.DeployServiceV1_pb2 import (
+    BlockInfoResponse, BlockResponse, DeployResponse,
+    ListeningNameDataPayload as Data, ListeningNameDataResponse,
+    VisualizeBlocksResponse,
+)
+from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
+from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
+from .pb.ProposeServiceV1_pb2 import ProposeResponse
+from .pb.ProposeServiceV1_pb2_grpc import ProposeServiceStub
+from .pb.RhoTypes_pb2 import Expr, GDeployId, GUnforgeable, Par
 from .util import create_deploy_data
 
-from .pb.DeployServiceCommon_pb2 import DataAtNameQuery, BlockQuery, BlockInfo, BlocksQuery, LightBlockInfo
-from .pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data, DeployResponse, ListeningNameDataResponse, BlockResponse
-from .pb.DeployServiceV1_pb2_grpc import (DeployServiceStub)
-from .pb.ProposeServiceV1_pb2_grpc import (ProposeServiceStub)
-from .pb.ProposeServiceV1_pb2 import ProposeResponse
-from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
+GRPC_Response_T = Union[ProposeResponse,
+                        DeployResponse,
+                        ListeningNameDataResponse,
+                        BlockResponse,
+                        BlockInfoResponse,
+                        VisualizeBlocksResponse]
 
-from .pb.RhoTypes_pb2 import (Par, Expr, GUnforgeable, GDeployId)
-
-GRPC_Response_T = Union[ProposeResponse, DeployResponse, ListeningNameDataResponse, BlockResponse]
+GRPC_StreamResponse_T = Union[BlockInfoResponse, VisualizeBlocksResponse]
 T = TypeVar("T")
 
 propose_result_match = re.compile(r'Success! Block (?P<block_hash>[0-9a-f]+) created and added.')
@@ -34,8 +46,8 @@ class DataQueries:
         return Par(exprs=exprs)
 
     @staticmethod
-    def deploy_id(deploy_id: bytes) -> Par:
-        g_deploy_id = GDeployId(sig=deploy_id)
+    def deploy_id(deploy_id: str) -> Par:
+        g_deploy_id = GDeployId(sig=bytes.fromhex(deploy_id))
         g_unforgeable = GUnforgeable(g_deploy_id_body=g_deploy_id)
         return Par(unforgeables=[g_unforgeable])
 
@@ -50,7 +62,7 @@ class RClient:
         if response.WhichOneof("message") == 'error':
             raise RClientException('\n'.join(response.error.messages))
 
-    def _handle_stream(self, response: Iterable[T]) -> List[T]:
+    def _handle_stream(self, response: Iterable[GRPC_StreamResponse_T]) -> List[GRPC_StreamResponse_T]:
         result = []
         for resp in response:
             self._check_response(resp)
@@ -103,7 +115,7 @@ class RClient:
         stub = DeployServiceStub(self.channel)
         response = stub.getBlocks(blocks_query)
         result = self._handle_stream(response)
-        return list(map(lambda x:x.blockInfo, result))
+        return list(map(lambda x:x.blockInfo, result))  # type: ignore
 
     def propose(self) -> str:
         stub = ProposeServiceStub(self.channel)
@@ -124,5 +136,5 @@ class RClient:
     def get_data_at_public_names(self, names: List[str], depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.public_names(names), depth)
 
-    def get_data_at_deploy_id(self, deploy_id: bytes, depth: int = -1) -> Optional[Data]:
+    def get_data_at_deploy_id(self, deploy_id: str, depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.deploy_id(deploy_id), depth)

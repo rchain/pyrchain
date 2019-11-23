@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pyrchain = {path = ".",extras = ["dev"],editable = true}
+isort = "*"
 
 [packages]
 pyrchain = {path = ".",editable = true}

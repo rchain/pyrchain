@@ -3,9 +3,11 @@ python:
   - '3.6'
   - '3.7'
   - '3.8'
-install: pip install .
+install: pip install -e .[dev]
 script:
-  - python -m unittest discover -p '*_test.py'
+  - python -m unittest discover -s rchain/tests
+  - python -m mypy rchain
+  - isort --recursive --check-only rchain
 deploy:
   edge: true
   provider: pypi

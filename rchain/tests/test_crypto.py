@@ -1,7 +1,7 @@
 import unittest
-from ecdsa.keys import BadSignatureError
 
-from .crypto import blake2b_32, PrivateKey, PublicKey
+from ecdsa.keys import BadSignatureError
+from rchain.crypto import PrivateKey, PublicKey, blake2b_32
 
 
 class TestCrypto(unittest.TestCase):

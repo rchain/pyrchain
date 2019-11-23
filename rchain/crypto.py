@@ -1,12 +1,14 @@
-import random
 import hashlib
+import random
+
 import bitcoin.base58
 from ecdsa import SigningKey, VerifyingKey
 from ecdsa.curves import SECP256k1
-from ecdsa.util import sigencode_der_canonize, sigdecode_der
+from ecdsa.util import sigdecode_der, sigencode_der_canonize
 from eth_hash.auto import keccak
+from google.protobuf.wrappers_pb2 import Int32Value, StringValue
 from rchain.pb.CasperMessage_pb2 import BlockMessageProto
-from google.protobuf.wrappers_pb2 import StringValue, Int32Value
+
 
 def blake2b_32(data=b''):
     return hashlib.blake2b(data, digest_size=32)
