@@ -1,7 +1,6 @@
 import unittest
 
 from ecdsa.keys import BadSignatureError
-
 from rchain.crypto import PrivateKey, PublicKey, blake2b_32
 
 
