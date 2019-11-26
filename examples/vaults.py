@@ -1,9 +1,8 @@
 import logging
 
 import grpc
-
-from rchain.crypto import PrivateKey
 from rchain.client import RClient
+from rchain.crypto import PrivateKey
 from rchain.vault import VaultAPI
 
 

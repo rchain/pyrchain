@@ -3,11 +3,9 @@ import time
 from typing import Mapping, Optional
 
 from ..client import RClient
+from ..const import DEFAULT_PHLO_LIMIT, DEFAULT_PHLO_PRICE
 from ..crypto import PrivateKey
 from ..pb.DeployServiceV1_pb2 import ListeningNameDataPayload as Data
-
-DEFAULT_PHLO_PRICE = 1
-DEFAULT_PHLO_LIMIT = 10000000
 
 CREATE_VAULT_RHO_TPL = """
 new rl(`rho:registry:lookup`), RevVaultCh in {
@@ -17,7 +15,6 @@ new rl(`rho:registry:lookup`), RevVaultCh in {
   }
 }
 """
-
 
 BOND_RHO_TPL = """
 new retCh, PoSCh, rl(`rho:registry:lookup`), stdout(`rho:io:stdout`) in {
@@ -33,7 +30,6 @@ new retCh, PoSCh, rl(`rho:registry:lookup`), stdout(`rho:io:stdout`) in {
 }
 """
 
-
 GET_BALANCE_RHO_TPL = """
 new rl(`rho:registry:lookup`), deployId(`rho:rchain:deployId`), RevVaultCh, vaultCh, balanceCh in {
   rl!(`rho:rchain:revVault`, *RevVaultCh) |
@@ -48,7 +44,6 @@ new rl(`rho:registry:lookup`), deployId(`rho:rchain:deployId`), RevVaultCh, vaul
   }
 }
 """
-
 
 TRANSFER_RHO_TPL = """
 new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, revVaultKeyCh, resultCh in {
@@ -71,10 +66,8 @@ class VaultAPIException(Exception):
         super().__init__(message)
 
 
-
 def render_contract_template(template: str, substitutions: Mapping[str, str]) -> str:
     return string.Template(template).substitute(substitutions)
-
 
 
 class VaultAPI:
@@ -90,26 +83,28 @@ class VaultAPI:
         timestamp_mill = int(time.time() * 1000)
         return self.client.deploy_with_vabn_filled(self.key, contract, phlo_price, phlo_limit, timestamp_mill)
 
-    def deploy_create_vault(self, addr: Optional[str] = None, phlo_price: int=DEFAULT_PHLO_PRICE, phlo_limit: int=DEFAULT_PHLO_LIMIT) -> str:
+    def deploy_create_vault(self, addr: Optional[str] = None, phlo_price: int = DEFAULT_PHLO_PRICE,
+                            phlo_limit: int = DEFAULT_PHLO_LIMIT) -> str:
         contract = render_contract_template(
             CREATE_VAULT_RHO_TPL,
             {'addr': self._get_addr(addr)},
         )
         return self._deploy(contract, phlo_price, phlo_limit)
 
-    def create_vault(self, phlo_price: int=DEFAULT_PHLO_PRICE, phlo_limit:int = DEFAULT_PHLO_LIMIT) -> None:
+    def create_vault(self, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit: int = DEFAULT_PHLO_LIMIT) -> None:
         self.deploy_create_vault(phlo_price=phlo_price, phlo_limit=phlo_limit)
         self.client.propose()
 
-    def deploy_bond(self, amount, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit = DEFAULT_PHLO_LIMIT) -> str:
+    def deploy_bond(self, amount, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit=DEFAULT_PHLO_LIMIT) -> str:
         contract = render_contract_template(BOND_RHO_TPL, {'amount': amount})
         return self._deploy(contract, phlo_price, phlo_limit)
 
-    def bond(self, amount = 100, phlo_price: int=DEFAULT_PHLO_PRICE, phlo_limit:int = DEFAULT_PHLO_LIMIT) -> None:
+    def bond(self, amount=100, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit: int = DEFAULT_PHLO_LIMIT) -> None:
         self.deploy_bond(amount, phlo_price, phlo_limit)
         self.client.propose()
 
-    def deploy_get_balance(self, addr: Optional[str] = None, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit: int=DEFAULT_PHLO_LIMIT) -> str:
+    def deploy_get_balance(self, addr: Optional[str] = None, phlo_price: int = DEFAULT_PHLO_PRICE,
+                           phlo_limit: int = DEFAULT_PHLO_LIMIT) -> str:
         contract = render_contract_template(
             GET_BALANCE_RHO_TPL,
             {'addr': self._get_addr(addr)},
@@ -125,13 +120,15 @@ class VaultAPI:
             raise VaultAPIException('No data at deployId')
         return self.get_balance_from_data(data)
 
-    def get_balance(self, addr: Optional[str] = None, depth: int = -1, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit: int=DEFAULT_PHLO_LIMIT) -> int:
+    def get_balance(self, addr: Optional[str] = None, depth: int = -1, phlo_price: int = DEFAULT_PHLO_PRICE,
+                    phlo_limit: int = DEFAULT_PHLO_LIMIT) -> int:
         deploy_id = self.deploy_get_balance(addr, phlo_price, phlo_limit)
         self.client.propose()
         return self.get_balance_from_deploy_id(deploy_id, depth=depth)
 
     def deploy_transfer(
-        self, from_addr: Optional[str], to_addr: str, amount: int, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit: int = DEFAULT_PHLO_LIMIT
+            self, from_addr: Optional[str], to_addr: str, amount: int, phlo_price: int = DEFAULT_PHLO_PRICE,
+            phlo_limit: int = DEFAULT_PHLO_LIMIT
     ) -> str:
         contract = render_contract_template(
             TRANSFER_RHO_TPL, {
@@ -142,6 +139,7 @@ class VaultAPI:
         )
         return self._deploy(contract, phlo_price, phlo_limit)
 
-    def transfer(self, from_addr: Optional[str], to_addr: str, amount: int, phlo_price: int=DEFAULT_PHLO_PRICE, phlo_limit:int = DEFAULT_PHLO_LIMIT) -> None:
+    def transfer(self, from_addr: Optional[str], to_addr: str, amount: int, phlo_price: int = DEFAULT_PHLO_PRICE,
+                 phlo_limit: int = DEFAULT_PHLO_LIMIT) -> None:
         self.deploy_transfer(from_addr, to_addr, amount, phlo_price, phlo_limit)
         self.client.propose()
