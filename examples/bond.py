@@ -3,10 +3,8 @@
 # 0x06a441c277bf454c5d159b0e5bdafca69b296733,1000000,0
 
 import grpc
-
-from rchain.crypto import PrivateKey
 from rchain.client import RClient
-
+from rchain.crypto import PrivateKey
 from rchain.vault import VaultAPI
 
 alice_key = PrivateKey.from_hex("b2527b00340a83e302beae2a8daf6d654e8e57541acfa261cc1b5635eb16aa15")

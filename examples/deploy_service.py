@@ -1,11 +1,8 @@
-import logging
-
 import time
-import grpc
 
-from rchain.crypto import PrivateKey
+import grpc
 from rchain.client import RClient
-from rchain.vault import VaultAPI
+from rchain.crypto import PrivateKey
 
 term = """
 new stderr(`rho:io:stderr`) in {
