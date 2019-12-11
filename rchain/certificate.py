@@ -50,8 +50,8 @@ def get_node_tls_cert_pem(key: ec.EllipticCurvePrivateKeyWithSerialization) -> s
 
 def generate_node_tls_key_cert_id() -> Tuple[str, str, str]:
     key = ec.generate_private_key(ec.SECP256R1(), default_backend())
-    key_pem = get_node_tls_key_pem(key)
-    node_id_raw = get_node_id_raw(key)
+    key_pem = get_node_tls_key_pem(key)  # type: ignore
+    node_id_raw = get_node_id_raw(key)  # type: ignore
     node_id = node_id_raw.hex()
-    cert_pem = get_node_tls_cert_pem(key)
+    cert_pem = get_node_tls_cert_pem(key)  # type:ignore
     return key_pem, cert_pem, node_id
