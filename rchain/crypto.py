@@ -42,8 +42,8 @@ class PublicKey:
     def __init__(self, _pub_key: VerifyingKey):
         self._pub_key = _pub_key
 
-    def verify(self, signature: bytes, data: bytes):
-        self._pub_key.verify(
+    def verify(self, signature: bytes, data: bytes) -> bool:
+        return self._pub_key.verify(
             signature, data, hashfunc=blake2b_32, sigdecode=sigdecode_der
         )
 
