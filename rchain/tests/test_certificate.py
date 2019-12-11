@@ -1,5 +1,4 @@
-import unittest
-
+import pytest
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
@@ -10,9 +9,7 @@ from rchain.certificate import (
     get_node_tls_cn, get_node_tls_key_pem,
 )
 
-
-class TestCertificate(unittest.TestCase):
-    identities = [
+certs_examples = [
         (
             b"""-----BEGIN PRIVATE KEY-----
 MEECAQAwEwYHKoZIzj0CAQYIKoZIzj0DAQcEJzAlAgEBBCDgWIf2/YwI9Hfql9uz
@@ -42,37 +39,40 @@ cHuiNCGoQZXxz82LhOLhUQaFmg==
         )
     ]
 
-    def check_cert(self, actual_cert: x509.Certificate, expected_tls_cn: str):
-        self.assertIsInstance(actual_cert.signature_hash_algorithm, hashes.SHA256)
-        self.assertEqual(actual_cert.signature_algorithm_oid.dotted_string, '1.2.840.10045.4.3.2')  # ecdsa-with-sha256
-        actual_issuer_cn = actual_cert.issuer.get_attributes_for_oid(NameOID.COMMON_NAME)[0].value
-        self.assertEqual(actual_issuer_cn, expected_tls_cn)
-        actual_subject_cn = actual_cert.subject.get_attributes_for_oid(NameOID.COMMON_NAME)[0].value
-        self.assertEqual(actual_subject_cn, expected_tls_cn)
+def check_cert(actual_cert: x509.Certificate, expected_tls_cn: str):
+    assert isinstance(actual_cert.signature_hash_algorithm, hashes.SHA256)
+    assert actual_cert.signature_algorithm_oid.dotted_string == '1.2.840.10045.4.3.2'  # ecdsa-with-sha256
+    actual_issuer_cn = actual_cert.issuer.get_attributes_for_oid(NameOID.COMMON_NAME)[0].value
+    assert actual_issuer_cn == expected_tls_cn
+    actual_subject_cn = actual_cert.subject.get_attributes_for_oid(NameOID.COMMON_NAME)[0].value
+    assert actual_subject_cn == expected_tls_cn
 
-    def test_get_node_tls_key_pem(self):
-        for private_key_pem, tls_cn_name, _ in self.identities:
-            private_key = load_pem_private_key(private_key_pem, None, default_backend())
-            self.assertEqual(private_key_pem.decode('utf8'), get_node_tls_key_pem(private_key))
 
-    def test_get_node_tls_cn(self):
-        for private_key_pem, expected_node_id_raw, expected_tls_cn in self.identities:
-            private_key = load_pem_private_key(private_key_pem, None, default_backend())
-            actual_node_id_raw = get_node_id_raw(private_key)
-            actual_tls_cn = get_node_tls_cn(actual_node_id_raw)
-            self.assertEqual(actual_node_id_raw, expected_node_id_raw)
-            self.assertEqual(actual_tls_cn, expected_tls_cn)
+@pytest.mark.parametrize("private_key_pem,tls_cn_name,expected_tls_cn", certs_examples)
+def test_get_node_tls_key_pem(private_key_pem: bytes, tls_cn_name: str, expected_tls_cn: str):
+    private_key = load_pem_private_key(private_key_pem, None, default_backend())
+    assert private_key_pem.decode('utf8') ==  get_node_tls_key_pem(private_key)
 
-    def test_get_node_tls_cert_pem(self):
-        for private_key_pem, expected_node_id_raw, expected_tls_cn in self.identities:
-            private_key = load_pem_private_key(private_key_pem, None, default_backend())
-            cert_pem = get_node_tls_cert_pem(private_key)
-            actual_cert = x509.load_pem_x509_certificate(cert_pem.encode('utf8'), default_backend())
-            self.check_cert(actual_cert, expected_tls_cn)
+@pytest.mark.parametrize("private_key_pem,tls_cn_name,expected_tls_cn", certs_examples)
+def test_get_node_tls_cn(private_key_pem: bytes, tls_cn_name: str, expected_tls_cn: str):
+    private_key = load_pem_private_key(private_key_pem, None, default_backend())
+    actual_node_id_raw = get_node_id_raw(private_key)
+    actual_tls_cn = get_node_tls_cn(actual_node_id_raw)
+    assert actual_node_id_raw == tls_cn_name
+    assert actual_tls_cn == expected_tls_cn
 
-    def test_generate_node_tls_key_cert_id(self):
-        key_pem, cert_pem, node_id = generate_node_tls_key_cert_id()
-        private_key = load_pem_private_key(key_pem.encode('utf8'), None, default_backend())
-        cert = x509.load_pem_x509_certificate(cert_pem.encode('utf8'), default_backend())
-        expected_tls_cn = get_node_tls_cn(get_node_id_raw(private_key))
-        self.check_cert(cert, expected_tls_cn)
+@pytest.mark.parametrize("private_key_pem,tls_cn_name,expected_tls_cn", certs_examples)
+def test_get_node_tls_cert_pem(private_key_pem: bytes, tls_cn_name: str, expected_tls_cn: str):
+    private_key = load_pem_private_key(private_key_pem, None, default_backend())
+    cert_pem = get_node_tls_cert_pem(private_key)
+    actual_cert = x509.load_pem_x509_certificate(cert_pem.encode('utf8'), default_backend())
+    check_cert(actual_cert, expected_tls_cn)
+
+
+def test_generate_node_tls_key_cert_id():
+    key_pem, cert_pem, node_id = generate_node_tls_key_cert_id()
+    private_key = load_pem_private_key(key_pem.encode('utf8'), None, default_backend())
+    cert = x509.load_pem_x509_certificate(cert_pem.encode('utf8'), default_backend())
+    expected_tls_cn = get_node_tls_cn(get_node_id_raw(private_key))
+    check_cert(cert, expected_tls_cn)
+

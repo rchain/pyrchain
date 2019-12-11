@@ -22,5 +22,5 @@ setuptools.setup(
         'eth_hash',
         'pycryptodome'
     ],
-    extras_require={'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort']}
+    extras_require={'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest', 'typeshed']}
 )
