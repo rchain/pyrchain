@@ -34,7 +34,8 @@ def deploy_service(deploy_service: Union[DeployServiceServicer, ProposeServiceSe
         add_DeployServiceServicer_to_server(deploy_service, server)
     if isinstance(deploy_service, ProposeServiceServicer):
         add_ProposeServiceServicer_to_server(deploy_service, server)
-    port = server.add_insecure_port("0.0.0.0")
+    port = server.add_insecure_port("0.0.0.0:9766")
+    assert port != 0
     server.start()
     yield server, port
     server.stop(0)
