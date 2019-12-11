@@ -17,16 +17,18 @@ def _gen_deploy_sig_content(data: DeployDataProto) -> bytes:
 def sign_deploy_data(key: PrivateKey, data: DeployDataProto) -> bytes:
     return key.sign(_gen_deploy_sig_content(data))
 
+
 def verify_deploy_data(key: PublicKey, sig: bytes, data: DeployDataProto) -> bool:
     return key.verify(sig, _gen_deploy_sig_content(data))
 
+
 def create_deploy_data(
-    key: PrivateKey,
-    term: str,
-    phlo_price: int,
-    phlo_limit: int,
-    valid_after_block_no: int = -1,
-    timestamp_millis: int = -1,
+        key: PrivateKey,
+        term: str,
+        phlo_price: int,
+        phlo_limit: int,
+        valid_after_block_no: int = -1,
+        timestamp_millis: int = -1,
 ) -> DeployDataProto:
     if timestamp_millis < 0:
         timestamp_millis = int(time.time() * 1000)

@@ -24,7 +24,7 @@ def get_node_id_raw(key: ec.EllipticCurvePrivateKeyWithSerialization) -> bytes:
     return keccak(pk_bytes)[12:]
 
 
-def get_node_tls_cn(node_id_raw) -> str:
+def get_node_tls_cn(node_id_raw: bytes) -> str:
     return base64.b16encode(node_id_raw).decode('ascii').lower()
 
 

@@ -62,7 +62,7 @@ new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, revVaultKeyCh, resultCh in {
 
 class VaultAPIException(Exception):
 
-    def _init__(self, message):
+    def _init__(self, message: str) -> None:
         super().__init__(message)
 
 
@@ -95,11 +95,13 @@ class VaultAPI:
         self.deploy_create_vault(phlo_price=phlo_price, phlo_limit=phlo_limit)
         self.client.propose()
 
-    def deploy_bond(self, amount, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit=DEFAULT_PHLO_LIMIT) -> str:
-        contract = render_contract_template(BOND_RHO_TPL, {'amount': amount})
+    def deploy_bond(self, amount: int, phlo_price: int = DEFAULT_PHLO_PRICE,
+                    phlo_limit: int = DEFAULT_PHLO_LIMIT) -> str:
+        contract = render_contract_template(BOND_RHO_TPL, {'amount': str(amount)})
         return self._deploy(contract, phlo_price, phlo_limit)
 
-    def bond(self, amount=100, phlo_price: int = DEFAULT_PHLO_PRICE, phlo_limit: int = DEFAULT_PHLO_LIMIT) -> None:
+    def bond(self, amount: int = 100, phlo_price: int = DEFAULT_PHLO_PRICE,
+             phlo_limit: int = DEFAULT_PHLO_LIMIT) -> None:
         self.deploy_bond(amount, phlo_price, phlo_limit)
         self.client.propose()
 

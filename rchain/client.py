@@ -32,9 +32,10 @@ T = TypeVar("T")
 
 propose_result_match = re.compile(r'Success! Block (?P<block_hash>[0-9a-f]+) created and added.')
 
+
 class RClientException(Exception):
 
-    def _init__(self, message: str):
+    def _init__(self, message: str) -> None:
         super().__init__(message)
 
 
@@ -57,7 +58,7 @@ class RClient:
     def __init__(self, channel: Channel):
         self.channel = channel
 
-    def _check_response(self, response: GRPC_Response_T):
+    def _check_response(self, response: GRPC_Response_T) -> None:
         logging.debug('gRPC response: %s', str(response))
         if response.WhichOneof("message") == 'error':
             raise RClientException('\n'.join(response.error.messages))
@@ -76,7 +77,7 @@ class RClient:
             phlo_price: int,
             phlo_limit: int,
             timestamp_millis: int = -1
-        ) -> str:
+    ) -> str:
         latest_blocks = self.show_blocks(1)
         # when the genesis block is not ready, it would be empty in show_blocks
         # it could return more than 1 block when there are multiple blocks at the same height
@@ -93,7 +94,7 @@ class RClient:
             phlo_limit: int,
             valid_after_block_no: int = -1,
             timestamp_millis: int = -1
-        ) -> str:
+    ) -> str:
         deploy_data = create_deploy_data(
             key, term, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis
         )
@@ -115,7 +116,7 @@ class RClient:
         stub = DeployServiceStub(self.channel)
         response = stub.getBlocks(blocks_query)
         result = self._handle_stream(response)
-        return list(map(lambda x:x.blockInfo, result))  # type: ignore
+        return list(map(lambda x: x.blockInfo, result))  # type: ignore
 
     def propose(self) -> str:
         stub = ProposeServiceStub(self.channel)
