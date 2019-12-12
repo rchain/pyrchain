@@ -1,5 +1,6 @@
 import hashlib
 import random
+from typing import Any
 
 import bitcoin.base58
 from ecdsa import SigningKey, VerifyingKey
@@ -10,12 +11,14 @@ from google.protobuf.wrappers_pb2 import Int32Value, StringValue
 from rchain.pb.CasperMessage_pb2 import BlockMessageProto
 
 
-def blake2b_32(data=b''):
+def blake2b_32(data: bytes = b'') -> hashlib.blake2b:
     return hashlib.blake2b(data, digest_size=32)
+
 
 def gen_deploys_hash_from_block(block: BlockMessageProto) -> bytes:
     hash_obj = b"".join([deploy.SerializeToString() for deploy in block.body.deploys])
     return blake2b_32(hash_obj).digest()
+
 
 def gen_block_hash_from_block(block: BlockMessageProto) -> bytes:
     signed_obj = b''.join([block.header.SerializeToString(),
@@ -26,6 +29,7 @@ def gen_block_hash_from_block(block: BlockMessageProto) -> bytes:
                            StringValue(value=block.shardId).SerializeToString(),
                            block.extraBytes])
     return blake2b_32(signed_obj).digest()
+
 
 class PublicKey:
 
@@ -42,13 +46,13 @@ class PublicKey:
     def __init__(self, _pub_key: VerifyingKey):
         self._pub_key = _pub_key
 
-    def verify(self, signature: bytes, data: bytes):
-        self._pub_key.verify(
+    def verify(self, signature: bytes, data: bytes) -> bool:
+        return self._pub_key.verify(
             signature, data, hashfunc=blake2b_32, sigdecode=sigdecode_der
         )
 
-    def verify_block_hash(self, signature: bytes, block_hash: bytes):
-        self._pub_key.verify_digest(signature, block_hash, sigdecode=sigdecode_der)
+    def verify_block_hash(self, signature: bytes, block_hash: bytes) -> bool:
+        return self._pub_key.verify_digest(signature, block_hash, sigdecode=sigdecode_der)
 
     def to_hex(self, lower: bool = True) -> str:
         return self.to_bytes().hex().lower() if lower else self.to_bytes().hex()
@@ -68,10 +72,10 @@ class PublicKey:
     def get_eth_address(self) -> str:
         return keccak(self.to_bytes()[1:]).hex()[-40:]
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         return hash(self.to_bytes())
 
-    def __eq__(self, other):
+    def __eq__(self, other: Any) -> bool:
         return isinstance(other, self.__class__) and self.to_bytes() == other.to_bytes()
 
 
@@ -114,8 +118,8 @@ class PrivateKey:
     def get_public_key(self) -> PublicKey:
         return PublicKey(self._key.get_verifying_key())
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         return hash(self.to_bytes())
 
-    def __eq__(self, other):
+    def __eq__(self, other: Any) -> bool:
         return isinstance(other, self.__class__) and self.to_bytes() == other.to_bytes()
