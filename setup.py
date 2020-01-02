@@ -12,7 +12,7 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url='https://github.com/rchain/pyrchain',
     packages=setuptools.find_namespace_packages(include=['rchain', 'rchain.*']),
-    package_data={'rchain.vault': ['*.rho.tpl']},
+    package_data={'rchain.vault': ['*.rho.tpl'], 'rchain.pb': ['*.pyi'], 'rchain.pb.scalapb':['*.pyi']},
     install_requires=[
         'grpcio',
         'protobuf',
@@ -22,5 +22,6 @@ setuptools.setup(
         'eth_hash',
         'pycryptodome'
     ],
-    extras_require={'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest', 'typeshed']}
+    extras_require={'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest', 'typeshed']},
+    zip_safe=False
 )
