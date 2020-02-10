@@ -81,7 +81,7 @@ the deploy.
     deploy_data = create_deploy_data(key=private_key, 
                                     term=contract, phlo_price=1, 
                                     phlo_limit=100000, 
-                                    valid_after_blo>ck_no=10, 
+                                    valid_after_block_no=10, 
                                     timestamp_millis = int(time.time()*1000))
     
     
