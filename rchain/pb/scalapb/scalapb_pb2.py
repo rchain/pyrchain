@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='scalapb',
   syntax='proto2',
   serialized_options=_b('\n\017scalapb.options\342?\023\n\017scalapb.options\020\001'),
-  serialized_pb=_b('\n\x15scalapb/scalapb.proto\x12\x07scalapb\x1a google/protobuf/descriptor.proto\"\xf3\x04\n\x0eScalaPbOptions\x12\x14\n\x0cpackage_name\x18\x01 \x01(\t\x12\x14\n\x0c\x66lat_package\x18\x02 \x01(\x08\x12\x0e\n\x06import\x18\x03 \x03(\t\x12\x10\n\x08preamble\x18\x04 \x03(\t\x12\x13\n\x0bsingle_file\x18\x05 \x01(\x08\x12\x1d\n\x15no_primitive_wrappers\x18\x07 \x01(\x08\x12\x1a\n\x12primitive_wrappers\x18\x06 \x01(\x08\x12\x17\n\x0f\x63ollection_type\x18\x08 \x01(\t\x12%\n\x17preserve_unknown_fields\x18\t \x01(\x08:\x04true\x12\x13\n\x0bobject_name\x18\n \x01(\t\x12\x33\n\x05scope\x18\x0b \x01(\x0e\x32$.scalapb.ScalaPbOptions.OptionsScope\x12\x14\n\x06lenses\x18\x0c \x01(\x08:\x04true\x12\x1f\n\x17retain_source_code_info\x18\r \x01(\x08\x12\x10\n\x08map_type\x18\x0e \x01(\t\x12(\n no_default_values_in_constructor\x18\x0f \x01(\x08\x12\x42\n\x11\x65num_value_naming\x18\x10 \x01(\x0e\x32\'.scalapb.ScalaPbOptions.EnumValueNaming\x12\'\n\x1dtest_only_no_java_conversions\x18\xa1\x8d\x06 \x01(\x08\"%\n\x0cOptionsScope\x12\x08\n\x04\x46ILE\x10\x00\x12\x0b\n\x07PACKAGE\x10\x01\"2\n\x0f\x45numValueNaming\x12\x0f\n\x0b\x41S_IN_PROTO\x10\x00\x12\x0e\n\nCAMEL_CASE\x10\x01\"\xac\x01\n\x0eMessageOptions\x12\x0f\n\x07\x65xtends\x18\x01 \x03(\t\x12\x19\n\x11\x63ompanion_extends\x18\x02 \x03(\t\x12\x13\n\x0b\x61nnotations\x18\x03 \x03(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x1d\n\x15\x63ompanion_annotations\x18\x05 \x03(\t\x12\x1c\n\x14sealed_oneof_extends\x18\x06 \x03(\t\x12\x0e\n\x06no_box\x18\x07 \x01(\x08\"\xa6\x01\n\x0c\x46ieldOptions\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x12\n\nscala_name\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_type\x18\x03 \x01(\t\x12\x10\n\x08key_type\x18\x04 \x01(\t\x12\x12\n\nvalue_type\x18\x05 \x01(\t\x12\x13\n\x0b\x61nnotations\x18\x06 \x03(\t\x12\x10\n\x08map_type\x18\x07 \x01(\t\x12\x0e\n\x06no_box\x18\x1e \x01(\x08\"G\n\x0b\x45numOptions\x12\x0f\n\x07\x65xtends\x18\x01 \x03(\t\x12\x19\n\x11\x63ompanion_extends\x18\x02 \x03(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\"7\n\x10\x45numValueOptions\x12\x0f\n\x07\x65xtends\x18\x01 \x03(\t\x12\x12\n\nscala_name\x18\x02 \x01(\t\"\x1f\n\x0cOneofOptions\x12\x0f\n\x07\x65xtends\x18\x01 \x03(\t:G\n\x07options\x12\x1c.google.protobuf.FileOptions\x18\xfc\x07 \x01(\x0b\x32\x17.scalapb.ScalaPbOptions:J\n\x07message\x12\x1f.google.protobuf.MessageOptions\x18\xfc\x07 \x01(\x0b\x32\x17.scalapb.MessageOptions:D\n\x05\x66ield\x12\x1d.google.protobuf.FieldOptions\x18\xfc\x07 \x01(\x0b\x32\x15.scalapb.FieldOptions:I\n\x0c\x65num_options\x12\x1c.google.protobuf.EnumOptions\x18\xfc\x07 \x01(\x0b\x32\x14.scalapb.EnumOptions:Q\n\nenum_value\x12!.google.protobuf.EnumValueOptions\x18\xfc\x07 \x01(\x0b\x32\x19.scalapb.EnumValueOptions:D\n\x05oneof\x12\x1d.google.protobuf.OneofOptions\x18\xfc\x07 \x01(\x0b\x32\x15.scalapb.OneofOptionsB\'\n\x0fscalapb.options\xe2?\x13\n\x0fscalapb.options\x10\x01')
+  serialized_pb=_b('\n\x15scalapb/scalapb.proto\x12\x07scalapb\x1a google/protobuf/descriptor.proto\"\xda\x08\n\x0eScalaPbOptions\x12\x14\n\x0cpackage_name\x18\x01 \x01(\t\x12\x14\n\x0c\x66lat_package\x18\x02 \x01(\x08\x12\x0e\n\x06import\x18\x03 \x03(\t\x12\x10\n\x08preamble\x18\x04 \x03(\t\x12\x13\n\x0bsingle_file\x18\x05 \x01(\x08\x12\x1d\n\x15no_primitive_wrappers\x18\x07 \x01(\x08\x12\x1a\n\x12primitive_wrappers\x18\x06 \x01(\x08\x12\x17\n\x0f\x63ollection_type\x18\x08 \x01(\t\x12%\n\x17preserve_unknown_fields\x18\t \x01(\x08:\x04true\x12\x13\n\x0bobject_name\x18\n \x01(\t\x12\x33\n\x05scope\x18\x0b \x01(\x0e\x32$.scalapb.ScalaPbOptions.OptionsScope\x12\x14\n\x06lenses\x18\x0c \x01(\x08:\x04true\x12\x1f\n\x17retain_source_code_info\x18\r \x01(\x08\x12\x10\n\x08map_type\x18\x0e \x01(\t\x12(\n no_default_values_in_constructor\x18\x0f \x01(\x08\x12\x42\n\x11\x65num_value_naming\x18\x10 \x01(\x0e\x32\'.scalapb.ScalaPbOptions.EnumValueNaming\x12 \n\x11\x65num_strip_prefix\x18\x11 \x01(\x08:\x05\x66\x61lse\x12\x46\n\x13\x61ux_message_options\x18\x12 \x03(\x0b\x32).scalapb.ScalaPbOptions.AuxMessageOptions\x12\x42\n\x11\x61ux_field_options\x18\x13 \x03(\x0b\x32\'.scalapb.ScalaPbOptions.AuxFieldOptions\x12@\n\x10\x61ux_enum_options\x18\x14 \x03(\x0b\x32&.scalapb.ScalaPbOptions.AuxEnumOptions\x12\x12\n\nbytes_type\x18\x15 \x01(\t\x12\'\n\x1dtest_only_no_java_conversions\x18\xa1\x8d\x06 \x01(\x08\x1aM\n\x11\x41uxMessageOptions\x12\x0e\n\x06target\x18\x01 \x01(\t\x12(\n\x07options\x18\x02 \x01(\x0b\x32\x17.scalapb.MessageOptions\x1aI\n\x0f\x41uxFieldOptions\x12\x0e\n\x06target\x18\x01 \x01(\t\x12&\n\x07options\x18\x02 \x01(\x0b\x32\x15.scalapb.FieldOptions\x1aG\n\x0e\x41uxEnumOptions\x12\x0e\n\x06target\x18\x01 \x01(\t\x12%\n\x07options\x18\x02 \x01(\x0b\x32\x14.scalapb.EnumOptions\"%\n\x0cOptionsScope\x12\x08\n\x04\x46ILE\x10\x00\x12\x0b\n\x07PACKAGE\x10\x01\"2\n\x0f\x45numValueNaming\x12\x0f\n\x0b\x41S_IN_PROTO\x10\x00\x12\x0e\n\nCAMEL_CASE\x10\x01\"\xac\x01\n\x0eMessageOptions\x12\x0f\n\x07\x65xtends\x18\x01 \x03(\t\x12\x19\n\x11\x63ompanion_extends\x18\x02 \x03(\t\x12\x13\n\x0b\x61nnotations\x18\x03 \x03(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x1d\n\x15\x63ompanion_annotations\x18\x05 \x03(\t\x12\x1c\n\x14sealed_oneof_extends\x18\x06 \x03(\t\x12\x0e\n\x06no_box\x18\x07 \x01(\x08\"\xa6\x01\n\x0c\x46ieldOptions\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x12\n\nscala_name\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_type\x18\x03 \x01(\t\x12\x10\n\x08key_type\x18\x04 \x01(\t\x12\x12\n\nvalue_type\x18\x05 \x01(\t\x12\x13\n\x0b\x61nnotations\x18\x06 \x03(\t\x12\x10\n\x08map_type\x18\x07 \x01(\t\x12\x0e\n\x06no_box\x18\x1e \x01(\x08\"G\n\x0b\x45numOptions\x12\x0f\n\x07\x65xtends\x18\x01 \x03(\t\x12\x19\n\x11\x63ompanion_extends\x18\x02 \x03(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\"7\n\x10\x45numValueOptions\x12\x0f\n\x07\x65xtends\x18\x01 \x03(\t\x12\x12\n\nscala_name\x18\x02 \x01(\t\"\x1f\n\x0cOneofOptions\x12\x0f\n\x07\x65xtends\x18\x01 \x03(\t:G\n\x07options\x12\x1c.google.protobuf.FileOptions\x18\xfc\x07 \x01(\x0b\x32\x17.scalapb.ScalaPbOptions:J\n\x07message\x12\x1f.google.protobuf.MessageOptions\x18\xfc\x07 \x01(\x0b\x32\x17.scalapb.MessageOptions:D\n\x05\x66ield\x12\x1d.google.protobuf.FieldOptions\x18\xfc\x07 \x01(\x0b\x32\x15.scalapb.FieldOptions:I\n\x0c\x65num_options\x12\x1c.google.protobuf.EnumOptions\x18\xfc\x07 \x01(\x0b\x32\x14.scalapb.EnumOptions:Q\n\nenum_value\x12!.google.protobuf.EnumValueOptions\x18\xfc\x07 \x01(\x0b\x32\x19.scalapb.EnumValueOptions:D\n\x05oneof\x12\x1d.google.protobuf.OneofOptions\x18\xfc\x07 \x01(\x0b\x32\x15.scalapb.OneofOptionsB\'\n\x0fscalapb.options\xe2?\x13\n\x0fscalapb.options\x10\x01')
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
 
@@ -92,8 +92,8 @@ _SCALAPBOPTIONS_OPTIONSSCOPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=607,
-  serialized_end=644,
+  serialized_start=1094,
+  serialized_end=1131,
 )
 _sym_db.RegisterEnumDescriptor(_SCALAPBOPTIONS_OPTIONSSCOPE)
 
@@ -114,11 +114,122 @@ _SCALAPBOPTIONS_ENUMVALUENAMING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=646,
-  serialized_end=696,
+  serialized_start=1133,
+  serialized_end=1183,
 )
 _sym_db.RegisterEnumDescriptor(_SCALAPBOPTIONS_ENUMVALUENAMING)
 
+
+_SCALAPBOPTIONS_AUXMESSAGEOPTIONS = _descriptor.Descriptor(
+  name='AuxMessageOptions',
+  full_name='scalapb.ScalaPbOptions.AuxMessageOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='target', full_name='scalapb.ScalaPbOptions.AuxMessageOptions.target', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='scalapb.ScalaPbOptions.AuxMessageOptions.options', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=867,
+  serialized_end=944,
+)
+
+_SCALAPBOPTIONS_AUXFIELDOPTIONS = _descriptor.Descriptor(
+  name='AuxFieldOptions',
+  full_name='scalapb.ScalaPbOptions.AuxFieldOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='target', full_name='scalapb.ScalaPbOptions.AuxFieldOptions.target', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='scalapb.ScalaPbOptions.AuxFieldOptions.options', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=946,
+  serialized_end=1019,
+)
+
+_SCALAPBOPTIONS_AUXENUMOPTIONS = _descriptor.Descriptor(
+  name='AuxEnumOptions',
+  full_name='scalapb.ScalaPbOptions.AuxEnumOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='target', full_name='scalapb.ScalaPbOptions.AuxEnumOptions.target', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='scalapb.ScalaPbOptions.AuxEnumOptions.options', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1021,
+  serialized_end=1092,
+)
 
 _SCALAPBOPTIONS = _descriptor.Descriptor(
   name='ScalaPbOptions',
@@ -240,7 +351,42 @@ _SCALAPBOPTIONS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='test_only_no_java_conversions', full_name='scalapb.ScalaPbOptions.test_only_no_java_conversions', index=16,
+      name='enum_strip_prefix', full_name='scalapb.ScalaPbOptions.enum_strip_prefix', index=16,
+      number=17, type=8, cpp_type=7, label=1,
+      has_default_value=True, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='aux_message_options', full_name='scalapb.ScalaPbOptions.aux_message_options', index=17,
+      number=18, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='aux_field_options', full_name='scalapb.ScalaPbOptions.aux_field_options', index=18,
+      number=19, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='aux_enum_options', full_name='scalapb.ScalaPbOptions.aux_enum_options', index=19,
+      number=20, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='bytes_type', full_name='scalapb.ScalaPbOptions.bytes_type', index=20,
+      number=21, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='test_only_no_java_conversions', full_name='scalapb.ScalaPbOptions.test_only_no_java_conversions', index=21,
       number=100001, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -249,7 +395,7 @@ _SCALAPBOPTIONS = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_SCALAPBOPTIONS_AUXMESSAGEOPTIONS, _SCALAPBOPTIONS_AUXFIELDOPTIONS, _SCALAPBOPTIONS_AUXENUMOPTIONS, ],
   enum_types=[
     _SCALAPBOPTIONS_OPTIONSSCOPE,
     _SCALAPBOPTIONS_ENUMVALUENAMING,
@@ -261,7 +407,7 @@ _SCALAPBOPTIONS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=69,
-  serialized_end=696,
+  serialized_end=1183,
 )
 
 
@@ -333,8 +479,8 @@ _MESSAGEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=699,
-  serialized_end=871,
+  serialized_start=1186,
+  serialized_end=1358,
 )
 
 
@@ -413,8 +559,8 @@ _FIELDOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=874,
-  serialized_end=1040,
+  serialized_start=1361,
+  serialized_end=1527,
 )
 
 
@@ -458,8 +604,8 @@ _ENUMOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1042,
-  serialized_end=1113,
+  serialized_start=1529,
+  serialized_end=1600,
 )
 
 
@@ -496,8 +642,8 @@ _ENUMVALUEOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1115,
-  serialized_end=1170,
+  serialized_start=1602,
+  serialized_end=1657,
 )
 
 
@@ -527,12 +673,21 @@ _ONEOFOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1172,
-  serialized_end=1203,
+  serialized_start=1659,
+  serialized_end=1690,
 )
 
+_SCALAPBOPTIONS_AUXMESSAGEOPTIONS.fields_by_name['options'].message_type = _MESSAGEOPTIONS
+_SCALAPBOPTIONS_AUXMESSAGEOPTIONS.containing_type = _SCALAPBOPTIONS
+_SCALAPBOPTIONS_AUXFIELDOPTIONS.fields_by_name['options'].message_type = _FIELDOPTIONS
+_SCALAPBOPTIONS_AUXFIELDOPTIONS.containing_type = _SCALAPBOPTIONS
+_SCALAPBOPTIONS_AUXENUMOPTIONS.fields_by_name['options'].message_type = _ENUMOPTIONS
+_SCALAPBOPTIONS_AUXENUMOPTIONS.containing_type = _SCALAPBOPTIONS
 _SCALAPBOPTIONS.fields_by_name['scope'].enum_type = _SCALAPBOPTIONS_OPTIONSSCOPE
 _SCALAPBOPTIONS.fields_by_name['enum_value_naming'].enum_type = _SCALAPBOPTIONS_ENUMVALUENAMING
+_SCALAPBOPTIONS.fields_by_name['aux_message_options'].message_type = _SCALAPBOPTIONS_AUXMESSAGEOPTIONS
+_SCALAPBOPTIONS.fields_by_name['aux_field_options'].message_type = _SCALAPBOPTIONS_AUXFIELDOPTIONS
+_SCALAPBOPTIONS.fields_by_name['aux_enum_options'].message_type = _SCALAPBOPTIONS_AUXENUMOPTIONS
 _SCALAPBOPTIONS_OPTIONSSCOPE.containing_type = _SCALAPBOPTIONS
 _SCALAPBOPTIONS_ENUMVALUENAMING.containing_type = _SCALAPBOPTIONS
 DESCRIPTOR.message_types_by_name['ScalaPbOptions'] = _SCALAPBOPTIONS
@@ -550,11 +705,35 @@ DESCRIPTOR.extensions_by_name['oneof'] = oneof
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ScalaPbOptions = _reflection.GeneratedProtocolMessageType('ScalaPbOptions', (_message.Message,), {
+
+  'AuxMessageOptions' : _reflection.GeneratedProtocolMessageType('AuxMessageOptions', (_message.Message,), {
+    'DESCRIPTOR' : _SCALAPBOPTIONS_AUXMESSAGEOPTIONS,
+    '__module__' : 'scalapb.scalapb_pb2'
+    # @@protoc_insertion_point(class_scope:scalapb.ScalaPbOptions.AuxMessageOptions)
+    })
+  ,
+
+  'AuxFieldOptions' : _reflection.GeneratedProtocolMessageType('AuxFieldOptions', (_message.Message,), {
+    'DESCRIPTOR' : _SCALAPBOPTIONS_AUXFIELDOPTIONS,
+    '__module__' : 'scalapb.scalapb_pb2'
+    # @@protoc_insertion_point(class_scope:scalapb.ScalaPbOptions.AuxFieldOptions)
+    })
+  ,
+
+  'AuxEnumOptions' : _reflection.GeneratedProtocolMessageType('AuxEnumOptions', (_message.Message,), {
+    'DESCRIPTOR' : _SCALAPBOPTIONS_AUXENUMOPTIONS,
+    '__module__' : 'scalapb.scalapb_pb2'
+    # @@protoc_insertion_point(class_scope:scalapb.ScalaPbOptions.AuxEnumOptions)
+    })
+  ,
   'DESCRIPTOR' : _SCALAPBOPTIONS,
   '__module__' : 'scalapb.scalapb_pb2'
   # @@protoc_insertion_point(class_scope:scalapb.ScalaPbOptions)
   })
 _sym_db.RegisterMessage(ScalaPbOptions)
+_sym_db.RegisterMessage(ScalaPbOptions.AuxMessageOptions)
+_sym_db.RegisterMessage(ScalaPbOptions.AuxFieldOptions)
+_sym_db.RegisterMessage(ScalaPbOptions.AuxEnumOptions)
 
 MessageOptions = _reflection.GeneratedProtocolMessageType('MessageOptions', (_message.Message,), {
   'DESCRIPTOR' : _MESSAGEOPTIONS,
