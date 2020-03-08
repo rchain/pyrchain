@@ -2,9 +2,17 @@ import random
 import string
 from dataclasses import dataclass, field
 from typing import List
-from unittest.mock import Mock, seal
+from unittest.mock import Mock
 
 from ..meta import from_pb
+
+try:
+    # python3.6 doesn't have it
+    from unittest.mock import seal
+except ImportError:
+    def seal(obj):
+        return obj
+
 
 
 @from_pb
