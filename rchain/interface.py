@@ -1,7 +1,7 @@
-from typing import List
 from abc import ABC
 
 from .crypto import PrivateKey
+
 # from .data_types import BlockInfo, LightBlockInfo
 
 
@@ -14,11 +14,11 @@ class APIClient(ABC):
                timestamp_millis: int) -> str:
         raise NotImplementedError()
 
-    def deploy_with_vabn_filled(self,key: PrivateKey,
-               term: str,
-               phlo_price: int,
-               phlo_limit: int,
-               timestamp_millis: int) -> str:
+    def deploy_with_vabn_filled(self, key: PrivateKey,
+                                term: str,
+                                phlo_price: int,
+                                phlo_limit: int,
+                                timestamp_millis: int) -> str:
         raise NotImplementedError()
 
     def show_block(self, block_hash: str):

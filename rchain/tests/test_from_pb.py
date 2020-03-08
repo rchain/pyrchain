@@ -1,9 +1,11 @@
-from typing import List
-from unittest.mock import Mock, seal
 import random
 import string
 from dataclasses import dataclass, field
+from typing import List
+from unittest.mock import Mock, seal
+
 from ..meta import from_pb
+
 
 @from_pb
 @dataclass
@@ -13,11 +15,13 @@ class Class1:
     value3: List[str]
     value4: float
 
+
 @from_pb
 @dataclass
 class ClassEmbedded:
     value2: str
     value1: Class1 = field(default_factory=Class1)
+
 
 @from_pb
 @dataclass
@@ -38,12 +42,14 @@ def generate_Class1_pb():
     seal(obj)
     return obj
 
+
 def generate_ClassEmbedded_pb():
     obj = Mock()
     obj.value1 = generate_Class1_pb()
     obj.value2 = random.choice(string.ascii_lowercase)
     seal(obj)
     return obj
+
 
 def generate_ClassEmbeddedList_pb():
     obj = Mock()
@@ -73,6 +79,7 @@ def test_gen_from_pb_embedded():
     assert c.value1.value3 == embedded_pb.value1.value3
     assert c.value1.value4 == embedded_pb.value1.value4
     assert c.value2 == embedded_pb.value2
+
 
 def test_gen_from_pb_embedded_list():
     embedded_pb = generate_ClassEmbeddedList_pb()

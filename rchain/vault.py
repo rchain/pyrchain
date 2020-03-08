@@ -48,6 +48,7 @@ new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, revVaultKeyCh, resultCh in {
 TRANSFER_PHLO_LIMIT = 100000
 TRANSFER_PHLO_PRICE = 1
 
+
 def render_contract_template(template: str, substitutions: Mapping[str, str]) -> str:
     return string.Template(template).substitute(substitutions)
 
@@ -74,4 +75,5 @@ class VaultAPI:
             }
         )
         timestamp_mill = int(time.time() * 1000)
-        return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT, timestamp_mill)
+        return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT,
+                                                   timestamp_mill)

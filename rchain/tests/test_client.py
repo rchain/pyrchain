@@ -8,12 +8,12 @@ from rchain.client import RClient
 from rchain.crypto import PrivateKey
 from rchain.pb.CasperMessage_pb2 import DeployDataProto
 from rchain.pb.DeployServiceCommon_pb2 import (
-    BlockInfo, BlockQuery, BlocksQuery, BondInfo, DeployInfo, LightBlockInfo, FindDeployQuery,
-    LastFinalizedBlockQuery, IsFinalizedQuery
+    BlockInfo, BlockQuery, BlocksQuery, BondInfo, DeployInfo, FindDeployQuery,
+    IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
 )
 from rchain.pb.DeployServiceV1_pb2 import (
-    BlockInfoResponse, BlockResponse, DeployResponse, FindDeployResponse, IsFinalizedResponse,
-    LastFinalizedBlockResponse
+    BlockInfoResponse, BlockResponse, DeployResponse, FindDeployResponse,
+    IsFinalizedResponse, LastFinalizedBlockResponse,
 )
 from rchain.pb.DeployServiceV1_pb2_grpc import (
     DeployServiceServicer, add_DeployServiceServicer_to_server,
@@ -41,6 +41,7 @@ def deploy_service(deploy_service: Union[DeployServiceServicer, ProposeServiceSe
     server.start()
     yield server, port
     server.stop(0)
+
 
 TEST_HOST = '127.0.0.1'
 

@@ -1,7 +1,8 @@
-from typing import List
 from dataclasses import dataclass
+from typing import List
 
 from .meta import from_pb
+
 
 @from_pb
 @dataclass
@@ -18,11 +19,13 @@ class DeployInfo:
     errored: bool
     systemDeployError: str
 
+
 @from_pb
 @dataclass
 class BondInfo:
     validator: str
     stake: int
+
 
 @from_pb
 @dataclass
@@ -53,6 +56,7 @@ class LightBlockInfo:
     blockSize: str
     deployCount: int
     faultTolerance: float
+
 
 @from_pb
 @dataclass

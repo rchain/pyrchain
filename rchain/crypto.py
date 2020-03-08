@@ -1,6 +1,5 @@
 import hashlib
 import random
-from eth_keyfile import extract_key_from_keyfile
 from typing import Any, Optional
 
 import bitcoin.base58
@@ -8,6 +7,7 @@ from ecdsa import SigningKey, VerifyingKey
 from ecdsa.curves import SECP256k1
 from ecdsa.util import sigdecode_der, sigencode_der_canonize
 from eth_hash.auto import keccak
+from eth_keyfile import extract_key_from_keyfile
 from google.protobuf.wrappers_pb2 import Int32Value, StringValue
 from rchain.pb.CasperMessage_pb2 import BlockMessageProto
 
@@ -82,7 +82,7 @@ class PublicKey:
 
 class PrivateKey:
     @classmethod
-    def from_eth_keyfile(cls, path: str, password: Optional[str]=None) -> 'PrivateKey':
+    def from_eth_keyfile(cls, path: str, password: Optional[str] = None) -> 'PrivateKey':
         key_bytes = extract_key_from_keyfile(path, password)
         return cls.from_bytes(key_bytes)
 

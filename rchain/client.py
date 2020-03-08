@@ -1,20 +1,20 @@
 import logging
 import re
-from typing import Iterable, List, Optional, TypeVar, Union, Tuple, Type
 from types import TracebackType
+from typing import Iterable, List, Optional, Tuple, Type, TypeVar, Union
 
 import grpc
-from grpc import Channel
 
 from .crypto import PrivateKey
 from .pb.DeployServiceCommon_pb2 import (
-    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery, LightBlockInfo, ExploratoryDeployQuery, FindDeployQuery,
-    LastFinalizedBlockQuery, IsFinalizedQuery
+    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery,
+    ExploratoryDeployQuery, FindDeployQuery, IsFinalizedQuery,
+    LastFinalizedBlockQuery, LightBlockInfo,
 )
 from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, DeployResponse,
-    ListeningNameDataPayload as Data, ListeningNameDataResponse,
-    VisualizeBlocksResponse, ExploratoryDeployResponse
+    ExploratoryDeployResponse, ListeningNameDataPayload as Data,
+    ListeningNameDataResponse, VisualizeBlocksResponse,
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
@@ -150,7 +150,7 @@ class RClient:
         return response.blockInfo
 
     def is_finalized(self, block_hash: str) -> bool:
-        is_finalized_query = IsFinalizedQuery(hash= block_hash)
+        is_finalized_query = IsFinalizedQuery(hash=block_hash)
         response = self._deploy_stub.isFinalized(is_finalized_query)
         self._check_response(response)
         return response.isFinalized
