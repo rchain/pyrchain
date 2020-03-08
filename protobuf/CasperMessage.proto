@@ -100,7 +100,8 @@ message BlockMessageProto {
 
 message BlockHashMessageProto {
   option (scalapb.message).extends = "CasperMessageProto";
-  bytes  hash       = 1;
+  bytes  hash         = 1;
+  bytes  blockCreator = 2;
 }
 
 message BlockMetadataInternal {
@@ -120,11 +121,9 @@ message BlockMetadataInternal {
 
 message HeaderProto {
   repeated bytes parentsHashList = 1; //list of parent block hashes
-  bytes deploysHash = 3;
   int64 timestamp = 5;
   int64 version = 6;
-  int32 deployCount = 7;
-  bytes extraBytes = 8;
+  bytes extraBytes = 7;
 }
 
 /**
@@ -147,14 +146,36 @@ message ProcessedDeployProto {
     DeployDataProto deploy = 1;
     PCost cost = 2 ;
     repeated EventProto deployLog = 3; //the new terms and comm. rule reductions from this deploy
-    repeated EventProto paymentLog = 4; //the comm. rule reductions from the payment for the deploy
     bool errored = 5; //true if deploy encountered a user error
+    string systemDeployError = 6;
+}
+
+message SlashSystemDeployDataProto {
+  bytes invalidBlockHash = 1;
+  bytes issuerPublicKey = 2;
+}
+
+message CloseBlockSystemDeployDataProto{
+}
+
+message SystemDeployDataProto{
+  oneof systemDeploy{
+    SlashSystemDeployDataProto slashSystemDeploy = 1;
+    CloseBlockSystemDeployDataProto closeBlockSystemDeploy = 2;
+  }
+}
+
+message ProcessedSystemDeployProto {
+    SystemDeployDataProto systemDeploy = 1;
+    repeated EventProto deployLog = 2;
+    string errorMsg = 3;
 }
 
 message BodyProto {
   RChainStateProto              state    = 1;
   repeated ProcessedDeployProto deploys      = 2;
-  bytes                    extraBytes   = 3;
+  repeated ProcessedSystemDeployProto systemDeploys = 3;
+  bytes                    extraBytes   = 4;
 }
 
 message JustificationProto {

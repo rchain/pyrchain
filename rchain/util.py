@@ -1,25 +1,34 @@
 import time
 
-from .crypto import PrivateKey
+from .crypto import PrivateKey, PublicKey
 from .pb.CasperMessage_pb2 import DeployDataProto
 
 
-def sign_deploy_data(key: PrivateKey, data: DeployDataProto) -> bytes:
+def _gen_deploy_sig_content(data: DeployDataProto) -> bytes:
     signed_data = DeployDataProto()
-    signed_data.CopyFrom(data)
-    signed_data.ClearField('deployer')
-    signed_data.ClearField('sig')
-    signed_data.ClearField('sigAlgorithm')
-    return key.sign(signed_data.SerializeToString())
+    signed_data.term = data.term
+    signed_data.timestamp = data.timestamp
+    signed_data.phloLimit = data.phloLimit
+    signed_data.phloPrice = data.phloPrice
+    signed_data.validAfterBlockNumber = data.validAfterBlockNumber
+    return signed_data.SerializeToString()
+
+
+def sign_deploy_data(key: PrivateKey, data: DeployDataProto) -> bytes:
+    return key.sign(_gen_deploy_sig_content(data))
+
+
+def verify_deploy_data(key: PublicKey, sig: bytes, data: DeployDataProto) -> bool:
+    return key.verify(sig, _gen_deploy_sig_content(data))
 
 
 def create_deploy_data(
-    key: PrivateKey,
-    term: str,
-    phlo_price: int,
-    phlo_limit: int,
-    valid_after_block_no: int = -1,
-    timestamp_millis: int = -1,
+        key: PrivateKey,
+        term: str,
+        phlo_price: int,
+        phlo_limit: int,
+        valid_after_block_no: int = -1,
+        timestamp_millis: int = -1,
 ) -> DeployDataProto:
     if timestamp_millis < 0:
         timestamp_millis = int(time.time() * 1000)

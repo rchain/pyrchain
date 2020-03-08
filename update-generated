@@ -3,13 +3,14 @@ set -e
 
 src_dir=protobuf
 out_dir=rchain/pb
+stub_dir=rchain/pb
 
 mkdir -p $out_dir
-pipenv run python -m grpc_tools.protoc \
+python -m grpc_tools.protoc \
 	-I $src_dir \
 	--python_out=$out_dir \
 	--grpc_python_out=$out_dir \
-	--mypy_out=$out_dir \
+	--mypy_out=$stub_dir \
 	$(find $src_dir -name '*.proto')
 
 # https://github.com/protocolbuffers/protobuf/issues/1491#issuecomment-438138293

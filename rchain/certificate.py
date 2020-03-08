@@ -2,10 +2,10 @@ import base64
 from datetime import datetime, timedelta
 from typing import Tuple
 
+from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec
-from cryptography import x509
 from cryptography.x509.oid import NameOID
 from eth_hash.auto import keccak
 
@@ -24,7 +24,7 @@ def get_node_id_raw(key: ec.EllipticCurvePrivateKeyWithSerialization) -> bytes:
     return keccak(pk_bytes)[12:]
 
 
-def get_node_tls_cn(node_id_raw) -> str:
+def get_node_tls_cn(node_id_raw: bytes) -> str:
     return base64.b16encode(node_id_raw).decode('ascii').lower()
 
 
@@ -50,8 +50,8 @@ def get_node_tls_cert_pem(key: ec.EllipticCurvePrivateKeyWithSerialization) -> s
 
 def generate_node_tls_key_cert_id() -> Tuple[str, str, str]:
     key = ec.generate_private_key(ec.SECP256R1(), default_backend())
-    key_pem = get_node_tls_key_pem(key)
-    node_id_raw = get_node_id_raw(key)
+    key_pem = get_node_tls_key_pem(key)  # type: ignore
+    node_id_raw = get_node_id_raw(key)  # type: ignore
     node_id = node_id_raw.hex()
-    cert_pem = get_node_tls_cert_pem(key)
+    cert_pem = get_node_tls_cert_pem(key)  # type:ignore
     return key_pem, cert_pem, node_id
