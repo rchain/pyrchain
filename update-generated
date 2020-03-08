@@ -6,7 +6,7 @@ out_dir=rchain/pb
 stub_dir=rchain/pb
 
 mkdir -p $out_dir
-pipenv run python -m grpc_tools.protoc \
+python -m grpc_tools.protoc \
 	-I $src_dir \
 	--python_out=$out_dir \
 	--grpc_python_out=$out_dir \

@@ -8,10 +8,12 @@ from rchain.client import RClient
 from rchain.crypto import PrivateKey
 from rchain.pb.CasperMessage_pb2 import DeployDataProto
 from rchain.pb.DeployServiceCommon_pb2 import (
-    BlockInfo, BlockQuery, BlocksQuery, BondInfo, DeployInfo, LightBlockInfo,
+    BlockInfo, BlockQuery, BlocksQuery, BondInfo, DeployInfo, FindDeployQuery,
+    IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
 )
 from rchain.pb.DeployServiceV1_pb2 import (
-    BlockInfoResponse, BlockResponse, DeployResponse,
+    BlockInfoResponse, BlockResponse, DeployResponse, FindDeployResponse,
+    IsFinalizedResponse, LastFinalizedBlockResponse,
 )
 from rchain.pb.DeployServiceV1_pb2_grpc import (
     DeployServiceServicer, add_DeployServiceServicer_to_server,
@@ -41,10 +43,7 @@ def deploy_service(deploy_service: Union[DeployServiceServicer, ProposeServiceSe
     server.stop(0)
 
 
-@contextmanager
-def establish_channel(service_port: int) -> Generator[grpc.Channel, None, None]:
-    with grpc.insecure_channel("127.0.0.1:{}".format(service_port)) as channel:
-        yield channel
+TEST_HOST = '127.0.0.1'
 
 
 @pytest.mark.parametrize("key,terms,phlo_price,phlo_limit,valid_after_block_no,timestamp_millis", [
@@ -59,8 +58,7 @@ def test_client_deploy(key: PrivateKey, terms: str, phlo_price: int, phlo_limit:
             return DeployResponse(result=request.sig.hex())
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
-            establish_channel(port) as channel:
-        client = RClient(channel)
+            RClient(TEST_HOST, port) as client:
         ret = client.deploy(key, terms, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis)
         assert verify_deploy_data(key.get_public_key(), bytes.fromhex(ret),
                                   create_deploy_data(key, terms, phlo_price, phlo_limit, valid_after_block_no,
@@ -114,9 +112,7 @@ def test_client_show_block() -> None:
             ), deploys=[deploy]))
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
-            establish_channel(port) as channel:
-        client = RClient(channel)
-
+            RClient(TEST_HOST, port) as client:
         block = client.show_block(request_block_hash)
         block_info = block.blockInfo
         assert block_info.blockHash == request_block_hash
@@ -188,9 +184,7 @@ def test_client_show_blocks() -> None:
                 deployCount=deployCount, faultTolerance=faultTolerance))
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
-            establish_channel(port) as channel:
-        client = RClient(channel)
-
+            RClient(TEST_HOST, port) as client:
         blocks = client.show_blocks()
         block_info = blocks[0]
         assert len(blocks) == 1
@@ -225,8 +219,39 @@ def test_client_propose() -> None:
             return ProposeResponse(result="Success! Block {} created and added.".format(block_hash))
 
     with deploy_service(DummyProposeService()) as (server, port), \
-            establish_channel(port) as channel:
-        client = RClient(channel)
-
+            RClient(TEST_HOST, port) as client:
         hash = client.propose()
         assert hash == block_hash
+
+
+def test_client_find_deploy() -> None:
+    deploy_id = '61e594124ca6af84a5468d98b34a4f3431ef39c54c6cf07fe6fbf8b079ef64f6'
+
+    class DummyDeployService(DeployServiceServicer):
+        def findDeploy(self, request: FindDeployQuery, context: grpc.ServicerContext) -> FindDeployResponse:
+            return FindDeployResponse(blockInfo=LightBlockInfo())
+
+    with deploy_service(DummyDeployService()) as (server, port), \
+            RClient(TEST_HOST, port) as client:
+        assert client.find_deploy(deploy_id)
+
+
+def test_client_last_finalized_block() -> None:
+    class DummyDeployService(DeployServiceServicer):
+        def lastFinalizedBlock(self, request: LastFinalizedBlockQuery,
+                               context: grpc.ServicerContext) -> LastFinalizedBlockResponse:
+            return LastFinalizedBlockResponse(blockInfo=BlockInfo())
+
+    with deploy_service(DummyDeployService()) as (server, port), \
+            RClient(TEST_HOST, port) as client:
+        assert client.last_finalized_block()
+
+
+def test_client_is_finalized_block() -> None:
+    class DummyDeployService(DeployServiceServicer):
+        def isFinalized(self, request: IsFinalizedQuery, context: grpc.ServicerContext) -> IsFinalizedResponse:
+            return IsFinalizedResponse(isFinalized=True)
+
+    with deploy_service(DummyDeployService()) as (server, port), \
+            RClient(TEST_HOST, port) as client:
+        assert client.is_finalized('asd')

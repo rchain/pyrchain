@@ -16,6 +16,7 @@ from typing import (
     Iterable as typing___Iterable,
     Optional as typing___Optional,
     Text as typing___Text,
+    Union as typing___Union,
 )
 
 from typing_extensions import (
@@ -27,6 +28,9 @@ builtin___bool = bool
 builtin___bytes = bytes
 builtin___float = float
 builtin___int = int
+if sys.version_info < (3,):
+    builtin___buffer = buffer
+    builtin___unicode = unicode
 
 
 class ServiceError(google___protobuf___message___Message):
@@ -37,11 +41,12 @@ class ServiceError(google___protobuf___message___Message):
         *,
         messages : typing___Optional[typing___Iterable[typing___Text]] = None,
         ) -> None: ...
-    @classmethod
-    def FromString(cls, s: builtin___bytes) -> ServiceError: ...
+    if sys.version_info >= (3,):
+        @classmethod
+        def FromString(cls, s: builtin___bytes) -> ServiceError: ...
+    else:
+        @classmethod
+        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> ServiceError: ...
     def MergeFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
-    if sys.version_info >= (3,):
-        def ClearField(self, field_name: typing_extensions___Literal[u"messages"]) -> None: ...
-    else:
-        def ClearField(self, field_name: typing_extensions___Literal[u"messages",b"messages"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions___Literal[u"messages",b"messages"]) -> None: ...

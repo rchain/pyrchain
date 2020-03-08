@@ -1,3 +1,5 @@
+import os
+
 import pytest
 from ecdsa.keys import BadSignatureError
 from rchain.crypto import PrivateKey, PublicKey, blake2b_32
@@ -108,3 +110,8 @@ def test_address(key_hex: str, pub_key_hex: str, rev_address: str) -> None:
     pub_key = PublicKey.from_hex(pub_key_hex)
     actual_address = pub_key.get_rev_address()
     assert rev_address == actual_address
+
+
+def test_private_key_from_eth_path():
+    key_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources/key.json')
+    PrivateKey.from_eth_keyfile(key_path, 'testpassword')

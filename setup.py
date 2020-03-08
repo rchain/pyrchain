@@ -12,7 +12,7 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url='https://github.com/rchain/pyrchain',
     packages=setuptools.find_namespace_packages(include=['rchain', 'rchain.*']),
-    package_data={'rchain.vault': ['*.rho.tpl'], 'rchain.pb': ['*.pyi'], 'rchain.pb.scalapb':['*.pyi']},
+    package_data={'rchain.vault': ['*.rho.tpl'], 'rchain.pb': ['*.pyi'], 'rchain.pb.scalapb': ['*.pyi']},
     install_requires=[
         'grpcio',
         'protobuf',
@@ -20,8 +20,11 @@ setuptools.setup(
         'python-bitcoinlib',
         'cryptography',
         'eth_hash',
-        'pycryptodome'
+        'pycryptodome',
+        'eth-keyfile',
+        'dataclasses'
     ],
-    extras_require={'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest', 'typeshed']},
+    extras_require={
+        'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest', 'sphinx']},
     zip_safe=False
 )

@@ -85,6 +85,11 @@ class DeployServiceStub(object):
         request_serializer=DeployServiceCommon__pb2.BondStatusQuery.SerializeToString,
         response_deserializer=DeployServiceV1__pb2.BondStatusResponse.FromString,
         )
+    self.exploratoryDeploy = channel.unary_unary(
+        '/casper.v1.DeployService/exploratoryDeploy',
+        request_serializer=DeployServiceCommon__pb2.ExploratoryDeployQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.ExploratoryDeployResponse.FromString,
+        )
 
 
 class DeployServiceServicer(object):
@@ -187,6 +192,13 @@ class DeployServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def exploratoryDeploy(self, request, context):
+    """Executes deploy as user deploy with immediate rollback and return result
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DeployServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -254,6 +266,11 @@ def add_DeployServiceServicer_to_server(servicer, server):
           servicer.bondStatus,
           request_deserializer=DeployServiceCommon__pb2.BondStatusQuery.FromString,
           response_serializer=DeployServiceV1__pb2.BondStatusResponse.SerializeToString,
+      ),
+      'exploratoryDeploy': grpc.unary_unary_rpc_method_handler(
+          servicer.exploratoryDeploy,
+          request_deserializer=DeployServiceCommon__pb2.ExploratoryDeployQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.ExploratoryDeployResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
