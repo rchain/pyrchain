@@ -8,7 +8,8 @@ from grpc import Channel
 
 from .crypto import PrivateKey
 from .pb.DeployServiceCommon_pb2 import (
-    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery, LightBlockInfo, ExploratoryDeployQuery
+    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery, LightBlockInfo, ExploratoryDeployQuery, FindDeployQuery,
+    LastFinalizedBlockQuery, IsFinalizedQuery
 )
 from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, DeployResponse,
@@ -60,6 +61,7 @@ class RClient:
 
     def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, str]]] = None):
         self.channel = grpc.insecure_channel("{}:{}".format(host, port), grpc_options)
+        self._deploy_stub = DeployServiceStub(self.channel)
 
     def close(self) -> None:
         self.channel.close()
@@ -102,8 +104,7 @@ class RClient:
 
     def exploratory_deploy(self, term: str) -> List[Par]:
         exploratory_query = ExploratoryDeployQuery(term=term)
-        stub = DeployServiceStub(self.channel)
-        response = stub.exploratoryDeploy(exploratory_query)
+        response = self._deploy_stub.exploratoryDeploy(exploratory_query)
         self._check_response(response)
         return list(response.result.postBlockData)
 
@@ -119,25 +120,40 @@ class RClient:
         deploy_data = create_deploy_data(
             key, term, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis
         )
-        stub = DeployServiceStub(self.channel)
-        response = stub.doDeploy(deploy_data)
+        response = self._deploy_stub.doDeploy(deploy_data)
         self._check_response(response)
         # sig of deploy data is deployId
         return deploy_data.sig.hex()
 
     def show_block(self, block_hash: str) -> BlockInfo:
         block_query = BlockQuery(hash=block_hash)
-        stub = DeployServiceStub(self.channel)
-        response = stub.getBlock(block_query)
+        response = self._deploy_stub.getBlock(block_query)
         self._check_response(response)
         return response.blockInfo
 
     def show_blocks(self, depth: int = 1) -> List[LightBlockInfo]:
         blocks_query = BlocksQuery(depth=depth)
-        stub = DeployServiceStub(self.channel)
-        response = stub.getBlocks(blocks_query)
+        response = self._deploy_stub.getBlocks(blocks_query)
         result = self._handle_stream(response)
         return list(map(lambda x: x.blockInfo, result))  # type: ignore
+
+    def find_deploy(self, deploy_id: str) -> LightBlockInfo:
+        find_deploy_query = FindDeployQuery(deployId=bytes.fromhex(deploy_id))
+        response = self._deploy_stub.findDeploy(find_deploy_query)
+        self._check_response(response)
+        return response.blockInfo
+
+    def last_finalized_block(self) -> BlockInfo:
+        last_finalized_query = LastFinalizedBlockQuery()
+        response = self._deploy_stub.lastFinalizedBlock(last_finalized_query)
+        self._check_response(response)
+        return response.blockInfo
+
+    def is_finalized(self, block_hash: str) -> bool:
+        is_finalized_query = IsFinalizedQuery(hash= block_hash)
+        response = self._deploy_stub.isFinalized(is_finalized_query)
+        self._check_response(response)
+        return response.isFinalized
 
     def propose(self) -> str:
         stub = ProposeServiceStub(self.channel)
@@ -149,8 +165,7 @@ class RClient:
 
     def get_data_at_name(self, par: Par, depth: int = -1) -> Data:
         query = DataAtNameQuery(depth=depth, name=par)
-        stub = DeployServiceStub(self.channel)
-        response = stub.listenForDataAtName(query)
+        response = self._deploy_stub.listenForDataAtName(query)
         self._check_response(response)
         wrapped = response.payload
         return Data.FromString(wrapped.SerializeToString())

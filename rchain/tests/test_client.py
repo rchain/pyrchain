@@ -8,10 +8,12 @@ from rchain.client import RClient
 from rchain.crypto import PrivateKey
 from rchain.pb.CasperMessage_pb2 import DeployDataProto
 from rchain.pb.DeployServiceCommon_pb2 import (
-    BlockInfo, BlockQuery, BlocksQuery, BondInfo, DeployInfo, LightBlockInfo,
+    BlockInfo, BlockQuery, BlocksQuery, BondInfo, DeployInfo, LightBlockInfo, FindDeployQuery,
+    LastFinalizedBlockQuery, IsFinalizedQuery
 )
 from rchain.pb.DeployServiceV1_pb2 import (
-    BlockInfoResponse, BlockResponse, DeployResponse,
+    BlockInfoResponse, BlockResponse, DeployResponse, FindDeployResponse, IsFinalizedResponse,
+    LastFinalizedBlockResponse
 )
 from rchain.pb.DeployServiceV1_pb2_grpc import (
     DeployServiceServicer, add_DeployServiceServicer_to_server,
@@ -110,7 +112,6 @@ def test_client_show_block() -> None:
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
             RClient(TEST_HOST, port) as client:
-
         block = client.show_block(request_block_hash)
         block_info = block.blockInfo
         assert block_info.blockHash == request_block_hash
@@ -183,7 +184,6 @@ def test_client_show_blocks() -> None:
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
             RClient(TEST_HOST, port) as client:
-
         blocks = client.show_blocks()
         block_info = blocks[0]
         assert len(blocks) == 1
@@ -219,6 +219,38 @@ def test_client_propose() -> None:
 
     with deploy_service(DummyProposeService()) as (server, port), \
             RClient(TEST_HOST, port) as client:
-
         hash = client.propose()
         assert hash == block_hash
+
+
+def test_client_find_deploy() -> None:
+    deploy_id = '61e594124ca6af84a5468d98b34a4f3431ef39c54c6cf07fe6fbf8b079ef64f6'
+
+    class DummyDeployService(DeployServiceServicer):
+        def findDeploy(self, request: FindDeployQuery, context: grpc.ServicerContext) -> FindDeployResponse:
+            return FindDeployResponse(blockInfo=LightBlockInfo())
+
+    with deploy_service(DummyDeployService()) as (server, port), \
+            RClient(TEST_HOST, port) as client:
+        assert client.find_deploy(deploy_id)
+
+
+def test_client_last_finalized_block() -> None:
+    class DummyDeployService(DeployServiceServicer):
+        def lastFinalizedBlock(self, request: LastFinalizedBlockQuery,
+                               context: grpc.ServicerContext) -> LastFinalizedBlockResponse:
+            return LastFinalizedBlockResponse(blockInfo=BlockInfo())
+
+    with deploy_service(DummyDeployService()) as (server, port), \
+            RClient(TEST_HOST, port) as client:
+        assert client.last_finalized_block()
+
+
+def test_client_is_finalized_block() -> None:
+    class DummyDeployService(DeployServiceServicer):
+        def isFinalized(self, request: IsFinalizedQuery, context: grpc.ServicerContext) -> IsFinalizedResponse:
+            return IsFinalizedResponse(isFinalized=True)
+
+    with deploy_service(DummyDeployService()) as (server, port), \
+            RClient(TEST_HOST, port) as client:
+        assert client.is_finalized('asd')
