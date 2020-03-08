@@ -1,6 +1,7 @@
 import hashlib
 import random
-from typing import Any
+from eth_keyfile import extract_key_from_keyfile
+from typing import Any, Optional
 
 import bitcoin.base58
 from ecdsa import SigningKey, VerifyingKey
@@ -80,6 +81,11 @@ class PublicKey:
 
 
 class PrivateKey:
+    @classmethod
+    def from_eth_keyfile(cls, path: str, password: Optional[str]=None) -> 'PrivateKey':
+        key_bytes = extract_key_from_keyfile(path, password)
+        return cls.from_bytes(key_bytes)
+
     @classmethod
     def generate(cls) -> 'PrivateKey':
         return cls(SigningKey.generate(curve=SECP256k1))
