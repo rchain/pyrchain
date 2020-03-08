@@ -21,7 +21,8 @@ setuptools.setup(
         'cryptography',
         'eth_hash',
         'pycryptodome',
-        'eth-keyfile'
+        'eth-keyfile',
+        'dataclasses'
     ],
     extras_require={
         'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest', 'sphinx']},
