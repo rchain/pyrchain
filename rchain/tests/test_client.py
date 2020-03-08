@@ -40,11 +40,7 @@ def deploy_service(deploy_service: Union[DeployServiceServicer, ProposeServiceSe
     yield server, port
     server.stop(0)
 
-
-@contextmanager
-def establish_channel(service_port: int) -> Generator[grpc.Channel, None, None]:
-    with grpc.insecure_channel("127.0.0.1:{}".format(service_port)) as channel:
-        yield channel
+TEST_HOST = '127.0.0.1'
 
 
 @pytest.mark.parametrize("key,terms,phlo_price,phlo_limit,valid_after_block_no,timestamp_millis", [
@@ -59,8 +55,7 @@ def test_client_deploy(key: PrivateKey, terms: str, phlo_price: int, phlo_limit:
             return DeployResponse(result=request.sig.hex())
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
-            establish_channel(port) as channel:
-        client = RClient(channel)
+            RClient(TEST_HOST, port) as client:
         ret = client.deploy(key, terms, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis)
         assert verify_deploy_data(key.get_public_key(), bytes.fromhex(ret),
                                   create_deploy_data(key, terms, phlo_price, phlo_limit, valid_after_block_no,
@@ -114,8 +109,7 @@ def test_client_show_block() -> None:
             ), deploys=[deploy]))
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
-            establish_channel(port) as channel:
-        client = RClient(channel)
+            RClient(TEST_HOST, port) as client:
 
         block = client.show_block(request_block_hash)
         block_info = block.blockInfo
@@ -188,8 +182,7 @@ def test_client_show_blocks() -> None:
                 deployCount=deployCount, faultTolerance=faultTolerance))
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
-            establish_channel(port) as channel:
-        client = RClient(channel)
+            RClient(TEST_HOST, port) as client:
 
         blocks = client.show_blocks()
         block_info = blocks[0]
@@ -225,8 +218,7 @@ def test_client_propose() -> None:
             return ProposeResponse(result="Success! Block {} created and added.".format(block_hash))
 
     with deploy_service(DummyProposeService()) as (server, port), \
-            establish_channel(port) as channel:
-        client = RClient(channel)
+            RClient(TEST_HOST, port) as client:
 
         hash = client.propose()
         assert hash == block_hash

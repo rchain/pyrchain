@@ -1,17 +1,19 @@
 import logging
 import re
-from typing import Iterable, List, Optional, TypeVar, Union
+from typing import Iterable, List, Optional, TypeVar, Union, Tuple, Type
+from types import TracebackType
 
+import grpc
 from grpc import Channel
 
 from .crypto import PrivateKey
 from .pb.DeployServiceCommon_pb2 import (
-    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery, LightBlockInfo,
+    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery, LightBlockInfo, ExploratoryDeployQuery
 )
 from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, DeployResponse,
     ListeningNameDataPayload as Data, ListeningNameDataResponse,
-    VisualizeBlocksResponse,
+    VisualizeBlocksResponse, ExploratoryDeployResponse
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
@@ -25,6 +27,7 @@ GRPC_Response_T = Union[ProposeResponse,
                         ListeningNameDataResponse,
                         BlockResponse,
                         BlockInfoResponse,
+                        ExploratoryDeployResponse,
                         VisualizeBlocksResponse]
 
 GRPC_StreamResponse_T = Union[BlockInfoResponse, VisualizeBlocksResponse]
@@ -55,8 +58,19 @@ class DataQueries:
 
 class RClient:
 
-    def __init__(self, channel: Channel):
-        self.channel = channel
+    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, str]]] = None):
+        self.channel = grpc.insecure_channel("{}:{}".format(host, port), grpc_options)
+
+    def close(self) -> None:
+        self.channel.close()
+
+    def __enter__(self) -> 'RClient':
+        return self
+
+    def __exit__(self, exc_type: Optional[Type[BaseException]],
+                 exc_val: Optional[BaseException],
+                 exc_tb: Optional[TracebackType]) -> None:
+        self.close()
 
     def _check_response(self, response: GRPC_Response_T) -> None:
         logging.debug('gRPC response: %s', str(response))
@@ -85,6 +99,13 @@ class RClient:
         latest_block = latest_blocks[0]
         latest_block_num = latest_block.blockNumber
         return self.deploy(key, term, phlo_price, phlo_limit, latest_block_num, timestamp_millis)
+
+    def exploratory_deploy(self, term: str) -> List[Par]:
+        exploratory_query = ExploratoryDeployQuery(term=term)
+        stub = DeployServiceStub(self.channel)
+        response = stub.exploratoryDeploy(exploratory_query)
+        self._check_response(response)
+        return list(response.result.postBlockData)
 
     def deploy(
             self,
