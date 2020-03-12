@@ -77,3 +77,12 @@ class VaultAPI:
         timestamp_mill = int(time.time() * 1000)
         return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT,
                                                    timestamp_mill)
+
+    def create_vault(self, addr: str, key: PrivateKey) -> str:
+        contract = render_contract_template(
+            CREATE_VAULT_RHO_TPL, {
+                'addr': addr
+            }
+        )
+        timestamp_mill = int(time.time() * 1000)
+        return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT, timestamp_millis=timestamp_mill)
