@@ -34,9 +34,23 @@ new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, revVaultKeyCh, resultCh in {
   rl!(`rho:rchain:revVault`, *RevVaultCh) |
   for (@(_, RevVault) <- RevVaultCh) {
     @RevVault!("findOrCreate", "$from", *vaultCh) |
-    @RevVault!("findOrCreate", "to", *vaultCh) |
     @RevVault!("deployerAuthKey", *revVaultKeyCh) |
     for (@(true, vault) <- vaultCh; key <- revVaultKeyCh) {
+      @vault!("transfer", "$to", $amount, *key, *resultCh) |
+      for (_ <- resultCh) { Nil }
+    }
+  }
+}
+"""
+
+TRANSFER_ENSURE_TO_RHO_TPL = """
+new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, toVaultCh, revVaultKeyCh, resultCh in {
+  rl!(`rho:rchain:revVault`, *RevVaultCh) |
+  for (@(_, RevVault) <- RevVaultCh) {
+    @RevVault!("findOrCreate", "$from", *vaultCh) |
+    @RevVault!("findOrCreate", "$to", *toVaultCh) |
+    @RevVault!("deployerAuthKey", *revVaultKeyCh) |
+    for (@(true, vault) <- vaultCh; key <- revVaultKeyCh; @(true, toVault) <- toVaultCh;) {
       @vault!("transfer", "$to", $amount, *key, *resultCh) |
       for (_ <- resultCh) { Nil }
     }
@@ -67,6 +81,10 @@ class VaultAPI:
         return int(result[0].exprs[0].g_int)
 
     def transfer(self, from_addr: str, to_addr: str, amount: int, key: PrivateKey) -> str:
+        """
+        Transfer from `from_addr` to `to_addr` in the chain. Just make sure the `to_addr` is created
+        in the chain. Otherwise, the transfer would hang until the `to_addr` is created.
+        """
         contract = render_contract_template(
             TRANSFER_RHO_TPL, {
                 'from': from_addr,
@@ -75,6 +93,24 @@ class VaultAPI:
             }
         )
         timestamp_mill = int(time.time() * 1000)
+        return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT,
+                                                   timestamp_mill)
+
+    def transfer_ensure(self, from_addr: str, to_addr: str, amount: int, key: PrivateKey) -> str:
+        """
+        The difference between `transfer_ensure` and `transfer` is that , if the to_addr is not created in the
+        chain, the `transfer` would hang until the to_addr successfully created in the change and the `transfer_ensure`
+        can be sure that if the `to_addr` is not existed in the chain the process would created the vault in the chain
+        and make the transfer successfully.
+        """
+        contract = render_contract_template(
+            TRANSFER_ENSURE_TO_RHO_TPL, {
+                'from': from_addr,
+                'to': to_addr,
+                'amount': str(amount)
+            }
+        )
+        timestamp_mill = int(time.time()* 1000)
         return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT,
                                                    timestamp_mill)
 
