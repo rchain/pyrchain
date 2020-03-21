@@ -30,11 +30,11 @@ new return, rl(`rho:registry:lookup`), RevVaultCh, vaultCh, balanceCh in {
 """
 
 TRANSFER_RHO_TPL = """
-new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, revVaultKeyCh, resultCh in {
+new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, revVaultKeyCh, deployerId(`rho:rchain:deployerId`), stdout(`rho:io:stdout`), resultCh in {
   rl!(`rho:rchain:revVault`, *RevVaultCh) |
   for (@(_, RevVault) <- RevVaultCh) {
     @RevVault!("findOrCreate", "$from", *vaultCh) |
-    @RevVault!("deployerAuthKey", *revVaultKeyCh) |
+    @RevVault!("deployerAuthKey", *deployerId, *revVaultKeyCh) |
     for (@(true, vault) <- vaultCh; key <- revVaultKeyCh) {
       @vault!("transfer", "$to", $amount, *key, *resultCh) |
       for (_ <- resultCh) { Nil }
@@ -44,12 +44,12 @@ new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, revVaultKeyCh, resultCh in {
 """
 
 TRANSFER_ENSURE_TO_RHO_TPL = """
-new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, toVaultCh, revVaultKeyCh, resultCh in {
+new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, toVaultCh, deployerId(`rho:rchain:deployerId`), revVaultKeyCh, resultCh in {
   rl!(`rho:rchain:revVault`, *RevVaultCh) |
   for (@(_, RevVault) <- RevVaultCh) {
     @RevVault!("findOrCreate", "$from", *vaultCh) |
     @RevVault!("findOrCreate", "$to", *toVaultCh) |
-    @RevVault!("deployerAuthKey", *revVaultKeyCh) |
+    @RevVault!("deployerAuthKey", *deployerId, *revVaultKeyCh) |
     for (@(true, vault) <- vaultCh; key <- revVaultKeyCh; @(true, toVault) <- toVaultCh;) {
       @vault!("transfer", "$to", $amount, *key, *resultCh) |
       for (_ <- resultCh) { Nil }
@@ -59,7 +59,7 @@ new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, toVaultCh, revVaultKeyCh, re
 """
 
 # these are predefined param
-TRANSFER_PHLO_LIMIT = 100000
+TRANSFER_PHLO_LIMIT = 1000000
 TRANSFER_PHLO_PRICE = 1
 
 
