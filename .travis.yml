@@ -3,6 +3,24 @@ python:
   - '3.6'
   - '3.7'
   - '3.8'
+services:
+  - docker
+env:
+  - BOOTSTRAP_PRIVATE_KEY=34d969f43affa8e5c47900e6db475cb8ddd8520170ee73b2207c54014006ff2b SYNCHRONY_CONSTRAINT_THREDHOLD=0.0 RNODE_IMAGE=rchain/rnode:v0.9.23
+before_install:
+  - docker run --name rnode -d -v $TRAVIS_BUILD_DIR/rchain/tests/resources/rnode:/var/lib/rnode
+    -p 127.0.0.1:40400-40404:40400-40404 $RNODE_IMAGE run -s
+    --validator-private-key=$BOOTSTRAP_PRIVATE_KEY --allow-private-addresses -n
+    --synchrony-constraint-threshold=$SYNCHRONY_CONSTRAINT_THREDHOLD --deploy-timestamp=1
+    --required-sigs=0 --duration=10sec --interval=10sec --reporting
+  - docker logs -f rnode | grep -m 1 "Making a transition to Running state."
+  - docker run --name read-only -d -p 127.0.0.1:30300-30304:30300-30304 $RNODE_IMAGE
+    --grpc-port-internal 30302 --grpc-port 30301 run
+    --port 30300 --http-port 30303 --kademlia-port 30304
+    --bootstrap="rnode://5b0390a7c34319310de2432cc2c9dc433043783e@127.0.0.1?protocol=40400&discovery=40404"
+    --allow-private-addresses -n --synchrony-constraint-threshold=$SYNCHRONY_CONSTRAINT_THREDHOLD
+    --reporting --fault-tolerance-threshold=-2.0
+  - docker logs -f read-only | grep -m 1 "Making a transition to Running state."
 install: pip install -e .[dev]
 script:
   - python -m pytest rchain/tests

@@ -113,5 +113,5 @@ def test_address(key_hex: str, pub_key_hex: str, rev_address: str) -> None:
 
 
 def test_private_key_from_eth_path():
-    key_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources/key.json')
+    key_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources/key_store_file.json')
     PrivateKey.from_eth_keyfile(key_path, 'testpassword')
