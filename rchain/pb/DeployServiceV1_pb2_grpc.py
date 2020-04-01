@@ -90,6 +90,16 @@ class DeployServiceStub(object):
         request_serializer=DeployServiceCommon__pb2.ExploratoryDeployQuery.SerializeToString,
         response_deserializer=DeployServiceV1__pb2.ExploratoryDeployResponse.FromString,
         )
+    self.getBlocksByHeights = channel.unary_stream(
+        '/casper.v1.DeployService/getBlocksByHeights',
+        request_serializer=DeployServiceCommon__pb2.BlocksQueryByHeight.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.BlockInfoResponse.FromString,
+        )
+    self.getEventByHash = channel.unary_unary(
+        '/casper.v1.DeployService/getEventByHash',
+        request_serializer=DeployServiceCommon__pb2.BlockQuery.SerializeToString,
+        response_deserializer=DeployServiceV1__pb2.EventInfoResponse.FromString,
+        )
 
 
 class DeployServiceServicer(object):
@@ -199,6 +209,20 @@ class DeployServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def getBlocksByHeights(self, request, context):
+    """get blocks by block height
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def getEventByHash(self, request, context):
+    """temporary api for testing
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DeployServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -271,6 +295,16 @@ def add_DeployServiceServicer_to_server(servicer, server):
           servicer.exploratoryDeploy,
           request_deserializer=DeployServiceCommon__pb2.ExploratoryDeployQuery.FromString,
           response_serializer=DeployServiceV1__pb2.ExploratoryDeployResponse.SerializeToString,
+      ),
+      'getBlocksByHeights': grpc.unary_stream_rpc_method_handler(
+          servicer.getBlocksByHeights,
+          request_deserializer=DeployServiceCommon__pb2.BlocksQueryByHeight.FromString,
+          response_serializer=DeployServiceV1__pb2.BlockInfoResponse.SerializeToString,
+      ),
+      'getEventByHash': grpc.unary_unary_rpc_method_handler(
+          servicer.getEventByHash,
+          request_deserializer=DeployServiceCommon__pb2.BlockQuery.FromString,
+          response_serializer=DeployServiceV1__pb2.EventInfoResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

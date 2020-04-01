@@ -22,11 +22,52 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='casper.v1',
   syntax='proto3',
   serialized_options=b'\342?+\n%coop.rchain.casper.protocol.deploy.v1\020\001(\001',
-  serialized_pb=b'\n\x15\x44\x65ployServiceV1.proto\x12\tcasper.v1\x1a\x13\x43\x61sperMessage.proto\x1a\x12ServiceError.proto\x1a\x19\x44\x65ployServiceCommon.proto\x1a\x15scalapb/scalapb.proto\"s\n\x19\x45xploratoryDeployResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12+\n\x06result\x18\x02 \x01(\x0b\x32\x19.casper.DataWithBlockInfoH\x00\x42\t\n\x07message\"M\n\x0e\x44\x65ployResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x10\n\x06result\x18\x02 \x01(\tH\x00\x42\t\n\x07message\"b\n\rBlockResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12&\n\tblockInfo\x18\x02 \x01(\x0b\x32\x11.casper.BlockInfoH\x00\x42\t\n\x07message\"W\n\x17VisualizeBlocksResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x11\n\x07\x63ontent\x18\x02 \x01(\tH\x00\x42\t\n\x07message\"U\n\x15MachineVerifyResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x11\n\x07\x63ontent\x18\x02 \x01(\tH\x00\x42\t\n\x07message\"k\n\x11\x42lockInfoResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12+\n\tblockInfo\x18\x02 \x01(\x0b\x32\x16.casper.LightBlockInfoH\x00\x42\t\n\x07message\"~\n\x19ListeningNameDataResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x36\n\x07payload\x18\x02 \x01(\x0b\x32#.casper.v1.ListeningNameDataPayloadH\x00\x42\t\n\x07message\"X\n\x18ListeningNameDataPayload\x12,\n\tblockInfo\x18\x01 \x03(\x0b\x32\x19.casper.DataWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"\x80\x01\n\x1a\x43ontinuationAtNameResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x37\n\x07payload\x18\x02 \x01(\x0b\x32$.casper.v1.ContinuationAtNamePayloadH\x00\x42\t\n\x07message\"e\n\x19\x43ontinuationAtNamePayload\x12\x38\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32\".casper.ContinuationsWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"l\n\x12\x46indDeployResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12+\n\tblockInfo\x18\x02 \x01(\x0b\x32\x16.casper.LightBlockInfoH\x00\x42\t\n\x07message\"\x80\x01\n\x1aPrivateNamePreviewResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x37\n\x07payload\x18\x02 \x01(\x0b\x32$.casper.v1.PrivateNamePreviewPayloadH\x00\x42\t\n\x07message\"(\n\x19PrivateNamePreviewPayload\x12\x0b\n\x03ids\x18\x01 \x03(\x0c\"o\n\x1aLastFinalizedBlockResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12&\n\tblockInfo\x18\x02 \x01(\x0b\x32\x11.casper.BlockInfoH\x00\x42\t\n\x07message\"W\n\x13IsFinalizedResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x15\n\x0bisFinalized\x18\x02 \x01(\x08H\x00\x42\t\n\x07message\"S\n\x12\x42ondStatusResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x12\n\x08isBonded\x18\x02 \x01(\x08H\x00\x42\t\n\x07message2\xfe\x08\n\rDeployService\x12@\n\x08\x64oDeploy\x12\x17.casper.DeployDataProto\x1a\x19.casper.v1.DeployResponse\"\x00\x12:\n\x08getBlock\x12\x12.casper.BlockQuery\x1a\x18.casper.v1.BlockResponse\"\x00\x12Q\n\x0cvisualizeDag\x12\x19.casper.VisualizeDagQuery\x1a\".casper.v1.VisualizeBlocksResponse\"\x00\x30\x01\x12V\n\x14machineVerifiableDag\x12\x1a.casper.MachineVerifyQuery\x1a .casper.v1.MachineVerifyResponse\"\x00\x12\x46\n\rshowMainChain\x12\x13.casper.BlocksQuery\x1a\x1c.casper.v1.BlockInfoResponse\"\x00\x30\x01\x12\x42\n\tgetBlocks\x12\x13.casper.BlocksQuery\x1a\x1c.casper.v1.BlockInfoResponse\"\x00\x30\x01\x12V\n\x13listenForDataAtName\x12\x17.casper.DataAtNameQuery\x1a$.casper.v1.ListeningNameDataResponse\"\x00\x12g\n\x1blistenForContinuationAtName\x12\x1f.casper.ContinuationAtNameQuery\x1a%.casper.v1.ContinuationAtNameResponse\"\x00\x12\x46\n\nfindDeploy\x12\x17.casper.FindDeployQuery\x1a\x1d.casper.v1.FindDeployResponse\"\x00\x12_\n\x13previewPrivateNames\x12\x1f.casper.PrivateNamePreviewQuery\x1a%.casper.v1.PrivateNamePreviewResponse\"\x00\x12^\n\x12lastFinalizedBlock\x12\x1f.casper.LastFinalizedBlockQuery\x1a%.casper.v1.LastFinalizedBlockResponse\"\x00\x12I\n\x0bisFinalized\x12\x18.casper.IsFinalizedQuery\x1a\x1e.casper.v1.IsFinalizedResponse\"\x00\x12\x46\n\nbondStatus\x12\x17.casper.BondStatusQuery\x1a\x1d.casper.v1.BondStatusResponse\"\x00\x12[\n\x11\x65xploratoryDeploy\x12\x1e.casper.ExploratoryDeployQuery\x1a$.casper.v1.ExploratoryDeployResponse\"\x00\x42.\xe2?+\n%coop.rchain.casper.protocol.deploy.v1\x10\x01(\x01\x62\x06proto3'
+  serialized_pb=b'\n\x15\x44\x65ployServiceV1.proto\x12\tcasper.v1\x1a\x13\x43\x61sperMessage.proto\x1a\x12ServiceError.proto\x1a\x19\x44\x65ployServiceCommon.proto\x1a\x15scalapb/scalapb.proto\"h\n\x11\x45ventInfoResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12(\n\x06result\x18\x02 \x01(\x0b\x32\x16.casper.BlockEventInfoH\x00\x42\t\n\x07message\"s\n\x19\x45xploratoryDeployResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12+\n\x06result\x18\x02 \x01(\x0b\x32\x19.casper.DataWithBlockInfoH\x00\x42\t\n\x07message\"M\n\x0e\x44\x65ployResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x10\n\x06result\x18\x02 \x01(\tH\x00\x42\t\n\x07message\"b\n\rBlockResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12&\n\tblockInfo\x18\x02 \x01(\x0b\x32\x11.casper.BlockInfoH\x00\x42\t\n\x07message\"W\n\x17VisualizeBlocksResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x11\n\x07\x63ontent\x18\x02 \x01(\tH\x00\x42\t\n\x07message\"U\n\x15MachineVerifyResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x11\n\x07\x63ontent\x18\x02 \x01(\tH\x00\x42\t\n\x07message\"k\n\x11\x42lockInfoResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12+\n\tblockInfo\x18\x02 \x01(\x0b\x32\x16.casper.LightBlockInfoH\x00\x42\t\n\x07message\"~\n\x19ListeningNameDataResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x36\n\x07payload\x18\x02 \x01(\x0b\x32#.casper.v1.ListeningNameDataPayloadH\x00\x42\t\n\x07message\"X\n\x18ListeningNameDataPayload\x12,\n\tblockInfo\x18\x01 \x03(\x0b\x32\x19.casper.DataWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"\x80\x01\n\x1a\x43ontinuationAtNameResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x37\n\x07payload\x18\x02 \x01(\x0b\x32$.casper.v1.ContinuationAtNamePayloadH\x00\x42\t\n\x07message\"e\n\x19\x43ontinuationAtNamePayload\x12\x38\n\x0c\x62lockResults\x18\x01 \x03(\x0b\x32\".casper.ContinuationsWithBlockInfo\x12\x0e\n\x06length\x18\x02 \x01(\x05\"l\n\x12\x46indDeployResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12+\n\tblockInfo\x18\x02 \x01(\x0b\x32\x16.casper.LightBlockInfoH\x00\x42\t\n\x07message\"\x80\x01\n\x1aPrivateNamePreviewResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x37\n\x07payload\x18\x02 \x01(\x0b\x32$.casper.v1.PrivateNamePreviewPayloadH\x00\x42\t\n\x07message\"(\n\x19PrivateNamePreviewPayload\x12\x0b\n\x03ids\x18\x01 \x03(\x0c\"o\n\x1aLastFinalizedBlockResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12&\n\tblockInfo\x18\x02 \x01(\x0b\x32\x11.casper.BlockInfoH\x00\x42\t\n\x07message\"W\n\x13IsFinalizedResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x15\n\x0bisFinalized\x18\x02 \x01(\x08H\x00\x42\t\n\x07message\"S\n\x12\x42ondStatusResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x12\n\x08isBonded\x18\x02 \x01(\x08H\x00\x42\t\n\x07message2\x99\n\n\rDeployService\x12@\n\x08\x64oDeploy\x12\x17.casper.DeployDataProto\x1a\x19.casper.v1.DeployResponse\"\x00\x12:\n\x08getBlock\x12\x12.casper.BlockQuery\x1a\x18.casper.v1.BlockResponse\"\x00\x12Q\n\x0cvisualizeDag\x12\x19.casper.VisualizeDagQuery\x1a\".casper.v1.VisualizeBlocksResponse\"\x00\x30\x01\x12V\n\x14machineVerifiableDag\x12\x1a.casper.MachineVerifyQuery\x1a .casper.v1.MachineVerifyResponse\"\x00\x12\x46\n\rshowMainChain\x12\x13.casper.BlocksQuery\x1a\x1c.casper.v1.BlockInfoResponse\"\x00\x30\x01\x12\x42\n\tgetBlocks\x12\x13.casper.BlocksQuery\x1a\x1c.casper.v1.BlockInfoResponse\"\x00\x30\x01\x12V\n\x13listenForDataAtName\x12\x17.casper.DataAtNameQuery\x1a$.casper.v1.ListeningNameDataResponse\"\x00\x12g\n\x1blistenForContinuationAtName\x12\x1f.casper.ContinuationAtNameQuery\x1a%.casper.v1.ContinuationAtNameResponse\"\x00\x12\x46\n\nfindDeploy\x12\x17.casper.FindDeployQuery\x1a\x1d.casper.v1.FindDeployResponse\"\x00\x12_\n\x13previewPrivateNames\x12\x1f.casper.PrivateNamePreviewQuery\x1a%.casper.v1.PrivateNamePreviewResponse\"\x00\x12^\n\x12lastFinalizedBlock\x12\x1f.casper.LastFinalizedBlockQuery\x1a%.casper.v1.LastFinalizedBlockResponse\"\x00\x12I\n\x0bisFinalized\x12\x18.casper.IsFinalizedQuery\x1a\x1e.casper.v1.IsFinalizedResponse\"\x00\x12\x46\n\nbondStatus\x12\x17.casper.BondStatusQuery\x1a\x1d.casper.v1.BondStatusResponse\"\x00\x12[\n\x11\x65xploratoryDeploy\x12\x1e.casper.ExploratoryDeployQuery\x1a$.casper.v1.ExploratoryDeployResponse\"\x00\x12S\n\x12getBlocksByHeights\x12\x1b.casper.BlocksQueryByHeight\x1a\x1c.casper.v1.BlockInfoResponse\"\x00\x30\x01\x12\x44\n\x0egetEventByHash\x12\x12.casper.BlockQuery\x1a\x1c.casper.v1.EventInfoResponse\"\x00\x42.\xe2?+\n%coop.rchain.casper.protocol.deploy.v1\x10\x01(\x01\x62\x06proto3'
   ,
   dependencies=[CasperMessage__pb2.DESCRIPTOR,ServiceError__pb2.DESCRIPTOR,DeployServiceCommon__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
 
+
+
+_EVENTINFORESPONSE = _descriptor.Descriptor(
+  name='EventInfoResponse',
+  full_name='casper.v1.EventInfoResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='error', full_name='casper.v1.EventInfoResponse.error', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='result', full_name='casper.v1.EventInfoResponse.result', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='message', full_name='casper.v1.EventInfoResponse.message',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=127,
+  serialized_end=231,
+)
 
 
 _EXPLORATORYDEPLOYRESPONSE = _descriptor.Descriptor(
@@ -65,8 +106,8 @@ _EXPLORATORYDEPLOYRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.ExploratoryDeployResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=127,
-  serialized_end=242,
+  serialized_start=233,
+  serialized_end=348,
 )
 
 
@@ -106,8 +147,8 @@ _DEPLOYRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.DeployResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=244,
-  serialized_end=321,
+  serialized_start=350,
+  serialized_end=427,
 )
 
 
@@ -147,8 +188,8 @@ _BLOCKRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.BlockResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=323,
-  serialized_end=421,
+  serialized_start=429,
+  serialized_end=527,
 )
 
 
@@ -188,8 +229,8 @@ _VISUALIZEBLOCKSRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.VisualizeBlocksResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=423,
-  serialized_end=510,
+  serialized_start=529,
+  serialized_end=616,
 )
 
 
@@ -229,8 +270,8 @@ _MACHINEVERIFYRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.MachineVerifyResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=512,
-  serialized_end=597,
+  serialized_start=618,
+  serialized_end=703,
 )
 
 
@@ -270,8 +311,8 @@ _BLOCKINFORESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.BlockInfoResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=599,
-  serialized_end=706,
+  serialized_start=705,
+  serialized_end=812,
 )
 
 
@@ -311,8 +352,8 @@ _LISTENINGNAMEDATARESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.ListeningNameDataResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=708,
-  serialized_end=834,
+  serialized_start=814,
+  serialized_end=940,
 )
 
 
@@ -349,8 +390,8 @@ _LISTENINGNAMEDATAPAYLOAD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=836,
-  serialized_end=924,
+  serialized_start=942,
+  serialized_end=1030,
 )
 
 
@@ -390,8 +431,8 @@ _CONTINUATIONATNAMERESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.ContinuationAtNameResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=927,
-  serialized_end=1055,
+  serialized_start=1033,
+  serialized_end=1161,
 )
 
 
@@ -428,8 +469,8 @@ _CONTINUATIONATNAMEPAYLOAD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1057,
-  serialized_end=1158,
+  serialized_start=1163,
+  serialized_end=1264,
 )
 
 
@@ -469,8 +510,8 @@ _FINDDEPLOYRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.FindDeployResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1160,
-  serialized_end=1268,
+  serialized_start=1266,
+  serialized_end=1374,
 )
 
 
@@ -510,8 +551,8 @@ _PRIVATENAMEPREVIEWRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.PrivateNamePreviewResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1271,
-  serialized_end=1399,
+  serialized_start=1377,
+  serialized_end=1505,
 )
 
 
@@ -541,8 +582,8 @@ _PRIVATENAMEPREVIEWPAYLOAD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1401,
-  serialized_end=1441,
+  serialized_start=1507,
+  serialized_end=1547,
 )
 
 
@@ -582,8 +623,8 @@ _LASTFINALIZEDBLOCKRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.LastFinalizedBlockResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1443,
-  serialized_end=1554,
+  serialized_start=1549,
+  serialized_end=1660,
 )
 
 
@@ -623,8 +664,8 @@ _ISFINALIZEDRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.IsFinalizedResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1556,
-  serialized_end=1643,
+  serialized_start=1662,
+  serialized_end=1749,
 )
 
 
@@ -664,10 +705,18 @@ _BONDSTATUSRESPONSE = _descriptor.Descriptor(
       name='message', full_name='casper.v1.BondStatusResponse.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1645,
-  serialized_end=1728,
+  serialized_start=1751,
+  serialized_end=1834,
 )
 
+_EVENTINFORESPONSE.fields_by_name['error'].message_type = ServiceError__pb2._SERVICEERROR
+_EVENTINFORESPONSE.fields_by_name['result'].message_type = DeployServiceCommon__pb2._BLOCKEVENTINFO
+_EVENTINFORESPONSE.oneofs_by_name['message'].fields.append(
+  _EVENTINFORESPONSE.fields_by_name['error'])
+_EVENTINFORESPONSE.fields_by_name['error'].containing_oneof = _EVENTINFORESPONSE.oneofs_by_name['message']
+_EVENTINFORESPONSE.oneofs_by_name['message'].fields.append(
+  _EVENTINFORESPONSE.fields_by_name['result'])
+_EVENTINFORESPONSE.fields_by_name['result'].containing_oneof = _EVENTINFORESPONSE.oneofs_by_name['message']
 _EXPLORATORYDEPLOYRESPONSE.fields_by_name['error'].message_type = ServiceError__pb2._SERVICEERROR
 _EXPLORATORYDEPLOYRESPONSE.fields_by_name['result'].message_type = DeployServiceCommon__pb2._DATAWITHBLOCKINFO
 _EXPLORATORYDEPLOYRESPONSE.oneofs_by_name['message'].fields.append(
@@ -769,6 +818,7 @@ _BONDSTATUSRESPONSE.fields_by_name['error'].containing_oneof = _BONDSTATUSRESPON
 _BONDSTATUSRESPONSE.oneofs_by_name['message'].fields.append(
   _BONDSTATUSRESPONSE.fields_by_name['isBonded'])
 _BONDSTATUSRESPONSE.fields_by_name['isBonded'].containing_oneof = _BONDSTATUSRESPONSE.oneofs_by_name['message']
+DESCRIPTOR.message_types_by_name['EventInfoResponse'] = _EVENTINFORESPONSE
 DESCRIPTOR.message_types_by_name['ExploratoryDeployResponse'] = _EXPLORATORYDEPLOYRESPONSE
 DESCRIPTOR.message_types_by_name['DeployResponse'] = _DEPLOYRESPONSE
 DESCRIPTOR.message_types_by_name['BlockResponse'] = _BLOCKRESPONSE
@@ -786,6 +836,13 @@ DESCRIPTOR.message_types_by_name['LastFinalizedBlockResponse'] = _LASTFINALIZEDB
 DESCRIPTOR.message_types_by_name['IsFinalizedResponse'] = _ISFINALIZEDRESPONSE
 DESCRIPTOR.message_types_by_name['BondStatusResponse'] = _BONDSTATUSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+EventInfoResponse = _reflection.GeneratedProtocolMessageType('EventInfoResponse', (_message.Message,), {
+  'DESCRIPTOR' : _EVENTINFORESPONSE,
+  '__module__' : 'DeployServiceV1_pb2'
+  # @@protoc_insertion_point(class_scope:casper.v1.EventInfoResponse)
+  })
+_sym_db.RegisterMessage(EventInfoResponse)
 
 ExploratoryDeployResponse = _reflection.GeneratedProtocolMessageType('ExploratoryDeployResponse', (_message.Message,), {
   'DESCRIPTOR' : _EXPLORATORYDEPLOYRESPONSE,
@@ -908,8 +965,8 @@ _DEPLOYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1731,
-  serialized_end=2881,
+  serialized_start=1837,
+  serialized_end=3142,
   methods=[
   _descriptor.MethodDescriptor(
     name='doDeploy',
@@ -1035,6 +1092,24 @@ _DEPLOYSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=DeployServiceCommon__pb2._EXPLORATORYDEPLOYQUERY,
     output_type=_EXPLORATORYDEPLOYRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='getBlocksByHeights',
+    full_name='casper.v1.DeployService.getBlocksByHeights',
+    index=14,
+    containing_service=None,
+    input_type=DeployServiceCommon__pb2._BLOCKSQUERYBYHEIGHT,
+    output_type=_BLOCKINFORESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='getEventByHash',
+    full_name='casper.v1.DeployService.getEventByHash',
+    index=15,
+    containing_service=None,
+    input_type=DeployServiceCommon__pb2._BLOCKQUERY,
+    output_type=_EVENTINFORESPONSE,
     serialized_options=None,
   ),
 ])
