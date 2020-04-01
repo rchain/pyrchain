@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-from rchain.pb.RhoTypes_pb2 import GPrivate, Par, GUnforgeable
 
+from rchain.pb.RhoTypes_pb2 import GPrivate, GUnforgeable, Par
 
 
 """

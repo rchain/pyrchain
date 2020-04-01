@@ -1,7 +1,9 @@
-from .pb.DeployServiceCommon_pb2 import SingleReport
-from .pb.RhoTypes_pb2 import Par, ParWithRandom
 from dataclasses import dataclass
 from typing import Optional, Tuple
+
+from .pb.DeployServiceCommon_pb2 import SingleReport
+from .pb.RhoTypes_pb2 import Par, ParWithRandom
+
 
 @dataclass
 class Report:

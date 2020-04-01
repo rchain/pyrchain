@@ -1,8 +1,7 @@
 from rchain.client import RClient
 from rchain.crypto import PrivateKey
+from rchain.pb.RhoTypes_pb2 import GPrivate, GUnforgeable, Par
 from rchain.vault import VaultAPI
-from rchain.pb.RhoTypes_pb2 import GPrivate, Par, GUnforgeable
-
 
 TESTNET_SERVER = ['node0.testnet.rchain-dev.tk',
                   'node1.testnet.rchain-dev.tk',

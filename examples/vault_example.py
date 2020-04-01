@@ -1,5 +1,5 @@
-from rchain.crypto import PrivateKey
 from rchain.client import RClient
+from rchain.crypto import PrivateKey
 from rchain.vault import VaultAPI
 
 MAINNET_SERVER = ['node0.root-shard.mainnet.rchain.coop',

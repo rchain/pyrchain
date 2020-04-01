@@ -1,7 +1,8 @@
-import grpc
 import time
-from rchain.crypto import PrivateKey
+
+import grpc
 from rchain.client import RClient
+from rchain.crypto import PrivateKey
 
 MAINNET_SERVER = ['node0.root-shard.mainnet.rchain.coop',
                   'node1.root-shard.mainnet.rchain.coop',

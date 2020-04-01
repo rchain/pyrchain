@@ -6,26 +6,26 @@ from typing import Iterable, List, Optional, Tuple, Type, TypeVar, Union
 import grpc
 
 from .crypto import PrivateKey
+from .param import Params
 from .pb.DeployServiceCommon_pb2 import (
-    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery,
-    ExploratoryDeployQuery, FindDeployQuery, IsFinalizedQuery,
-    LastFinalizedBlockQuery, LightBlockInfo, ContinuationAtNameQuery,
-    BlocksQueryByHeight, SingleReport
+    BlockInfo, BlockQuery, BlocksQuery, BlocksQueryByHeight,
+    ContinuationAtNameQuery, DataAtNameQuery, ExploratoryDeployQuery,
+    FindDeployQuery, IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
+    SingleReport,
 )
 from .pb.DeployServiceV1_pb2 import (
-    BlockInfoResponse, BlockResponse, DeployResponse,
-    ExploratoryDeployResponse, ListeningNameDataPayload as Data,
-    ListeningNameDataResponse, VisualizeBlocksResponse, ContinuationAtNameResponse,
-    EventInfoResponse
+    BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
+    DeployResponse, EventInfoResponse, ExploratoryDeployResponse,
+    ListeningNameDataPayload as Data, ListeningNameDataResponse,
+    VisualizeBlocksResponse,
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 from .pb.ProposeServiceV1_pb2 import ProposeResponse
 from .pb.ProposeServiceV1_pb2_grpc import ProposeServiceStub
 from .pb.RhoTypes_pb2 import Expr, GDeployId, GUnforgeable, Par
-from .util import create_deploy_data
-from .param import Params
 from .report import Report, Transaction
+from .util import create_deploy_data
 
 GRPC_Response_T = Union[ProposeResponse,
                         DeployResponse,
@@ -79,7 +79,7 @@ class RClient:
                  exc_tb: Optional[TracebackType]) -> None:
         self.close()
 
-    def install_param(self, param: Params):
+    def install_param(self, param: Params) -> None:
         self.param = param
 
     def _check_response(self, response: GRPC_Response_T) -> None:
@@ -184,7 +184,7 @@ class RClient:
     def get_data_at_deploy_id(self, deploy_id: str, depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.deploy_id(deploy_id), depth)
 
-    def get_blocks_by_heights(self, start_block_number:int , end_block_number:int):
+    def get_blocks_by_heights(self, start_block_number:int , end_block_number:int) -> List[LightBlockInfo]:
         query = BlocksQueryByHeight(startBlockNumber=start_block_number, endBlockNumber=end_block_number)
         response = self._deploy_stub.getBlocksByHeights(query)
         result = self._handle_stream(response)
@@ -223,7 +223,7 @@ class RClient:
         return transactions
 
 
-def find_transfer_comm(report: SingleReport, transfer_template_unforgeable: Par):
+def find_transfer_comm(report: SingleReport, transfer_template_unforgeable: Par) -> List[Transaction]:
     transfers = []
     transactions = []
     for event in report.events:
