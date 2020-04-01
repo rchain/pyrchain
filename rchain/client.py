@@ -6,21 +6,25 @@ from typing import Iterable, List, Optional, Tuple, Type, TypeVar, Union
 import grpc
 
 from .crypto import PrivateKey
+from .param import Params
 from .pb.DeployServiceCommon_pb2 import (
-    BlockInfo, BlockQuery, BlocksQuery, DataAtNameQuery,
-    ExploratoryDeployQuery, FindDeployQuery, IsFinalizedQuery,
-    LastFinalizedBlockQuery, LightBlockInfo,
+    BlockInfo, BlockQuery, BlocksQuery, BlocksQueryByHeight,
+    ContinuationAtNameQuery, DataAtNameQuery, ExploratoryDeployQuery,
+    FindDeployQuery, IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
+    SingleReport,
 )
 from .pb.DeployServiceV1_pb2 import (
-    BlockInfoResponse, BlockResponse, DeployResponse,
-    ExploratoryDeployResponse, ListeningNameDataPayload as Data,
-    ListeningNameDataResponse, VisualizeBlocksResponse,
+    BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
+    DeployResponse, EventInfoResponse, ExploratoryDeployResponse,
+    ListeningNameDataPayload as Data, ListeningNameDataResponse,
+    VisualizeBlocksResponse,
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 from .pb.ProposeServiceV1_pb2 import ProposeResponse
 from .pb.ProposeServiceV1_pb2_grpc import ProposeServiceStub
 from .pb.RhoTypes_pb2 import Expr, GDeployId, GUnforgeable, Par
+from .report import Report, Transaction
 from .util import create_deploy_data
 
 GRPC_Response_T = Union[ProposeResponse,
@@ -62,6 +66,7 @@ class RClient:
     def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, str]]] = None):
         self.channel = grpc.insecure_channel("{}:{}".format(host, port), grpc_options)
         self._deploy_stub = DeployServiceStub(self.channel)
+        self.param: Optional[Params] = None
 
     def close(self) -> None:
         self.channel.close()
@@ -73,6 +78,9 @@ class RClient:
                  exc_val: Optional[BaseException],
                  exc_tb: Optional[TracebackType]) -> None:
         self.close()
+
+    def install_param(self, param: Params) -> None:
+        self.param = param
 
     def _check_response(self, response: GRPC_Response_T) -> None:
         logging.debug('gRPC response: %s', str(response))
@@ -175,3 +183,72 @@ class RClient:
 
     def get_data_at_deploy_id(self, deploy_id: str, depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.deploy_id(deploy_id), depth)
+
+    def get_blocks_by_heights(self, start_block_number:int , end_block_number:int) -> List[LightBlockInfo]:
+        query = BlocksQueryByHeight(startBlockNumber=start_block_number, endBlockNumber=end_block_number)
+        response = self._deploy_stub.getBlocksByHeights(query)
+        result = self._handle_stream(response)
+        return list(map(lambda x: x.blockInfo, result))  # type: ignore
+
+    def get_continuation(self, par: Par, depth: int = 1) -> ContinuationAtNameResponse:
+        query = ContinuationAtNameQuery(depth = depth, names = [par])
+        response = self._deploy_stub.listenForContinuationAtName(query)
+        self._check_response(response)
+        return response
+
+    def get_event_data(self, block_hash: str) -> EventInfoResponse:
+        query  = BlockQuery(hash = block_hash)
+        response = self._deploy_stub.getEventByHash(query)
+        self._check_response(response)
+        return response
+
+    def get_transaction(self, block_hash: str) -> List[Transaction]:
+        if self.param is None:
+            raise ValueError("You haven't install your network param.")
+        transactions = []
+        event_data = self.get_event_data(block_hash)
+        deploys = event_data.result.deploys
+        for deploy in deploys:
+            # it is possible that the user deploy doesn't generate
+            # any comm events . So there are only two report in the response.
+            if len(deploy.report) == 2:
+                continue
+            # normally there are precharge, user and refund deploy, 3 totally.
+            elif len(deploy.report) == 3:
+                precharge = deploy.report[0]
+                user = deploy.report[1]
+                refund = deploy.report[2]
+                report = Report(precharge, user, refund)
+                transactions.extend(find_transfer_comm(report.user, self.param.transfer_unforgeable))
+        return transactions
+
+
+def find_transfer_comm(report: SingleReport, transfer_template_unforgeable: Par) -> List[Transaction]:
+    transfers = []
+    transactions = []
+    for event in report.events:
+        report_type = event.WhichOneof('report')
+        if report_type == 'comm':
+            channel = event.comm.consume.channels[0]
+            if channel == transfer_template_unforgeable:
+                transfers.append(event)
+                from_addr = event.comm.produces[0].data.pars[0].exprs[0].g_string
+                to_addr = event.comm.produces[0].data.pars[2].exprs[0].g_string
+                amount = event.comm.produces[0].data.pars[3].exprs[0].g_int
+                ret = event.comm.produces[0].data.pars[5]
+                transactions.append(Transaction(from_addr, to_addr, amount, ret, None))
+    for transaction in transactions:
+        for event in report.events:
+            report_type = event.WhichOneof('report')
+            if report_type == 'produce':
+                channel = event.produce.channel
+                if channel == transaction.ret_unforgeable:
+                    data = event.produce.data
+                    # transfer result True or False
+                    result = data.pars[0].exprs[0].e_tuple_body.ps[0].exprs[0].g_bool
+                    if result:
+                        reason = ''
+                    else:
+                        reason = data.pars[0].exprs[0].e_tuple_body.ps[1].exprs[0].g_string
+                    transaction.success = (result, reason)
+    return transactions
