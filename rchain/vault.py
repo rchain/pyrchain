@@ -50,7 +50,7 @@ new rl(`rho:registry:lookup`), RevVaultCh, vaultCh, toVaultCh, deployerId(`rho:r
     @RevVault!("findOrCreate", "$from", *vaultCh) |
     @RevVault!("findOrCreate", "$to", *toVaultCh) |
     @RevVault!("deployerAuthKey", *deployerId, *revVaultKeyCh) |
-    for (@(true, vault) <- vaultCh; key <- revVaultKeyCh; @(true, toVault) <- toVaultCh;) {
+    for (@(true, vault) <- vaultCh; key <- revVaultKeyCh; @(true, toVault) <- toVaultCh) {
       @vault!("transfer", "$to", $amount, *key, *resultCh) |
       for (_ <- resultCh) { Nil }
     }
