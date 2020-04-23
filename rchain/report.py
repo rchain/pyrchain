@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from typing import Optional, Tuple
+from typing import Optional, Tuple, List
 
-from .pb.DeployServiceCommon_pb2 import SingleReport
+from .pb.DeployServiceCommon_pb2 import SingleReport, DeployInfo
 from .pb.RhoTypes_pb2 import Par, ParWithRandom
 
 
@@ -18,3 +18,8 @@ class Transaction:
     amount: int
     ret_unforgeable: Par
     success: Optional[Tuple[bool, str]]
+
+@dataclass
+class DeployWithTransaction:
+    deploy_info: DeployInfo
+    transactions: List[Transaction]
