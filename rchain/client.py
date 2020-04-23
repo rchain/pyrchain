@@ -24,7 +24,7 @@ from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 from .pb.ProposeServiceV1_pb2 import ProposeResponse
 from .pb.ProposeServiceV1_pb2_grpc import ProposeServiceStub
 from .pb.RhoTypes_pb2 import Expr, GDeployId, GUnforgeable, Par
-from .report import Report, Transaction
+from .report import Report, Transaction, DeployWithTransaction
 from .util import create_deploy_data
 
 GRPC_Response_T = Union[ProposeResponse,
@@ -202,7 +202,7 @@ class RClient:
         self._check_response(response)
         return response
 
-    def get_transaction(self, block_hash: str) -> List[Transaction]:
+    def get_transaction(self, block_hash: str) -> List[DeployWithTransaction]:
         if self.param is None:
             raise ValueError("You haven't install your network param.")
         transactions = []
@@ -219,7 +219,11 @@ class RClient:
                 user = deploy.report[1]
                 refund = deploy.report[2]
                 report = Report(precharge, user, refund)
-                transactions.extend(find_transfer_comm(report.user, self.param.transfer_unforgeable))
+                transactions.append(
+                    DeployWithTransaction(
+                        deploy.deployInfo,
+                        find_transfer_comm(report.user, self.param.transfer_unforgeable))
+                )
         return transactions
 
 
