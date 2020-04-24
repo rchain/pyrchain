@@ -17,8 +17,9 @@ from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
     DeployResponse, EventInfoResponse, ExploratoryDeployResponse,
     ListeningNameDataPayload as Data, ListeningNameDataResponse,
-    VisualizeBlocksResponse,
+    VisualizeBlocksResponse
 )
+from .pb.CasperMessage_pb2 import DeployDataProto
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 from .pb.ProposeServiceV1_pb2 import ProposeResponse
@@ -128,10 +129,13 @@ class RClient:
         deploy_data = create_deploy_data(
             key, term, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis
         )
-        response = self._deploy_stub.doDeploy(deploy_data)
+        return self.send_deploy(deploy_data)
+
+    def send_deploy(self, deploy: DeployDataProto) -> str:
+        response = self._deploy_stub.doDeploy(deploy)
         self._check_response(response)
         # sig of deploy data is deployId
-        return deploy_data.sig.hex()
+        return deploy.sig.hex()
 
     def show_block(self, block_hash: str) -> BlockInfo:
         block_query = BlockQuery(hash=block_hash)
