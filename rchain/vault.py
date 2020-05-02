@@ -80,7 +80,8 @@ class VaultAPI:
         result = self.client.exploratory_deploy(contract)
         return int(result[0].exprs[0].g_int)
 
-    def transfer(self, from_addr: str, to_addr: str, amount: int, key: PrivateKey) -> str:
+    def transfer(self, from_addr: str, to_addr: str, amount: int, key: PrivateKey, phlo_price:int=TRANSFER_PHLO_PRICE,
+                 phlo_limit:int=TRANSFER_PHLO_LIMIT) -> str:
         """
         Transfer from `from_addr` to `to_addr` in the chain. Just make sure the `to_addr` is created
         in the chain. Otherwise, the transfer would hang until the `to_addr` is created.
@@ -93,10 +94,12 @@ class VaultAPI:
             }
         )
         timestamp_mill = int(time.time() * 1000)
-        return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT,
+        return self.client.deploy_with_vabn_filled(key, contract, phlo_price, phlo_limit,
                                                    timestamp_mill)
 
-    def transfer_ensure(self, from_addr: str, to_addr: str, amount: int, key: PrivateKey) -> str:
+    def transfer_ensure(self, from_addr: str, to_addr: str, amount: int, key: PrivateKey,
+                        phlo_price:int=TRANSFER_PHLO_PRICE,
+                        phlo_limit:int=TRANSFER_PHLO_LIMIT) -> str:
         """
         The difference between `transfer_ensure` and `transfer` is that , if the to_addr is not created in the
         chain, the `transfer` would hang until the to_addr successfully created in the change and the `transfer_ensure`
@@ -110,15 +113,16 @@ class VaultAPI:
                 'amount': str(amount)
             }
         )
-        timestamp_mill = int(time.time()* 1000)
-        return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT,
+        timestamp_mill = int(time.time() * 1000)
+        return self.client.deploy_with_vabn_filled(key, contract, phlo_price, phlo_limit,
                                                    timestamp_mill)
 
-    def create_vault(self, addr: str, key: PrivateKey) -> str:
+    def create_vault(self, addr: str, key: PrivateKey, phlo_price:int=TRANSFER_PHLO_PRICE, phlo_limit:int=TRANSFER_PHLO_LIMIT) -> str:
         contract = render_contract_template(
             CREATE_VAULT_RHO_TPL, {
                 'addr': addr
             }
         )
         timestamp_mill = int(time.time() * 1000)
-        return self.client.deploy_with_vabn_filled(key, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMIT, timestamp_millis=timestamp_mill)
+        return self.client.deploy_with_vabn_filled(key, contract, phlo_price, phlo_limit,
+                                                   timestamp_millis=timestamp_mill)
