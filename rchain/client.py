@@ -64,8 +64,9 @@ class DataQueries:
 
 class RClient:
 
-    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, str]]] = None):
-        self.channel = grpc.insecure_channel("{}:{}".format(host, port), grpc_options)
+    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, str]]] = None, compress: bool=False):
+        compress = grpc.Compression.Gzip if compress else None
+        self.channel = grpc.insecure_channel("{}:{}".format(host, port), grpc_options, compress)
         self._deploy_stub = DeployServiceStub(self.channel)
         self.param: Optional[Params] = None
 
