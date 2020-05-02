@@ -7,6 +7,7 @@ import grpc
 
 from .crypto import PrivateKey
 from .param import Params
+from .pb.CasperMessage_pb2 import DeployDataProto
 from .pb.DeployServiceCommon_pb2 import (
     BlockInfo, BlockQuery, BlocksQuery, BlocksQueryByHeight,
     ContinuationAtNameQuery, DataAtNameQuery, ExploratoryDeployQuery,
@@ -19,7 +20,6 @@ from .pb.DeployServiceV1_pb2 import (
     ListeningNameDataPayload as Data, ListeningNameDataResponse,
     VisualizeBlocksResponse
 )
-from .pb.CasperMessage_pb2 import DeployDataProto
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 from .pb.ProposeServiceV1_pb2 import ProposeResponse
@@ -64,7 +64,8 @@ class DataQueries:
 
 class RClient:
 
-    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, str]]] = None, compress: bool=False):
+    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, str]]] = None,
+                 compress: bool = False):
         compress = grpc.Compression.Gzip if compress else None
         self.channel = grpc.insecure_channel("{}:{}".format(host, port), grpc_options, compress)
         self._deploy_stub = DeployServiceStub(self.channel)
@@ -189,20 +190,20 @@ class RClient:
     def get_data_at_deploy_id(self, deploy_id: str, depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.deploy_id(deploy_id), depth)
 
-    def get_blocks_by_heights(self, start_block_number:int , end_block_number:int) -> List[LightBlockInfo]:
+    def get_blocks_by_heights(self, start_block_number: int, end_block_number: int) -> List[LightBlockInfo]:
         query = BlocksQueryByHeight(startBlockNumber=start_block_number, endBlockNumber=end_block_number)
         response = self._deploy_stub.getBlocksByHeights(query)
         result = self._handle_stream(response)
         return list(map(lambda x: x.blockInfo, result))  # type: ignore
 
     def get_continuation(self, par: Par, depth: int = 1) -> ContinuationAtNameResponse:
-        query = ContinuationAtNameQuery(depth = depth, names = [par])
+        query = ContinuationAtNameQuery(depth=depth, names=[par])
         response = self._deploy_stub.listenForContinuationAtName(query)
         self._check_response(response)
         return response
 
     def get_event_data(self, block_hash: str) -> EventInfoResponse:
-        query  = BlockQuery(hash = block_hash)
+        query = BlockQuery(hash=block_hash)
         response = self._deploy_stub.getEventByHash(query)
         self._check_response(response)
         return response
@@ -260,4 +261,7 @@ def find_transfer_comm(report: SingleReport, transfer_template_unforgeable: Par)
                     else:
                         reason = data.pars[0].exprs[0].e_tuple_body.ps[1].exprs[0].g_string
                     transaction.success = (result, reason)
+        if transaction.success is None:
+            transaction.success = (True,
+                                   'Possibly the transfer toAddr wallet is not created in chain. Create the wallet to make transaction succeed.')
     return transactions
