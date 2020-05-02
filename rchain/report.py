@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from typing import Optional, Tuple, List
+from typing import List, Optional, Tuple
 
-from .pb.DeployServiceCommon_pb2 import SingleReport, DeployInfo
+from .pb.DeployServiceCommon_pb2 import DeployInfo, SingleReport
 from .pb.RhoTypes_pb2 import Par, ParWithRandom
 
 

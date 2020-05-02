@@ -18,14 +18,14 @@ from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
     DeployResponse, EventInfoResponse, ExploratoryDeployResponse,
     ListeningNameDataPayload as Data, ListeningNameDataResponse,
-    VisualizeBlocksResponse
+    VisualizeBlocksResponse,
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
 from .pb.ProposeServiceV1_pb2 import ProposeResponse
 from .pb.ProposeServiceV1_pb2_grpc import ProposeServiceStub
 from .pb.RhoTypes_pb2 import Expr, GDeployId, GUnforgeable, Par
-from .report import Report, Transaction, DeployWithTransaction
+from .report import DeployWithTransaction, Report, Transaction
 from .util import create_deploy_data
 
 GRPC_Response_T = Union[ProposeResponse,
@@ -64,7 +64,7 @@ class DataQueries:
 
 class RClient:
 
-    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, str]]] = None,
+    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, Union[str, int]],...]] = None,
                  compress: bool = False):
         compress = grpc.Compression.Gzip if compress else None
         self.channel = grpc.insecure_channel("{}:{}".format(host, port), grpc_options, compress)
