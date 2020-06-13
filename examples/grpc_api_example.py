@@ -40,7 +40,7 @@ with RClient(READONLY_SERVER[0], 40401) as client:
     assert client.is_finalized(block_hash)
 
     # get blocks from blockNumber 10 to blockNumber 20
-    block_at_heights = client.get_blocks_by_heights(10, 20)
+    block_at_heights = client.get_blocks_by_heights(last_finalize_block.blockInfo.blockNumber, last_finalize_block.blockInfo.blockNumber+10)
 
     # exploratory deploy can only used for read-only node
     # this method is for exploring the data in the tuple space
