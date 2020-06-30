@@ -12,7 +12,7 @@ from .pb.DeployServiceCommon_pb2 import (
     BlockInfo, BlockQuery, BlocksQuery, BlocksQueryByHeight,
     ContinuationAtNameQuery, DataAtNameQuery, ExploratoryDeployQuery,
     FindDeployQuery, IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
-    SingleReport,
+    SingleReport, VisualizeDagQuery
 )
 from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
@@ -113,8 +113,8 @@ class RClient:
         latest_block_num = latest_block.blockNumber
         return self.deploy(key, term, phlo_price, phlo_limit, latest_block_num, timestamp_millis)
 
-    def exploratory_deploy(self, term: str) -> List[Par]:
-        exploratory_query = ExploratoryDeployQuery(term=term)
+    def exploratory_deploy(self, term: str, blockHash: str, usePreStateHash: bool=False) -> List[Par]:
+        exploratory_query = ExploratoryDeployQuery(term=term, blockHash=blockHash, usePreStateHash=usePreStateHash)
         response = self._deploy_stub.exploratoryDeploy(exploratory_query)
         self._check_response(response)
         return list(response.result.postBlockData)
@@ -207,6 +207,12 @@ class RClient:
         response = self._deploy_stub.getEventByHash(query)
         self._check_response(response)
         return response
+
+    def visual_dag(self, depth:int , showJustificationLines: bool, startBlockNumber:int) -> str:
+        query = VisualizeDagQuery(depth=depth, showJustificationLines=showJustificationLines, startBlockNumber=startBlockNumber)
+        response = self._deploy_stub.visualizeDag(query)
+        result = self._handle_stream(response)
+        return ''.join(list(map(lambda x:x.content,result)))
 
     def get_transaction(self, block_hash: str) -> List[DeployWithTransaction]:
         if self.param is None:

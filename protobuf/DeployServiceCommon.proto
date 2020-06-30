@@ -52,6 +52,7 @@ message ContinuationAtNameQuery {
 message VisualizeDagQuery {
   int32 depth                 = 1;
   bool showJustificationLines = 2;
+  int32 startBlockNumber      = 3;
 }
 
 message MachineVerifyQuery {
@@ -76,11 +77,18 @@ message BondStatusQuery {
 
 message ExploratoryDeployQuery{
   string term = 1;
+  string blockHash = 2;
+  bool usePreStateHash = 3;
 }
 
 message BondInfo{
   string validator = 1;
   int64  stake = 2;
+}
+
+message JustificationInfo{
+  string validator = 1;
+  string latestBlockHash = 2;
 }
 
 message DeployInfo{
@@ -124,6 +132,8 @@ message LightBlockInfo {
   string blockSize = 17;
   int32 deployCount = 18;
   float faultTolerance = 19;
+
+  repeated JustificationInfo justifications = 20;
 }
 
 // For node clients, see BlockMessage for actual Casper protocol Block representation
