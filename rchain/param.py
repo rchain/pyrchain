@@ -2,7 +2,6 @@ from dataclasses import dataclass
 
 from rchain.pb.RhoTypes_pb2 import GPrivate, GUnforgeable, Par
 
-
 """
 These parameter are pre defined params which can help access the data quicklier.
 It is not the best way to solve the problem right now.But it is the fast way.

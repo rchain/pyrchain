@@ -1,6 +1,7 @@
 import time
 
 import grpc
+
 from rchain.client import RClient
 from rchain.crypto import PrivateKey
 
@@ -44,7 +45,7 @@ with RClient(READONLY_SERVER[0], 40401) as client:
 
     # exploratory deploy can only used for read-only node
     # this method is for exploring the data in the tuple space
-    result = client.exploratory_deploy(exploratory_term)
+    result = client.exploratory_deploy(exploratory_term, last_finalize_block.blockInfo.blockHash)
 
     # find deploy by the deploy id
     block_deploy =  client.find_deploy(find_deploy)
@@ -67,4 +68,4 @@ with RClient(MAINNET_SERVER[1], 40401) as client:
                                                 phlo_price=1, phlo_limit=1000000,
                                                 timestamp_millis=int(time.time() * 1000))
     # this will raise a exception
-    client.exploratory_deploy(exploratory_term)
+    client.exploratory_deploy(exploratory_term, last_finalize_block.blockInfo.blockHash)

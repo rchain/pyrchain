@@ -25,6 +25,7 @@ READONLY_SERVER = ['observer-asia.services.mainnet.rchain.coop',
 
 with RClient(TESTNET_READONLY[0], 40401) as client:
     from rchain.param import testnet_param
+
     # these param are fixed when the network starts on the genesis
     # the param will never change except hard-fork
     # but different network has different param based on the genesis block
@@ -34,6 +35,7 @@ with RClient(TESTNET_READONLY[0], 40401) as client:
 
 with RClient(READONLY_SERVER[0], 40401) as client:
     from rchain.param import mainnet_param
+
     # these param are fixed when the network starts on the genesis
     # the param will never change except hard-fork
     # but different network has different param based on the genesis block

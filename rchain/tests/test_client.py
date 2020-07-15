@@ -4,6 +4,7 @@ from typing import Generator, Tuple, Union
 
 import grpc
 import pytest
+
 from rchain.client import RClient
 from rchain.crypto import PrivateKey
 from rchain.pb.CasperMessage_pb2 import DeployDataProto

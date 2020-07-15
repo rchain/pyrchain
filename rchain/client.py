@@ -12,7 +12,7 @@ from .pb.DeployServiceCommon_pb2 import (
     BlockInfo, BlockQuery, BlocksQuery, BlocksQueryByHeight,
     ContinuationAtNameQuery, DataAtNameQuery, ExploratoryDeployQuery,
     FindDeployQuery, IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
-    SingleReport, VisualizeDagQuery
+    SingleReport, VisualizeDagQuery,
 )
 from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
@@ -212,7 +212,7 @@ class RClient:
         query = VisualizeDagQuery(depth=depth, showJustificationLines=showJustificationLines, startBlockNumber=startBlockNumber)
         response = self._deploy_stub.visualizeDag(query)
         result = self._handle_stream(response)
-        return ''.join(list(map(lambda x:x.content,result)))
+        return ''.join(list(map(lambda x:x.content, result))) # type: ignore
 
     def get_transaction(self, block_hash: str) -> List[DeployWithTransaction]:
         if self.param is None:
