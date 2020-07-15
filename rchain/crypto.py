@@ -9,6 +9,7 @@ from ecdsa.util import sigdecode_der, sigencode_der_canonize
 from eth_hash.auto import keccak
 from eth_keyfile import extract_key_from_keyfile
 from google.protobuf.wrappers_pb2 import Int32Value, StringValue
+
 from rchain.pb.CasperMessage_pb2 import BlockMessageProto
 
 
