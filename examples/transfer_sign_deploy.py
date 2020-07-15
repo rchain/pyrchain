@@ -3,8 +3,11 @@ import time
 import grpc
 from rchain.client import RClient
 from rchain.crypto import PrivateKey
-from rchain.vault import render_contract_template, TRANSFER_RHO_TPL, TRANSFER_PHLO_LIMIT, TRANSFER_PHLO_PRICE
 from rchain.util import create_deploy_data
+from rchain.vault import (
+    TRANSFER_PHLO_LIMIT, TRANSFER_PHLO_PRICE, TRANSFER_RHO_TPL,
+    render_contract_template,
+)
 
 a = PrivateKey.generate()
 b = PrivateKey.generate()
@@ -36,4 +39,3 @@ deploy = create_deploy_data(a, contract, TRANSFER_PHLO_PRICE, TRANSFER_PHLO_LIMI
 with RClient('node0.root-shard.mainnet.rchain.coop', 40401) as client:
     # send the signed deploy to the network
     resp = client.send_deploy(deploy)
-

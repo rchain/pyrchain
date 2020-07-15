@@ -72,12 +72,12 @@ class VaultAPI:
     def __init__(self, client: RClient):
         self.client = client
 
-    def get_balance(self, rev_addr: str) -> int:
+    def get_balance(self, rev_addr: str, block_hash: str='') -> int:
         contract = render_contract_template(
             GET_BALANCE_RHO_TPL,
             {'addr': rev_addr},
         )
-        result = self.client.exploratory_deploy(contract)
+        result = self.client.exploratory_deploy(contract, block_hash)
         return int(result[0].exprs[0].g_int)
 
     def transfer(self, from_addr: str, to_addr: str, amount: int, key: PrivateKey, phlo_price:int=TRANSFER_PHLO_PRICE,
