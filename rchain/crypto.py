@@ -113,6 +113,9 @@ class PrivateKey:
             data, hashfunc=blake2b_32, sigencode=sigencode_der_canonize
         )
 
+    def sign_deterministic(self, data: bytes, extra_entropy:bytes=b'') -> bytes:
+        return self._key.sign_deterministic(data, hashfunc=blake2b_32, sigencode=sigencode_der_canonize, extra_entropy=extra_entropy)
+
     def sign_block_hash(self, block_hash: bytes) -> bytes:
         return self._key.sign_digest(block_hash, sigencode=sigencode_der_canonize)
 
