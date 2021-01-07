@@ -5,20 +5,20 @@ from typing import Iterable, List, Optional, Tuple, Type, TypeVar, Union
 
 import grpc
 
-from .crypto import PrivateKey
+from .crypto import PrivateKey, PublicKey
 from .param import Params
 from .pb.CasperMessage_pb2 import DeployDataProto
 from .pb.DeployServiceCommon_pb2 import (
     BlockInfo, BlockQuery, BlocksQuery, BlocksQueryByHeight,
     ContinuationAtNameQuery, DataAtNameQuery, ExploratoryDeployQuery,
     FindDeployQuery, IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
-    SingleReport, VisualizeDagQuery,
+    PrivateNamePreviewQuery, SingleReport, VisualizeDagQuery,
 )
 from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
     DeployResponse, EventInfoResponse, ExploratoryDeployResponse,
     ListeningNameDataPayload as Data, ListeningNameDataResponse,
-    VisualizeBlocksResponse,
+    PrivateNamePreviewResponse, VisualizeBlocksResponse,
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
@@ -64,7 +64,7 @@ class DataQueries:
 
 class RClient:
 
-    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, Union[str, int]],...]] = None,
+    def __init__(self, host: str, port: int, grpc_options: Optional[Tuple[Tuple[str, Union[str, int]], ...]] = None,
                  compress: bool = False):
         compress = grpc.Compression.Gzip if compress else None
         self.channel = grpc.insecure_channel("{}:{}".format(host, port), grpc_options, compress)
@@ -113,7 +113,7 @@ class RClient:
         latest_block_num = latest_block.blockNumber
         return self.deploy(key, term, phlo_price, phlo_limit, latest_block_num, timestamp_millis)
 
-    def exploratory_deploy(self, term: str, blockHash: str, usePreStateHash: bool=False) -> List[Par]:
+    def exploratory_deploy(self, term: str, blockHash: str, usePreStateHash: bool = False) -> List[Par]:
         exploratory_query = ExploratoryDeployQuery(term=term, blockHash=blockHash, usePreStateHash=usePreStateHash)
         response = self._deploy_stub.exploratoryDeploy(exploratory_query)
         self._check_response(response)
@@ -202,17 +202,24 @@ class RClient:
         self._check_response(response)
         return response
 
+    def previewPrivateNames(self, public_key: PublicKey, timestamp: int, nameQty: int) -> PrivateNamePreviewResponse:
+        query = PrivateNamePreviewQuery(user=public_key.to_bytes(), timestamp=timestamp, nameQty=nameQty)
+        response = self._deploy_stub.previewPrivateNames(query)
+        self._check_response(response)
+        return response
+
     def get_event_data(self, block_hash: str) -> EventInfoResponse:
         query = BlockQuery(hash=block_hash)
         response = self._deploy_stub.getEventByHash(query)
         self._check_response(response)
         return response
 
-    def visual_dag(self, depth:int , showJustificationLines: bool, startBlockNumber:int) -> str:
-        query = VisualizeDagQuery(depth=depth, showJustificationLines=showJustificationLines, startBlockNumber=startBlockNumber)
+    def visual_dag(self, depth: int, showJustificationLines: bool, startBlockNumber: int) -> str:
+        query = VisualizeDagQuery(depth=depth, showJustificationLines=showJustificationLines,
+                                  startBlockNumber=startBlockNumber)
         response = self._deploy_stub.visualizeDag(query)
         result = self._handle_stream(response)
-        return ''.join(list(map(lambda x:x.content, result))) # type: ignore
+        return ''.join(list(map(lambda x: x.content, result)))  # type: ignore
 
     def get_transaction(self, block_hash: str) -> List[DeployWithTransaction]:
         if self.param is None:
