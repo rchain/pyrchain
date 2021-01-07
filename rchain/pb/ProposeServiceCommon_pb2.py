@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ProposeServiceCommon.proto',
   package='casper',
   syntax='proto3',
-  serialized_options=b'\342?!\n\033coop.rchain.casper.protocol\020\001(\001',
-  serialized_pb=b'\n\x1aProposeServiceCommon.proto\x12\x06\x63\x61sper\x1a\x15scalapb/scalapb.proto\"7\n\x18PrintUnmatchedSendsQuery\x12\x1b\n\x13printUnmatchedSends\x18\x01 \x01(\x08\x42$\xe2?!\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01\x62\x06proto3'
+  serialized_options=b'\342?#\n\033coop.rchain.casper.protocol\020\001(\001H\000',
+  serialized_pb=b'\n\x1aProposeServiceCommon.proto\x12\x06\x63\x61sper\x1a\x15scalapb/scalapb.proto\"7\n\x18PrintUnmatchedSendsQuery\x12\x1b\n\x13printUnmatchedSends\x18\x01 \x01(\x08\x42&\xe2?#\n\x1b\x63oop.rchain.casper.protocol\x10\x01(\x01H\x00\x62\x06proto3'
   ,
   dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 

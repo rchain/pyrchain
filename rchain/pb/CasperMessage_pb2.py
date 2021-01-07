@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='CasperMessage.proto',
   package='casper',
   syntax='proto3',
-  serialized_options=b'\342?B\n\033coop.rchain.casper.protocol\020\001\"\037sealed trait CasperMessageProto(\001',
-  serialized_pb=b'\n\x13\x43\x61sperMessage.proto\x12\x06\x63\x61sper\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\"=\n\x14HasBlockRequestProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"6\n\rHasBlockProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\":\n\x11\x42lockRequestProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"4\n\x19\x46orkChoiceTipRequestProto:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"v\n\x1b\x41pprovedBlockCandidateProto\x12(\n\x05\x62lock\x18\x01 \x01(\x0b\x32\x19.casper.BlockMessageProto\x12\x14\n\x0crequiredSigs\x18\x02 \x01(\x05:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\x8c\x01\n\x14UnapprovedBlockProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x10\n\x08\x64uration\x18\x03 \x01(\x03:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\">\n\tSignature\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x0b\n\x03sig\x18\x03 \x01(\x0c\"\x85\x01\n\x12\x42lockApprovalProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x1e\n\x03sig\x18\x02 \x01(\x0b\x32\x11.casper.Signature:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\x86\x01\n\x12\x41pprovedBlockProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x1f\n\x04sigs\x18\x02 \x03(\x0b\x32\x11.casper.Signature:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"H\n\x19\x41pprovedBlockRequestProto\x12\x12\n\nidentifier\x18\x01 \x01(\t:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"c\n\x1dNoApprovedBlockAvailableProto\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x15\n\rnodeIdentifer\x18\x02 \x01(\t:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\xa1\x02\n\x11\x42lockMessageProto\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12#\n\x06header\x18\x02 \x01(\x0b\x32\x13.casper.HeaderProto\x12\x1f\n\x04\x62ody\x18\x03 \x01(\x0b\x32\x11.casper.BodyProto\x12\x32\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x1a.casper.JustificationProto\x12\x0e\n\x06sender\x18\x05 \x01(\x0c\x12\x0e\n\x06seqNum\x18\x06 \x01(\x05\x12\x0b\n\x03sig\x18\x07 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x08 \x01(\t\x12\x0f\n\x07shardId\x18\t \x01(\t\x12\x12\n\nextraBytes\x18\n \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"T\n\x15\x42lockHashMessageProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c\x12\x14\n\x0c\x62lockCreator\x18\x02 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\xdb\x02\n\x15\x42lockMetadataInternal\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12/\n\x07parents\x18\x02 \x03(\x0c\x42\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x0e\n\x06sender\x18\x03 \x01(\x0c\x12R\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x1a.casper.JustificationProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12@\n\x05\x62onds\x18\x05 \x03(\x0b\x32\x11.casper.BondProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x10\n\x08\x62lockNum\x18\x06 \x01(\x03\x12\x0e\n\x06seqNum\x18\x07 \x01(\x05\x12\x0f\n\x07invalid\x18\x08 \x01(\x08:%\xe2?\"\" coop.rchain.models.BlockMetadata\"^\n\x0bHeaderProto\x12\x17\n\x0fparentsHashList\x18\x01 \x03(\x0c\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12\x0f\n\x07version\x18\x06 \x01(\x03\x12\x12\n\nextraBytes\x18\x07 \x01(\x0c\"\xac\x01\n\x0f\x44\x65ployDataProto\x12\x10\n\x08\x64\x65ployer\x18\x01 \x01(\x0c\x12\x0c\n\x04term\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0b\n\x03sig\x18\x04 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x05 \x01(\t\x12\x11\n\tphloPrice\x18\x07 \x01(\x03\x12\x11\n\tphloLimit\x18\x08 \x01(\x03\x12\x1d\n\x15validAfterBlockNumber\x18\n \x01(\x03\"\xa8\x01\n\x14ProcessedDeployProto\x12\'\n\x06\x64\x65ploy\x18\x01 \x01(\x0b\x32\x17.casper.DeployDataProto\x12\x14\n\x04\x63ost\x18\x02 \x01(\x0b\x32\x06.PCost\x12%\n\tdeployLog\x18\x03 \x03(\x0b\x32\x12.casper.EventProto\x12\x0f\n\x07\x65rrored\x18\x05 \x01(\x08\x12\x19\n\x11systemDeployError\x18\x06 \x01(\t\"O\n\x1aSlashSystemDeployDataProto\x12\x18\n\x10invalidBlockHash\x18\x01 \x01(\x0c\x12\x17\n\x0fissuerPublicKey\x18\x02 \x01(\x0c\"!\n\x1f\x43loseBlockSystemDeployDataProto\"\xb3\x01\n\x15SystemDeployDataProto\x12?\n\x11slashSystemDeploy\x18\x01 \x01(\x0b\x32\".casper.SlashSystemDeployDataProtoH\x00\x12I\n\x16\x63loseBlockSystemDeploy\x18\x02 \x01(\x0b\x32\'.casper.CloseBlockSystemDeployDataProtoH\x00\x42\x0e\n\x0csystemDeploy\"\x8a\x01\n\x1aProcessedSystemDeployProto\x12\x33\n\x0csystemDeploy\x18\x01 \x01(\x0b\x32\x1d.casper.SystemDeployDataProto\x12%\n\tdeployLog\x18\x02 \x03(\x0b\x32\x12.casper.EventProto\x12\x10\n\x08\x65rrorMsg\x18\x03 \x01(\t\"\xb2\x01\n\tBodyProto\x12\'\n\x05state\x18\x01 \x01(\x0b\x32\x18.casper.RChainStateProto\x12-\n\x07\x64\x65ploys\x18\x02 \x03(\x0b\x32\x1c.casper.ProcessedDeployProto\x12\x39\n\rsystemDeploys\x18\x03 \x03(\x0b\x32\".casper.ProcessedSystemDeployProto\x12\x12\n\nextraBytes\x18\x04 \x01(\x0c\"@\n\x12JustificationProto\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\x17\n\x0flatestBlockHash\x18\x02 \x01(\x0c\"v\n\x10RChainStateProto\x12\x14\n\x0cpreStateHash\x18\x01 \x01(\x0c\x12\x15\n\rpostStateHash\x18\x02 \x01(\x0c\x12 \n\x05\x62onds\x18\x03 \x03(\x0b\x32\x11.casper.BondProto\x12\x13\n\x0b\x62lockNumber\x18\x04 \x01(\x03\"\xa2\x01\n\nEventProto\x12,\n\x07produce\x18\x01 \x01(\x0b\x32\x19.casper.ProduceEventProtoH\x00\x12,\n\x07\x63onsume\x18\x02 \x01(\x0b\x32\x19.casper.ConsumeEventProtoH\x00\x12&\n\x04\x63omm\x18\x03 \x01(\x0b\x32\x16.casper.CommEventProtoH\x00\x42\x10\n\x0e\x65vent_instance\"b\n\x11ProduceEventProto\x12\x14\n\x0c\x63hannelsHash\x18\x01 \x01(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x15\n\rtimesRepeated\x18\x04 \x01(\x05\"M\n\x11\x43onsumeEventProto\x12\x16\n\x0e\x63hannelsHashes\x18\x01 \x03(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\"\x8b\x01\n\x0e\x43ommEventProto\x12*\n\x07\x63onsume\x18\x01 \x01(\x0b\x32\x19.casper.ConsumeEventProto\x12+\n\x08produces\x18\x02 \x03(\x0b\x32\x19.casper.ProduceEventProto\x12 \n\x05peeks\x18\x03 \x03(\x0b\x32\x11.casper.PeekProto\"!\n\tPeekProto\x12\x14\n\x0c\x63hannelIndex\x18\x01 \x01(\x05\"-\n\tBondProto\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\r\n\x05stake\x18\x02 \x01(\x03\x42\x45\xe2?B\n\x1b\x63oop.rchain.casper.protocol\x10\x01\"\x1fsealed trait CasperMessageProto(\x01\x62\x06proto3'
+  serialized_options=b'\342?D\n\033coop.rchain.casper.protocol\020\001\"\037sealed trait CasperMessageProto(\001H\000',
+  serialized_pb=b'\n\x13\x43\x61sperMessage.proto\x12\x06\x63\x61sper\x1a\x15scalapb/scalapb.proto\x1a\x0eRhoTypes.proto\"=\n\x14HasBlockRequestProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"6\n\rHasBlockProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\":\n\x11\x42lockRequestProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"4\n\x19\x46orkChoiceTipRequestProto:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"v\n\x1b\x41pprovedBlockCandidateProto\x12(\n\x05\x62lock\x18\x01 \x01(\x0b\x32\x19.casper.BlockMessageProto\x12\x14\n\x0crequiredSigs\x18\x02 \x01(\x05:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\x8c\x01\n\x14UnapprovedBlockProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x10\n\x08\x64uration\x18\x03 \x01(\x03:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\">\n\tSignature\x12\x11\n\tpublicKey\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x0b\n\x03sig\x18\x03 \x01(\x0c\"\x85\x01\n\x12\x42lockApprovalProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x1e\n\x03sig\x18\x02 \x01(\x0b\x32\x11.casper.Signature:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\x86\x01\n\x12\x41pprovedBlockProto\x12\x36\n\tcandidate\x18\x01 \x01(\x0b\x32#.casper.ApprovedBlockCandidateProto\x12\x1f\n\x04sigs\x18\x02 \x03(\x0b\x32\x11.casper.Signature:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"[\n\x19\x41pprovedBlockRequestProto\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x11\n\ttrimState\x18\x02 \x01(\x08:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"c\n\x1dNoApprovedBlockAvailableProto\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x15\n\rnodeIdentifer\x18\x02 \x01(\t:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\xa1\x02\n\x11\x42lockMessageProto\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12#\n\x06header\x18\x02 \x01(\x0b\x32\x13.casper.HeaderProto\x12\x1f\n\x04\x62ody\x18\x03 \x01(\x0b\x32\x11.casper.BodyProto\x12\x32\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x1a.casper.JustificationProto\x12\x0e\n\x06sender\x18\x05 \x01(\x0c\x12\x0e\n\x06seqNum\x18\x06 \x01(\x05\x12\x0b\n\x03sig\x18\x07 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x08 \x01(\t\x12\x0f\n\x07shardId\x18\t \x01(\t\x12\x12\n\nextraBytes\x18\n \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"T\n\x15\x42lockHashMessageProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c\x12\x14\n\x0c\x62lockCreator\x18\x02 \x01(\x0c:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\"\xdb\x02\n\x15\x42lockMetadataInternal\x12\x11\n\tblockHash\x18\x01 \x01(\x0c\x12/\n\x07parents\x18\x02 \x03(\x0c\x42\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x0e\n\x06sender\x18\x03 \x01(\x0c\x12R\n\x0ejustifications\x18\x04 \x03(\x0b\x32\x1a.casper.JustificationProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12@\n\x05\x62onds\x18\x05 \x03(\x0b\x32\x11.casper.BondProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x10\n\x08\x62lockNum\x18\x06 \x01(\x03\x12\x0e\n\x06seqNum\x18\x07 \x01(\x05\x12\x0f\n\x07invalid\x18\x08 \x01(\x08:%\xe2?\"\" coop.rchain.models.BlockMetadata\"^\n\x0bHeaderProto\x12\x17\n\x0fparentsHashList\x18\x01 \x03(\x0c\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12\x0f\n\x07version\x18\x06 \x01(\x03\x12\x12\n\nextraBytes\x18\x07 \x01(\x0c\"\xac\x01\n\x0f\x44\x65ployDataProto\x12\x10\n\x08\x64\x65ployer\x18\x01 \x01(\x0c\x12\x0c\n\x04term\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0b\n\x03sig\x18\x04 \x01(\x0c\x12\x14\n\x0csigAlgorithm\x18\x05 \x01(\t\x12\x11\n\tphloPrice\x18\x07 \x01(\x03\x12\x11\n\tphloLimit\x18\x08 \x01(\x03\x12\x1d\n\x15validAfterBlockNumber\x18\n \x01(\x03\"\xa8\x01\n\x14ProcessedDeployProto\x12\'\n\x06\x64\x65ploy\x18\x01 \x01(\x0b\x32\x17.casper.DeployDataProto\x12\x14\n\x04\x63ost\x18\x02 \x01(\x0b\x32\x06.PCost\x12%\n\tdeployLog\x18\x03 \x03(\x0b\x32\x12.casper.EventProto\x12\x0f\n\x07\x65rrored\x18\x05 \x01(\x08\x12\x19\n\x11systemDeployError\x18\x06 \x01(\t\"O\n\x1aSlashSystemDeployDataProto\x12\x18\n\x10invalidBlockHash\x18\x01 \x01(\x0c\x12\x17\n\x0fissuerPublicKey\x18\x02 \x01(\x0c\"!\n\x1f\x43loseBlockSystemDeployDataProto\"\xb3\x01\n\x15SystemDeployDataProto\x12?\n\x11slashSystemDeploy\x18\x01 \x01(\x0b\x32\".casper.SlashSystemDeployDataProtoH\x00\x12I\n\x16\x63loseBlockSystemDeploy\x18\x02 \x01(\x0b\x32\'.casper.CloseBlockSystemDeployDataProtoH\x00\x42\x0e\n\x0csystemDeploy\"\x8a\x01\n\x1aProcessedSystemDeployProto\x12\x33\n\x0csystemDeploy\x18\x01 \x01(\x0b\x32\x1d.casper.SystemDeployDataProto\x12%\n\tdeployLog\x18\x02 \x03(\x0b\x32\x12.casper.EventProto\x12\x10\n\x08\x65rrorMsg\x18\x03 \x01(\t\"\xb2\x01\n\tBodyProto\x12\'\n\x05state\x18\x01 \x01(\x0b\x32\x18.casper.RChainStateProto\x12-\n\x07\x64\x65ploys\x18\x02 \x03(\x0b\x32\x1c.casper.ProcessedDeployProto\x12\x39\n\rsystemDeploys\x18\x03 \x03(\x0b\x32\".casper.ProcessedSystemDeployProto\x12\x12\n\nextraBytes\x18\x04 \x01(\x0c\"@\n\x12JustificationProto\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\x17\n\x0flatestBlockHash\x18\x02 \x01(\x0c\"v\n\x10RChainStateProto\x12\x14\n\x0cpreStateHash\x18\x01 \x01(\x0c\x12\x15\n\rpostStateHash\x18\x02 \x01(\x0c\x12 \n\x05\x62onds\x18\x03 \x03(\x0b\x32\x11.casper.BondProto\x12\x13\n\x0b\x62lockNumber\x18\x04 \x01(\x03\"\xa2\x01\n\nEventProto\x12,\n\x07produce\x18\x01 \x01(\x0b\x32\x19.casper.ProduceEventProtoH\x00\x12,\n\x07\x63onsume\x18\x02 \x01(\x0b\x32\x19.casper.ConsumeEventProtoH\x00\x12&\n\x04\x63omm\x18\x03 \x01(\x0b\x32\x16.casper.CommEventProtoH\x00\x42\x10\n\x0e\x65vent_instance\"b\n\x11ProduceEventProto\x12\x14\n\x0c\x63hannelsHash\x18\x01 \x01(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\x12\x15\n\rtimesRepeated\x18\x04 \x01(\x05\"M\n\x11\x43onsumeEventProto\x12\x16\n\x0e\x63hannelsHashes\x18\x01 \x03(\x0c\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x12\n\npersistent\x18\x03 \x01(\x08\"\x8b\x01\n\x0e\x43ommEventProto\x12*\n\x07\x63onsume\x18\x01 \x01(\x0b\x32\x19.casper.ConsumeEventProto\x12+\n\x08produces\x18\x02 \x03(\x0b\x32\x19.casper.ProduceEventProto\x12 \n\x05peeks\x18\x03 \x03(\x0b\x32\x11.casper.PeekProto\"!\n\tPeekProto\x12\x14\n\x0c\x63hannelIndex\x18\x01 \x01(\x05\"-\n\tBondProto\x12\x11\n\tvalidator\x18\x01 \x01(\x0c\x12\r\n\x05stake\x18\x02 \x01(\x03\"0\n\x11StoreNodeKeyProto\x12\x0c\n\x04hash\x18\x01 \x01(\x0c\x12\r\n\x05index\x18\x02 \x01(\x05\"\xa2\x01\n\x1dStoreItemsMessageRequestProto\x12L\n\tstartPath\x18\x01 \x03(\x0b\x32\x19.casper.StoreNodeKeyProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12\x0c\n\x04skip\x18\x02 \x01(\x05\x12\x0c\n\x04take\x18\x03 \x01(\x05:\x17\xe2?\x14\n\x12\x43\x61sperMessageProto\",\n\x0eStoreItemProto\x12\x0b\n\x03key\x18\x01 \x01(\x0c\x12\r\n\x05value\x18\x02 \x01(\x0c\"\xe5\x02\n\x16StoreItemsMessageProto\x12L\n\tstartPath\x18\x01 \x03(\x0b\x32\x19.casper.StoreNodeKeyProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12K\n\x08lastPath\x18\x02 \x03(\x0b\x32\x19.casper.StoreNodeKeyProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12L\n\x0chistoryItems\x18\x03 \x03(\x0b\x32\x16.casper.StoreItemProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List\x12I\n\tdataItems\x18\x04 \x03(\x0b\x32\x16.casper.StoreItemProtoB\x1e\xe2?\x1b\x1a\x19\x63ollection.immutable.List:\x17\xe2?\x14\n\x12\x43\x61sperMessageProtoBG\xe2?D\n\x1b\x63oop.rchain.casper.protocol\x10\x01\"\x1fsealed trait CasperMessageProto(\x01H\x00\x62\x06proto3'
   ,
   dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,RhoTypes__pb2.DESCRIPTOR,])
 
@@ -362,6 +362,13 @@ _APPROVEDBLOCKREQUESTPROTO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='trimState', full_name='casper.ApprovedBlockRequestProto.trimState', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -375,7 +382,7 @@ _APPROVEDBLOCKREQUESTPROTO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=903,
-  serialized_end=975,
+  serialized_end=994,
 )
 
 
@@ -412,8 +419,8 @@ _NOAPPROVEDBLOCKAVAILABLEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=977,
-  serialized_end=1076,
+  serialized_start=996,
+  serialized_end=1095,
 )
 
 
@@ -506,8 +513,8 @@ _BLOCKMESSAGEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1079,
-  serialized_end=1368,
+  serialized_start=1098,
+  serialized_end=1387,
 )
 
 
@@ -544,8 +551,8 @@ _BLOCKHASHMESSAGEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1370,
-  serialized_end=1454,
+  serialized_start=1389,
+  serialized_end=1473,
 )
 
 
@@ -624,8 +631,8 @@ _BLOCKMETADATAINTERNAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1457,
-  serialized_end=1804,
+  serialized_start=1476,
+  serialized_end=1823,
 )
 
 
@@ -676,8 +683,8 @@ _HEADERPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1806,
-  serialized_end=1900,
+  serialized_start=1825,
+  serialized_end=1919,
 )
 
 
@@ -756,8 +763,8 @@ _DEPLOYDATAPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1903,
-  serialized_end=2075,
+  serialized_start=1922,
+  serialized_end=2094,
 )
 
 
@@ -815,8 +822,8 @@ _PROCESSEDDEPLOYPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2078,
-  serialized_end=2246,
+  serialized_start=2097,
+  serialized_end=2265,
 )
 
 
@@ -853,8 +860,8 @@ _SLASHSYSTEMDEPLOYDATAPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2248,
-  serialized_end=2327,
+  serialized_start=2267,
+  serialized_end=2346,
 )
 
 
@@ -877,8 +884,8 @@ _CLOSEBLOCKSYSTEMDEPLOYDATAPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2329,
-  serialized_end=2362,
+  serialized_start=2348,
+  serialized_end=2381,
 )
 
 
@@ -918,8 +925,8 @@ _SYSTEMDEPLOYDATAPROTO = _descriptor.Descriptor(
       name='systemDeploy', full_name='casper.SystemDeployDataProto.systemDeploy',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2365,
-  serialized_end=2544,
+  serialized_start=2384,
+  serialized_end=2563,
 )
 
 
@@ -963,8 +970,8 @@ _PROCESSEDSYSTEMDEPLOYPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2547,
-  serialized_end=2685,
+  serialized_start=2566,
+  serialized_end=2704,
 )
 
 
@@ -1015,8 +1022,8 @@ _BODYPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2688,
-  serialized_end=2866,
+  serialized_start=2707,
+  serialized_end=2885,
 )
 
 
@@ -1053,8 +1060,8 @@ _JUSTIFICATIONPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2868,
-  serialized_end=2932,
+  serialized_start=2887,
+  serialized_end=2951,
 )
 
 
@@ -1105,8 +1112,8 @@ _RCHAINSTATEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2934,
-  serialized_end=3052,
+  serialized_start=2953,
+  serialized_end=3071,
 )
 
 
@@ -1153,8 +1160,8 @@ _EVENTPROTO = _descriptor.Descriptor(
       name='event_instance', full_name='casper.EventProto.event_instance',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=3055,
-  serialized_end=3217,
+  serialized_start=3074,
+  serialized_end=3236,
 )
 
 
@@ -1205,8 +1212,8 @@ _PRODUCEEVENTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3219,
-  serialized_end=3317,
+  serialized_start=3238,
+  serialized_end=3336,
 )
 
 
@@ -1250,8 +1257,8 @@ _CONSUMEEVENTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3319,
-  serialized_end=3396,
+  serialized_start=3338,
+  serialized_end=3415,
 )
 
 
@@ -1295,8 +1302,8 @@ _COMMEVENTPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3399,
-  serialized_end=3538,
+  serialized_start=3418,
+  serialized_end=3557,
 )
 
 
@@ -1326,8 +1333,8 @@ _PEEKPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3540,
-  serialized_end=3573,
+  serialized_start=3559,
+  serialized_end=3592,
 )
 
 
@@ -1364,8 +1371,181 @@ _BONDPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3575,
-  serialized_end=3620,
+  serialized_start=3594,
+  serialized_end=3639,
+)
+
+
+_STORENODEKEYPROTO = _descriptor.Descriptor(
+  name='StoreNodeKeyProto',
+  full_name='casper.StoreNodeKeyProto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='hash', full_name='casper.StoreNodeKeyProto.hash', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='index', full_name='casper.StoreNodeKeyProto.index', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3641,
+  serialized_end=3689,
+)
+
+
+_STOREITEMSMESSAGEREQUESTPROTO = _descriptor.Descriptor(
+  name='StoreItemsMessageRequestProto',
+  full_name='casper.StoreItemsMessageRequestProto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='startPath', full_name='casper.StoreItemsMessageRequestProto.startPath', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342?\033\032\031collection.immutable.List', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='skip', full_name='casper.StoreItemsMessageRequestProto.skip', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='take', full_name='casper.StoreItemsMessageRequestProto.take', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\342?\024\n\022CasperMessageProto',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3692,
+  serialized_end=3854,
+)
+
+
+_STOREITEMPROTO = _descriptor.Descriptor(
+  name='StoreItemProto',
+  full_name='casper.StoreItemProto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='casper.StoreItemProto.key', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='casper.StoreItemProto.value', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3856,
+  serialized_end=3900,
+)
+
+
+_STOREITEMSMESSAGEPROTO = _descriptor.Descriptor(
+  name='StoreItemsMessageProto',
+  full_name='casper.StoreItemsMessageProto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='startPath', full_name='casper.StoreItemsMessageProto.startPath', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342?\033\032\031collection.immutable.List', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='lastPath', full_name='casper.StoreItemsMessageProto.lastPath', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342?\033\032\031collection.immutable.List', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='historyItems', full_name='casper.StoreItemsMessageProto.historyItems', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342?\033\032\031collection.immutable.List', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dataItems', full_name='casper.StoreItemsMessageProto.dataItems', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342?\033\032\031collection.immutable.List', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\342?\024\n\022CasperMessageProto',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3903,
+  serialized_end=4260,
 )
 
 _APPROVEDBLOCKCANDIDATEPROTO.fields_by_name['block'].message_type = _BLOCKMESSAGEPROTO
@@ -1411,6 +1591,11 @@ _EVENTPROTO.fields_by_name['comm'].containing_oneof = _EVENTPROTO.oneofs_by_name
 _COMMEVENTPROTO.fields_by_name['consume'].message_type = _CONSUMEEVENTPROTO
 _COMMEVENTPROTO.fields_by_name['produces'].message_type = _PRODUCEEVENTPROTO
 _COMMEVENTPROTO.fields_by_name['peeks'].message_type = _PEEKPROTO
+_STOREITEMSMESSAGEREQUESTPROTO.fields_by_name['startPath'].message_type = _STORENODEKEYPROTO
+_STOREITEMSMESSAGEPROTO.fields_by_name['startPath'].message_type = _STORENODEKEYPROTO
+_STOREITEMSMESSAGEPROTO.fields_by_name['lastPath'].message_type = _STORENODEKEYPROTO
+_STOREITEMSMESSAGEPROTO.fields_by_name['historyItems'].message_type = _STOREITEMPROTO
+_STOREITEMSMESSAGEPROTO.fields_by_name['dataItems'].message_type = _STOREITEMPROTO
 DESCRIPTOR.message_types_by_name['HasBlockRequestProto'] = _HASBLOCKREQUESTPROTO
 DESCRIPTOR.message_types_by_name['HasBlockProto'] = _HASBLOCKPROTO
 DESCRIPTOR.message_types_by_name['BlockRequestProto'] = _BLOCKREQUESTPROTO
@@ -1441,6 +1626,10 @@ DESCRIPTOR.message_types_by_name['ConsumeEventProto'] = _CONSUMEEVENTPROTO
 DESCRIPTOR.message_types_by_name['CommEventProto'] = _COMMEVENTPROTO
 DESCRIPTOR.message_types_by_name['PeekProto'] = _PEEKPROTO
 DESCRIPTOR.message_types_by_name['BondProto'] = _BONDPROTO
+DESCRIPTOR.message_types_by_name['StoreNodeKeyProto'] = _STORENODEKEYPROTO
+DESCRIPTOR.message_types_by_name['StoreItemsMessageRequestProto'] = _STOREITEMSMESSAGEREQUESTPROTO
+DESCRIPTOR.message_types_by_name['StoreItemProto'] = _STOREITEMPROTO
+DESCRIPTOR.message_types_by_name['StoreItemsMessageProto'] = _STOREITEMSMESSAGEPROTO
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 HasBlockRequestProto = _reflection.GeneratedProtocolMessageType('HasBlockRequestProto', (_message.Message,), {
@@ -1653,6 +1842,34 @@ BondProto = _reflection.GeneratedProtocolMessageType('BondProto', (_message.Mess
   })
 _sym_db.RegisterMessage(BondProto)
 
+StoreNodeKeyProto = _reflection.GeneratedProtocolMessageType('StoreNodeKeyProto', (_message.Message,), {
+  'DESCRIPTOR' : _STORENODEKEYPROTO,
+  '__module__' : 'CasperMessage_pb2'
+  # @@protoc_insertion_point(class_scope:casper.StoreNodeKeyProto)
+  })
+_sym_db.RegisterMessage(StoreNodeKeyProto)
+
+StoreItemsMessageRequestProto = _reflection.GeneratedProtocolMessageType('StoreItemsMessageRequestProto', (_message.Message,), {
+  'DESCRIPTOR' : _STOREITEMSMESSAGEREQUESTPROTO,
+  '__module__' : 'CasperMessage_pb2'
+  # @@protoc_insertion_point(class_scope:casper.StoreItemsMessageRequestProto)
+  })
+_sym_db.RegisterMessage(StoreItemsMessageRequestProto)
+
+StoreItemProto = _reflection.GeneratedProtocolMessageType('StoreItemProto', (_message.Message,), {
+  'DESCRIPTOR' : _STOREITEMPROTO,
+  '__module__' : 'CasperMessage_pb2'
+  # @@protoc_insertion_point(class_scope:casper.StoreItemProto)
+  })
+_sym_db.RegisterMessage(StoreItemProto)
+
+StoreItemsMessageProto = _reflection.GeneratedProtocolMessageType('StoreItemsMessageProto', (_message.Message,), {
+  'DESCRIPTOR' : _STOREITEMSMESSAGEPROTO,
+  '__module__' : 'CasperMessage_pb2'
+  # @@protoc_insertion_point(class_scope:casper.StoreItemsMessageProto)
+  })
+_sym_db.RegisterMessage(StoreItemsMessageProto)
+
 
 DESCRIPTOR._options = None
 _HASBLOCKREQUESTPROTO._options = None
@@ -1671,4 +1888,11 @@ _BLOCKMETADATAINTERNAL.fields_by_name['parents']._options = None
 _BLOCKMETADATAINTERNAL.fields_by_name['justifications']._options = None
 _BLOCKMETADATAINTERNAL.fields_by_name['bonds']._options = None
 _BLOCKMETADATAINTERNAL._options = None
+_STOREITEMSMESSAGEREQUESTPROTO.fields_by_name['startPath']._options = None
+_STOREITEMSMESSAGEREQUESTPROTO._options = None
+_STOREITEMSMESSAGEPROTO.fields_by_name['startPath']._options = None
+_STOREITEMSMESSAGEPROTO.fields_by_name['lastPath']._options = None
+_STOREITEMSMESSAGEPROTO.fields_by_name['historyItems']._options = None
+_STOREITEMSMESSAGEPROTO.fields_by_name['dataItems']._options = None
+_STOREITEMSMESSAGEPROTO._options = None
 # @@protoc_insertion_point(module_scope)

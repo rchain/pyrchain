@@ -20,8 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ProposeServiceV1.proto',
   package='casper.v1',
   syntax='proto3',
-  serialized_options=b'\342?,\n&coop.rchain.casper.protocol.propose.v1\020\001(\001',
-  serialized_pb=b'\n\x16ProposeServiceV1.proto\x12\tcasper.v1\x1a\x12ServiceError.proto\x1a\x1aProposeServiceCommon.proto\x1a\x15scalapb/scalapb.proto\"N\n\x0fProposeResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x10\n\x06result\x18\x02 \x01(\tH\x00\x42\t\n\x07message2[\n\x0eProposeService\x12I\n\x07propose\x12 .casper.PrintUnmatchedSendsQuery\x1a\x1a.casper.v1.ProposeResponse\"\x00\x42/\xe2?,\n&coop.rchain.casper.protocol.propose.v1\x10\x01(\x01\x62\x06proto3'
+  serialized_options=b'\342?.\n&coop.rchain.casper.protocol.propose.v1\020\001(\001H\000',
+  serialized_pb=b'\n\x16ProposeServiceV1.proto\x12\tcasper.v1\x1a\x12ServiceError.proto\x1a\x1aProposeServiceCommon.proto\x1a\x15scalapb/scalapb.proto\"N\n\x0fProposeResponse\x12\x1e\n\x05\x65rror\x18\x01 \x01(\x0b\x32\r.ServiceErrorH\x00\x12\x10\n\x06result\x18\x02 \x01(\tH\x00\x42\t\n\x07message2[\n\x0eProposeService\x12I\n\x07propose\x12 .casper.PrintUnmatchedSendsQuery\x1a\x1a.casper.v1.ProposeResponse\"\x00\x42\x31\xe2?.\n&coop.rchain.casper.protocol.propose.v1\x10\x01(\x01H\x00\x62\x06proto3'
   ,
   dependencies=[ServiceError__pb2.DESCRIPTOR,ProposeServiceCommon__pb2.DESCRIPTOR,scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
