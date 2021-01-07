@@ -12,17 +12,16 @@ _sym_db = _symbol_database.Default()
 
 
 from .scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
-from . import CasperMessage_pb2 as CasperMessage__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='routing.proto',
   package='routing',
   syntax='proto3',
-  serialized_options=b'\342?%\n!coop.rchain.comm.protocol.routing\020\001',
-  serialized_pb=b'\n\rrouting.proto\x12\x07routing\x1a\x15scalapb/scalapb.proto\x1a\x13\x43\x61sperMessage.proto\"D\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0c\n\x04host\x18\x02 \x01(\x0c\x12\x10\n\x08tcp_port\x18\x03 \x01(\r\x12\x10\n\x08udp_port\x18\x04 \x01(\r\":\n\x06Header\x12\x1d\n\x06sender\x18\x01 \x01(\x0b\x32\r.routing.Node\x12\x11\n\tnetworkId\x18\x02 \x01(\t\"\x0b\n\tHeartbeat\"\x13\n\x11HeartbeatResponse\"\"\n\x11ProtocolHandshake\x12\r\n\x05nonce\x18\x01 \x01(\x0c\"*\n\x19ProtocolHandshakeResponse\x12\r\n\x05nonce\x18\x01 \x01(\x0c\")\n\x06Packet\x12\x0e\n\x06typeId\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"\x0c\n\nDisconnect\"\xb2\x02\n\x08Protocol\x12\x1f\n\x06header\x18\x01 \x01(\x0b\x32\x0f.routing.Header\x12\'\n\theartbeat\x18\x02 \x01(\x0b\x32\x12.routing.HeartbeatH\x00\x12\x38\n\x12protocol_handshake\x18\x03 \x01(\x0b\x32\x1a.routing.ProtocolHandshakeH\x00\x12I\n\x1bprotocol_handshake_response\x18\x04 \x01(\x0b\x32\".routing.ProtocolHandshakeResponseH\x00\x12!\n\x06packet\x18\x05 \x01(\x0b\x32\x0f.routing.PacketH\x00\x12)\n\ndisconnect\x18\x06 \x01(\x0b\x32\x13.routing.DisconnectH\x00\x42\t\n\x07message\"0\n\tTLRequest\x12#\n\x08protocol\x18\x01 \x01(\x0b\x32\x11.routing.Protocol\"$\n\x13InternalServerError\x12\r\n\x05\x65rror\x18\x01 \x01(\x0c\"&\n\x03\x41\x63k\x12\x1f\n\x06header\x18\x01 \x01(\x0b\x32\x0f.routing.Header\"q\n\nTLResponse\x12\x1b\n\x03\x61\x63k\x18\x01 \x01(\x0b\x32\x0c.routing.AckH\x00\x12;\n\x13internalServerError\x18\x02 \x01(\x0b\x32\x1c.routing.InternalServerErrorH\x00\x42\t\n\x07payload\"z\n\x0b\x43hunkHeader\x12\x1d\n\x06sender\x18\x01 \x01(\x0b\x32\r.routing.Node\x12\x0e\n\x06typeId\x18\x02 \x01(\t\x12\x12\n\ncompressed\x18\x03 \x01(\x08\x12\x15\n\rcontentLength\x18\x04 \x01(\x05\x12\x11\n\tnetworkId\x18\x05 \x01(\t\" \n\tChunkData\x12\x13\n\x0b\x63ontentData\x18\x01 \x01(\x0c\"^\n\x05\x43hunk\x12&\n\x06header\x18\x01 \x01(\x0b\x32\x14.routing.ChunkHeaderH\x00\x12\"\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x12.routing.ChunkDataH\x00\x42\t\n\x07\x63ontent2v\n\x0eTransportLayer\x12\x31\n\x04Send\x12\x12.routing.TLRequest\x1a\x13.routing.TLResponse\"\x00\x12\x31\n\x06Stream\x12\x0e.routing.Chunk\x1a\x13.routing.TLResponse\"\x00(\x01\x42(\xe2?%\n!coop.rchain.comm.protocol.routing\x10\x01\x62\x06proto3'
+  serialized_options=b'\342?\'\n!coop.rchain.comm.protocol.routing\020\001H\000',
+  serialized_pb=b'\n\rrouting.proto\x12\x07routing\x1a\x15scalapb/scalapb.proto\"D\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x0c\n\x04host\x18\x02 \x01(\x0c\x12\x10\n\x08tcp_port\x18\x03 \x01(\r\x12\x10\n\x08udp_port\x18\x04 \x01(\r\":\n\x06Header\x12\x1d\n\x06sender\x18\x01 \x01(\x0b\x32\r.routing.Node\x12\x11\n\tnetworkId\x18\x02 \x01(\t\"\x0b\n\tHeartbeat\"\x13\n\x11HeartbeatResponse\"\"\n\x11ProtocolHandshake\x12\r\n\x05nonce\x18\x01 \x01(\x0c\"*\n\x19ProtocolHandshakeResponse\x12\r\n\x05nonce\x18\x01 \x01(\x0c\")\n\x06Packet\x12\x0e\n\x06typeId\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"\x0c\n\nDisconnect\"\xb2\x02\n\x08Protocol\x12\x1f\n\x06header\x18\x01 \x01(\x0b\x32\x0f.routing.Header\x12\'\n\theartbeat\x18\x02 \x01(\x0b\x32\x12.routing.HeartbeatH\x00\x12\x38\n\x12protocol_handshake\x18\x03 \x01(\x0b\x32\x1a.routing.ProtocolHandshakeH\x00\x12I\n\x1bprotocol_handshake_response\x18\x04 \x01(\x0b\x32\".routing.ProtocolHandshakeResponseH\x00\x12!\n\x06packet\x18\x05 \x01(\x0b\x32\x0f.routing.PacketH\x00\x12)\n\ndisconnect\x18\x06 \x01(\x0b\x32\x13.routing.DisconnectH\x00\x42\t\n\x07message\"0\n\tTLRequest\x12#\n\x08protocol\x18\x01 \x01(\x0b\x32\x11.routing.Protocol\"$\n\x13InternalServerError\x12\r\n\x05\x65rror\x18\x01 \x01(\x0c\"&\n\x03\x41\x63k\x12\x1f\n\x06header\x18\x01 \x01(\x0b\x32\x0f.routing.Header\"q\n\nTLResponse\x12\x1b\n\x03\x61\x63k\x18\x01 \x01(\x0b\x32\x0c.routing.AckH\x00\x12;\n\x13internalServerError\x18\x02 \x01(\x0b\x32\x1c.routing.InternalServerErrorH\x00\x42\t\n\x07payload\"z\n\x0b\x43hunkHeader\x12\x1d\n\x06sender\x18\x01 \x01(\x0b\x32\r.routing.Node\x12\x0e\n\x06typeId\x18\x02 \x01(\t\x12\x12\n\ncompressed\x18\x03 \x01(\x08\x12\x15\n\rcontentLength\x18\x04 \x01(\x05\x12\x11\n\tnetworkId\x18\x05 \x01(\t\" \n\tChunkData\x12\x13\n\x0b\x63ontentData\x18\x01 \x01(\x0c\"^\n\x05\x43hunk\x12&\n\x06header\x18\x01 \x01(\x0b\x32\x14.routing.ChunkHeaderH\x00\x12\"\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x12.routing.ChunkDataH\x00\x42\t\n\x07\x63ontent2v\n\x0eTransportLayer\x12\x31\n\x04Send\x12\x12.routing.TLRequest\x1a\x13.routing.TLResponse\"\x00\x12\x31\n\x06Stream\x12\x0e.routing.Chunk\x1a\x13.routing.TLResponse\"\x00(\x01\x42*\xe2?\'\n!coop.rchain.comm.protocol.routing\x10\x01H\x00\x62\x06proto3'
   ,
-  dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,CasperMessage__pb2.DESCRIPTOR,])
+  dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
 
 
@@ -74,8 +73,8 @@ _NODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=70,
-  serialized_end=138,
+  serialized_start=49,
+  serialized_end=117,
 )
 
 
@@ -112,8 +111,8 @@ _HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=140,
-  serialized_end=198,
+  serialized_start=119,
+  serialized_end=177,
 )
 
 
@@ -136,8 +135,8 @@ _HEARTBEAT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=200,
-  serialized_end=211,
+  serialized_start=179,
+  serialized_end=190,
 )
 
 
@@ -160,8 +159,8 @@ _HEARTBEATRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=213,
-  serialized_end=232,
+  serialized_start=192,
+  serialized_end=211,
 )
 
 
@@ -191,8 +190,8 @@ _PROTOCOLHANDSHAKE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=234,
-  serialized_end=268,
+  serialized_start=213,
+  serialized_end=247,
 )
 
 
@@ -222,8 +221,8 @@ _PROTOCOLHANDSHAKERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=270,
-  serialized_end=312,
+  serialized_start=249,
+  serialized_end=291,
 )
 
 
@@ -260,8 +259,8 @@ _PACKET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=314,
-  serialized_end=355,
+  serialized_start=293,
+  serialized_end=334,
 )
 
 
@@ -284,8 +283,8 @@ _DISCONNECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=357,
-  serialized_end=369,
+  serialized_start=336,
+  serialized_end=348,
 )
 
 
@@ -353,8 +352,8 @@ _PROTOCOL = _descriptor.Descriptor(
       name='message', full_name='routing.Protocol.message',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=372,
-  serialized_end=678,
+  serialized_start=351,
+  serialized_end=657,
 )
 
 
@@ -384,8 +383,8 @@ _TLREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=680,
-  serialized_end=728,
+  serialized_start=659,
+  serialized_end=707,
 )
 
 
@@ -415,8 +414,8 @@ _INTERNALSERVERERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=730,
-  serialized_end=766,
+  serialized_start=709,
+  serialized_end=745,
 )
 
 
@@ -446,8 +445,8 @@ _ACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=806,
+  serialized_start=747,
+  serialized_end=785,
 )
 
 
@@ -487,8 +486,8 @@ _TLRESPONSE = _descriptor.Descriptor(
       name='payload', full_name='routing.TLResponse.payload',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=808,
-  serialized_end=921,
+  serialized_start=787,
+  serialized_end=900,
 )
 
 
@@ -546,8 +545,8 @@ _CHUNKHEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=923,
-  serialized_end=1045,
+  serialized_start=902,
+  serialized_end=1024,
 )
 
 
@@ -577,8 +576,8 @@ _CHUNKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1047,
-  serialized_end=1079,
+  serialized_start=1026,
+  serialized_end=1058,
 )
 
 
@@ -618,8 +617,8 @@ _CHUNK = _descriptor.Descriptor(
       name='content', full_name='routing.Chunk.content',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1081,
-  serialized_end=1175,
+  serialized_start=1060,
+  serialized_end=1154,
 )
 
 _HEADER.fields_by_name['sender'].message_type = _NODE
@@ -802,8 +801,8 @@ _TRANSPORTLAYER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1177,
-  serialized_end=1295,
+  serialized_start=1156,
+  serialized_end=1274,
   methods=[
   _descriptor.MethodDescriptor(
     name='Send',

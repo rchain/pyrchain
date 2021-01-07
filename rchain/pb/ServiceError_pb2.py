@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ServiceError.proto',
   package='',
   syntax='proto3',
-  serialized_options=b'\342?\035\n\033coop.rchain.casper.protocol',
-  serialized_pb=b'\n\x12ServiceError.proto\x1a\x15scalapb/scalapb.proto\" \n\x0cServiceError\x12\x10\n\x08messages\x18\x01 \x03(\tB \xe2?\x1d\n\x1b\x63oop.rchain.casper.protocolb\x06proto3'
+  serialized_options=b'\342?\037\n\033coop.rchain.casper.protocolH\000',
+  serialized_pb=b'\n\x12ServiceError.proto\x1a\x15scalapb/scalapb.proto\" \n\x0cServiceError\x12\x10\n\x08messages\x18\x01 \x03(\tB\"\xe2?\x1f\n\x1b\x63oop.rchain.casper.protocolH\x00\x62\x06proto3'
   ,
   dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,])
 
