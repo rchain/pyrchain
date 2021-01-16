@@ -12,6 +12,8 @@ from google.protobuf.wrappers_pb2 import Int32Value, StringValue
 
 from rchain.pb.CasperMessage_pb2 import BlockMessageProto
 
+REVADDR_LENGTH = 40
+
 
 def blake2b_32(data: bytes = b'') -> hashlib.blake2b:
     return hashlib.blake2b(data, digest_size=32)
@@ -31,6 +33,15 @@ def gen_block_hash_from_block(block: BlockMessageProto) -> bytes:
                            StringValue(value=block.shardId).SerializeToString(),
                            block.extraBytes])
     return blake2b_32(signed_obj).digest()
+
+
+def verify_rev_address(rev_address: str) -> bool:
+    revBytes = bitcoin.base58.decode(rev_address)
+    payload = revBytes[:-4]
+    checksum = revBytes[-4:]
+    checksumCalc = blake2b_32(payload).digest()
+    cal = checksumCalc[:4]
+    return checksum == cal and len(revBytes) == REVADDR_LENGTH
 
 
 class PublicKey:
@@ -113,8 +124,9 @@ class PrivateKey:
             data, hashfunc=blake2b_32, sigencode=sigencode_der_canonize
         )
 
-    def sign_deterministic(self, data: bytes, extra_entropy:bytes=b'') -> bytes:
-        return self._key.sign_deterministic(data, hashfunc=blake2b_32, sigencode=sigencode_der_canonize, extra_entropy=extra_entropy)
+    def sign_deterministic(self, data: bytes, extra_entropy: bytes = b'') -> bytes:
+        return self._key.sign_deterministic(data, hashfunc=blake2b_32, sigencode=sigencode_der_canonize,
+                                            extra_entropy=extra_entropy)
 
     def sign_block_hash(self, block_hash: bytes) -> bytes:
         return self._key.sign_digest(block_hash, sigencode=sigencode_der_canonize)
