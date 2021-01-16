@@ -3,7 +3,7 @@ import os
 import pytest
 from ecdsa.keys import BadSignatureError
 
-from rchain.crypto import PrivateKey, PublicKey, blake2b_32
+from rchain.crypto import PrivateKey, PublicKey, blake2b_32, verify_rev_address
 
 
 @pytest.mark.parametrize('input_str,expected_output', [
@@ -116,3 +116,8 @@ def test_address(key_hex: str, pub_key_hex: str, rev_address: str) -> None:
 def test_private_key_from_eth_path():
     key_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources/key.json')
     PrivateKey.from_eth_keyfile(key_path, 'testpassword')
+
+def test_rev_address_validation():
+    for i in range(20):
+        key = PrivateKey.generate()
+        assert verify_rev_address(key.get_public_key().get_rev_address()) is True
