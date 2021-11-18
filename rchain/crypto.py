@@ -44,6 +44,15 @@ def verify_rev_address(rev_address: str) -> bool:
     return checksum == cal and len(revBytes) == REVADDR_LENGTH
 
 
+def generate_rev_addr_from_eth(eth_address: str) -> str:
+    prefix = b'\0\0\0\0'
+    pub_key_hash = keccak(bytes.fromhex(eth_address))
+    payload = prefix + pub_key_hash
+    payload_chksum = blake2b_32(payload).digest()[:4]
+    addr_bytes = payload + payload_chksum
+    return bitcoin.base58.encode(addr_bytes)
+
+
 class PublicKey:
 
     @classmethod
@@ -74,13 +83,8 @@ class PublicKey:
         return b'\x04' + self._pub_key.to_string()
 
     def get_rev_address(self) -> str:
-        prefix = b'\0\0\0\0'
         eth_address = self.get_eth_address()
-        pub_key_hash = keccak(bytes.fromhex(eth_address))
-        payload = prefix + pub_key_hash
-        payload_chksum = blake2b_32(payload).digest()[:4]
-        addr_bytes = payload + payload_chksum
-        return bitcoin.base58.encode(addr_bytes)
+        return generate_rev_addr_from_eth(eth_address)
 
     def get_eth_address(self) -> str:
         return keccak(self.to_bytes()[1:]).hex()[-40:]
