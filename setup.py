@@ -25,6 +25,11 @@ setuptools.setup(
         'dataclasses',
         'click'
     ],
+    entry_points={
+        'console_scripts': [
+            'pyrchain = rchain.__main__:cli',
+        ],
+    },
     extras_require={
         'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest', 'sphinx']},
     zip_safe=False
