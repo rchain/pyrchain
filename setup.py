@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='pyrchain',
-    version='0.3.10',
+    version='0.3.11-rc1',
     author='RChain Cooperative',
     author_email='rchain-makers@rchain.coop',
     description='Interface to RChain RNode RPC',

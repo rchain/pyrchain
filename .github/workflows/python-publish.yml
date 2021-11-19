@@ -23,6 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
     - name: Build and publish
-      uses: pypa/gh-action-pypi-publish@master
+      uses: pypa/gh-action-pypi-publish@release/v1
       with:
+        user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
