@@ -22,6 +22,8 @@ def cli(ctx: click.core.Context, json_output: bool) -> None:
 @click.option('--input', help='the concrete content of your input type')
 def get_rev_addr(ctx: click.core.Context, input_type: str, input: str) -> None:
     if input_type == 'eth':
+        if input.startswith("0x"):
+            input = input[2:]
         addr = generate_rev_addr_from_eth(input)
     elif input_type == 'public':
         pub = PublicKey.from_hex(input)
