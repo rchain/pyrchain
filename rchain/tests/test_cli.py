@@ -1,3 +1,5 @@
+import json
+
 import grpc
 import pytest
 from click.testing import CliRunner
@@ -19,24 +21,39 @@ def test_get_rev_from_private():
     result = runner.invoke(cli, ['get-rev-addr', '--input-type', 'private', '--input',
                                  "1000000000000000000000000000000000000000000000000000000000000000"])
     assert result.exit_code == 0
-    assert result.output == '1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL\n'
+    assert result.output == 'Rev Address is : 1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL\n'
 
+    result = runner.invoke(cli, ["--json-output",'get-rev-addr', '--input-type', 'private', '--input',
+                                 "1000000000000000000000000000000000000000000000000000000000000000"])
+    assert result.exit_code == 0
+    j = json.loads(result.output)
+    assert j['revAddress'] == "1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL"
 
 def test_get_rev_from_pub():
     runner = CliRunner()
     result = runner.invoke(cli, ['get-rev-addr', '--input-type', 'public', '--input',
                                  "0408ea9666139527a8c1dd94ce4f071fd23c8b350c5a4bb33748c4ba111faccae0620efabbc8ee2782e24e7c0cfb95c5d735b783be9cf0f8e955af34a30e62b945"])
     assert result.exit_code == 0
-    assert result.output == '1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL\n'
+    assert result.output == 'Rev Address is : 1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL\n'
 
+    result = runner.invoke(cli, ["--json-output", 'get-rev-addr', '--input-type', 'public', '--input',
+                                 "0408ea9666139527a8c1dd94ce4f071fd23c8b350c5a4bb33748c4ba111faccae0620efabbc8ee2782e24e7c0cfb95c5d735b783be9cf0f8e955af34a30e62b945"])
+    assert result.exit_code == 0
+    j = json.loads(result.output)
+    assert j['revAddress'] == "1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL"
 
 def test_get_rev_from_eth():
     runner = CliRunner()
     result = runner.invoke(cli, ['get-rev-addr', '--input-type', 'eth', '--input',
                                  "7b2419e0ee0bd034f7bf24874c12512acac6e21c"])
     assert result.exit_code == 0
-    assert result.output == '1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL\n'
+    assert result.output == 'Rev Address is : 1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL\n'
 
+    result = runner.invoke(cli, ["--json-output", 'get-rev-addr', '--input-type', 'eth', '--input',
+                                 "7b2419e0ee0bd034f7bf24874c12512acac6e21c"])
+    assert result.exit_code == 0
+    j = json.loads(result.output)
+    assert j['revAddress'] == "1111cnoFDAa7GubxBMHpPLbbediPegnjSdZwNjxg9oqYvSvSmfqQL"
 
 def test_get_rev_from_err():
     runner = CliRunner()
@@ -54,7 +71,7 @@ def test_get_rev_from_err():
 def test_sign_deploy(key: PrivateKey, terms: str, phlo_price: int, phlo_limit: int, valid_after_block_no: int,
                      timestamp_millis: int):
     runner = CliRunner()
-    result = runner.invoke(cli, ['sign-deploy', '--private-key', key.to_hex(),
+    result = runner.invoke(cli, ["--json-output",'sign-deploy', '--private-key', key.to_hex(),
                                  '--term', terms,
                                  "--phlo-price", phlo_price,
                                  "--phlo-limit", phlo_limit,
@@ -63,7 +80,7 @@ def test_sign_deploy(key: PrivateKey, terms: str, phlo_price: int, phlo_limit: i
                                  "--sig-algorithm", "secp256k1"
                                  ])
     assert result.exit_code == 0
-    sig = result.output.strip()
+    sig = json.loads(result.output)
 
     data = DeployDataProto(
         deployer=key.get_public_key().to_bytes(),
@@ -74,7 +91,7 @@ def test_sign_deploy(key: PrivateKey, terms: str, phlo_price: int, phlo_limit: i
         timestamp=timestamp_millis,
         sigAlgorithm='secp256k1',
     )
-    assert verify_deploy_data(key.get_public_key(), bytes.fromhex(sig), data)
+    assert verify_deploy_data(key.get_public_key(), bytes.fromhex(sig['signature']), data)
 
 
 @pytest.mark.parametrize("key,terms,phlo_price,phlo_limit,valid_after_block_no,timestamp_millis", [
@@ -90,7 +107,7 @@ def test_submit_deploy(key: PrivateKey, terms: str, phlo_price: int, phlo_limit:
 
     with deploy_service(DummyDeploySerivce()) as (server, port):
         runner = CliRunner()
-        result = runner.invoke(cli, ['submit-deploy', '--deployer', key.get_public_key().to_hex(),
+        result = runner.invoke(cli, ["--json-output", 'submit-deploy', '--deployer', key.get_public_key().to_hex(),
                                      '--term', terms,
                                      "--phlo-price", phlo_price,
                                      "--phlo-limit", phlo_limit,
@@ -102,3 +119,5 @@ def test_submit_deploy(key: PrivateKey, terms: str, phlo_price: int, phlo_limit:
                                      "--port", port
                                      ])
         assert result.exit_code == 0
+        res = json.loads(result.output)
+        assert res['deployID'] == "1111"
