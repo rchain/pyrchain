@@ -10,7 +10,7 @@ from .param import Params
 from .pb.CasperMessage_pb2 import DeployDataProto
 from .pb.DeployServiceCommon_pb2 import (
     BlockInfo, BlockQuery, BlocksQuery, BlocksQueryByHeight,
-    ContinuationAtNameQuery, DataAtNameQuery, ExploratoryDeployQuery,
+    ContinuationAtNameQuery, DataAtNameQuery, DataAtNameByBlockQuery, ExploratoryDeployQuery,
     FindDeployQuery, IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
     PrivateNamePreviewQuery, SingleReport, VisualizeDagQuery,
 )
@@ -18,7 +18,7 @@ from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
     DeployResponse, EventInfoResponse, ExploratoryDeployResponse,
     ListeningNameDataPayload as Data, ListeningNameDataResponse,
-    PrivateNamePreviewResponse, VisualizeBlocksResponse,
+    PrivateNamePreviewResponse, VisualizeBlocksResponse, RhoDataResponse,
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
@@ -183,6 +183,10 @@ class RClient:
         self._check_response(response)
         wrapped = response.payload
         return Data.FromString(wrapped.SerializeToString())
+
+    def get_data_at_par(self, par: Par, block_hash: str, use_pre_state_hash: bool) -> RhoDataResponse:
+        query = DataAtNameByBlockQuery(par=par, blockHash=block_hash, usePreStateHash=use_pre_state_hash)
+        return self._deploy_stub.getDataAtName(query)
 
     def get_data_at_public_names(self, names: List[str], depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.public_names(names), depth)
