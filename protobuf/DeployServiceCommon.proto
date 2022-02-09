@@ -30,6 +30,11 @@ message BlockQuery {
   string hash = 1;
 }
 
+message ReportQuery{
+  string hash = 1;
+  bool forceReplay = 2;
+}
+
 message BlocksQuery {
   int32 depth = 1;
 }
@@ -42,6 +47,12 @@ message BlocksQueryByHeight{
 message DataAtNameQuery {
   int32 depth = 1;
   Par name = 2;
+}
+
+message DataAtNameByBlockQuery {
+  Par par              = 1 [(scalapb.field).no_box = true];
+  string blockHash     = 2;
+  bool usePreStateHash = 3;
 }
 
 message ContinuationAtNameQuery {
@@ -134,6 +145,11 @@ message LightBlockInfo {
   float faultTolerance = 19;
 
   repeated JustificationInfo justifications = 20;
+  repeated RejectedDeployInfo rejectedDeploys = 21;
+}
+
+message RejectedDeployInfo{
+  string sig = 1;
 }
 
 // For node clients, see BlockMessage for actual Casper protocol Block representation
@@ -199,7 +215,29 @@ message DeployInfoWithEventData{
   repeated SingleReport report =2;
 }
 
+message SystemDeployInfoWithEventData{
+  SystemDeployDataProto systemDeploy = 1;
+  repeated SingleReport report =2;
+}
+
 message BlockEventInfo{
   LightBlockInfo blockInfo = 1;
   repeated DeployInfoWithEventData deploys= 2;
+  repeated SystemDeployInfoWithEventData systemDeploys = 3;
+  bytes postStateHash = 4;
+}
+
+message Status {
+  VersionInfo version = 1 [(scalapb.field).no_box = true];
+  string address      = 2;
+  string networkId    = 3;
+  string shardId      = 4;
+  int32 peers         = 5;
+  int32 nodes         = 6;
+  int64 minPhloPrice  = 7;
+}
+
+message VersionInfo {
+  string api  = 1;
+  string node = 2;
 }
