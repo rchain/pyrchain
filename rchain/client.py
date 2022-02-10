@@ -18,7 +18,7 @@ from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
     DeployResponse, EventInfoResponse, ExploratoryDeployResponse,
     ListeningNameDataPayload as Data, ListeningNameDataResponse,
-    PrivateNamePreviewResponse, VisualizeBlocksResponse, RhoDataResponse,
+    PrivateNamePreviewResponse, VisualizeBlocksResponse, RhoDataPayload,
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
@@ -184,9 +184,12 @@ class RClient:
         wrapped = response.payload
         return Data.FromString(wrapped.SerializeToString())
 
-    def get_data_at_par(self, par: Par, block_hash: str, use_pre_state_hash: bool) -> RhoDataResponse:
+    def get_data_at_par(self, par: Par, block_hash: str, use_pre_state_hash: bool) -> RhoDataPayload:
         query = DataAtNameByBlockQuery(par=par, blockHash=block_hash, usePreStateHash=use_pre_state_hash)
-        return self._deploy_stub.getDataAtName(query)
+        response = self._deploy_stub.getDataAtName(query)
+        self._check_response(response)
+        wrapped = response.payload
+        return RhoDataPayload.FromString(wrapped.SerializeToString())
 
     def get_data_at_public_names(self, names: List[str], depth: int = -1) -> Optional[Data]:
         return self.get_data_at_name(DataQueries.public_names(names), depth)
