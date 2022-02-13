@@ -10,15 +10,16 @@ from .param import Params
 from .pb.CasperMessage_pb2 import DeployDataProto
 from .pb.DeployServiceCommon_pb2 import (
     BlockInfo, BlockQuery, BlocksQuery, BlocksQueryByHeight,
-    ContinuationAtNameQuery, DataAtNameQuery, DataAtNameByBlockQuery, ExploratoryDeployQuery,
-    FindDeployQuery, IsFinalizedQuery, LastFinalizedBlockQuery, LightBlockInfo,
-    PrivateNamePreviewQuery, SingleReport, VisualizeDagQuery,
+    ContinuationAtNameQuery, DataAtNameByBlockQuery, DataAtNameQuery,
+    ExploratoryDeployQuery, FindDeployQuery, IsFinalizedQuery,
+    LastFinalizedBlockQuery, LightBlockInfo, PrivateNamePreviewQuery,
+    SingleReport, VisualizeDagQuery,
 )
 from .pb.DeployServiceV1_pb2 import (
     BlockInfoResponse, BlockResponse, ContinuationAtNameResponse,
     DeployResponse, EventInfoResponse, ExploratoryDeployResponse,
     ListeningNameDataPayload as Data, ListeningNameDataResponse,
-    PrivateNamePreviewResponse, VisualizeBlocksResponse, RhoDataPayload,
+    PrivateNamePreviewResponse, RhoDataPayload, VisualizeBlocksResponse,
 )
 from .pb.DeployServiceV1_pb2_grpc import DeployServiceStub
 from .pb.ProposeServiceCommon_pb2 import PrintUnmatchedSendsQuery
