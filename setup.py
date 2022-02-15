@@ -31,6 +31,6 @@ setuptools.setup(
         ],
     },
     extras_require={
-        'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest', 'sphinx']},
+        'dev': ['grpcio-tools', 'mypy', 'typing-extensions', 'mypy-protobuf', 'isort', 'pytest==4.6.9', 'sphinx']},
     zip_safe=False
 )
