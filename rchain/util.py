@@ -11,6 +11,7 @@ def _gen_deploy_sig_content(data: DeployDataProto) -> bytes:
     signed_data.phloLimit = data.phloLimit
     signed_data.phloPrice = data.phloPrice
     signed_data.validAfterBlockNumber = data.validAfterBlockNumber
+    signed_data.shardId = data.shardId
     return signed_data.SerializeToString()
 
 
