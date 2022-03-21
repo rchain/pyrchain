@@ -1,7 +1,5 @@
 import time
 
-import grpc
-
 from rchain.client import RClient
 from rchain.crypto import PrivateKey
 
@@ -20,6 +18,7 @@ READONLY_SERVER = ['observer-asia.services.mainnet.rchain.coop',
 
 admin_key = PrivateKey.generate()
 contract = "@1!(2)"
+shard_id = 'root-shard'
 
 exploratory_term = 'new return in{return!("a")}'
 
@@ -41,23 +40,22 @@ with RClient(READONLY_SERVER[0], 40401) as client:
     assert client.is_finalized(block_hash)
 
     # get blocks from blockNumber 10 to blockNumber 20
-    block_at_heights = client.get_blocks_by_heights(last_finalize_block.blockInfo.blockNumber, last_finalize_block.blockInfo.blockNumber+10)
+    block_at_heights = client.get_blocks_by_heights(last_finalize_block.blockInfo.blockNumber,
+                                                    last_finalize_block.blockInfo.blockNumber + 10)
 
     # exploratory deploy can only used for read-only node
     # this method is for exploring the data in the tuple space
     result = client.exploratory_deploy(exploratory_term, last_finalize_block.blockInfo.blockHash)
 
     # find deploy by the deploy id
-    block_deploy =  client.find_deploy(find_deploy)
-
+    block_deploy = client.find_deploy(find_deploy)
 
 # only valid validator can process deploy request
 # all the methods above can be processed by the validator except exploratory deploy
 with RClient(MAINNET_SERVER[1], 40401) as client:
-
     # normal deploy
     deploy_id = client.deploy(key=admin_key, term=contract, phlo_price=1, phlo_limit=1000000, valid_after_block_no=100,
-                              timestamp_millis=int(time.time() * 1000))
+                              timestamp_millis=int(time.time() * 1000), shard_id=shard_id)
     # deploy with validate after block number argument
     # the difference between `deploy` and `deploy_with_vabn_filled` is that
     # valid after block number is not auto filled by fetching the newest block number which would be assure
@@ -66,6 +64,6 @@ with RClient(MAINNET_SERVER[1], 40401) as client:
     deploy_id2 = client.deploy_with_vabn_filled(key=admin_key,
                                                 term=contract,
                                                 phlo_price=1, phlo_limit=1000000,
-                                                timestamp_millis=int(time.time() * 1000))
+                                                timestamp_millis=int(time.time() * 1000), shard_id=shard_id)
     # this will raise a exception
     client.exploratory_deploy(exploratory_term, last_finalize_block.blockInfo.blockHash)

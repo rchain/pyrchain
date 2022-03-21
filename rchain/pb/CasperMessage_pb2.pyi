@@ -325,6 +325,7 @@ class DeployDataProto(google.protobuf.message.Message):
     PHLOPRICE_FIELD_NUMBER: builtins.int
     PHLOLIMIT_FIELD_NUMBER: builtins.int
     VALIDAFTERBLOCKNUMBER_FIELD_NUMBER: builtins.int
+    SHARDID_FIELD_NUMBER: builtins.int
     deployer: builtins.bytes
     """public key"""
 
@@ -347,6 +348,9 @@ class DeployDataProto(google.protobuf.message.Message):
     """phlo limit for the deployment"""
 
     validAfterBlockNumber: builtins.int
+    shardId: typing.Text
+    """shard ID to prevent replay of deploys between shards"""
+
     def __init__(self,
         *,
         deployer: builtins.bytes = ...,
@@ -357,8 +361,9 @@ class DeployDataProto(google.protobuf.message.Message):
         phloPrice: builtins.int = ...,
         phloLimit: builtins.int = ...,
         validAfterBlockNumber: builtins.int = ...,
+        shardId: typing.Text = ...,
         ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["deployer",b"deployer","phloLimit",b"phloLimit","phloPrice",b"phloPrice","sig",b"sig","sigAlgorithm",b"sigAlgorithm","term",b"term","timestamp",b"timestamp","validAfterBlockNumber",b"validAfterBlockNumber"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["deployer",b"deployer","phloLimit",b"phloLimit","phloPrice",b"phloPrice","shardId",b"shardId","sig",b"sig","sigAlgorithm",b"sigAlgorithm","term",b"term","timestamp",b"timestamp","validAfterBlockNumber",b"validAfterBlockNumber"]) -> None: ...
 global___DeployDataProto = DeployDataProto
 
 class ProcessedDeployProto(google.protobuf.message.Message):

@@ -45,25 +45,26 @@ def deploy_service(deploy_service: Union[DeployServiceServicer, ProposeServiceSe
 
 
 TEST_HOST = '127.0.0.1'
+SHARD_ID = 'root-shard'
 
 
-@pytest.mark.parametrize("key,terms,phlo_price,phlo_limit,valid_after_block_no,timestamp_millis", [
-    (key, "@0!(2)", 1, 10000, 1, 1000),
-    (key, "@0!(2) | @1!(1)", 1, 10000, 10, 1000),
-    (key, "@0!(2)", 10, 200000, 10, 3000),
+@pytest.mark.parametrize("key,terms,phlo_price,phlo_limit,valid_after_block_no,timestamp_millis,shard_id", [
+    (key, "@0!(2)", 1, 10000, 1, 1000, SHARD_ID),
+    (key, "@0!(2) | @1!(1)", 1, 10000, 10, 1000, SHARD_ID),
+    (key, "@0!(2)", 10, 200000, 10, 3000, SHARD_ID),
 ])
 def test_client_deploy(key: PrivateKey, terms: str, phlo_price: int, phlo_limit: int, valid_after_block_no: int,
-                       timestamp_millis: int) -> None:
+                       timestamp_millis: int, shard_id: str) -> None:
     class DummyDeploySerivce(DeployServiceServicer):
         def doDeploy(self, request: DeployDataProto, context: grpc.ServicerContext) -> DeployResponse:
             return DeployResponse(result=request.sig.hex())
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
             RClient(TEST_HOST, port) as client:
-        ret = client.deploy(key, terms, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis)
+        ret = client.deploy(key, terms, phlo_price, phlo_limit, valid_after_block_no, timestamp_millis, shard_id)
         assert verify_deploy_data(key.get_public_key(), bytes.fromhex(ret),
                                   create_deploy_data(key, terms, phlo_price, phlo_limit, valid_after_block_no,
-                                                     timestamp_millis))
+                                                     timestamp_millis, shard_id))
 
 
 def test_client_show_block() -> None:

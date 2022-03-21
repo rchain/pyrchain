@@ -15,6 +15,7 @@ def cli(ctx: click.core.Context, json_output: bool) -> None:
     ctx.ensure_object(dict)
     ctx.obj['json_output'] = json_output
 
+
 @cli.command()
 @click.pass_context
 @click.option('--input-type', type=click.Choice(['eth', 'public', 'private'], case_sensitive=False),
@@ -30,7 +31,7 @@ def get_rev_addr(ctx: click.core.Context, input_type: str, input: str) -> None:
         addr = pub.get_rev_address()
     elif input_type == 'private':
         private = PrivateKey.from_hex(input)
-        addr  = private.get_public_key().get_rev_address()
+        addr = private.get_public_key().get_rev_address()
     else:
         raise NotImplementedError("Not supported type {}".format(input_type))
 
@@ -49,13 +50,15 @@ def get_rev_addr(ctx: click.core.Context, input_type: str, input: str) -> None:
 @click.option('--valid-after-block-number', type=int,
               help='valid after block number, usually used the latest block number')
 @click.option('--timestamp', type=int, help='timestamp, unit millisecond')
+@click.option('--shard-id', type=str, help='the name of the shard')
 @click.option('--sig-algorithm', type=click.Choice(['secp256k1']),
               help='signature algorithm. Currently only support secp256k1')
-def sign_deploy(ctx: click.core.Context, private_key: str, term: str, phlo_price: int, phlo_limit: int, valid_after_block_number: int,
-                timestamp: int, sig_algorithm: str) -> None:
+def sign_deploy(ctx: click.core.Context, private_key: str, term: str, phlo_price: int, phlo_limit: int,
+                valid_after_block_number: int,
+                timestamp: int, shard_id: str, sig_algorithm: str) -> None:
     pri = PrivateKey.from_hex(private_key)
     signed_deploy = create_deploy_data(
-        pri, term, phlo_price, phlo_limit, valid_after_block_number, timestamp
+        pri, term, phlo_price, phlo_limit, valid_after_block_number, timestamp, shard_id
     )
     deploy_id = signed_deploy.sig.hex()
 
@@ -74,13 +77,15 @@ def sign_deploy(ctx: click.core.Context, private_key: str, term: str, phlo_price
 @click.option('--valid-after-block-number', type=int,
               help='valid after block number, usually used the latest block number')
 @click.option('--timestamp', type=int, help='timestamp, unit millisecond')
+@click.option('--shard-id', type=str, help='the name of the shard')
 @click.option('--sig-algorithm', type=click.Choice(['secp256k1']),
               help='signature algorithm. Currently only support secp256k1')  # not used actually
 @click.option('--sig', help='the signature of the deploy')
 @click.option('--host', help='validator host the deploy is going to send to')
 @click.option('--port', type=int, help='validator grpc port the deploy is going to send to')
-def submit_deploy(ctx: click.core.Context, deployer: str, term: str, phlo_price: int, phlo_limit: int, valid_after_block_number: int,
-                  timestamp: int, sig_algorithm: str, sig: str, host: str,
+def submit_deploy(ctx: click.core.Context, deployer: str, term: str, phlo_price: int, phlo_limit: int,
+                  valid_after_block_number: int,
+                  timestamp: int, shard_id: str, sig_algorithm: str, sig: str, host: str,
                   port: int) -> None:
     deploy = DeployDataProto(
         deployer=bytes.fromhex(deployer),
@@ -89,6 +94,7 @@ def submit_deploy(ctx: click.core.Context, deployer: str, term: str, phlo_price:
         phloLimit=phlo_limit,
         validAfterBlockNumber=valid_after_block_number,
         timestamp=timestamp,
+        shardId=shard_id,
         sigAlgorithm='secp256k1',
         sig=bytes.fromhex(sig)
     )
@@ -99,6 +105,7 @@ def submit_deploy(ctx: click.core.Context, deployer: str, term: str, phlo_price:
         click.echo(json.dumps({"deployID": ret}))
     else:
         click.echo("Send {} deploy succeeded".format(sig))
+
 
 if __name__ == '__main__':
     cli()
