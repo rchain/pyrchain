@@ -42,11 +42,6 @@ class DeployServiceStub(object):
                 request_serializer=DeployServiceCommon__pb2.MachineVerifyQuery.SerializeToString,
                 response_deserializer=DeployServiceV1__pb2.MachineVerifyResponse.FromString,
                 )
-        self.showMainChain = channel.unary_stream(
-                '/casper.v1.DeployService/showMainChain',
-                request_serializer=DeployServiceCommon__pb2.BlocksQuery.SerializeToString,
-                response_deserializer=DeployServiceV1__pb2.BlockInfoResponse.FromString,
-                )
         self.getBlocks = channel.unary_stream(
                 '/casper.v1.DeployService/getBlocks',
                 request_serializer=DeployServiceCommon__pb2.BlocksQuery.SerializeToString,
@@ -145,13 +140,6 @@ class DeployServiceServicer(object):
 
     def machineVerifiableDag(self, request, context):
         """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def showMainChain(self, request, context):
-        """Returns on success LightBlockInfo
-        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -271,11 +259,6 @@ def add_DeployServiceServicer_to_server(servicer, server):
                     servicer.machineVerifiableDag,
                     request_deserializer=DeployServiceCommon__pb2.MachineVerifyQuery.FromString,
                     response_serializer=DeployServiceV1__pb2.MachineVerifyResponse.SerializeToString,
-            ),
-            'showMainChain': grpc.unary_stream_rpc_method_handler(
-                    servicer.showMainChain,
-                    request_deserializer=DeployServiceCommon__pb2.BlocksQuery.FromString,
-                    response_serializer=DeployServiceV1__pb2.BlockInfoResponse.SerializeToString,
             ),
             'getBlocks': grpc.unary_stream_rpc_method_handler(
                     servicer.getBlocks,
@@ -422,23 +405,6 @@ class DeployService(object):
         return grpc.experimental.unary_unary(request, target, '/casper.v1.DeployService/machineVerifiableDag',
             DeployServiceCommon__pb2.MachineVerifyQuery.SerializeToString,
             DeployServiceV1__pb2.MachineVerifyResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def showMainChain(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/casper.v1.DeployService/showMainChain',
-            DeployServiceCommon__pb2.BlocksQuery.SerializeToString,
-            DeployServiceV1__pb2.BlockInfoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

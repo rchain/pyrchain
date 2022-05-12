@@ -450,6 +450,8 @@ class Expr(google.protobuf.message.Message):
     E_PLUS_PLUS_BODY_FIELD_NUMBER: builtins.int
     E_MINUS_MINUS_BODY_FIELD_NUMBER: builtins.int
     E_MOD_BODY_FIELD_NUMBER: builtins.int
+    E_SHORT_AND_BODY_FIELD_NUMBER: builtins.int
+    E_SHORT_OR_BODY_FIELD_NUMBER: builtins.int
     g_bool: builtins.bool
     g_int: builtins.int
     g_string: typing.Text
@@ -511,6 +513,12 @@ class Expr(google.protobuf.message.Message):
         pass
     @property
     def e_mod_body(self) -> global___EMod: ...
+    @property
+    def e_short_and_body(self) -> global___EShortAnd:
+        """short circuit boolean evaluation"""
+        pass
+    @property
+    def e_short_or_body(self) -> global___EShortOr: ...
     def __init__(self,
         *,
         g_bool: builtins.bool = ...,
@@ -543,10 +551,12 @@ class Expr(google.protobuf.message.Message):
         e_plus_plus_body: typing.Optional[global___EPlusPlus] = ...,
         e_minus_minus_body: typing.Optional[global___EMinusMinus] = ...,
         e_mod_body: typing.Optional[global___EMod] = ...,
+        e_short_and_body: typing.Optional[global___EShortAnd] = ...,
+        e_short_or_body: typing.Optional[global___EShortOr] = ...,
         ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["e_and_body",b"e_and_body","e_div_body",b"e_div_body","e_eq_body",b"e_eq_body","e_gt_body",b"e_gt_body","e_gte_body",b"e_gte_body","e_list_body",b"e_list_body","e_lt_body",b"e_lt_body","e_lte_body",b"e_lte_body","e_map_body",b"e_map_body","e_matches_body",b"e_matches_body","e_method_body",b"e_method_body","e_minus_body",b"e_minus_body","e_minus_minus_body",b"e_minus_minus_body","e_mod_body",b"e_mod_body","e_mult_body",b"e_mult_body","e_neg_body",b"e_neg_body","e_neq_body",b"e_neq_body","e_not_body",b"e_not_body","e_or_body",b"e_or_body","e_percent_percent_body",b"e_percent_percent_body","e_plus_body",b"e_plus_body","e_plus_plus_body",b"e_plus_plus_body","e_set_body",b"e_set_body","e_tuple_body",b"e_tuple_body","e_var_body",b"e_var_body","expr_instance",b"expr_instance","g_bool",b"g_bool","g_byte_array",b"g_byte_array","g_int",b"g_int","g_string",b"g_string","g_uri",b"g_uri"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["e_and_body",b"e_and_body","e_div_body",b"e_div_body","e_eq_body",b"e_eq_body","e_gt_body",b"e_gt_body","e_gte_body",b"e_gte_body","e_list_body",b"e_list_body","e_lt_body",b"e_lt_body","e_lte_body",b"e_lte_body","e_map_body",b"e_map_body","e_matches_body",b"e_matches_body","e_method_body",b"e_method_body","e_minus_body",b"e_minus_body","e_minus_minus_body",b"e_minus_minus_body","e_mod_body",b"e_mod_body","e_mult_body",b"e_mult_body","e_neg_body",b"e_neg_body","e_neq_body",b"e_neq_body","e_not_body",b"e_not_body","e_or_body",b"e_or_body","e_percent_percent_body",b"e_percent_percent_body","e_plus_body",b"e_plus_body","e_plus_plus_body",b"e_plus_plus_body","e_set_body",b"e_set_body","e_tuple_body",b"e_tuple_body","e_var_body",b"e_var_body","expr_instance",b"expr_instance","g_bool",b"g_bool","g_byte_array",b"g_byte_array","g_int",b"g_int","g_string",b"g_string","g_uri",b"g_uri"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["expr_instance",b"expr_instance"]) -> typing.Optional[typing_extensions.Literal["g_bool","g_int","g_string","g_uri","g_byte_array","e_not_body","e_neg_body","e_mult_body","e_div_body","e_plus_body","e_minus_body","e_lt_body","e_lte_body","e_gt_body","e_gte_body","e_eq_body","e_neq_body","e_and_body","e_or_body","e_var_body","e_list_body","e_tuple_body","e_set_body","e_map_body","e_method_body","e_matches_body","e_percent_percent_body","e_plus_plus_body","e_minus_minus_body","e_mod_body"]]: ...
+    def HasField(self, field_name: typing_extensions.Literal["e_and_body",b"e_and_body","e_div_body",b"e_div_body","e_eq_body",b"e_eq_body","e_gt_body",b"e_gt_body","e_gte_body",b"e_gte_body","e_list_body",b"e_list_body","e_lt_body",b"e_lt_body","e_lte_body",b"e_lte_body","e_map_body",b"e_map_body","e_matches_body",b"e_matches_body","e_method_body",b"e_method_body","e_minus_body",b"e_minus_body","e_minus_minus_body",b"e_minus_minus_body","e_mod_body",b"e_mod_body","e_mult_body",b"e_mult_body","e_neg_body",b"e_neg_body","e_neq_body",b"e_neq_body","e_not_body",b"e_not_body","e_or_body",b"e_or_body","e_percent_percent_body",b"e_percent_percent_body","e_plus_body",b"e_plus_body","e_plus_plus_body",b"e_plus_plus_body","e_set_body",b"e_set_body","e_short_and_body",b"e_short_and_body","e_short_or_body",b"e_short_or_body","e_tuple_body",b"e_tuple_body","e_var_body",b"e_var_body","expr_instance",b"expr_instance","g_bool",b"g_bool","g_byte_array",b"g_byte_array","g_int",b"g_int","g_string",b"g_string","g_uri",b"g_uri"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["e_and_body",b"e_and_body","e_div_body",b"e_div_body","e_eq_body",b"e_eq_body","e_gt_body",b"e_gt_body","e_gte_body",b"e_gte_body","e_list_body",b"e_list_body","e_lt_body",b"e_lt_body","e_lte_body",b"e_lte_body","e_map_body",b"e_map_body","e_matches_body",b"e_matches_body","e_method_body",b"e_method_body","e_minus_body",b"e_minus_body","e_minus_minus_body",b"e_minus_minus_body","e_mod_body",b"e_mod_body","e_mult_body",b"e_mult_body","e_neg_body",b"e_neg_body","e_neq_body",b"e_neq_body","e_not_body",b"e_not_body","e_or_body",b"e_or_body","e_percent_percent_body",b"e_percent_percent_body","e_plus_body",b"e_plus_body","e_plus_plus_body",b"e_plus_plus_body","e_set_body",b"e_set_body","e_short_and_body",b"e_short_and_body","e_short_or_body",b"e_short_or_body","e_tuple_body",b"e_tuple_body","e_var_body",b"e_var_body","expr_instance",b"expr_instance","g_bool",b"g_bool","g_byte_array",b"g_byte_array","g_int",b"g_int","g_string",b"g_string","g_uri",b"g_uri"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["expr_instance",b"expr_instance"]) -> typing.Optional[typing_extensions.Literal["g_bool","g_int","g_string","g_uri","g_byte_array","e_not_body","e_neg_body","e_mult_body","e_div_body","e_plus_body","e_minus_body","e_lt_body","e_lte_body","e_gt_body","e_gte_body","e_eq_body","e_neq_body","e_and_body","e_or_body","e_var_body","e_list_body","e_tuple_body","e_set_body","e_map_body","e_method_body","e_matches_body","e_percent_percent_body","e_plus_plus_body","e_minus_minus_body","e_mod_body","e_short_and_body","e_short_or_body"]]: ...
 global___Expr = Expr
 
 class EList(google.protobuf.message.Message):
@@ -946,6 +956,40 @@ class EOr(google.protobuf.message.Message):
     def HasField(self, field_name: typing_extensions.Literal["p1",b"p1","p2",b"p2"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["p1",b"p1","p2",b"p2"]) -> None: ...
 global___EOr = EOr
+
+class EShortAnd(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    P1_FIELD_NUMBER: builtins.int
+    P2_FIELD_NUMBER: builtins.int
+    @property
+    def p1(self) -> global___Par: ...
+    @property
+    def p2(self) -> global___Par: ...
+    def __init__(self,
+        *,
+        p1: typing.Optional[global___Par] = ...,
+        p2: typing.Optional[global___Par] = ...,
+        ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["p1",b"p1","p2",b"p2"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["p1",b"p1","p2",b"p2"]) -> None: ...
+global___EShortAnd = EShortAnd
+
+class EShortOr(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    P1_FIELD_NUMBER: builtins.int
+    P2_FIELD_NUMBER: builtins.int
+    @property
+    def p1(self) -> global___Par: ...
+    @property
+    def p2(self) -> global___Par: ...
+    def __init__(self,
+        *,
+        p1: typing.Optional[global___Par] = ...,
+        p2: typing.Optional[global___Par] = ...,
+        ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["p1",b"p1","p2",b"p2"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["p1",b"p1","p2",b"p2"]) -> None: ...
+global___EShortOr = EShortOr
 
 class EMatches(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
