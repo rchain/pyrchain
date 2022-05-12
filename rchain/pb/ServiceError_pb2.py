@@ -3,6 +3,7 @@
 # source: ServiceError.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -14,53 +15,11 @@ _sym_db = _symbol_database.Default()
 from .scalapb import scalapb_pb2 as scalapb_dot_scalapb__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='ServiceError.proto',
-  package='',
-  syntax='proto3',
-  serialized_options=b'\342?\037\n\033coop.rchain.casper.protocolH\000',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12ServiceError.proto\x1a\x15scalapb/scalapb.proto\" \n\x0cServiceError\x12\x10\n\x08messages\x18\x01 \x03(\tB\"\xe2?\x1f\n\x1b\x63oop.rchain.casper.protocolH\x00\x62\x06proto3'
-  ,
-  dependencies=[scalapb_dot_scalapb__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12ServiceError.proto\x1a\x15scalapb/scalapb.proto\" \n\x0cServiceError\x12\x10\n\x08messages\x18\x01 \x03(\tB\"\xe2?\x1f\n\x1b\x63oop.rchain.casper.protocolH\x00\x62\x06proto3')
 
 
 
-
-_SERVICEERROR = _descriptor.Descriptor(
-  name='ServiceError',
-  full_name='ServiceError',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='messages', full_name='ServiceError.messages', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=45,
-  serialized_end=77,
-)
-
-DESCRIPTOR.message_types_by_name['ServiceError'] = _SERVICEERROR
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_SERVICEERROR = DESCRIPTOR.message_types_by_name['ServiceError']
 ServiceError = _reflection.GeneratedProtocolMessageType('ServiceError', (_message.Message,), {
   'DESCRIPTOR' : _SERVICEERROR,
   '__module__' : 'ServiceError_pb2'
@@ -68,6 +27,10 @@ ServiceError = _reflection.GeneratedProtocolMessageType('ServiceError', (_messag
   })
 _sym_db.RegisterMessage(ServiceError)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\342?\037\n\033coop.rchain.casper.protocolH\000'
+  _SERVICEERROR._serialized_start=45
+  _SERVICEERROR._serialized_end=77
 # @@protoc_insertion_point(module_scope)
