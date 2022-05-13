@@ -1,3 +1,4 @@
+import copy
 import hashlib
 import random
 from typing import Any, Optional
@@ -8,7 +9,6 @@ from ecdsa.curves import SECP256k1
 from ecdsa.util import sigdecode_der, sigencode_der_canonize
 from eth_hash.auto import keccak
 from eth_keyfile import extract_key_from_keyfile
-from google.protobuf.wrappers_pb2 import Int32Value, StringValue
 
 from rchain.pb.CasperMessage_pb2 import BlockMessageProto
 
@@ -20,19 +20,16 @@ def blake2b_32(data: bytes = b'') -> hashlib.blake2b:
 
 
 def gen_deploys_hash_from_block(block: BlockMessageProto) -> bytes:
-    hash_obj = b"".join([deploy.SerializeToString() for deploy in block.body.deploys])
+    hash_obj = b"".join([deploy.SerializeToString() for deploy in block.state.deploys])
     return blake2b_32(hash_obj).digest()
 
 
 def gen_block_hash_from_block(block: BlockMessageProto) -> bytes:
-    signed_obj = b''.join([block.header.SerializeToString(),
-                           block.body.SerializeToString(),
-                           block.sender,
-                           StringValue(value=block.sigAlgorithm).SerializeToString(),
-                           Int32Value(value=block.seqNum).SerializeToString(),
-                           StringValue(value=block.shardId).SerializeToString(),
-                           block.extraBytes])
-    return blake2b_32(signed_obj).digest()
+    empty_bytes = b''
+    block_clear_sig_data = copy.copy(block)
+    block_clear_sig_data.blockHash = empty_bytes
+    block_clear_sig_data.sig = empty_bytes
+    return blake2b_32(block_clear_sig_data.SerializeToString()).digest()
 
 
 def verify_rev_address(rev_address: str) -> bool:

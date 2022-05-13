@@ -74,15 +74,11 @@ def test_client_show_block() -> None:
     sig = "sig"
     sigAlgorithm = "sigal"
     shardId = "rchain"
-    extraBytes = b"extraBytes"
     version = 1
     timestamp = 10000000
-    headerExtraBytes = b"headerExtraBytes"
-    parentsHashList = ["abc"]
     blockNumber = 1
     preStateHash = "preStateHash"
     postStateHash = "postStateHash"
-    bodyExtraBytes = b"bodyExtraBytes"
     bond = BondInfo(validator="a", stake=100)
     blockSize = "100"
     deployCount = 1
@@ -107,9 +103,8 @@ def test_client_show_block() -> None:
             return BlockResponse(blockInfo=BlockInfo(blockInfo=LightBlockInfo(
                 blockHash=request_block_hash,
                 sender=sender, seqNum=seqNum, sig=sig, sigAlgorithm=sigAlgorithm, shardId=shardId,
-                extraBytes=extraBytes, version=version, timestamp=timestamp, headerExtraBytes=headerExtraBytes,
-                parentsHashList=parentsHashList, blockNumber=blockNumber, preStateHash=preStateHash,
-                postStateHash=postStateHash, bodyExtraBytes=bodyExtraBytes, bonds=[bond], blockSize=blockSize,
+                version=version, blockNumber=blockNumber, preStateHash=preStateHash,
+                postStateHash=postStateHash, bonds=[bond], blockSize=blockSize,
                 deployCount=deployCount, faultTolerance=faultTolerance
             ), deploys=[deploy]))
 
@@ -123,15 +118,10 @@ def test_client_show_block() -> None:
         assert block_info.sig == sig
         assert block_info.sigAlgorithm == sigAlgorithm
         assert block_info.shardId == shardId
-        assert block_info.extraBytes == extraBytes
         assert block_info.version == version
-        assert block_info.timestamp == timestamp
-        assert block_info.headerExtraBytes == headerExtraBytes
-        assert block_info.parentsHashList == parentsHashList
         assert block_info.blockNumber == blockNumber
         assert block_info.preStateHash == preStateHash
         assert block_info.postStateHash == postStateHash
-        assert block_info.bodyExtraBytes == bodyExtraBytes
         assert block_info.blockSize == blockSize
         assert block_info.deployCount == deployCount
         assert pytest.approx(block_info.faultTolerance, faultTolerance)
@@ -160,15 +150,10 @@ def test_client_show_blocks() -> None:
     sig = "sig"
     sigAlgorithm = "sigal"
     shardId = "rchain"
-    extraBytes = b"extraBytes"
     version = 1
-    timestamp = 10000000
-    headerExtraBytes = b"headerExtraBytes"
-    parentsHashList = ["abc"]
     blockNumber = 1
     preStateHash = "preStateHash"
     postStateHash = "postStateHash"
-    bodyExtraBytes = b"bodyExtraBytes"
     bond = BondInfo(validator="a", stake=100)
     blockSize = "100"
     deployCount = 1
@@ -180,9 +165,8 @@ def test_client_show_blocks() -> None:
             yield BlockInfoResponse(blockInfo=LightBlockInfo(
                 blockHash=request_block_hash,
                 sender=sender, seqNum=seqNum, sig=sig, sigAlgorithm=sigAlgorithm, shardId=shardId,
-                extraBytes=extraBytes, version=version, timestamp=timestamp, headerExtraBytes=headerExtraBytes,
-                parentsHashList=parentsHashList, blockNumber=blockNumber, preStateHash=preStateHash,
-                postStateHash=postStateHash, bodyExtraBytes=bodyExtraBytes, bonds=[bond], blockSize=blockSize,
+                version=version, blockNumber=blockNumber, preStateHash=preStateHash,
+                postStateHash=postStateHash, bonds=[bond], blockSize=blockSize,
                 deployCount=deployCount, faultTolerance=faultTolerance))
 
     with deploy_service(DummyDeploySerivce()) as (server, port), \
@@ -196,15 +180,10 @@ def test_client_show_blocks() -> None:
         assert block_info.sig == sig
         assert block_info.sigAlgorithm == sigAlgorithm
         assert block_info.shardId == shardId
-        assert block_info.extraBytes == extraBytes
         assert block_info.version == version
-        assert block_info.timestamp == timestamp
-        assert block_info.headerExtraBytes == headerExtraBytes
-        assert block_info.parentsHashList == parentsHashList
         assert block_info.blockNumber == blockNumber
         assert block_info.preStateHash == preStateHash
         assert block_info.postStateHash == postStateHash
-        assert block_info.bodyExtraBytes == bodyExtraBytes
         assert block_info.blockSize == blockSize
         assert block_info.deployCount == deployCount
         assert pytest.approx(block_info.faultTolerance, faultTolerance)

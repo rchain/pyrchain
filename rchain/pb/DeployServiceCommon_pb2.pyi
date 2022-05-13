@@ -143,8 +143,13 @@ global___VisualizeDagQuery = VisualizeDagQuery
 
 class MachineVerifyQuery(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    DEPTH_FIELD_NUMBER: builtins.int
+    depth: builtins.int
     def __init__(self,
+        *,
+        depth: builtins.int = ...,
         ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["depth",b"depth"]) -> None: ...
 global___MachineVerifyQuery = MachineVerifyQuery
 
 class PrivateNamePreviewQuery(google.protobuf.message.Message):
@@ -286,97 +291,68 @@ global___DeployInfo = DeployInfo
 
 class LightBlockInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+    VERSION_FIELD_NUMBER: builtins.int
+    SHARDID_FIELD_NUMBER: builtins.int
     BLOCKHASH_FIELD_NUMBER: builtins.int
+    BLOCKNUMBER_FIELD_NUMBER: builtins.int
     SENDER_FIELD_NUMBER: builtins.int
     SEQNUM_FIELD_NUMBER: builtins.int
-    SIG_FIELD_NUMBER: builtins.int
-    SIGALGORITHM_FIELD_NUMBER: builtins.int
-    SHARDID_FIELD_NUMBER: builtins.int
-    EXTRABYTES_FIELD_NUMBER: builtins.int
-    VERSION_FIELD_NUMBER: builtins.int
-    TIMESTAMP_FIELD_NUMBER: builtins.int
-    HEADEREXTRABYTES_FIELD_NUMBER: builtins.int
-    PARENTSHASHLIST_FIELD_NUMBER: builtins.int
-    BLOCKNUMBER_FIELD_NUMBER: builtins.int
     PRESTATEHASH_FIELD_NUMBER: builtins.int
     POSTSTATEHASH_FIELD_NUMBER: builtins.int
-    BODYEXTRABYTES_FIELD_NUMBER: builtins.int
+    JUSTIFICATIONS_FIELD_NUMBER: builtins.int
     BONDS_FIELD_NUMBER: builtins.int
+    SIGALGORITHM_FIELD_NUMBER: builtins.int
+    SIG_FIELD_NUMBER: builtins.int
     BLOCKSIZE_FIELD_NUMBER: builtins.int
     DEPLOYCOUNT_FIELD_NUMBER: builtins.int
     FAULTTOLERANCE_FIELD_NUMBER: builtins.int
-    JUSTIFICATIONS_FIELD_NUMBER: builtins.int
     REJECTEDDEPLOYS_FIELD_NUMBER: builtins.int
-    blockHash: typing.Text
+    version: builtins.int
     """BlockMessageProto message"""
 
+    shardId: typing.Text
+    blockHash: typing.Text
+    blockNumber: builtins.int
     sender: typing.Text
     seqNum: builtins.int
-    sig: typing.Text
-    sigAlgorithm: typing.Text
-    shardId: typing.Text
-    extraBytes: builtins.bytes
-    version: builtins.int
-    """HeaderProto message"""
-
-    timestamp: builtins.int
-    headerExtraBytes: builtins.bytes
-    @property
-    def parentsHashList(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
-    blockNumber: builtins.int
-    """BodyProto message"""
-
     preStateHash: typing.Text
     postStateHash: typing.Text
-    bodyExtraBytes: builtins.bytes
+    @property
+    def justifications(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]: ...
     @property
     def bonds(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BondInfo]: ...
+    sigAlgorithm: typing.Text
+    sig: typing.Text
     blockSize: typing.Text
     """extra"""
 
     deployCount: builtins.int
     faultTolerance: builtins.float
     @property
-    def justifications(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___JustificationInfo]: ...
-    @property
-    def rejectedDeploys(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RejectedDeployInfo]: ...
+    def rejectedDeploys(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text]:
+        """Rejected data"""
+        pass
     def __init__(self,
         *,
+        version: builtins.int = ...,
+        shardId: typing.Text = ...,
         blockHash: typing.Text = ...,
+        blockNumber: builtins.int = ...,
         sender: typing.Text = ...,
         seqNum: builtins.int = ...,
-        sig: typing.Text = ...,
-        sigAlgorithm: typing.Text = ...,
-        shardId: typing.Text = ...,
-        extraBytes: builtins.bytes = ...,
-        version: builtins.int = ...,
-        timestamp: builtins.int = ...,
-        headerExtraBytes: builtins.bytes = ...,
-        parentsHashList: typing.Optional[typing.Iterable[typing.Text]] = ...,
-        blockNumber: builtins.int = ...,
         preStateHash: typing.Text = ...,
         postStateHash: typing.Text = ...,
-        bodyExtraBytes: builtins.bytes = ...,
+        justifications: typing.Optional[typing.Iterable[typing.Text]] = ...,
         bonds: typing.Optional[typing.Iterable[global___BondInfo]] = ...,
+        sigAlgorithm: typing.Text = ...,
+        sig: typing.Text = ...,
         blockSize: typing.Text = ...,
         deployCount: builtins.int = ...,
         faultTolerance: builtins.float = ...,
-        justifications: typing.Optional[typing.Iterable[global___JustificationInfo]] = ...,
-        rejectedDeploys: typing.Optional[typing.Iterable[global___RejectedDeployInfo]] = ...,
+        rejectedDeploys: typing.Optional[typing.Iterable[typing.Text]] = ...,
         ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["blockHash",b"blockHash","blockNumber",b"blockNumber","blockSize",b"blockSize","bodyExtraBytes",b"bodyExtraBytes","bonds",b"bonds","deployCount",b"deployCount","extraBytes",b"extraBytes","faultTolerance",b"faultTolerance","headerExtraBytes",b"headerExtraBytes","justifications",b"justifications","parentsHashList",b"parentsHashList","postStateHash",b"postStateHash","preStateHash",b"preStateHash","rejectedDeploys",b"rejectedDeploys","sender",b"sender","seqNum",b"seqNum","shardId",b"shardId","sig",b"sig","sigAlgorithm",b"sigAlgorithm","timestamp",b"timestamp","version",b"version"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["blockHash",b"blockHash","blockNumber",b"blockNumber","blockSize",b"blockSize","bonds",b"bonds","deployCount",b"deployCount","faultTolerance",b"faultTolerance","justifications",b"justifications","postStateHash",b"postStateHash","preStateHash",b"preStateHash","rejectedDeploys",b"rejectedDeploys","sender",b"sender","seqNum",b"seqNum","shardId",b"shardId","sig",b"sig","sigAlgorithm",b"sigAlgorithm","version",b"version"]) -> None: ...
 global___LightBlockInfo = LightBlockInfo
-
-class RejectedDeployInfo(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-    SIG_FIELD_NUMBER: builtins.int
-    sig: typing.Text
-    def __init__(self,
-        *,
-        sig: typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["sig",b"sig"]) -> None: ...
-global___RejectedDeployInfo = RejectedDeployInfo
 
 class BlockInfo(google.protobuf.message.Message):
     """For node clients, see BlockMessage for actual Casper protocol Block representation"""

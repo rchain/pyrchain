@@ -124,7 +124,7 @@ class MachineVerifyResponse(google.protobuf.message.Message):
 global___MachineVerifyResponse = MachineVerifyResponse
 
 class BlockInfoResponse(google.protobuf.message.Message):
-    """showMainChain & getBlocks"""
+    """getBlocks"""
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
     ERROR_FIELD_NUMBER: builtins.int
     BLOCKINFO_FIELD_NUMBER: builtins.int
